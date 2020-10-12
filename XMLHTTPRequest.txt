@@ -1,0 +1,235 @@
+XMLHttpRequest
+================================================================================
+
+        Request -->
+browser ------------ server
+        <-- Response
+
+let xhr = new XMLHttpRequest();      // створення об'єкта, екземпляра класу
+
+
+МЕТОДИ XMLHttpRequest-об'єкта
+-----------------------------
+
+xhr.abort();                         // обрив поточного запиту (status стає 0)
+
+xhr.getAllResponseHeaders();         // отримання заголовків відповіді на запит
+                                     // (усі, крім Set-Cookie та Set-Cookie2,
+                                     // відповідь - рядок, завжди з \r\n)
+
+xhr.getResponseHeader(name);         // отримання конкретного заголовку
+
+xhr.open(method,url,async,user,psw); // конфігурація запиту
+                                     // method: 'POST'/'GET'
+                                     // url: 'url'
+                                     // async: true(default) - асинхронний запит
+                                     //        false - синхронний запит
+                                     // user: ім'я користувача для базової HTTP-
+                                     // авторизації
+                                     // psw: пароль користувача для базової
+                                     // HTTP-авторизації
+
+xhr.send();                          // відправити GET-запит
+
+xhr.send(string/blob/BufferSource);  // відправити POST-запит
+
+xhr.setRequestHeader(name,value);    // встановити заголовок запиту (встановлені
+                                     // заголовки не можливо скасувати,
+                                     // при повторному виклику value += value;)
+
+
+ВЛАСТИВОСТІ XMLHttpRequest-об'єкта
+----------------------------------
+
+onload             // обробник події (отримано відповідь, включно з 404 тощо)
+
+onerror            // обробник події (помилка виконання запиту як такого)
+
+onprogress         // обробник події (періодично під час завантаження відповіді)
+                   //    event.loaded: кількість завантажених байт
+                   //    event.lengthComputable: true - сервер присилає
+                   //                                   заголовок Content-Length
+                   //    event.total - кількість байт всього (тільки якщо
+                   //                  lengthComputable = true)
+
+onreadystatechange // обробник події (зміна readyState), застарів
+
+readyState         // поточний стан запиту: 0 - запит не ініціалізований
+                   //                       1 - викликаний метод open()
+                   //                       2 - отримано заголовки відповіді
+                   //                       3 - відповідь у процесі передачі
+                   //                       4 - запит оброблено,відповідь готова
+
+responseType       // очікуватий формат отримуваних даних
+                   //     "" - string (default)
+                   //     "text" - string
+                   //     "arraybuffer" - ArrayBuffer
+                   //     "blob" - Blob
+                   //     "document" - XML-document
+                   //     "json" - JSON (парситься автоматично)
+
+response           // відповідь сервера
+
+responseText       // відповідь сервера у вигляді рядка (застаріле)
+
+responseHML        // відповідь сервера у вигляді HML (застаріле)
+
+status             // статус запиту цифрами (200, 404 тощо)
+
+statusText         // статус запиту рядком ("ok"/"Not Found"/"Forbidden" тощо)
+
+timeout            // час в мілісекундах, відведений на очікування відповіді
+
+ontimeout          // обробник події (запит не вклався у відведений час timeout)
+
+onabort            // обробник події ( викликаний метод abort() )
+
+
+responseText/responseHML - застарілі властивості, замість них краще використову-
+вати зв'язку responseType + response:
+
+    xhr.responseType = 'json';
+    let responseObj = xhr.response;
+
+
+ЗАГАЛЬНА СХЕМА ВІДПРАВКИ ЗАПИТУ
+-------------------------------
+
+    let xhr = new XMLHttpRequest();
+    xhr.open(method,url,async,user,psw);
+    xhr.onreadystatechange = function() {...};
+    xhr.send();
+
+
+РІЗНИЦЯ МІЖ GET I POST
+----------------------
+
+GET простіший і швидший, але має обмеження по розмірах
+POST не має обмежень по розмірах, безпечніший при передачі паролів і даних
+POST не працює з кешованими даними???
+
+За замовчуванням GET дає кешований результат, щоб цього уникнути, потрібно в
+адресу дописувати унікальний ідентифікатор:
+
+    let xhr = new XMLHttpRequest();
+    let url = 'demo_get.asp?t=' + Math.random();
+    xhr.open('GET',url,true);
+
+
+Відправка даних на сервер через GET - за допомогою url:
+
+    let url = 'demo_get.asp?fname=Henry&lname=Ford';
+
+
+Щоб в POST адекватно відображалася кирилиця потрібно встановити заголовок:
+
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+
+
+При відправці синхронного запиту функція-обробник (onreadystatechange) не
+потрібна.
+Синхронні запити не рекомендовані, вони видають помилку:
+
+    invalidAccessError
+
+
+Якщо на сайті є більше 1 запиту, є смисл створити окрему функцію для запитів і
+на кожен запит - свій колбек:
+
+    // функція для запитів
+    function loadDoc(url,callback) {
+      let xhr = new XMLHttpRequest();
+      xhr.onreadestatechange = function() {
+        if ( this.readyState == 4 && this.status == 200 ) {
+          callback(this)
+        }
+      }
+      xhr.open('GET',url,true);
+      xhr.send;
+    }
+
+    // колбеки - отримують об'єкт xhr і далі оброблюють результат запиту
+    function foo1(xhr) {...}
+    function foo2(xhr) {...}
+
+    // використання
+    document.querySelector('...').onclick = function(event) {
+       ...
+       loadDoc('url1', foo1);
+       ...
+    }
+    document.querySelector('...').onclick = function(event) {
+       ...
+       loadDoc('url2', foo2);
+       ...
+    }
+
+
+POST + FormData
+---------------
+
+    let formData = new FormData([form]);
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', ...);
+    xhr.send;
+
+Якщо потрібно відправити дані у форматі JSON, потрібно встановити заголовок:
+
+    let json = JSON.stringify({...});
+    xhr.open('POST', ...);
+    xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+    xhr.send(json);
+
+
+Прогрес відправки даних на сервер
+---------------------------------
+
+Для цього використовується об'єкт xhr.upload, який генерує наступні події:
+
+    xhr.upload.onstart    // початок завантаження
+    xhr.upload.onprogress // періодично в процесі
+    xhr.upload.onabort    // скасування відправки
+    xhr.upload.onerror    // помилка, не пов'язана з HTTP
+    xhr.upload.onload     // успішне завершення
+    xhr.upload.ontimeout  // закінчився відведений для відправки час
+    xhr.upload.onloadend  // завершено (успішно або ні)
+
+
+Запити на інші джерела
+----------------------
+
+    xhr.withCredentials = true;
+
+
+Відновлюване завантаження файлів на сервер
+------------------------------------------
+
+Схема:
+
+1. створити унікальний ідентифікатор файла.
+
+    let fileId = file.name + '-' + file.size + '-' + +file.lastModifiedDate;
+
+2. запит на сервер, скільки байтів уже отримано (сервер повинен бути налаштова-
+   ний приймати заголовок X-File-Id, якщо файл серверу не відомий, він повинен
+   повернути 0):
+
+    let response = await fetch('status', {
+      headers: {
+        'X-File-Id': fileId
+      }
+    });
+    let startByte = +await response.text();
+
+3. метод slice(startByte) при повторній відправці файла вказує, з якого місця
+   почати завантаження
+
+    xhr.open("POST", "upload", true);
+    xhr.setRequestHeader('X-File-Id', fileId);
+    xhr.setRequestHeader('X-Start-Byte', startByte);
+
+    xhr.upload.onprogress = (e) => {
+      console.log(`Uploaded ${startByte + e.loaded} of ${startByte + e.total}`);
+    };
+
+    xhr.send(file.slice(startByte));

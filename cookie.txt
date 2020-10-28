@@ -92,4 +92,3 @@ samesite=lax    // те саме, що samesite=strict, але cookie відпр
                 // зміну даних, наприклад перехід по посиланню (GET).
 
 httpOnly        // cookie стає невидимим для JS через document.cookie
-

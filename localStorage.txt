@@ -1,57 +1,103 @@
-localStorage
+localStorage/sessionStorage
 ================================================================================
 
 ВИЗНАЧЕННЯ
 ----------
 
-window.localStorage   - stores data with no expiration date
-window.sessionStorage - stores data for one session (data is lost when the browser tab is closed)
+    window.localStorage   - сховище даних без часових обмежень
+    window.sessionStorage - сховище даних на період сесії
+
+
+ВІДМІННОСТІ МІЖ localStorage ТА sessionStorage
+----------------------------------------------
+1. localStorage спільний для усіх вкладок одного джерела протокол://домен:порт;
+   sessionStorage для кожної вкладки браузера свій, але спільний для вкладки і
+   її фреймів, якщо ті з одного джерела.
+2. дані в localStorage зберігаються після закриття браузера, перезавантаження
+   сторінки, вимкнення компа; дані в sessionStorage зберігаються при
+   перезавантаженні сторінки, але витираються при закритті вкладки.
 
 
 ПЕРЕВІРКА ПІДТРИМКИ БРАУЗЕРОМ
 -----------------------------
 
-  if (typeof(Storage) !== "undefined") {
-    // Code for localStorage/sessionStorage.
-  } else {
-    // Sorry! No Web Storage support..
-  }
+    if (typeof(Storage) !== "undefined") {
+      // Code for localStorage/sessionStorage.
+    } else {
+      // Sorry! No Web Storage support..
+    }
 
 
 МЕТОДИ І ВЛАСТИВОСТІ
 --------------------
 
-localStorage.length;
-localStorage.setItem('key','value');
-localStorage.getItem('key');
-localStorage.removeItem('key');
-localStorage.clear();
+    localStorage.length;
+    localStorage.setItem('key','value');
+    localStorage.getItem('key');
+    localStorage.removeItem('key');
+    localStorage.clear();
 
-аналогічно - властивості в []:
+Також можливо звертатися до даних в localStorage як до властивостей об'єкта -
+через крапку або в []:
 
-localStorage['key'] = 'value';
-delete localStorage['key'];
+    localStorage['key'] = 'value';
+    console.log( localStorage.key );
+    delete localStorage['key'];
 
 ключі/значення обов'язково рядки
 масиви не підтримуються, замість них - JSON
 
-  JSON.stringify : obj -> JSON.
-  JSON.parse : JSON -> obj.
+    JSON.stringify : obj -> JSON.
+    JSON.parse : JSON -> obj.
 
 об'єм localStorage - приблизно 5мб, при заповненні - QUOTA_EXCEEDED_ERR.
 
-  try {
-    localStorage.setItem('ключ', 'значение');
-  } catch (e) {
-    if (e == QUOTA_EXCEEDED_ERR) {
-     alert('Превышен лимит');
+    try {
+      localStorage.setItem('ключ', 'значення');
+    } catch (e) {
+      if (e == QUOTA_EXCEEDED_ERR) {
+       alert('Перевищено ліміт');
+      }
     }
-  }
+
+ПЕРЕБІР localStorage/sessionStorage
+-----------------------------------
+
+localStorage не ітерований, його не можливо перебрати циклом for...of.
+Можна перебрати як масив:
+
+    for(let i=0; i<localStorage.length; i++) {
+      let key = localStorage.key(i);
+      alert(`${key}: ${localStorage.getItem(key)}`);
+    }
+
+або як об'єкт. Але for...in виведе додатково кілька службових, вбудованих
+властивостей. Щоб цього уникнути, потрібно їх відфільтровувати або через
+localStorage.hasOwnProperty(key), або за допомогою Object.keys():
+
+    let keys = Object.keys(localStorage);
+    for(let key of keys) {
+      alert(`${key}: ${localStorage.getItem(key)}`);
+    }
 
 
 ПОДІЇ
 -----
 
-window.onstorage / window.addEventListener('storage', foo() );
+    window.onstorage / window.addEventListener('storage', foo() );
 
-спрацьовує при зміні localStorage (запис/виданення ключа, повна очистка) у всіх вкладках, крім тієї, яка змінює localStorage.
+спрацьовує при зміні localStorage (запис/виданення ключа, повна очистка) у всіх
+вкладках, крім тієї, яка змінює localStorage. ОБробник потрібно ставити на ту
+сторінку, яка слухає зміни.
+
+    event.key         // ключ, який оновився або null, якщо .claer()
+    event.oldValue    // старе значення або null, якщо це створення ключа
+    event.newValue    // нове значення або null, якщо це видалення ключа
+    event.url         // url, на якому відбулася зміна
+    event.storageArea // localStorage/sessionStorage, на якому відбулася зміна
+
+
+Сучасні браузери підтримують Broadcast Channel API, який є більш досконалим від
+localStorage, але менш підтримуваним.
+
+https://developer.mozilla.org/ru/docs/Web/API/Broadcast_Channel_API

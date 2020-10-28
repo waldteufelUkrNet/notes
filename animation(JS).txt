@@ -1,0 +1,105 @@
+animation(JS)
+================================================================================
+
+requestAnimationFrame
+---------------------
+
+
+ЩО ЦЕ І ДЛЯ ЧОГО
+----------------
+
+Коли на сайті багато JS-анімацій, вони можуть сильно пригальмовувати сайт. Тому
+їх краще групувати разом. Так буде швидше:
+
+    setInterval(function() {
+      animate1();
+      animate2();
+      animate3();
+    }, 20)
+
+ніж так:
+
+    setInterval(animate1, 20);
+    setInterval(animate2, 20);
+    setInterval(animate3, 20);
+
+
+ОГОЛОШЕННЯ
+----------
+
+    let requestId = requestAnimationFrame(callback);
+
+      // callback - функція, яка має один агрумент - час, який пройшов з моменту
+      //            початку завантаження сторінки ( performance.now() ).
+      //            Запускається одразу, як тільки браузер зможе виконати
+      //            анімацію. Якщо в callback відбувається зміна елементу, то
+      //            вона буде згрупована з іншими requestAnimationFrame та
+      //            CSS-анімаціями і браузер зробить одне перемальовування
+      //            сторінки, а не багато.
+
+
+СКАСУВАННЯ
+----------
+
+    cancelAnimationFrame(requestId);
+
+
+СХЕМА АНІМАЦІЇ
+--------------
+
+// створення допоміжної функції
+/**
+ * [animate ]
+ * @param  {[Function]} timing   [функція розрахунку етапу анімації]
+ * @param  {[Function]} draw     [функція відмальовування анімації]
+ * @param  {[Number]}   duration [тривалість анімації]
+ */
+function animate({timing, draw, duration}) {
+
+  let start = performance.now();
+
+  requestAnimationFrame(function animate(time) {
+    // поточний час анімації (часова шкала X, від 0 до 1)
+    let timeFraction = (time - start) / duration;
+    if (timeFraction > 1) timeFraction = 1;
+
+    // поточний стан анімації (шкала змін Y, від 0 до 1)
+    let progress = timing(timeFraction);
+
+    // відмальовування анімації
+    draw(progress);
+
+    // якщо час не добіг кінця, викликати ще раз
+    if (timeFraction < 1) {
+      requestAnimationFrame(animate);
+    }
+
+  });
+}
+
+// виклик функції з параметрами
+elem.onclick = function() {
+  animate({
+    duration: 1000,
+    timing: function(timeFraction) {
+      return timeFraction;
+    },
+    draw: function(progress) {
+      elem.style.width = progress * 100 + '%';
+    }
+  });
+};
+
+
+РІЗНОВИДИ АНІМАЦІЙНИХ ФУНКЦІЙ timing
+------------------------------------
+
+timing: function(timeFraction) {
+  return timeFraction;                          // лінійна анімація
+  return Math.pow(timeFraction, n)              // параболічна анімація
+  return 1 - Math.sin(Math.acos(timeFraction)); // дуга
+  ...
+  return Math.pow(timeFraction, n) * ((x + 1) * timeFraction - x)
+
+  // детальніше на https://learn.javascript.ru/js-animation#struktura-animatsii
+}

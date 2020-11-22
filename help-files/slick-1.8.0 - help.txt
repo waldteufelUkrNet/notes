@@ -1,0 +1,114 @@
+http://kenwheeler.github.io/slick/
+
+==========
+
+\slick-1.8.0.rar\slick-1.8.0\slick\
+потрібні файли:
+slick.css, slick-theme.css та slick.js (slick.min.js)
+
+==========
+
+ПІДКЛЮЧЕННЯ
+
+1. В розмітці вставити потрібний клас:
+
+    <div class="MY-CLASS">
+      <div>your content</div>
+      <div>your content</div>
+      <div>your content</div>
+    </div>
+
+2. В <head> вказати шлях до файлів css:
+
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    // Add the new slick-theme.css if you want the default styling
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
+3. Перед закриваючим тегом </body> вказати шлях до файлів js. Перед файлом slick.js (slick.min.js) потрібно вказати шлях до jQuery:
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+
+4. Ініціалізація slick в головному js-файлі проекту:
+
+    $(document).ready(function(){
+      $('.MY-CLASS').slick({
+        setting-name: setting-value
+      });
+    });
+
+=========
+
+НАЛАШТУВАННЯ
+
+1. Через data-атрибут:
+
+    <div data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+
+2. Через пари ключ-значення в об'єкті slick в js-файлі:
+
+Опція             Тип        Значення       Пояснення
+
+accessibility     boolean    true           ???
+adaptiveHeight    boolean    false          слайди різних розмірів по висоті
+appendArrows      string     $(element)     ???
+appendDots        string     $(element)     ???
+arrows            boolean    true           навігаційні стрілки
+asNavFor          string     $(element)     зв'язування двох слайдерів у один
+autoplay          boolean    false          автоматичне перегортання
+autoplaySpeed     int        3000           частота перегортання слайдів, вимагає autoplay:true
+centerMode        boolean    false          слайд по центру, а з боків - поля (інші слайди)
+centerPadding     string     '50px'         ширина полів, вимагає centerMode:true
+cssEase           string     'ease'         тип перебігу анімації speed ("ease-in-out" тощо)
+customPaging      function   n/a            ???
+dots              boolean    false          навігаційні крапки
+dotsClass         string     'slick-dots'   ???
+draggable         boolean    true           перетягування слайдів мишкою
+easing            string     'linear'       ???
+edgeFriction      integer    0.15           на скільки % можна перетягнути слайд, щоб він не перегорнувся
+fade              boolean    false          затухаюча анімація
+focusOnSelect     boolean    false          ???
+focusOnChange     boolean    false          ???
+infinite          boolean    true           кругове пермотування слайдів
+initialSlide      integer    0              ???
+lazyLoad          string     'ondemand'     при першому програванні файли завантажуються тільки при появі, а не усі одразу
+mobileFirst       boolean    false          ???
+nextArrow
+pauseOnDotsHover  boolean    false          зупинка при наведенні мишки на навігаційні крапки
+pauseOnFocus      boolean    true           зупинку при фокусуванні
+pauseOnHover      boolean    true           зупинка при наведенні мишки
+prevArrow
+respondTo         string     'window'       ???
+responsive        array      null           налаштування адаптивності
+rows              int        1              кількість слайдів по вертикалі
+rtl               boolean    false          напрям анімації. HTML-тег або батько слайдера повинен мати атрибут dir="rtl".
+slide             string     ''             ???
+slidesPerRow      int        1              кількість слайдів по горизонталі
+slidesToScroll    int        1              скільки слайдів перегортується, конфліктує з centerMode
+slidesToShow      int        1              скільки слайдів видно
+speed             int        300            швидкість анімації перегортання
+swipe             boolean    true           ???
+swipeToSlide      boolean    false          ???
+touchMove         boolean    true           ???
+touchThreshold    int        5              ???
+useCSS            boolean    true           ???
+useTransform      boolean    true           ???
+variableWidth     boolean    false          слайди різних розмірів по ширині
+vertical          boolean    false          вертикальне перегортування слайдів
+verticalSwiping   boolean    false          ???
+waitForAnimate    boolean    true           ???
+zIndex            number     1000           ???
+
+3. Через CSS-файл (навігаційні крапки та стрілки):
+
+    .slick-dots {}
+    .slick-dots li button {}
+    .slick-dots li button:before {}
+    .slick-dots li.slick-active button {}
+    .slick-dots li.slick-active button:before {}
+
+    .slick-prev {}
+    .slick-next {}
+    .slick-prev:before {}
+    .slick-next:before {}

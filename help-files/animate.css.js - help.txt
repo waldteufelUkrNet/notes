@@ -1,0 +1,71 @@
+-----
+анімація при прокрутці (додається клас):
+
+$(window).scroll(function() {
+  $('.someClass').each(function() {
+    var imagePos = $(this).offset().top;
+    var topOfWindow = $(window).scrollTop();
+    if (imagePos < topOfWindow + 200) {
+      $(this).addClass('animatedClass');
+    }
+  });
+});
+
+-----
+
+одноразова анімація при клацанні (додається клас):
+
+$('#id').click(function() {
+  $(this).addClass('animatedClass');
+});
+ 
+-----
+
+для багаторазового використання ефекту без перезавантаження сторінки потрібно:
+
+$('#id').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', doSomething);
+
+замість doSomething потрібно прописати функцію видалення класів:
+
+$('#id').click(function() {
+  $('#id').addClass('animated animatedClass');
+  $('#id').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+    $('#id').removeClass('animated animatedClass');
+  });
+});
+
+-----
+
+кастомізація animate.css:
+
+в таблиці стилів додаємо клас/ідентифікатор для анімованого елемента і додаємо туди animation-duration, animation-delay, animation-iteration-count;
+
+-----
+
+animate.css + WOW.js:
+
+1. Link to Animate.css (You can link to another CSS animation library by changing WOW.js settings):
+
+<link rel="stylesheet" href="css/animate.css">
+
+2. Link and activate WOW.js
+
+     <script src="js/wow.min.js"></script>
+     <script>
+       new WOW().init();
+     </script>
+
+3. Animated -> wow:
+
+     <div class="wow bounceInUp">
+       Content to Reveal Here
+     </div>
+
+4. Advanced Options
+
+     data-wow-duration   : Change the animation duration
+     data-wow-delay      : Delay before the animation starts (data-wow-delay="2.9s")
+     data-wow-offset     : Distance to start the animation (related to the browser bottom)
+     data-wow-iteration  : Number of times the animation is repeated
+
+-----

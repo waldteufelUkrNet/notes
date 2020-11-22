@@ -1,0 +1,53 @@
+﻿How to install Gulp 4
+
+# Uninstall previous Gulp installation and related packages, if any
+$ npm rm gulp -g
+$ npm rm gulp-cli -g
+$ cd [your-project-dir/]
+$ npm rm gulp --save-dev
+$ npm rm gulp --save
+$ npm rm gulp --save-optional
+$ npm cache clean
+
+# Install the latest Gulp CLI tools globally
+$ npm install gulpjs/gulp-cli -g
+
+# Install Gulp 4 into your project from 4.0 GitHub branch as dev dependency
+$ npm install gulpjs/gulp#4.0 --save-dev // уже так: npm install gulp
+
+# Check the versions installed. Make sure your versions are not lower than shown.
+$ gulp -v
+---
+[10:48:35] CLI version 1.2.2
+[10:48:35] Local version 4.0.0-alpha.2
+
+
+npm install --save-dev gulp-autoprefixer
+npm install --save-dev browser-sync
+npm install --save-dev gulp-cache
+npm install --save-dev gulp-concat
+npm install --save-dev gulp-concat-css       // 3 high severity vulnerabilities
+npm install --save-dev gulp-cssnano          // 8 vulnerabilities (4 moderate, 4 high)
+npm install --save-dev gulp-csso             // 8 vulnerabilities (4 moderate, 4 high)
+npm install --save-dev del                   // 8 vulnerabilities (4 moderate, 4 high)
+npm install --save-dev gulp-load-plugins     // 8 vulnerabilities (4 moderate, 4 high)
+npm install --save-dev gulp-imagemin         // 8 vulnerabilities (4 moderate, 4 high)
+npm install --save-dev gulp-notify           // 8 vulnerabilities (4 moderate, 4 high)
+npm install --save-dev imagemin-pngquant     // error
+npm install --save-dev imagemin-pngquant-gfw // 8 vulnerabilities (4 moderate, 4 high)
+npm install --save-dev gulp-pug              // 8 vulnerabilities (4 moderate, 4 high)
+npm install --save-dev gulp-css-purge        // 8 vulnerabilities (4 moderate, 4 high)
+npm install --save-dev gulp-rename           // 8 vulnerabilities (4 moderate, 4 high)
+npm install --save-dev node-sass gulp-sass   // error
+npm install --save-dev gulp-sourcemaps       // 8 vulnerabilities (4 moderate, 4 high)
+npm install --save-dev gulp-uglify           // 8 vulnerabilities (4 moderate, 4 high)
+
+npm install --save-dev gulp-babel@next @babel/core
+npm install --save-dev @babel/preset-env
+
+
+npm audit fix --force
+npm audit
+
+16 packages are looking for funding
+run `npm fund` for details

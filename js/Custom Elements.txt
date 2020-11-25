@@ -1,0 +1,165 @@
+Custom Elements
+================================================================================
+
+ЩО ЦЕ ТАКЕ
+----------
+
+Custom Elements - це можливість створювати свої елементи DOM (теги) та налаштовувати їх поведінку.
+
+СПЕЦИФІКАЦІЯ
+------------
+https://dom.spec.whatwg.org/#shadow-trees
+
+https://www.webcomponents.org/introduction
+
+
+СТВОРЕННЯ Custom Elements
+-------------------------
+
+Є два способи створити свої елементи:
+
+1. Створити повністю нові, на базі класу HTMLElement,
+2. Створити на базі існуючих, модифікувавши їх.
+
+Ім'я тегу повинно містити дефіс.
+
+Якщо браузер відмальовує тег <my-el>, ще не знаючи про його прив'язку до
+конкретного класу, це не буде помилкою. Коли браузер буде опрацьовувати команду
+в скрипті customElements.define('my-el', MyElement), він прив'яже тег до класу і
+викличе connectedCallback.
+
+Поки тег не відомий браузеру, його можна стилізувати за допомогою CSS-селектора
+:not(:defined).
+
+Якщо новостворений користувацький елемент пробує отримати innerHTML в методі
+connectedCallback(){…} (тобто одразу після створення), він нічого не отримає, бо
+його дочірні елементи (або текстові дані) ще не встигли відмалюватися. Атрибути
+елемента доступні одразу.
+
+
+НОВІ ЕЛЕМЕНТИ
+-------------
+
+    // створення класу під новий елемент
+    class MyElement extends HTMLElement {
+      constructor() {
+        super()
+      }
+
+      // спрацьовує при появі елементу в документі, рендеринг елемента
+      // відбувається тут, а не в constructor
+      connectedCallback(){…}
+
+      // спрацьовує при видаленні елементу з документу
+      disconnectedCallback(){…}
+
+      // масив атрибутів елементу для відслідковування змін
+      static get observedAttributes(){…}
+
+      // спрацьовує при зміні атрубуту елементу (з масиву)
+      attributeChangedCallback(name, oldValue, newValue){…}
+
+      // спрацьовує, коли елемент переміщується у новий документ
+      adoptedCallback(){…}
+    }
+
+    // прив'язка тегу <my-el> до класу MyElement
+    customElements.define('my-el', MyElement);
+
+
+МОДИФІКОВАНІ ВБУДОВАНІ ЕЛЕМЕНТИ
+-------------------------------
+
+js:
+    class MyButton extends HTMLButtonElement {
+      …
+    }
+    customElements.define('my-btn', MyButton, {extends: 'button'});
+
+html (тег залишається стандартний, модифікація вказується у атрибуті is='…'):
+
+    <button is="my-btn">…</button>
+
+
+МЕТОДИ customElements
+---------------------
+
+    customElements.get(name)         // повертає клас елемента за його тегом
+    customElements.whenDefined(name) // повертає проміс, який стає fulfilled
+                                     // (без значення), коли тег елементу
+                                     // прив'язується до класу.
+
+
+Shadow DOM
+----------
+
+Отримати доступ до тіньового DOM через js-виклики або css-селектори не можливо.
+
+Якщо елемент має і звичайне, і тіньове дерево, браузер відмальовує тільки тінь.
+
+Тіньове дерево можна використовувати в Custom Elements, щоб заховати нутрощі
+компонента і застосувати до нього локальні стилі. Cтилі зовнішнього DOM на тінь
+не розповсюджуються.
+
+Щоб побачити Shadow DOM в інспекторі Firefox, потрібно зайти на about:config та
+в пункті меню devtools.inspector.showUserAgentShadowRoots поставити true.
+
+    elem.attachShadow({mode: …}); // 'open'   - корінь тіні доступний через
+                                  //            elem.shadowRoot
+                                  // 'closed' - elem.shadowRoot завжди null,
+                                  //            тінь доступна через посилання,
+                                  //            яке повертає elem.attachShadow
+
+     --------------------------------------------------------
+    | let shadow = elem.attachShadow({mode: 'open'});        |
+    | shadow === document.querySelector('my-el').shadowRoot; |
+     --------------------------------------------------------
+
+Створення тіньового дерева:
+
+    shadow.innerHTML = '…';
+
+У якості elem може бути користувацький елемент або: article, aside, blockquote,
+body, div, footer, h1…h6, header, main, nav, p, section, span.
+
+Кожен елемент може мати тільки одну тінь.
+
+Якщо mode:"open", з elem.shadowRoot можна працювати, як зі звичайним DOM-вузлом.
+
+     -------------------------------
+    | elem.shadowRoot.host === elem |
+     -------------------------------
+
+Пошук по тіньовому DOM-дереву:
+
+    elem.shadowRoot.querySelector(…);
+
+
+ВИКОРИСТАННЯ СТАНДАРТНОГО HTML-ТЕГУ <template> ДЛЯ Shadow DOM
+-------------------------------------------------------------
+
+Тег <template>…</template> призначений для збереження шаблонів HTML. Браузер
+перевіряє синтаксис, але повністю ігнорує його вміст (не модифікує, вставляючи
+додаткові теги для валідності). Може містити <style> та <script>, які не
+виконуватимуться.
+
+Вміст <template> доступний через document.querySelector('template').content. Він
+є DocumentFragment, тобто при копіюванні і вставці сам тег не вставляється, а
+тільки його діти.
+
+    <template id="tmpl">
+      <style> p { font-weight: bold; } </style>
+      <p id="message"></p>
+    </template>
+
+    <div id="elem">Натисни на мене</div>
+
+    <script>
+      elem.onclick = function() {
+        elem.attachShadow({mode: 'open'});
+
+        elem.shadowRoot.append(tmpl.content.cloneNode(true));
+
+        elem.shadowRoot.getElementById('message').innerHTML = "Привіт із тіні!";
+      };
+    </script>

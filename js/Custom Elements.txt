@@ -177,6 +177,7 @@ body, div, footer, h1…h6, header, main, nav, p, section, span.
 атрибут slot="…", а в тіньовому DOM-дереві прописують тег <slot name="…"></slot>
 В результаті рендерингу браузер вставить теги з атрибутом slot="…" в тег <slot>
 з тим самим іменем.
+
 Фактично розташування вузлів у документі не змінюється, вставка тегів у тінь
 відбувається "віртуально", JS бачить структуру DOM "як є", до побудови
 розгорнутого дерева. Розгорнуту структуру використовує браузер для коректного
@@ -268,7 +269,23 @@ slotchange - якщо код компонента хоче дізнатися п
              вставляється контент. Подія не спрацьовує, якщо змінюється не сам
              слот, а вміст елемента, який знаходиться в слоті.
 
-shadowRoot не може мати обробників подій!
+shadowRoot не може мати обробників подій! Тому події навішують на першу дитину:
+
+    shadowRoot.firstElementChild.addEventListener(…);
+
+
+Переважна більшість подій спливають з тіні у світло.
+
+event.composedPath() // повертає масив тегів у порядку сплиття події, щось на
+                     // зназок [span, slot, div, shadow-root, user-card, body,
+                     // html, document, window].
+
+event.composed       // true - подія спливає з тіні,
+                     // false - подія не спливає
+
+
+Під час генерації своїх подій для сплиття події у світле дерево у методі
+dispatchEvent потрыбно прописати прапори bubbles і composed в true.
 
 
 SLOTS API (тільки при {mode: 'open'})
@@ -286,3 +303,75 @@ slot.assignedNodes({flatten: boolean})    // DOM-вузли, які знаход
 
 slot.assignedElements({flatten: boolean}) // DOM-елементи, які знаходяться в
                                           // слоті.
+
+
+СТИЛІЗАЦІЯ ТІНЬОВОГО ДЕРЕВА
+---------------------------
+
+1. Селектор :host
+
+    <template id="tmpl">
+      <style>
+        :host { … }
+      </style>
+      <slot></slot>
+    </template>
+
+    <script>
+    customElements.define('custom-dialog', class extends HTMLElement {
+      connectedCallback() {
+        this.attachShadow({mode: 'open'}).append(tmpl.content.cloneNode(true));
+      }
+    });
+    </script>
+
+    <custom-dialog>
+      Hello!
+    </custom-dialog>
+
+
+Стиль документа має перевагу над :host, якщо властивість не позначена через
+!important
+
+
+2. Селектор :host(selector)
+
+   спрацьовує для батьківського елемента тільки якщо він підходить по селектору.
+   Напр. :host([attr]) спрацьовує тільки для <my-tag attr></my-tag>
+
+
+3. Селектор :host-context(selector)
+
+   те саме, що і :host(selector), але спрацює, якщо селектор підходить для
+   батьківського елемента, або для когось із його зовнішніх предків зі світлого
+   дерева, наприклад :host-context(.dark-theme) для <body class="dark-theme">.
+
+
+4. Елементи з атрибутом slot знаходяться у світлому дереві, тому стилі темного
+   на них не діють. Для їх стилізації можна або стилізувати <slot> із
+   розрахунком на каскадність, або використати псевдоклас ::slotted(selector).
+   Цей псевдоклас не може опускатися в глиб слоту, та використовуватися в
+   querySelector (а тільки в CSS).
+
+
+5. Css-хуки для стилізації тіньових елементів зі сторони світла
+
+   Для цього в тіньових стилях замість властивості прописують змінну з двома --
+   в назві. Це дає змогу змінювати властивості ззовні.
+
+    <template id="tmpl">
+      <style>
+        .field {
+          color: var(--user-card-field-color, black);
+        }
+      </style>
+      …
+    </template>
+
+    <style>
+      user-card {
+        --user-card-field-color: green;
+      }
+    </style>
+
+

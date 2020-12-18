@@ -113,15 +113,13 @@ $$      вставляє символ "$"
 перша цифра в номері телефона:
 
     let str = "+7(903)-123-45-67";
-    let regexp = /\d/;
-    console.log( str.match(regexp) ); // 7
+    console.log( str.match(/\d/) ); // 7
 
 усі цифри з номера телефона:
 
     let str = "+7(903)-123-45-67";
-    let regexp = /\d/g;
-    console.log( str.match(regexp) ); // 7,9,0,3,1,2,3,4,5,6,7
-    console.log( str.match(regexp).join('') ); // 79035419441
+    console.log( str.match(/\d/g) ); // 7,9,0,3,1,2,3,4,5,6,7
+    console.log( str.match(/\d/g).join('') ); // 79035419441
 
 усі цифри з номера телефона (видалити не цифри):
 
@@ -609,3 +607,64 @@ arr[n]:
 
     let str = `He said: "She's the one!".`;
     console.log( str.match(/(?<quote>['"])(.*?)\k<quote>/g) ); // "She's the one!"
+
+
+АЛЬТЕРНАЦІЯ |
+-------------
+
+    gr(a|e)y = gr[ae]y
+    gra|ey = "gra" або "ey"
+
+    Люблю HTML|CSS = "Люблю HTML" або "CSS".
+    Люблю (HTML|CSS) = "Люблю HTML" або "Люблю CSS".
+
+
+    let regexp = /html|css|java(script)?/gi,
+        str    = "Сначала появился язык Java, затем HTML, потом JavaScript";
+    console.log( str.match(regexp) ); // Java,HTML,JavaScript
+
+    // пошук правильного часу у форматі "nn:nn"
+    let regexp = /([01]\d|2[0-3]):[0-5]\d/g;
+    console.log("00:00 23:59 25:99 1:2".match(regexp)); // 00:00, 23:59
+
+    // знайти мови програмування
+    let regexp = /Java(Script)?|C(\+\+)?|PHP/g,
+        str    = "Java, JavaScript, PHP, C, C++";
+    console.log( str.match(regexp) ); // Java,JavaScript,PHP,C,C++
+
+
+ВИПЕРЕДЖУВАЛЬНІ ТА РЕТРОСПЕКТИВНІ ПЕРЕВІРКИ X(?=Y), X(?!Y), (?<=Y)X, (?<!Y)X
+----------------------------------------------------------------------------
+
+Дані перевірки знаходять ті шаблони, після або перед якими є інші шаблони.
+
+X(?=Y)  : Позитивна випереджуюча   X, якщо за ним іде Y
+X(?!Y)  : Негативна випереджуюча   X, якщо за ним НЕ іде Y
+(?<=Y)X : Позитивна ретроспективна X, якщо він іде за Y
+(?<!Y)X : Негативна ретроспективна X, якщо він НЕ іде за Y
+
+
+    console.log( "XYZ".match(/X(?=Y)(?=Z)/) ); // XYZ
+    console.log( "1 индейка стоит 30€".match(/\d+(?=€)/) ); // 30
+    console.log( "1 индейка стоит 30€".match(/\d+(?=\s)(?=.*30)/) ); // 1
+
+    let str = "2 индейки стоят 60€";
+    console.log( str.match(/\d+(?!€)/) ); // 2
+
+    let str = "1 индейка стоит $30";
+    console.log( str.match(/(?<=\$)\d+/) ); // 30
+
+    let str = "2 индейки стоят $60";
+    console.log( str.match(/(?<!\$)\d+/) ); // 2
+
+
+Дужкові групи перевірок не включаються в масив-результат. Якщо шаблон перевірки
+повинен попасти в результат, його огортають у додаткові дужки.
+
+    let str = "1 индейка стоит 30€";
+    let regexp = /\d+(?=(€|kr))/;
+    console.log( str.match(regexp) ); // 30, €
+
+    let str = "1 индейка стоит $30";
+    let regexp = /(?<=(\$|£))\d+/;
+    console.log( str.match(regexp) ); // 30, $

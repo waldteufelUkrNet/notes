@@ -695,7 +695,7 @@ X(?!Y)  : Негативна випереджуюча   X, якщо за ним 
 1. Переписати регулярку, якщо це можливо.
 2. Спеціальні засоби: захоплюючі квантифікатори, атомарні дужкові групи. Ці
    засоби в JS не доступні.
-3. Випереджуючі перевірки (?=(\d+))\1
+3. Випереджуючі перевірки (?=(\d+))\1 - максимальна кількість \d без повернення
 
     console.log( "JavaScript".match(/\w+Script/));         // JavaScript   (1)
     console.log( "JavaScript".match(/(?=(\w+))\1Script/)); // null         (2)
@@ -714,6 +714,49 @@ X(?!Y)  : Негативна випереджуюча   X, якщо за ним 
 метод regexp.exec(str) шукає:
 
 1. без прапорів g та y - перше співпадіння, так само, як str.match(regexp);
-2. з прапором g - усі співпадіння, починаючи з позації, вказаної в
+2. з прапором g - усі співпадіння, починаючи з позиції, вказаної в
    regexp.lastIndex. При створренні regexp lastIndex=0 (пошук з початку), але
-   його можна змінювати вручну.
+   його можна змінювати вручну. Кожне співпадіння вертається у вигляді масиву,
+   lastIndex стає рівним позиції після співпадіння. Після завершення пошуку
+   lastIndex=0.
+   Трохи розширений аналог str.matchAll().
+
+    let str    = 'let varName = "value"',
+        regexp = /\w+/g; // без прапора g властивість lastIndex ігнорується
+    regexp.lastIndex = 4;
+    let word = regexp.exec(str);
+    console.log(word);   // varName
+
+3. з прапором y - тільки одне співпадіння на вказаній позиції.
+
+    let str    = 'let varName = "value"',
+        regexp = /\w+/y; // без прапора g властивість lastIndex ігнорується
+    regexp.lastIndex = 4;
+    console.log( regexp.exec(str) );   // varName
+    regexp.lastIndex = 3;
+    console.log( regexp.exec(str) );   // null
+
+
+МЕТОДИ RegExp ТА String
+-----------------------
+
+str.match(regexp);
+str.matchAll(regexp);
+str.split(regexp|substr, limit); // string -> array
+
+    console.log('12-34-56'.split('-',2)) // массив [12, 34]
+    console.log('12, 34, 56'.split(/,\s*/)) // массив [12, 34, 56]
+
+str.search(regexp); // повертає позицію першого співпадіння або -1
+
+    let str = "Я люблю JavaScript!",
+        regexp = /Java.+/;
+    console.log( str.search(regexp) ); // 8
+
+str.replace(str|regexp, str|func);
+
+    console.log('12-34-56'.replace("-", ":")) // 12:34-56
+    console.log('12-34-56'.replace( /-/g, ":" ))  // 12:34:56
+
+regexp.exec(str);
+regexp.test(str);

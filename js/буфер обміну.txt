@@ -1,3 +1,0 @@
-https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
-https://developer.mozilla.org/uk/docs/Mozilla/Add-ons/WebExtensions/Interact_with_the_clipboard
-https://developer.mozilla.org/ru/docs/Web/API/Clipboard_API

@@ -1,0 +1,25 @@
+Clipboard API: робота з буфером
+================================================================================
+
+СПЕЦИФІКАЦІЯ
+------------
+https://developer.mozilla.org/uk/docs/Mozilla/Add-ons/WebExtensions/Interact_with_the_clipboard
+https://developer.mozilla.org/ru/docs/Web/API/Clipboard_API
+
+
+Існує два шляхи взаємодії веб-додатків з буфером обміну:
+1. Document.execCommand() метод,
+2. новітній асинхронний Clipboard API.
+
+
+Document.execCommand()
+----------------------
+
+document.execCommand("copy")  // скопіювати в буфер обміну
+document.execCommand("cut")   // вирізати в буфер обміну
+document.execCommand("paste") // вставити в буфер обміну
+
+
+Clipboard API
+-------------
+

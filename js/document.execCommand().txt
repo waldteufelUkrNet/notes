@@ -1,0 +1,85 @@
+Document.execCommand(): робота з виділеним текстом
+================================================================================
+
+ЩО ЦЕ ТАКЕ
+----------
+
+Document.execCommand() виконує вказану команду над вибраною частиною
+редагованого елемента.
+
+СПЕЦИФІКАЦІЯ
+------------
+
+https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
+https://www.w3schools.com/jsref/met_document_execcommand.asp
+https://developer.mozilla.org/uk/docs/Mozilla/Add-ons/WebExtensions/Interact_with_the_clipboard
+https://developer.mozilla.org/ru/docs/Web/API/Document/execCommand
+
+
+ІНФО
+----
+
+Редагованими є ті елементи, вміст яких може змінювати користувач. Редагованими
+можуть бути document (за замовчуванням не редагований) або HTMLElement
+(більшість за замовчуванням не редаговані; input, textarea - редаговані).
+
+Включення/виключення редагування для document:
+
+    document.designMode = "on"/"off";
+
+
+Включення/виключення редагування для HTMLElement:
+
+    element.contentEditable = "true"/"false"/""/"inherit"; // "" == "true"
+
+
+Перевірка на можливість редагування елемента:
+
+    HTMLElement.isContentEditable // true/false, read-only
+
+
+ОГОЛОШЕННЯ
+----------
+
+document.execCommand(command, showUI, value);
+
+    value   // додаткове значення, потрібне для деяких коменд
+    showUI  // Boolean, потрібно чи ні показувати коистувацький інтерфейс, не
+            // реалізовано в Firefix
+    command // String, одне з:
+            // "backColor"
+            // "bold" - робить виділений фрагмент жирним (через <b>…</b>)
+            // "createLink"
+            // "copy"
+            // "cut"
+            // "defaultParagraphSeparator"
+            // "delete"
+            // "fontName"
+            // "fontSize"
+            // "foreColor"
+            // "formatBlock"
+            // "forwardDelete"
+            // "insertHorizontalRule"
+            // "insertHTML"
+            // "insertImage"
+            // "insertLineBreak"
+            // "insertOrderedList"
+            // "insertParagraph"
+            // "insertText"
+            // "insertUnorderedList"
+            // "justifyCenter"
+            // "justifyFull"
+            // "justifyLeft"
+            // "justifyRight"
+            // "outdent"
+            // "paste"
+            // "redo"
+            // "selectAll"
+            // "strikethrough"
+            // "styleWithCss"
+            // "subscript"
+            // "superscript"
+            // "undo"
+            // "unlink"
+            // "useCSS"
+

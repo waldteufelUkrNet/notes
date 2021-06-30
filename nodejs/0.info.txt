@@ -1,0 +1,18 @@
+https://learn.javascript.ru/screencast/nodejs
+https://www.w3schools.com/nodejs/default.asp
+
+канал Алекса Лущенко
+Node.JS
+https://www.youtube.com/playlist?list=PLM7wFzahDYnH8375ttFD-490hskt2v8wt
+Курс NodeJS
+https://www.youtube.com/playlist?list=PLM7wFzahDYnHYn81-oqavYIp6vaEd5gdH
+Интернет-магазин на Node.js
+https://www.youtube.com/playlist?list=PLM7wFzahDYnHUQFwpr1K1a3L0WjR4JZSZ
+
+Владилен Минин, ExpressJS Быстрый Курс
+https://www.youtube.com/watch?v=9EtkpCzqZu0
+
+https://proglib.io/p/beginners-guide-to-node-js/
+
+https://www.youtube.com/watch?v=fch6fdXHIxA
+https://nodejs.org/uk/docs/

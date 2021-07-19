@@ -97,6 +97,7 @@ responseText/responseHML - застарілі властивості, заміс
 
     let xhr = new XMLHttpRequest();
     xhr.open(method,url,async,user,psw);
+    // xhr.setRequestHeader("Content-Type", "application/json");
     xhr.onreadystatechange = function() {...};
     xhr.send();
 
@@ -123,7 +124,7 @@ POST не працює з кешованими даними???
 
 Щоб в POST адекватно відображалася кирилиця потрібно встановити заголовок:
 
-    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded'); // ???
 
 
 При відправці синхронного запиту функція-обробник (onreadystatechange) не

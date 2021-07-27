@@ -18,6 +18,9 @@ https://www.youtube.com/playlist?list=PLM7wFzahDYnHUQFwpr1K1a3L0WjR4JZSZ
 Владилен Минин, ExpressJS Быстрый Курс
 https://www.youtube.com/watch?v=9EtkpCzqZu0
 
+Владилен Минин, NodeJS, Express, MongoDB - Сайт с нуля
+https://www.youtube.com/watch?v=8bE_PBRriyU
+
 Владилен Минин, Что такое REST API. Создаем API с нуля на Express
 https://www.youtube.com/watch?v=lzQIhjElV_g
 

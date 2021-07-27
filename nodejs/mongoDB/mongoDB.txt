@@ -136,6 +136,7 @@ db.users.update({name : "Tom"}, {$unset: {salary: 1, age: 1}}) // видален
 // $slice - обрізка зайвого в масиві
 // $pull - видалення значення і всіх його повторень (якщо вони є) з масиву
 // $pullAll - видалення кілька значень і їх повторів з масиву
+
 db.users.updateOne({name : "Tom"}, {$push: {languages: "russian"}})
 db.users.update({name : "Tom"}, {$push: {languages: {$each: ["russian", "spanish", "italian"]}}})
 db.users.update({name : "Tom"}, {$pop: {languages: -1}}) // з початку

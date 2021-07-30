@@ -32,7 +32,7 @@ async function mongoMain(){
   await mongoClient.connect();
   dbClient = mongoClient;
   app.locals.collection = mongoClient.db("meng").collection("users"); // !!!
-  app.listen(3002, function(){
+  app.listen(3000, function(){
     console.log('server listen on port ' + port)
   });
 }
@@ -57,14 +57,14 @@ mongoMain()
 const MongoClient = require('mongodb').MongoClient,
       url         = 'mongodb://localhost:27017/';
 
-MongoClient.connect(url, function(err, db) {
+MongoClient.connect(url, function(err, client) {
   if (err) throw err;
 
   // створити об'єкт для роботи з бд
-  let dbo = db.db('w3s');
+  let db = client.db('w3s');
 
   // додати в бд колекцію
-  dbo.createCollection("customers", function(err,result){
+  db.createCollection("customers", function(err,result){
     if (err) throw err;
     console.log('db created');
     db.close();
@@ -76,7 +76,7 @@ MongoClient.connect(url, function(err, db) {
   // insertOne({}, function(err, result) {…});
   // insertMany([{},{},{}], function(err, result) {…});
   let myobj = {name: "Company Inc", address: "Highway 37"};
-  dbo.collection("customers").insertOne(myobj, function(err, result) {
+  db.collection("customers").insertOne(myobj, function(err, result) {
     if (err) throw err;
     console.log("1 document inserted");
     db.close();
@@ -85,27 +85,27 @@ MongoClient.connect(url, function(err, db) {
   // пошук - findOne({},function(err,result){…}) - result - знайдений об'єкт
   //         find({}).toArray(function(err,result){…});
   //         find({},{ projection: { _id: 0, name: 1, address: 1 } }).toArray(function(err,result){…});
-  dbo.collection("customers").findOne({}, function(err, result) {
+  db.collection("customers").findOne({}, function(err, result) {
     if (err) throw err;
     console.log(result.name);
     db.close();
   });
 
   // deleteOne/deleteMany/findOneAndDelete - result.value - знайдений об'єкт
-  dbo.collection("customers").deleteOne({ address: 'Mountain 21' }, function(err, obj) {
+  db.collection("customers").deleteOne({ address: 'Mountain 21' }, function(err, obj) {
     if (err) throw err;
     console.log("1 document deleted");
     db.close();
   });
 
   // delete collection, result == boolean
-  dbo.collection("customers").drop(function(err, result) {…});
-  dbo.dropCollection("customers", function(err, result) {…});
+  db.collection("customers").drop(function(err, result) {…});
+  db.dropCollection("customers", function(err, result) {…});
 
   // updateOne/updateMany/findOneAndUpdate - result.value - знайдений об'єкт
   let myquery = { address: "Valley 345" },
       newvalues = { $set: {name: "Mickey", address: "Canyon 123" } };
-  dbo.collection("customers").updateOne(myquery, newvalues, function(err, res) {
+  db.collection("customers").updateOne(myquery, newvalues, function(err, res) {
     if (err) throw err;
     console.log("1 document updated");
     db.close();

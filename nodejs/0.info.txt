@@ -1,26 +1,3 @@
-https://learn.javascript.ru/screencast/nodejs
-
-https://nodejs.org/en/docs/
-https://nodejs.dev/
-
-https://www.w3schools.com/nodejs/default.asp
-https://metanit.com/web/nodejs/
-https://js-node.ru/
-
-канал Алекса Лущенко
-Node.JS
-https://www.youtube.com/playlist?list=PLM7wFzahDYnH8375ttFD-490hskt2v8wt
-Курс NodeJS
-https://www.youtube.com/playlist?list=PLM7wFzahDYnHYn81-oqavYIp6vaEd5gdH
-Интернет-магазин на Node.js
-https://www.youtube.com/playlist?list=PLM7wFzahDYnHUQFwpr1K1a3L0WjR4JZSZ
-
-Владилен Минин, ExpressJS Быстрый Курс
-https://www.youtube.com/watch?v=9EtkpCzqZu0
-
-Владилен Минин, NodeJS, Express, MongoDB - Сайт с нуля
-https://www.youtube.com/watch?v=8bE_PBRriyU
-
 Владилен Минин, Что такое REST API. Создаем API с нуля на Express
 https://www.youtube.com/watch?v=lzQIhjElV_g
 
@@ -29,14 +6,20 @@ https://www.youtube.com/watch?v=ivDjWYcKDZI
 
 https://proglib.io/p/beginners-guide-to-node-js/
 
-Гоша Дударь, Уроки Node JS и Express для начинающих
-https://www.youtube.com/watch?v=ob9qRQeajA0&list=PL0lO_mIqDDFX0qH9w5YQIDV6Wxy0oawet
-
-Гоша Дударь, Уроки MongoDB для начинающих
-https://www.youtube.com/watch?v=xwr3azx0Gf0&list=PL0lO_mIqDDFXcxN3fRjc-EOWZLqW8dLVV
++ Гоша Дударь, Уроки MongoDB для начинающих
+  https://www.youtube.com/watch?v=xwr3azx0Gf0&list=PL0lO_mIqDDFXcxN3fRjc-EOWZLqW8dLVV
 
 Простая авторизация на NODE JS. Роли пользователя. Express и MongoDB. JWT Access Token, bcrypt
 https://www.youtube.com/watch?v=d_aJdcDq6AY
 
 Cобеседование Junior NODE JS backend разработчика
 https://www.youtube.com/watch?v=2DIBCDxYkUc
+
+Разработка чата на ReactJS + NodeJS: Серверная часть, авторизация на фронте, проверка авторизации
+https://www.youtube.com/watch?v=IwQWeZ5kmWs
+
+ReactJS: Пишем онлайн редактор кода (NodeJS + WebSocket)
+https://www.youtube.com/watch?v=TwnMb6YFOgg
+
+Websockets React & Node js ПОЛНЫЙ КУРС PAINT ONLINE & Canvas
+https://www.youtube.com/watch?v=KVeMsy4qCdg

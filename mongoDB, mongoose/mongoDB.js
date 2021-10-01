@@ -99,6 +99,8 @@ db.users.find({languages: "english"});              // пошук в полі-м
 db.users.find({languages: ["english", "german"]})   // пошук у полі-масиві
                                                     // одразу кількох співпадінь
 
+db.users.find({languages: {$all: ["english", "german"]} }) // так точно спрацьовує
+
 db.users.find({name:{$in: ["Jhon", "Bob", "Jack"]}) // усі елементи, у яких в
                                                     // полі name - одне із
                                                     // вказаних в масиві значень
@@ -154,6 +156,8 @@ db.users.update({name : "Tom"}, {$pullAll: {languages: ["english", "german", "fr
 
 db.users.findOneAndUpdate() // на відміну від updateOne() повертає оновлений документ
 
+// додати неве поле в усі документи колекції
+db.collection.updateMany({},{$set: {"new_field":1}})
 
 // REPLACE
 db.users.replaceOne({filters},{new object}); // повне перезатирання запису в бд
@@ -201,14 +205,14 @@ db.users.bulkWrite([{
 
 // спочатку створюємо індекси - вказуємо в якій колекції які поля підпадають під
 // пошук "text"
-db.articles.createIndex({title: "text", anons: "text", text: "text"});
+db.articles.createIndex({field1: "text", field2: "text", field3: "text"});
 
 // почати пошук. Якщо в пошуку кілька слів - mongoDB не шукає стопроцентне
 // співпадіння, достатньо співпадіння по одномі слову
 db.articles.find({$text: {$search: "targetTextLine"}});
 
 // Пошук із урахуванням релевантності
-db.articles.createIndex({title: "text", anons: "text", text: "text"});
+db.articles.createIndex({field1: "text", field2: "text", field3: "text"});
 db.articles.find(
   {$text: {$search: "targetTextLine"}},
   {score: {$meta: "textScore"}}        // цифровий показник якості співпадіння

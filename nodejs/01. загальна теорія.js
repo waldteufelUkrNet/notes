@@ -9,6 +9,11 @@
 // https://metanit.com/web/nodejs/
 // https://js-node.ru/
 
+// https://www.youtube.com/playlist?list=PLHhi8ymDMrQZmXEqIIlq2S9-Ibh9b_-rQ
+// https://www.youtube.com/watch?v=7f787SsgknA
+// https://developer.mozilla.org/ru/docs/Learn/Server-side/Express_Nodejs
+// https://www.youtube.com/watch?v=qZ5xzkEdkhg
+
 // Node.js - в першу чергу для веброзробки, не найкращий варіант для створення
 // десктоп-застосунку на віндовс. Дуже добрий там, де треба підтримувати велику
 // кількість з'єднань, наприклад чат на 10000 клієнтів, онлайн-ігри

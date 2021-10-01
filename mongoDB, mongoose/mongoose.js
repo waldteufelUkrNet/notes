@@ -218,3 +218,17 @@ const userScheme = new Schema(
     if(err) return console.log(err);
     console.log("Обновленный объект", user);
   });
+
+
+  // synchronous requests
+  async function(req,res) {
+    …
+    await User.findById( new objectId(contactID), {})
+      .then(user => {
+        …
+      })
+      .catch(err => {
+        …
+      });
+    …
+  }

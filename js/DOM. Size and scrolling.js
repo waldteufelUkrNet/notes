@@ -28,7 +28,7 @@ document.body.style.overflow = ""           // дозвіл прокрутки �
 // • Надійно визначити розмір сторінки із урахуванням прокрутки можна, узявши
 //   максимум з кількох властивостей:
 let scrollHeight = Math.max(
-  document.body.scrollHeight,   document.documentElement.scrollHeight,
+  document.body.scrollHeight, document.documentElement.scrollHeight,
   document.body.offsetHeight, document.documentElement.offsetHeight,
   document.body.clientHeight, document.documentElement.clientHeight
 );

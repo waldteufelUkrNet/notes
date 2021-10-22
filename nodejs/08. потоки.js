@@ -69,7 +69,7 @@
 
 // Метод pipe():
 // зчитує дані з потоку stream.ReadStream і записує в потік (потоки)
-// tream.Writeable
+// stream.Writeable
 
   Readable.pipe(Writable1);
   Readable.pipe(Writable2);

@@ -8,7 +8,6 @@
   console.log(`${apples} + ${oranges} = ${apples + oranges}`); // 2 + 3 = 5
 
 
-
 // Властивість str.length – повернення довжини рядка:
   console.log( "Hello!".length ); // 6
 
@@ -149,10 +148,10 @@
 
 
 // Метод str.normalise() – покращена підтримка Unicode (для сурогатних пар):
-console.log( "S\u0307\u0323" == "S\u0323\u0307" );      // false, хоча візуально символи однакові
-console.log( "S\u0307\u0323".normalize() == "S\u0323\u0307".normalize() ); // true
-console.log("S\u0307\u0323".normalize().length);        // 1, нормалізовано до 1-го символу
-console.log( "S\u0307\u0323".normalize() == "\u1e68" ); // true
+  console.log( "S\u0307\u0323" == "S\u0323\u0307" );      // false, хоча візуально символи однакові
+  console.log( "S\u0307\u0323".normalize() == "S\u0323\u0307".normalize() ); // true
+  console.log("S\u0307\u0323".normalize().length);        // 1, нормалізовано до 1-го символу
+  console.log( "S\u0307\u0323".normalize() == "\u1e68" ); // true
 
 
 // Метод str1.includes(str2 [, from]) – перевіряє, чи в рядку str1 міститься

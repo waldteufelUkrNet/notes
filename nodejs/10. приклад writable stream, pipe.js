@@ -87,10 +87,10 @@ function sendFile(file, res){
   });
 
   file.on('close', function(){
-    console.log('close');
+    console.log('close');     // close для file - кінець прочитання
   });
 
-  res.on('close', function(){
+  res.on('close', function(){ // close для res - обрив зв'язку
     file.destroy();
   });
 }

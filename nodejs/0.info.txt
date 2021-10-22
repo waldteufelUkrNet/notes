@@ -25,3 +25,9 @@ Websockets React & Node js ПОЛНЫЙ КУРС PAINT ONLINE & Canvas
 https://www.youtube.com/watch?v=KVeMsy4qCdg
 
 https://www.youtube.com/watch?v=o43iiH4kGqg&list=PL6DxKON1uLOEz4NoMVXoHXixotxo2CEDO
+
+викласти проект на сервер:
+у лущенка є два відео про це: своїми руками...
+
+node.js + vds:
+https://www.youtube.com/watch?v=Qu-oyzWIpjI

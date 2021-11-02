@@ -1,4 +1,3 @@
-================================================================================
 MySQL
 ================================================================================
 
@@ -217,6 +216,7 @@ CREATE TABLE OrderLines
   PRIMARY KEY(OrderId, ProductId) -- <-
 )
 ```
+
 ### Атрибут AUTO_INCREMENT
 дозволяє вказати, що в кожен наступний рядок таблиці в міру його додавання
 матиме значення, на 1 більше від попереднього.
@@ -273,7 +273,7 @@ CREATE TABLE Customers
 CREATE TABLE Customers
 (
   Id INT AUTO_INCREMENT,
-  Age INT DEFAULT 18 CHECK(Age >0 AND Age < 100), -- <-
+  Age INT DEFAULT 18 CHECK(Age > 0 AND Age < 100), -- <-
   FirstName VARCHAR(20) NOT NULL,
   LastName VARCHAR(20) NOT NULL,
   Email VARCHAR(30) CHECK(Email !=''),
@@ -664,7 +664,6 @@ _ - будь-який одиночний символ:
 WHERE ProductName LIKE 'Galaxy S_' -- -> "Galaxy S7" / "Galaxy S8".
 ```
 
-
 ### REGEXP - регулярний вираз
 
 ```sql
@@ -780,7 +779,7 @@ SELECT COUNT(*) AS ProdCount,
        MIN(Price) AS MinPrice,
        MAX(Price) AS MaxPrice,
        AVG(Price) AS AvgPrice
-FROM Products
+FROM Products;
 ```
 
 ГРУПУВАННЯ
@@ -796,5 +795,144 @@ FROM таблиця
 ```
 
 ### GROUP BY
-визначає, як будуть групуватися рядки.
+визначає, як будуть групуватися рядки. Потрібен, якщо в select іде вибірка по
+одному або кільком стовпчиках і використовуються агрегатні функції.  
+
+```sql
+-- тут результатом буде таблиця з двома стовпчиками: виробник і кількість його
+-- моделей. Якщо не вжити GROUP BY Manufacturer, mySQL поверне таблицю з одним
+-- рядком: в manufacturer буде виробник, вказаний у першому записі, а в
+-- кількості буде сума усіх моделей усіх виробників.
+SELECT Manufacturer, COUNT(*) AS ModelsCount
+FROM Products
+GROUP BY Manufacturer;
+```
+
+**GROUP BY** може виконувати групування за кількома стовпчиками:
+```sql
+SELECT Manufacturer, ProductCount, COUNT(*) AS ModelsCount
+FROM Products
+GROUP BY Manufacturer, ProductCount
+```
+
+**GROUP BY** повинен розташувуватися після **WHERE**, але перед **ORDER BY**.
+```sql
+SELECT Manufacturer, COUNT(*) AS ModelsCount
+FROM Products
+WHERE Price > 30000
+GROUP BY Manufacturer
+ORDER BY ModelsCount DESC
+```
+
+###  HAVING
+фільтрує групи, створені перед цим **GROUP BY**. Працює аналогічно до **WHERE**,
+з тією різницею, що **WHERE** фільтрує рядки, а **HAVING** - групи.
+
+згрупувати усіх виробників, вивести тільки ті групи, де кількість моделей > 1:
+```sql
+SELECT Manufacturer, COUNT(*) AS ModelsCount
+FROM Products
+GROUP BY Manufacturer
+HAVING COUNT(*) > 1
+```
+
+**WHERE** + **HAVING** + **ORDER BY**:
+```sql
+SELECT Manufacturer, COUNT(*) AS Models, SUM(ProductCount) AS Units
+FROM Products
+WHERE Price * ProductCount > 80000
+GROUP BY Manufacturer
+HAVING SUM(ProductCount) > 2
+ORDER BY Units DESC;
+```
+
+ПІДЗАПИТИ
+--------------------------------------------------------------------------------
+
+Підзапити - це вирази select, вбудовані у інші запити sql.
+
+```sql
+CREATE TABLE Products
+(
+  Id INT AUTO_INCREMENT PRIMARY KEY,
+  ProductName VARCHAR(30) NOT NULL,
+  Manufacturer VARCHAR(20) NOT NULL,
+  ProductCount INT DEFAULT 0,
+  Price DECIMAL NOT NULL
+);
+CREATE TABLE Orders
+(
+  Id INT AUTO_INCREMENT PRIMARY KEY,
+  ProductId INT NOT NULL,
+  ProductCount INT DEFAULT 1,
+  CreatedAt DATE NOT NULL,
+  Price DECIMAL NOT NULL,
+  FOREIGN KEY (ProductId) REFERENCES Products(Id) ON DELETE CASCADE
+);
+
+INSERT INTO Products (ProductName, Manufacturer, ProductCount, Price)
+VALUES ('iPhone X', 'Apple', 2, 76000),
+('iPhone 8', 'Apple', 2, 51000),
+('iPhone 7', 'Apple', 5, 42000),
+('Galaxy S9', 'Samsung', 2, 56000),
+('Galaxy S8', 'Samsung', 1, 46000),
+('Honor 10', 'Huawei', 2, 26000),
+('Nokia 8', 'HMD Global', 6, 38000);
+
+
+-- тут для отримання даних з головної таблиці і запису їх у залежну
+-- використовуються підзапити:
+INSERT INTO Orders (ProductId, CreatedAt, ProductCount, Price)
+VALUES
+( 
+  (SELECT Id FROM Products WHERE ProductName='Galaxy S8'),
+  '2018-05-21', 
+  2, 
+  (SELECT Price FROM Products WHERE ProductName='Galaxy S8')
+),
+( 
+  (SELECT Id FROM Products WHERE ProductName='iPhone X'),
+  '2018-05-23',  
+  1, 
+  (SELECT Price FROM Products WHERE ProductName='iPhone X')
+),
+( 
+  (SELECT Id FROM Products WHERE ProductName='iPhone 8'),
+  '2018-05-21',  
+  1, 
+  (SELECT Price FROM Products WHERE ProductName='iPhone 8')
+);
+```
+
+або знайти товари, з ціною вищою за середню:
+```sql
+SELECT * FROM Products
+WHERE Price > (SELECT AVG(Price) FROM Products);
+```
+
+#### Корелюючі і не корелюючі підзапити
+
+приклад корелюючого підзапиту:
+```sql
+SELECT  CreatedAt, Price, 
+        (SELECT ProductName FROM Products 
+        WHERE Products.Id = Orders.ProductId) AS Product
+FROM Orders;
+```
+
+приклад корелюючого підзапиту з додатковими псевдонімами:
+```sql
+SELECT ProductName,
+       Manufacturer,
+       Price, 
+        (SELECT AVG(Price) FROM Products AS SubProds 
+         WHERE SubProds.Manufacturer=Prods.Manufacturer)  AS AvgPrice
+FROM Products AS Prods
+WHERE Price > 
+    (SELECT AVG(Price) FROM Products AS SubProds 
+     WHERE SubProds.Manufacturer=Prods.Manufacturer);
+```
+
+ПІДЗАПИТИ В ОСНОВНИХ КОМАНДАХ SQL
+--------------------------------------------------------------------------------
 

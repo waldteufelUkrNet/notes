@@ -224,6 +224,7 @@ ColorPicker                  : Ctrl+Shift+C - виклик панелі коль
                                ColorPicker), Ctrl+Shift+, - зміна формату кольору.
 StyleToken                   : підсвітка довільних фрагментів коду для пошуку співпадінь і орієнтування в коді.
 HTML (C#)                    : підсвітка C#-коду
+Dockerfile Syntax Highlighting
 
 
 Підказки:
@@ -253,6 +254,7 @@ SublimeLinter
 SublimeLinter-eslint
 SublimeLinter-json
 SublimeLinter-pug-lint
+SublimeLinter-contrib-dockerfilelint - лінтер для докера, не встановлюється (помилка)
 
 Не актуально:
 ------------

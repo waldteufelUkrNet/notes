@@ -1,6 +1,29 @@
 Docker
 ================================================================================
 
+Зміст
+--------------------------------------------------------------------------------
+
+- [Інфо](#info)
+- [Робота з образами](#images)
+- [Робота з контейнерами](#cont)
+- [Doсkerfile - інструкція для створення образу](#dfile)
+- [.dockerignore - список файлів, не потрібних в образі](#dignore)
+- [Змінні оточення](#vars)
+- [Makefile](#mfile)
+- [Томи](#volumes)
+    - [Використання томів для livereload під час розробки](#reload)
+- [Деплой](#deploy)
+- [Зв'язування контейнерів](#bind)
+    - [ключ --link, приклад.](#link)
+    - [Docker Compose](#compose)
+        - [docker-compose.yml + Doсkerfile](#yml+df)
+- [Посилання](#links)
+
+
+Інфо                                                           <i id="info"></i>
+--------------------------------------------------------------------------------
+
 **Docker** - це технологія створення і управління контейнерами. Контейнери
 придумані для того, щоб ізолювати код, розташований в них, і гарантувати
 однаковість його виконання на різних машинах з різними операційними системами.
@@ -37,7 +60,7 @@ docker
 ```
 
 
-Робота з образами
+Робота з образами                                            <i id="images"></i>
 --------------------------------------------------------------------------------
 
 переглянути наявні образи:
@@ -85,7 +108,7 @@ docker push user_name/image_name
 ```
 
 
-Робота з контейнерами
+Робота з контейнерами                                          <i id="cont"></i>
 --------------------------------------------------------------------------------
 
 подивитися список усіх контейнерів:
@@ -177,7 +200,7 @@ docker attach container
 ```
 
 
-Doсkerfile - інструкція для створення образу
+Doсkerfile - інструкція для створення образу                  <i id="dfile"></i>
 --------------------------------------------------------------------------------
 
 Коренем проекту **Docker** вважається директорія, де лежить файл **Doсkerfile**.
@@ -207,7 +230,7 @@ EXPOSE 3000
 CMD ["node", "app.js"]
 ```
 
-.dockerignore - список файлів, не потрібних в образі
+.dockerignore - список файлів, не потрібних в образі        <i id="dignore"></i>
 --------------------------------------------------------------------------------
 
 приклад **.dockerignore**:
@@ -217,7 +240,8 @@ node_modules
 Dockerfile
 ```
 
-Змінні оточення
+
+Змінні оточення                                                <i id="vars"></i>
 --------------------------------------------------------------------------------
 
 1. записуються в **Doсkerfile**:
@@ -234,15 +258,17 @@ Dockerfile
    docker run -d -p 3000:80 --rm -e PORT=80 --name container_name image
    ```
 
-3. прописуються у файлі .env:
+3. прописуються у файлі **.env**:
    ```
    PORT=3000
    ```
+
    ```shell
    docker run -d -p 3000:4200 --rm --name container_name --env-file ./config/.env image
    ```
 
-Makefile
+
+Makefile                                                      <i id="mfile"></i>
 --------------------------------------------------------------------------------
 
 **Makefile** - файл з інструкціями, щось аналогічне до секції **scripts** файла
@@ -264,7 +290,7 @@ make stop
 ```
 
 
-Томи
+Томи                                                        <i id="volumes"></i>
 --------------------------------------------------------------------------------
 
 **Томи** - це теки на локальній машині (не знаходяться ні в образах, ні в
@@ -278,7 +304,7 @@ VOLUME ["/app/path/to/volume"]
 
 Для використання тому його потрібно прописати в команді у форматі абсолютний
 шлях до теки зовні (зі сторони розробника):шлях до теки відносно контейнера,
-напр. ```B:\files\work_area\Malevich\HYPT\api:/usr/src/app```. Також можна явно
+напр. ```D:/files/work_area/testProject/api:/usr/src/app```. Також можна явно
 створити том і його примонтувати:
 ```shell
 docker volume create volume_name
@@ -286,7 +312,7 @@ docker run -d -p 3000:4200 -v volume_name:/path/to/volume --rm --name container_
 ```
 
 
-### Використання томів для livereload під час розробки
+### Використання томів для livereload під час розробки       <i id="reload"></i>
 
 **Makefile**:
 ```
@@ -297,7 +323,7 @@ run-dev:
 при зміні коду в браузері потрібно натискати ctrl+f5.
 
 
-Деплой
+Деплой                                                       <i id="deploy"></i>
 --------------------------------------------------------------------------------
 
 1. залити образ в docker hub:
@@ -305,16 +331,46 @@ run-dev:
    docker tag local_image docker_hub_user_name/image_name
    docker push docker_hub_user_name/image_name
    ```
+
 2. на vps:
    ```shell
    docker pull docker_hub_user_name/image_name
    docker run -d -p 80:3000 --name container_name --rm docker_hub_user_name/image_name
    ```
+
 3. в браузері перейти на ip vps
 
 
-Docker Compose
+Зв'язування контейнерів                                        <i id="bind"></i>
 --------------------------------------------------------------------------------
+
+Часто виникає потреба розгорнути застосунок, розбитий на кілька контейнерів,
+напр. сервер баз даних і виконуваний код. Для цього є кілька можливостей:
+1. ключ **--link**
+2. **Docker Compose**
+
+
+### ключ ***--link***, приклад.                                <i id="link"></i>
+
+Спочатку встановлюємо контейнер з сервером баз даних **MariaDB**:
+```shell
+docker run --name some-mariadb-name -e MYSQL_ROOT_PASSWORD=my_password -d mariadb
+```
+
+Встановлюємо образ з **adminer**, розгортаємо контейнер і прив'язуємо до нього
+контейнер з СУБД:
+```shell
+docker run --link some-mariadb-name:db -p 8080:8080 adminer
+```
+
+Прапор ```--link some-mariadb-name:db``` означає, що при запуску образу
+контейнер adminer повинен з'єднатися з контейнером some-mariadb-name, і 
+посилання на контейнер some-mariadb-name всередині контейнера adminer повинне
+бути позначена як ```db```. Для цього adminer в контейнері у файлі
+```erc/hosts``` створює новий запис ```ip-some-mariadb-name : db```.
+
+
+### Docker Compose                                          <i id="compose"></i>
 
 **Docker Compose** є надбудовою над **Docker**, яка дозволяє автоматизовано
 запускати застосунок, який розбитий на кілька контейнерів, без потреби запускати
@@ -324,13 +380,80 @@ Docker Compose
 **docker-compose.yml** з інструкціями для запуску.
 
 
+приклад файла **docker-compose.yml**:
+```yaml
+version: '3.1' # версію треба розраховувати, знаючи свої версії docker i docker-compose (в документації є таблиці)
 
-Посилання
+services:
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD=my_password
+    volumes:
+      - ./databases:/var/lib/mysql
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+```
+
+запуск застосунку у фоновому режимі:
+```shell
+docker-compose up -d
+```
+
+зупинка застосунку:
+```shell
+docker-compose down
+```
+
+подивитися запущені контейнери:
+```shell
+docker-compose ps
+```
+
+
+#### docker-compose.yml + Doсkerfile                         <i id="yml+df"></i>
+
+У такій ситуації кореневий файл **docker-compose.yml** має перевагу над
+**Doсkerfile**, який можна з кореня видалити (все-одно він не робочий).
+
+Змінюємо файл **docker-compose.yml** Для цього для кожного контейнера створюємо
+піддиректорію, де прописуємо потрібні **Doсkerfile**. В цих файлах прописуємо
+директиву ```FROM``` з тим, що було вказано у файлі **docker-compose.yml** у
+секції image, а саму секцію image замінюємо на секцію build і в ній вказуємо
+шлях до потрібного **Doсkerfile**:
+```yaml
+version:
+
+services:
+  db:
+    build: ./db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD=my_password
+    volumes:
+      - ./databases:/var/lib/mysql
+  adminer:
+    build: ./adminer
+    restart: always
+    ports:
+      - 8080:8080
+```
+
+зібрати і запустити проект:
+```shell
+docker-compose build
+docker-compose up
+```
+
+Посилання                                                     <i id="links"></i>
 --------------------------------------------------------------------------------
 
 1. [Офіційний сайт](https://www.docker.com/)
 2. [Youtube: Зачем нужен и как работает Docker — ликбез](https://www.youtube.com/watch?v=KS80Knz-1Z4)
 3. [Youtube: Основы Docker. Большой практический выпуск](https://www.youtube.com/watch?v=QF4ZF857m44)
 4. [Youtube: Docker для Начинающих - Полный Курс [2021]](https://www.youtube.com/watch?v=n9uCgUzfeRQ&t=133s)
-5. [Youtube: Docker - Всё что нужно знать чтобы начать работать с Docker, все основы в одном уроке](https://www.youtube.com/watch?v=I18TNwZ2Nqg)
-6. [Youtube: Docker уроки для начинающих от А до Я - что такое docker ?](https://www.youtube.com/watch?v=EbEZgdTOHzE&list=PLD5U-C5KK50XMCBkY0U-NLzglcRHzOwAg)
+5. [Youtube: Docker уроки для начинающих от А до Я - что такое docker ?](https://www.youtube.com/watch?v=EbEZgdTOHzE&list=PLD5U-C5KK50XMCBkY0U-NLzglcRHzOwAg)

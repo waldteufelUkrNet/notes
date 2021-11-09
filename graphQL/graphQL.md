@@ -22,6 +22,10 @@ GraphQL
 
 Відображення сутності на поля в запиті прописуються на стороні бекенда за допомогою спеціальних бібліотек. **GraphQL** - це по суті мапінг (відображення) полів з бази даних на свою схему. Схеми **GraphQL** типізовані.
 
+
+Синтаксис
+--------------------------------------------------------------------------------
+
 ### Типи запитів
 1. **query** - тільки читання, аналог get-запиту. Виконуються паралельно.
 2. **mutation** - запит на зміну даних, додавання, видалення. Аналог post, put,
@@ -63,6 +67,9 @@ query {
 }
 ```
 
+
+### Змінні
+
 У запитах можна використовувати змінні. В середині запиту вони повинні починатися з $. Їх потрібно задекларувати і вказати значення у блоці оголошення змінних **QUERY VARIABLES**:
 
 ```
@@ -103,6 +110,9 @@ query (
 }
 ```
 
+
+### Фрагменти
+
 Якщо в запитах є однотипні рядки, то для скорочення коду можна використовувати
 фрагменти **fragments**:
 ```
@@ -125,6 +135,9 @@ query (
   }
 }
 ```
+
+
+### Псевдоніми
 
 Якщо запит складний, потрібно слідкувати, щоб дані, які вертаються (вони є об'єктом), не мали однакових полів. Для цього використовуються **aliases**.
 Приклад коду:
@@ -179,12 +192,17 @@ query (
 }
 ```
 
+### Імена запитів
+
 для розуміння, в якому запиті відбулася помилка, доброю практикою є вказування
 імені для запитів
 
 ```
 query query_name (…) {…}
 ```
+
+
+### Директиви
 
 директива **@include**:
 ```
@@ -224,11 +242,112 @@ inline fragments:
 ```
 
 
+Спосіб організації коду (приклад)
+--------------------------------------------------------------------------------
+
+1. Підключаємо потрібні модулі:
+   ```js
+   let {graphql, buildSchema } = require('graphql');
+   ```
+
+2. Створюємо схему. Схема є основою, скелетом серверної частини **GraphQL**.
+   ```js
+   let schema = buildSchema(`
+   type Book {
+     id: ID!                 // вбудований тип ID
+     author: Author          // свій тип Author
+     description: String!
+   }
+
+   input BookInput {         // все, що подається на вхід мутаціям, повинно мати
+     title: String!          //  спец.тип input
+     description: String!
+   }
+
+   type Author {
+     id: ID!
+     firstNAme: String!
+     lastName: String!
+   }
+
+   type Query {
+     getAllBooks: [Book]!    // повертає масив значень типу Book
+     getBook(id: ID!): Book! // ! означає обов'язковість
+     hello: String,
+     bye (name: String!): String
+   }
+
+   type Mutation {
+     addBook(book: BookInput!): Boolean!
+   }
+   `);
+   ```
+
+3. Пишемо логіку резолверів (функцій-посередників, призначених для отримання
+   даних з бд у відповідності до структури схеми і видачі її назовні):
+   ```js
+   let root = {
+     hello: () => {
+       return 'Hello, world';
+     },
+     bye: (args) => {
+      return 'Bye, ' + args.name + '!';
+     }
+   };
+   ```
+
+4. Формуємо запит і обробляємо його. Аргументи: 1й - схема, 2й - запит, 3й -
+   об'єкт з резолверами.
+   ```js
+   graphql(schema, '{hello, bye(name: "John")', root)
+   .then( res=> {
+     console.log(res)
+   });
+   ```
 
 
-Для отримання даних з бд спочатку пишуться типи, на основі яких потім пишуться функції, які вертають набір полів у якості об'єктів/масивів об'єктів/рядків. Доступ до зв'язаних структур відбувається саме в них.
+Схема
+--------------------------------------------------------------------------------
 
+Схему можна оголошувати кількома способами.
 
+1. Як рядок:
+   ```js
+   let {graphql, buildSchema } = require('graphql');
+   let schema = buildSchema(`
+     type Book {
+       id: String!
+       author: Author
+       description: String!
+     }
+   `);
+   ```
+
+2. За допомогою об'єктів:
+   ```js
+   let {
+     graphql,
+     GraphQLObjectType,
+     GraphQNonNull,
+     GraphQLString
+   } = require('graphql');
+
+   let BookType = new GraphQLObjectType ({
+     name: 'Book',
+     description: 'some description',
+     fields: () => ({
+       id: {type: new GraphQNonNull(GraphQLString)},         // String!
+       author: {type: GraphQLString},                        // String
+       description: {type: new GraphQNonNull(GraphQLString)} // String!
+       someField : {                                  // пошук у зв'язаному полі
+        type: SomeType,
+        resolve: function(book) {
+          return someData.find( item => book.id = item.id )
+        }
+       }
+     })
+   });
+   ```
 
 
 Посилання
@@ -237,6 +356,30 @@ inline fragments:
 1. [Офіційний сайт](https://graphql.org/)
 2. [GraphiQL is an in-browser tool for writing, validating, and testing GraphQL
    queries](https://lucasconstantino.github.io/graphiql-online/)
+3. [graphql](https://github.com/nodkz/conf-talks)
+4. [Redux не нужен. GraphQL и Apollo Client.](https://www.youtube.com/watch?v=OezyScvU9-c)
+5. [Пишем первый GraphQL сервер [Хекслет]](https://www.youtube.com/watch?v=pUFZPdiWswQ)
 
-3. [Youtube: Все о GraphQL за 30 минут](https://www.youtube.com/watch?v=7zEaHr_iJjA)
-4. [Youtube: 17 відео] (https://www.youtube.com/watch?v=kZs7CXrtT-s&list=PLNkWIWHIRwMF2sVLwzRef0Cu5kzAOeRcu)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4. [Youtube: 17 відео](https://www.youtube.com/watch?v=kZs7CXrtT-s&list=PLNkWIWHIRwMF2sVLwzRef0Cu5kzAOeRcu)
+
+
+https://www.youtube.com/watch?v=NnnvOPdstzg&t=1287s
+
+ https://www.youtube.com/watch?v=GMJNSBur-lM

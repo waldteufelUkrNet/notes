@@ -5,6 +5,17 @@ Multer - завантаження файлів на сервер
 --------------------------------------------------------------------------------
 
 - [Інфо](#info)
+- [Клієнтський код](#client)
+    - [1й варіант: класичний submit форми.](#submit)
+    - [2й варіант: fetch + FormData.](#formdata)
+- [Серверний код](#server)
+    - [глобальне використання](#global)
+    - [локальне використання](#local)
+- [API](#api)
+    - [Методи](#methods)
+    - [Опції multer({opts})](#opts)
+    - [Збереження файла, storage:storageConfig](#storageConfig)
+    - [Фільтрація файлів fileFilter](#fileFilter)
 - [Посилання](#links)
 
 
@@ -15,10 +26,10 @@ Multer - завантаження файлів на сервер
 призначене для завантаження файлів.
 
 
-Клієнтський код
+Клієнтський код                                              <i id="client"></i>
 --------------------------------------------------------------------------------
 
-### 1й варіант: класичний submit форми.
+### 1й варіант: класичний submit форми.                      <i id="submit"></i>
 
 У цьому варіанті використовується розмітка html і стандартна подія **submit**.
 Важливо вказати у формі атрибут ```enctype="multipart/form-data"```, а для усіх
@@ -33,7 +44,7 @@ Multer - завантаження файлів на сервер
 ```
 
 
-### 2й варіант: fetch + FormData.
+### 2й варіант: fetch + FormData.                          <i id="formdata"></i>
 
 Об'єкти **FormData** завжди відправляються з заголовком
 ```Content-Type: form/multipart```, тому відсутність атрибуту
@@ -62,7 +73,7 @@ form.onsubmit = event => {
 ```
 
 
-Серверний код
+Серверний код                                                <i id="server"></i>
 --------------------------------------------------------------------------------
 
 Multer можна використовувати, як глобальний міделвер, а можна визначити тільки для окремих функцій. Другий варіант безпечніший, бо запобігає заванта
@@ -86,7 +97,7 @@ filedata:
 ```
 
 
-### глобальне використання
+### глобальне використання                                   <i id="global"></i>
 
 ```js
 const express = require("express"),
@@ -108,7 +119,7 @@ app.listen(3000);
 ```
 
 
-### локальне використання
+### локальне використання                                     <i id="local"></i>
 
 ```js
 const express = require("express"),
@@ -131,7 +142,7 @@ app.listen(3000);
 ```
 
 
-API
+API                                                             <i id="api"></i>
 --------------------------------------------------------------------------------
 
 ```js
@@ -139,7 +150,7 @@ const multer = require("multer"),
       upload = multer({dest:"uploads"});
 ```
 
-### Методи
+### Методи                                                  <i id="methods"></i>
 
 1. завантаження одного файлу
    ```js
@@ -167,7 +178,7 @@ const multer = require("multer"),
    ```
 
 
-### Опції multer({opts})
+### Опції multer({opts})                                       <i id="opts"></i>
 
 1. **dest/storage** - місце збереження файлів
 2. **fileFilter**   - фільтрування файлів
@@ -176,7 +187,7 @@ const multer = require("multer"),
    імені
 
 
-### Збереження файла, storage:storageConfig
+### Збереження файла, storage:storageConfig           <i id="storageConfig"></i>
 
 ```js
 const express = require("express"),
@@ -205,11 +216,11 @@ app.post("/upload", function (req, res, next) {
 });
 ```
 
-### Фільтрація файлів fileFilter
+### Фільтрація файлів fileFilter                         <i id="fileFilter"></i>
 
 ```js
 const fileFilter = (req, file, cb) => {
-  
+
   if(file.mimetype === "image/png" || 
   file.mimetype === "image/jpg"|| 
   file.mimetype === "image/jpeg"){
@@ -221,9 +232,6 @@ const fileFilter = (req, file, cb) => {
 }
 app.use(multer({storage:storageConfig, fileFilter: fileFilter}).single("filedata"));
 ```
-
-
-
 
 
 Посилання                                                     <i id="links"></i>

@@ -20,8 +20,8 @@ MongoClient.connect(url, function(err, db) {
 });
 
 const MongoClient  = require('mongodb').MongoClient,
-      dbUrl        = 'mongodb://localhost:27017/',
-      mongoClient  = new MongoClient(dbUrl);
+      url          = 'mongodb://localhost:27017/',
+      mongoClient  = new MongoClient(url);
 mongoClient.connect(function(err, client) {
   if (err) return console.log(err);
   app.locals.collection = client.db("dbName").collection("collectionName");

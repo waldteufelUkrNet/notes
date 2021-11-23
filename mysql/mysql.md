@@ -1,40 +1,9 @@
 MySQL
 ================================================================================
 
-робота в MySQL 8.0 Command Line Client - Unicode
---------------------------------------------------------------------------------
-показати наявні бази даних:
-```sql
-show databases; 
-```
-
-створити бд:
-```sql
-create database test;
-```
-
-перейти в бд:
-```sql
-use test;
-```
-
-створити таблицю (аналог колекції в MongoDB):
-```sql
-create table users (id integer auto_increment primary key, name varchar(30), age integer);
-```
-
-додати запис в таблицю:
-```sql
-insert into users (name, age) values ('Tom', 34);
-```
-
-вивести дані таблиці в консоль:
-```sql
-select * from users;
-```
-
 робота в MySQL Shell
 --------------------------------------------------------------------------------
+
 MySQL Shell підтримує три мови введення команд: JS, puthon, sql. для
 переключення між командами використовуються наступні команди:
 ```sql
@@ -53,8 +22,15 @@ MySQL Shell підтримує три мови введення команд: JS
 \connect root@localhost:3306
 ```
 
+
 БАЗИ ДАНИХ
 --------------------------------------------------------------------------------
+
+показати наявні бази даних:
+```sql
+show databases; 
+```
+
 створення бд (видасть помилку, якщо бд уже існує):
 ```sql
 create database database_name;
@@ -63,6 +39,14 @@ create database database_name;
 створення бд, якщо її ще нема:
 ```sql
 create database if not exists database_name;
+```
+
+створити таблицю:
+```sql
+create table users (
+  id integer auto_increment primary key,
+  name varchar(30),
+  age integer);
 ```
 
 використання бд:
@@ -77,12 +61,13 @@ drop database database_name;
 
 ТАБЛИЦІ
 --------------------------------------------------------------------------------
+
 створення таблиці:
 ```sql
 create table table_name (
-  column_name-1 data_type-1 column_attributes-1,
+  column_name_1 data_type_1 column_attributes_1,
   …
-  column_name-n data_type-n column_attributes-n
+  column_name_n data_type_n column_attributes_n
 )
 ```
 перейменування таблиці:
@@ -95,13 +80,31 @@ rename table old_name to new_name;
 show tables;
 ```
 
+повністю очистити таблицю:
+```sql
+  
+truncate table table_name;
+```
+
 видалення таблиці:
 ```sql
 drop table table_name;
 ```
 
+додати запис в таблицю:
+```sql
+insert into users (name, age) values ('Tom', 34);
+```
+
+вивести дані таблиці в консоль:
+```sql
+select * from users;
+```
+
+
 ТИПИ ДАНИХ
 --------------------------------------------------------------------------------
+
 ### символьні
   **char(n)**    рядок фіксованої довжини. Якщо в таблицю зберігатиметься
                  значення менше n, то недостатні символи будуть зайняті
@@ -133,12 +136,12 @@ drop table table_name;
                          максимальна кількість цифр після коми (від 0 до
                          precision), за замовчуванням - 0.  
   **float**              зберігає дробові числа з плаваючою крапкою одинарної
-                         точності від -3.4028*10^38 до 3.4028*10^38, займає 4
+                         точності від -3.4028×10^38 до 3.4028×10^38, займає 4
                          байта, може приймати форму float(m,d), де m - загальна
                          кількість цифр, d - кількість цифр після коми.  
   **double**             = real = double precision зберігає дробові числа з
-                         плаваючою крапкою подвійної точності від -1.7976*10^308
-                         до 1.7976*10^308, займає 8 байт. Також може приймати
+                         плаваючою крапкою подвійної точності від -1.7976×10^308
+                         до 1.7976×10^308, займає 8 байт. Також може приймати
                          форму double(m,d) по аналогії до float(m,d).
 
 ### для роботи з датами
@@ -153,7 +156,7 @@ drop table table_name;
   **year**      зберігає рік. Діапазон від 1901 до 2155. Займає 1 байт.
 
 > ***date і time можуть сприймати спрощені формати, напр. yy-mm-dd, але
-> зберігатимуть дані, привівши їх до стандартного формату.***
+зберігатимуть дані, привівши їх до стандартного формату.***
 
 ### складані типи
   **enum** зберігає 1 значення зі списку допустимих значень. Займає 1-2 байти.  
@@ -175,6 +178,7 @@ drop table table_name;
 
 АТРИБУТИ СТОВПЧИКІВ І ТАБЛИЦЬ
 --------------------------------------------------------------------------------
+
 атрибути стовпчиків пишуться після назви і типу стовпчика:
 ```sql
 USE productsdb;
@@ -267,7 +271,7 @@ CREATE TABLE Customers
 ```
 
 ### Атрибут CHECK
-робить перевірку, на підходящість значень для збереження в таблиці.
+робить перевірку на підходящість значень для збереження в таблиці.
 
 ```sql
 CREATE TABLE Customers
@@ -292,7 +296,7 @@ CREATE TABLE Customers
   LastName VARCHAR(20) NOT NULL,
   Email VARCHAR(30),
   Phone VARCHAR(20),
-  CHECK((Age > 0 AND Age<100) AND (Email !='') AND (Phone !=''))
+  CHECK((Age>0 AND Age<100) AND (Email !='') AND (Phone !=''))
 );
 ```
 
@@ -300,7 +304,8 @@ CREATE TABLE Customers
 вказує імена для обмежень, визначається на рівні таблиці.  
 Смисл у іменах обмежень в тому, що за допомогою них можна встановлювати, змімати
 або змінювати обмеження для запису даних в таблицю. Обмеження можна встановити
-на ***PRIMARY KEY, CHECK, UNIQUE*** та ***FOREIGN KEY.***
+на ***PRIMARY KEY, CHECK, UNIQUE*** та ***FOREIGN KEY.*** По суті це псевдоніми,
+за якими можна зверниутися до конкретної чарунки.
 
 Приклад з видаленням зовнішнього ключа є трохи нижче (в розділі **Зміна
 таблиці**, Додавання і видалення зовнішнього ключа).
@@ -314,9 +319,9 @@ CREATE TABLE Customers
   LastName VARCHAR(20) NOT NULL,
   Email VARCHAR(30),
   Phone VARCHAR(20) NOT NULL,
-  CONSTRAINT customers_pk PRIMARY KEY(Id),              -- <-
-  CONSTRAINT customer_phone_uq UNIQUE(Phone),           -- <-
-  CONSTRAINT customer_age_chk CHECK(Age >0 AND Age<100) -- <-
+  CONSTRAINT customers_pk PRIMARY KEY(Id),             -- <-
+  CONSTRAINT customer_phone_uq UNIQUE(Phone),          -- <-
+  CONSTRAINT customer_age_chk CHECK(Age>0 AND Age<100) -- <-
 );
 ```
 
@@ -335,6 +340,7 @@ REFERENCES головна_таблиця (стовпчик_головної_та
 [ON DELETE дія]
 [ON UPDATE дія]
 ```
+
 ```sql
 CREATE TABLE Customers
 (
@@ -350,7 +356,9 @@ CREATE TABLE Orders
   Id INT PRIMARY KEY AUTO_INCREMENT,
   CustomerId INT,
   CreatedAt Date,
-  FOREIGN KEY (CustomerId)  REFERENCES Customers (Id)
+  CONSTRAINT orders_custonmers_fk
+  FOREIGN KEY (CustomerId) REFERENCES Customers (Id)
+  ON DELETE CASCADE
 );
 ```
 
@@ -368,8 +376,10 @@ CREATE TABLE Orders
                 стовпчика зовнішнього ключа встановлюється значення, вказане в
                 атрибуті DEFAULT. Дана опція не підтримується рушієм InnoDB.
 
+
 ЗМІНА ТАБЛИЦІ
 --------------------------------------------------------------------------------
+
 Для зміни уже існуючої таблиці використовується команда ALTER TABLE:
 
 ```sql
@@ -450,8 +460,10 @@ ALTER TABLE Products
 DROP PRIMARY KEY;
 ```
 
+
 ОПЕРАЦІЇ З ДАНИМИ
 --------------------------------------------------------------------------------
+
 ### INSERT - додавання даних
 
 ```sql
@@ -474,9 +486,6 @@ INSERT Products(ProductName, Manufacturer, ProductCount, Price)
 VALUES ('iPhone X', 'Apple', 5, 76000);
 ```
 
-> ***якщо стовпчик має дефолтне значення або підтримує NULL, його можна не
-передавати, або, навпаки, явно передати ключові слова DEFAULT i NULL***
-
 множинне додавання даних:
 
 ```sql
@@ -487,11 +496,23 @@ VALUES
 ('Galaxy S8', 'Samsung', 46000, 2);
 ```
 
+> ***якщо стовпчик має дефолтне значення або підтримує NULL, його можна не
+передавати, або, навпаки, явно передати ключові слова DEFAULT i NULL. Стовпчики
+з атрибутом AUTO_INCREMENT також можна не передавати***
+
+```sql
+INSERT Products(ProductName, Manufacturer, Price, ProductCount) 
+VALUES
+('Nokia 9', 'HDM Global', 41000, DEFAULT),
+('Nokia 9', 'HDM Global', 41000, NULL);
+```
+
 ### SELECT - вибірка даних
 
 ```sql
 SELECT список_стовпчиків FROM ім''я_таблиці
 ```
+
 ```sql
 CREATE TABLE Products
 (
@@ -523,7 +544,7 @@ SELECT ProductName, Price * ProductCount FROM Products;
 SELECT ProductName AS Title, Price * ProductCount AS TotalSum FROM Products;
 ```
 
-### WHERE - фільтрація даних
+### WHERE - фільтрація даних (фільтрвція рядків в таблиці)
 
 ```sql
 WHERE умова
@@ -572,7 +593,7 @@ SET Manufacturer = 'Samsung',
 WHERE Manufacturer = 'Samsung Inc.';
 
 UPDATE Products
-SET ProductCount= DEFAULT
+SET ProductCount = DEFAULT
 WHERE Manufacturer = 'Huawei';
 ```
 
@@ -587,6 +608,7 @@ DELETE FROM Products WHERE Manufacturer='Huawei';
 DELETE FROM Products WHERE Manufacturer='Apple' AND Price < 60000;
 DELETE FROM Products;
 ```
+
 
 ЗАПИТИ
 --------------------------------------------------------------------------------
@@ -622,6 +644,7 @@ SELECT DISTINCT Manufacturer, ProductCount FROM Products;
 -- -> Apple 3, Samsung 6, Samsung 2, Huawei 3
 ```
 
+
 ОПЕРАТОРИ ФІЛЬТРАЦІЇ
 --------------------------------------------------------------------------------
 
@@ -637,7 +660,7 @@ SELECT * FROM Products WHERE Manufacturer IN ('Samsung', 'HTC', 'Huawei');
 SELECT * FROM Products WHERE Manufacturer NOT IN ('Samsung', 'HTC', 'Huawei');
 ```
 
-### BETWEEN - діапазон значень
+### [NOT] BETWEEN … AND - діапазон значень
 
 ```sql
 WHERE вираз [NOT] BETWEEN початкове_значення AND кінцеве_значення
@@ -694,6 +717,7 @@ SELECT * FROM Products WHERE ProductCount IS NULL;
 SELECT * FROM Products WHERE ProductCount IS NOT NULL;
 ```
 
+
 СОРТУВАННЯ
 --------------------------------------------------------------------------------
 
@@ -732,6 +756,7 @@ FROM Products
 ORDER BY Manufacturer ASC, ProductName DESC;
 ```
 
+
 ОТРИМАННЯ ДІАПАЗОНА
 --------------------------------------------------------------------------------
 
@@ -744,6 +769,7 @@ LIMIT [offset,] rowcount
 SELECT * FROM Products LIMIT 3;    -- взяти 3 перших рядка (1,2,3)
 SELECT * FROM Products LIMIT 2, 3; -- пропустити 2, взяти 3 (3,4,5)
 ```
+
 
 АГРЕГАТНІ ФУНКЦІЇ
 --------------------------------------------------------------------------------
@@ -762,7 +788,7 @@ SELECT AVG(Price) FROM Products WHERE Manufacturer='Apple';
 SELECT AVG(Price * ProductCount) FROM Products;
 
 SELECT COUNT(*) FROM Products;
-SELECT COUNT(Manufacturer) FROM Products (ігнор NULL);
+SELECT COUNT(Manufacturer) FROM Products; -- відкидає NULL
 SELECT MIN(Price), MAX(Price) FROM Products;
 
 SELECT SUM(ProductCount) FROM Products;
@@ -782,8 +808,11 @@ SELECT COUNT(*) AS ProdCount,
 FROM Products;
 ```
 
+
 ГРУПУВАННЯ
 --------------------------------------------------------------------------------
+
+Групування відбувається в рамках команди **SELECT**.
 
 ```sql
 SELECT стовпчики
@@ -821,7 +850,7 @@ SELECT Manufacturer, COUNT(*) AS ModelsCount
 FROM Products
 WHERE Price > 30000
 GROUP BY Manufacturer
-ORDER BY ModelsCount DESC
+ORDER BY ModelsCount DESC;
 ```
 
 ###  HAVING
@@ -833,7 +862,7 @@ ORDER BY ModelsCount DESC
 SELECT Manufacturer, COUNT(*) AS ModelsCount
 FROM Products
 GROUP BY Manufacturer
-HAVING COUNT(*) > 1
+HAVING COUNT(*) > 1;
 ```
 
 **WHERE** + **HAVING** + **ORDER BY**:
@@ -845,6 +874,7 @@ GROUP BY Manufacturer
 HAVING SUM(ProductCount) > 2
 ORDER BY Units DESC;
 ```
+
 
 ПІДЗАПИТИ
 --------------------------------------------------------------------------------
@@ -904,13 +934,20 @@ VALUES
 );
 ```
 
-або знайти товари, з ціною вищою за середню:
+або знайти товари, з ціною, вищою за середню:
 ```sql
 SELECT * FROM Products
 WHERE Price > (SELECT AVG(Price) FROM Products);
 ```
 
 #### Корелюючі і не корелюючі підзапити
+
+Не корелюючі підзапити - це підзапити, результати яких не залежать від рядків,
+які вибираються у основному запиті. Такі підзапити виконуються один раз для
+усього зовнішнього запиту. Корелюючі підзапити навпаки мають результати, які
+залежать від рядків, які вибираються у головному запиті.
+Виконання корелюючих підзапитів сповільнює виконання усього запиту.
+
 
 приклад корелюючого підзапиту:
 ```sql
@@ -933,6 +970,448 @@ WHERE Price >
      WHERE SubProds.Manufacturer=Prods.Manufacturer);
 ```
 
+
 ПІДЗАПИТИ В ОСНОВНИХ КОМАНДАХ SQL
 --------------------------------------------------------------------------------
 
+### SELECT
+
+```sql
+SELECT * FROM Products
+WHERE Price > (SELECT AVG(Price) FROM Products);
+```
+
+дані зі зв'язаної таблиці краще брати за допомогою **JOIN**, це більше для
+прикладу:
+
+```sql
+SELECT * FROM Products
+WHERE Id NOT IN (SELECT ProductId FROM Orders);
+```
+
+
+#### Набори значень
+
+В операторах порівняння підзапити повинні повертати одне скалярне значення. Якщо
+потрібно повернути набір значень, треба використовувати **ALL, SOME (SOME = ANY)**.
+
+```sql
+-- знайти товари, ціна яких менша за будь-який товар фірми Apple:
+SELECT * FROM Products
+WHERE Price < ALL(SELECT Price FROM Products WHERE Manufacturer='Apple');
+
+-- це те ж саме:
+SELECT * FROM Products
+WHERE Price < (SELECT MIN(Price) FROM Products WHERE Manufacturer='Apple');
+```
+
+```sql
+-- знайти товари, які коштують менше самого дорогого Apple:
+SELECT * FROM Products
+WHERE Price < ANY(SELECT Price FROM Products WHERE Manufacturer='Apple');
+
+-- це те ж саме:
+SELECT * FROM Products
+WHERE Price < (SELECT MAX(Price) FROM Products WHERE Manufacturer='Apple');
+```
+
+
+#### Підзапит як стовпчик
+
+```sql
+SELECT *, 
+(SELECT ProductName FROM Products WHERE Id=Orders.ProductId) AS Product 
+FROM Orders;
+```
+
+
+### INSERT
+
+визначення значення, яке буде вставлене в стовпчик:
+```sql
+INSERT INTO Orders (ProductId, CreatedAt, ProductCount, Price)
+VALUES
+( 
+  (SELECT Id FROM Products WHERE ProductName='Galaxy S8'),
+  '2018-05-23',  
+  2, 
+  (SELECT Price FROM Products WHERE ProductName='Galaxy S8')
+);
+```
+
+
+### UPDATE
+
+встановлюване значення після **SET**:
+```sql
+UPDATE Orders
+SET ProductCount = ProductCount + 2
+WHERE ProductId IN (SELECT Id FROM Products WHERE Manufacturer='Apple');
+```
+
+частина умови **WHERE**:
+```sql
+UPDATE Orders
+SET Price = (SELECT Price FROM Products WHERE Id=Orders.ProductId) + 3000
+WHERE Id=1;
+```
+
+### DELETE
+
+```sql
+DELETE FROM Orders
+WHERE ProductId=(SELECT Id FROM Products WHERE ProductName='Galaxy S8');
+```
+
+
+Оператор EXISTS
+--------------------------------------------------------------------------------
+
+Оператор **EXISTS** перевіряє, чи повертає підзапит яке-небудь значення. Є
+індикатором того, що як мінімум один рядок підпадає під певну умову. Оскільки
+повернення набору рядків не відбувається, підзапит виконується швидше, ніж
+**IN**.
+
+```sql
+-- знайти усі товари, на які є замовлення:
+SELECT * FROM Products
+WHERE EXISTS 
+(SELECT * FROM Orders WHERE Orders.ProductId = Products.Id)
+```
+
+
+З'ЄДНАННЯ ТАБЛИЦЬ
+--------------------------------------------------------------------------------
+
+### Неявне з'єднання
+
+Наприклад, є три таблиці: Products, Customers, Orders. В таблиці Orders є
+зовнішні ключі, які вказують на дві інші таблиці:
+
+```sql
+FOREIGN KEY (ProductId) REFERENCES Products(Id) ON DELETE CASCADE,
+FOREIGN KEY (CustomerId) REFERENCES Customers(Id) ON DELETE CASCADE
+```
+
+Для з'єднання таблиць Orders і Customers:
+```sql
+SELECT * FROM Orders, Customers
+WHERE Orders.CustomerId = Customers.Id;
+```
+
+Для з'єднання окремих стовпчиків усіх трьох таблиць:
+```sql
+SELECT Customers.FirstName, Products.ProductName, Orders.CreatedAt 
+FROM Orders, Customers, Products
+WHERE Orders.CustomerId = Customers.Id AND Orders.ProductId=Products.Id;
+```
+
+Для скорочення довжини запиту можна скористатися псевдонімами таблиць. Якщо
+потрібно вибрати усі стовпчики якоїсь таблиці, потрібно використовувати зірочку:
+```sql
+SELECT C.FirstName, P.ProductName, O.*
+FROM Orders AS O, Customers AS C, Products AS P
+WHERE O.CustomerId = C.Id AND O.ProductId=P.Id;
+```
+
+
+### Inner Join
+
+повертає тільки ті рядки з таблиць, які підпадають під умову
+
+загальний синтаксис:
+```sql
+SELECT стовпчики
+FROM таблиця1
+[INNER] JOIN таблиця2  -- наявність/відсутність INNER ні на що не впливає
+ON умова1
+[[INNER] JOIN таблиця3
+ON умова2]
+```
+
+приклад:
+```sql
+SELECT O.CreatedAt, O.ProductCount, P.ProductName 
+FROM Orders AS O
+JOIN Products AS P
+ON P.Id = O.ProductId;
+```
+
+приєднання кількох таблиць:
+```sql
+SELECT Orders.CreatedAt, Customers.FirstName, Products.ProductName 
+FROM Orders
+JOIN Products ON Products.Id = Orders.ProductId
+JOIN Customers ON Customers.Id = Orders.CustomerId;
+```
+
+фільтрація і сортування створеної таблиці:
+```sql
+SELECT Orders.CreatedAt, Customers.FirstName, Products.ProductName 
+FROM Orders
+JOIN Products ON Products.Id = Orders.ProductId
+JOIN Customers ON Customers.Id = Orders.CustomerId
+WHERE Products.Price > 45000
+ORDER BY Customers.FirstName;
+```
+
+
+### Outer Join
+
+повертає усі рядки таблиці
+
+загальний синтаксис:
+```sql
+SELECT стовпчики
+FROM таблиця1
+{LEFT|RIGHT} [OUTER] JOIN таблиця2 ON умова1      -- наявність/відсутність OUTER
+[{LEFT|RIGHT} [OUTER] JOIN таблиця3 ON умова2]... -- ні на що не впливає
+```
+
+LEFT означає, що у вибірці будуть знаходитися УСІ рядки з першої/лівої таблиці
+RIGHT означає, що у вибірці будуть знаходитися УСІ рядки з другої/правої таблиці
+
+приклад:
+```sql
+SELECT FirstName, CreatedAt, ProductCount, Price, ProductId 
+FROM Orders LEFT JOIN Customers 
+ON Orders.CustomerId = Customers.Id;
+```
+```sql
+SELECT FirstName FROM Customers
+LEFT JOIN Orders ON Customers.Id = Orders.CustomerId
+WHERE Orders.CustomerId IS NULL;
+```
+
+
+### UNION
+
+об'єднує однаково названі стовпчики різних таблиць (відкидаючи повторювані
+значення - якщо без ALL)
+
+загальний синтаксис:
+```sql
+SELECT_вираз1
+UNION [ALL] SELECT_вираз2
+[UNION [ALL] SELECT_виразN]
+```
+
+приклад:
+```sql
+SELECT FirstName, LastName 
+FROM Customers
+UNION SELECT FirstName, LastName FROM Employees;
+```
+
+**UNION** + **ORDER BY**:
+```sql
+SELECT FirstName AS FName, LastName
+FROM Customers
+UNION SELECT FirstName, LastName
+FROM Employees
+ORDER BY FName DESC;
+```
+
+об'єднання вибірок з однієї і тієї ж таблиці:
+```sql
+SELECT FirstName, LastName, AccountSum + AccountSum * 0.1 AS TotalSum 
+FROM Customers WHERE AccountSum < 3000
+UNION SELECT FirstName, LastName, AccountSum + AccountSum * 0.3 AS TotalSum 
+FROM Customers WHERE AccountSum >= 3000;
+```
+
+
+ФУНКЦІЇ ДЛЯ РОБОТИ З РЯДКАМИ
+--------------------------------------------------------------------------------
+
+**CONCAT** - об'єднання рядків, не рядкові значення спочатку приводить до рядків
+```sql
+SELECT CONCAT('Tom', ' ', 'Smith');  -- Tom Smith
+```
+
+**CONCAT_WS** - те саме, що і **CONCAT**, але 1й аргумент - роздількик
+```sql
+SELECT CONCAT_WS(' ', 'Tom', 'Smith', 'Age:', 34);  -- Tom Smith Age: 34
+```
+
+**LENGTH(str)**
+```sql
+SELECT LENGTH('Tom Smith');  -- 9
+```
+
+**LTRIM** - видаляє пробіли зліва
+```sql
+SELECT LTRIM('  Apple');
+```
+
+**RTRIM** - видаляє пробіли справа
+```sql
+  
+SELECT RTRIM(' Apple    ');
+```
+
+**TRIM** - видаляє пробіли з обох боків
+```sql
+SELECT TRIM('  Tom Smith   ');
+```
+
+**LOCATE(find, search [, start])** - пошук підрядка у рядку, аналог **indexof**
+в JS. Нуменація в SQL починається з 1! Якщо підрядок  не знайдено, повертається 0
+```sql
+SELECT LOCATE('om', 'Tom Smith');   -- 2
+SELECT LOCATE('m', 'Tom Smith');    -- 3
+SELECT LOCATE('m', 'Tom Smith', 4); -- 6
+SELECT LOCATE('mig', 'Tom Smith');  -- 0
+```
+
+**LEFT** - вирізає зліва вказану кількість символів
+```sql
+SELECT LEFT('Apple', 3); -- App
+```
+
+**RIGHT** - вирізає справа вказану кількість символів
+```sql
+SELECT RIGHT('Apple', 3);    -- ple
+```
+
+**SUBSTRING(str, start [, length])** - взяття підрядка з рядка
+```sql
+SELECT SUBSTRING('Galaxy S8 Plus', 8),       -- S8 Plus
+(SELECT SUBSTRING('Galaxy S8 Plus', 8, 2) ); -- S8
+```
+
+**SUBSTRING_INDEX(str, delimiter, count)** - вирізає підрядок з рядка по
+роздільнику. count визначає, після якого за разунком роздільника обрізати
+```sql
+SELECT SUBSTRING_INDEX('Galaxy S8 Plus', ' ', 1),     -- Galaxy
+(SELECT SUBSTRING_INDEX('Galaxy S8 Plus', ' ', 2) ),  -- Galaxy S8
+(SELECT SUBSTRING_INDEX('Galaxy S8 Plus', ' ', -2) ); -- S8 Plus
+```
+
+**REPLACE(search, find, replace)** - заміна в рядку підрядка1 на підрядок2
+```sql
+SELECT REPLACE('Galaxy S8 Plus', 'S8 Plus', 'Note 8')   -- Galaxy Note 8
+```
+
+**INSERT(str, start, length, insert)** - з позиції start видалити length сиволів,
+вставити підрядок insert
+```sql
+SELECT INSERT('Galaxy S9', 8, 3, 'Note 9');   -- Galaxy Note 9
+```
+
+**REVERSE** - переворот рядка
+```sql
+SELECT REVERSE('123456789') -- 987654321
+```
+
+**LOWER** - нижній регістр
+```sql
+SELECT LOWER('Apple')   -- apple
+```
+
+**UPPER** - верхній регістр
+```sql
+SELECT UPPER('Apple')   -- APPLE
+```
+
+**SPACE(num)** - повертає рядок, який містить вказану кількість пробілів
+
+**REPEATE(str, count)** - мультиплікація рядка
+```sql
+SELECT REPEAT('ab', 5);   -- ababababab
+```
+
+**LPAD(str, length, pad)** - додає на початок рядка length кількість підрядків
+pad
+```sql
+SELECT LPAD('Tom Smith', 13, '*');   -- ****Tom Smith
+```
+
+**RPAD(str, length, pad)** - додає в кінець рядка length кількість підрядків pad
+```sql
+SELECT RPAD('Tom Smith', 13, '*');   -- Tom Smith****
+```
+
+приклід викорастання рядкових функцій у вибірках:
+```sql
+SELECT UPPER(LEFT(Manufacturer,2)) AS Abbreviation,
+CONCAT(ProductName, ' - ',  Manufacturer) AS FullProdName
+FROM Products
+ORDER BY Abbreviation;
+```
+
+
+ФУНКЦІЇ ДЛЯ РОБОТИ З ЧИСЛАМИ
+--------------------------------------------------------------------------------
+
+**ROUND** - округлення числа. Другий параметр - точність. Якщо вона додатня, то
+відбувається округлення дробової частини. Якщо від'ємна - цілої.
+```sql
+SELECT ROUND(1342.345, 2),    -- 1342.35
+(SELECT ROUND(1342.345, -2)); -- 1300;
+```
+
+**TRUNCATE** - обрізка дробової частини
+```sql
+SELECT TRUNCATE(1342.345, 2); -- 1342.34
+```
+
+**ABS** - повернення абсолютного значення числа
+```sql
+SELECT ABS(-123) -- 123
+```
+
+**CEILING** - повертає найменше ціле число, яке більше або рівне заданому
+```sql
+SELECT CEILING(-123.45),  -- -123
+(SELECT CEILING(123.45)); -- 124
+```
+
+**FLOOR** - повертає найменше ціле число, яке менше або рівне заданому
+```sql
+SELECT FLOOR(-123.45),  -- -124
+(SELECT FLOOR(123.45)); -- 123
+```
+
+**POWER** - піднесення до степеня
+```sql
+SELECT POWER(5, 2),   -- 25
+(SELECT POWER(5, 3)); -- 125
+```
+
+**SQRT** - корінь квадратний
+```sql
+SELECT SQRT(225); -- 15
+```
+
+**SIGN** - повертає -1, якщо число менше 0, 0 - якщо рівне 0 і 1 - якщо більше
+```sql
+SELECT SIGN(-5),  -- -1
+(SELECT SIGN(7)); -- 1
+```
+
+**RAND** - генерує випадкове число з плаваючою крапкою від 0 до 1
+```sql
+SELECT RAND(); -- 0.707365088352935
+SELECT RAND(); -- 0.173808327956812
+```
+
+
+ФУНКЦІЇ ДЛЯ РОБОТИ З ДАТАМИ І ЧАСОМ
+--------------------------------------------------------------------------------
+
+
+
+
+ФУНКЦІЇ CASE, IF, INFULL, COALESCE
+--------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+1. [Metanit: Руководство по MySQL](https://metanit.com/sql/mysql/)
+2. [Metanit: Node.js + MySQL](https://metanit.com/web/nodejs/8.1.php)

@@ -200,6 +200,7 @@ View In Browser              : відкриття  файлу  у  відпов�
 HTML Nest Comments           : в стандартному HTML не можна закоментувати  код,  в  якому  уже  є  коменти.  Цей  плагін
                                виправляє дану проблему.
 Random Everything            : генерування випадкових значень: пошт, телефонів тощо. Працює через Ctrl+Shift+P.
+ClickableURLs                : відкриває посилання. Навести курсор на url і натиснути ctrl+alt+enter
 
 
 Вирівнювання:
@@ -229,6 +230,7 @@ HTML (C#)                    : підсвітка C#-коду
 Dockerfile Syntax Highlighting : підсвітка коду в Dockerfile
 nginx                        : Improved syntax support for Nginx configuration files
 DotENV                       : Syntax Highlighting support for Environment (.env) Files
+GraphQL
 
 Підказки:
 --------
@@ -295,6 +297,32 @@ React IDE
 FindInProject                : Text search plugin for Sublime Text 3 projects  не встановлюється!
 FileFinder                   : Sublime Filefinder plugin
 Search in Project            : Use ag, ack, grep and git grep directly from Sublime Text 2 and 3
+Debugger
+Sublimerge 3
+Clipboard Manager vs Clipboard History
+PlainTasks(https://xakep.ru/2014/07/28/sublime-text-not-for-coding/) є інструкції на сайті packagecontroll.io або Preferences → Package Settings → PlainTasks → Tutorial
+
+: + \n заголовок
+**bold**
+_italic_
+
+ctrl+enter   нова задача
+ctrl+i       нова задача
+ctrl+d       помітити задачу як зроблену
+alt+c        помітити задачу як скасовану
+ctrl+shift+a архівувати зроблену задачу (вилучити з тексту і помістити вниз)
+
+теги (помітки)
+  @tag
+  правий клік на тегу - Filter by tags under cursors - приховує все, крім задач з конкретним тегом
+  ctrl+k або ctrl+j або (ctrl+k, ctrl+0) знову усе показати
+
+ctrl+shift+U відкрити посилання у файлі .todo
+
+alt+o - відкрити файл. шлях до файла повинен починатися з .\ або ./
+
+пршоритетність і час не працюють (
+
 
 
 
@@ -550,3 +578,83 @@ Console Wrap
   }
 
 
+Sublimerge 3
+------------
+
+  The first steps after installation
+  ==================================
+
+  1. By default Sublimerge's colors theme conforms to default Sublime Text theme. If you are using some
+     custom theme and find the colors poorly visible, you may need to change them.
+
+  2. If you're on Windows and want to use VCS-related commands, you may need to configure the executable
+     path for your VCS. Linux and OS X users with non-standard VCS installation may need to configure this too.
+
+
+  Please visit http://www.sublimerge.com/sm3/docs/configuration.html for more information about configuration.
+
+
+
+  Simplified usage instructions
+  =============================
+
+  In file view:
+
+      [ctrl]+[alt]+[d]                      - display Quick Panel with commands available for current view
+
+
+  In diff view:
+
+      Windows/Linux:
+
+      [ctrl]+[down]                         - select next change
+      [ctrl]+[up]                           - select previous change
+    * [ctrl]+[left]                         - copy selected change (or active line) to left from right
+    * [ctrl]+[right]                        - copy selected change (or active line) to right from left
+      [ctrl]+[shift]+[left]                 - copy all changes to left from right
+      [ctrl]+[shift]+[right]                - copy all changes to right from left
+
+      OSX:
+
+      [alt]+[down]                          - select next change
+      [alt]+[up]                            - select previous change
+    * [alt]+[left]                          - copy selected change (or active line) to left from right
+    * [alt]+[right]                         - copy selected change (or active line) to right from left
+      [alt]+[shift]+[left]                  - copy all changes to left from right
+      [alt]+[shift]+[right]                 - copy all changes to right from left
+
+      Common:
+
+      [f3]                                  - swap panels
+      [f4]                                  - show changes navigator
+      [f5]                                  - recompare buffers
+
+    * - if change is selected the command will copy its whole contents, otherwise will copy only the focused line
+
+
+  In directories diff view:
+
+      [down]                              - select next file/directory
+      [up]                                - select previous file/directory
+      [left]                              - copy file/directory from right to left
+      [right]                             - copy file/directory from left to right
+      [enter]                             - enter sub directory / compare text files
+      [backspace]                         - enter parent directory
+
+
+      Windows/Linux:
+
+      [ctrl]+[down]                       - select next different file/directory
+      [ctrl]+[up]                         - select previous different file/directory
+
+
+      OS X:
+
+      [alt]+[down]                        - select next different file/directory
+      [alt]+[up]                          - select previous different file/directory
+
+
+      For convenience Sublimerge also supports standard OS X keyboard shortcuts for directories navigation:
+
+      [cmd]+[down]                        - enter sub directory / compare text files
+      [cmd]+[up]                          - enter parent directory

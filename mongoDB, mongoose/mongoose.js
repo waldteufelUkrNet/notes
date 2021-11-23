@@ -8,7 +8,7 @@
   mongoose.set('debug',true);
 
   // оголошення класу (моделі)
-  const Cat = mongoose.model('Cat', { name: String }); // Cat -> cats
+  const Cat = mongoose.model('Cat', { name: String }); // клас Cat -> колекція cats
 
   // при створенні екземпляра класу mongoose перевіряє відповідність полів до
   // заданої схеми і зайві не зберігає.

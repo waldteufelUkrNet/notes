@@ -1,7 +1,10 @@
 GraphQL
 ================================================================================
 
-**GraphQL** - це мова запитів клієнт/сервер та середовище для виконня таких запитів. Підтримує багато мов програмування, в тому числі JS. Є "прокладкою" між запитом і базою даних. Бази даних можуть використовуватися будь-які. Виконує аналогічні функції, що і REST API.
+**GraphQL** - це мова запитів клієнт/сервер та середовище для виконня таких
+запитів. Підтримує багато мов програмування, в тому числі JS. Є "прокладкою" між
+запитом і базою даних. Бази даних можуть використовуватися будь-які. Виконує
+аналогічні функції, що і REST API.
 
 **Відмінність від REST API**
 
@@ -20,7 +23,9 @@ GraphQL
 Принцип роботи
 --------------------------------------------------------------------------------
 
-Відображення сутності на поля в запиті прописуються на стороні бекенда за допомогою спеціальних бібліотек. **GraphQL** - це по суті мапінг (відображення) полів з бази даних на свою схему. Схеми **GraphQL** типізовані.
+Відображення сутності на поля в запиті прописуються на стороні бекенда за
+допомогою спеціальних бібліотек. **GraphQL** - це по суті мапінг (відображення)
+полів з бази даних на свою схему. Схеми **GraphQL** типізовані.
 
 
 Синтаксис
@@ -70,7 +75,9 @@ query {
 
 ### Змінні
 
-У запитах можна використовувати змінні. В середині запиту вони повинні починатися з $. Їх потрібно задекларувати і вказати значення у блоці оголошення змінних **QUERY VARIABLES**:
+У запитах можна використовувати змінні. В середині запиту вони повинні
+починатися з $. Їх потрібно задекларувати і вказати значення у блоці оголошення
+змінних **QUERY VARIABLES**:
 
 ```
 query (
@@ -139,7 +146,8 @@ query (
 
 ### Псевдоніми
 
-Якщо запит складний, потрібно слідкувати, щоб дані, які вертаються (вони є об'єктом), не мали однакових полів. Для цього використовуються **aliases**.
+Якщо запит складний, потрібно слідкувати, щоб дані, які вертаються (вони є
+об'єктом), не мали однакових полів. Для цього використовуються **aliases**.
 Приклад коду:
 
 ```
@@ -149,7 +157,7 @@ fragment someFields on Continent {
 }
 
 query (
-  $code: String = "EU" ## значення за замовчуванням
+  $code: String = "EU"
 ) {
   eu: continents (     ## <-
     filter: {
@@ -184,13 +192,14 @@ query (
     ],
     "as": [
       {
-        "code": "EU",
-        "name": "Europe"
+        "code": "AS",
+        "name": "Asia"
       }
     ]
   }
 }
 ```
+
 
 ### Імена запитів
 
@@ -205,6 +214,7 @@ query query_name (…) {…}
 ### Директиви
 
 директива **@include**:
+
 ```
 query continents_query(
   $includeCountries: Boolean = false
@@ -221,6 +231,7 @@ query continents_query(
 ```
 
 директива **@skip** - антипод **@include**:
+
 ```
 query continents_query(
   $skipCountries: Boolean = false
@@ -247,7 +258,7 @@ inline fragments:
 
 1. Підключаємо потрібні модулі:
    ```js
-   let {graphql, buildSchema } = require('graphql');
+   let {graphql, buildSchema} = require('graphql');
    ```
 
 2. Створюємо схему. Схема є основою, скелетом серверної частини **GraphQL**.
@@ -260,7 +271,7 @@ inline fragments:
    }
 
    input BookInput {         // все, що подається на вхід мутаціям, повинно мати
-     title: String!          //  спец.тип input
+     title: String!          // спец.тип input
      description: String!
    }
 
@@ -283,12 +294,13 @@ inline fragments:
    `);
    ```
 
-3. Пишемо логіку резолверів (функцій-посередників, призначених для отримання
+3. Пишемо логіку резолверів
+ (функцій-посередників, призначених для отримання
    даних з бд у відповідності до структури схеми і видачі її назовні):
    ```js
    let root = {
      hello: () => {
-       return 'Hello, world';
+         'Hello, world';
      },
      bye: (args) => {
       return 'Bye, ' + args.name + '!';
@@ -300,7 +312,7 @@ inline fragments:
    об'єкт з резолверами.
    ```js
    graphql(schema, '{hello, bye(name: "John")', root)
-   .then( res=> {
+   .then( res => {
      console.log(res)
    });
    ```
@@ -313,7 +325,7 @@ inline fragments:
 
 1. Як рядок:
    ```js
-   let {graphql, buildSchema } = require('graphql');
+   let {graphql, buildSchema} = require('graphql');
    let schema = buildSchema(`
      type Book {
        id: String!
@@ -340,10 +352,10 @@ inline fragments:
        author: {type: GraphQLString},                        // String
        description: {type: new GraphQNonNull(GraphQLString)} // String!
        someField : {                                  // пошук у зв'язаному полі
-        type: SomeType,
-        resolve: function(book) {
-          return someData.find( item => book.id = item.id )
-        }
+         type: SomeType,
+         resolve: function(book) {
+           return someData.find( item => book.id = item.id )
+         }
        }
      })
    });
@@ -359,27 +371,8 @@ inline fragments:
 3. [graphql](https://github.com/nodkz/conf-talks)
 4. [Redux не нужен. GraphQL и Apollo Client.](https://www.youtube.com/watch?v=OezyScvU9-c)
 5. [Пишем первый GraphQL сервер [Хекслет]](https://www.youtube.com/watch?v=pUFZPdiWswQ)
+6. [Павел Черторогов — Строим GraphQL-сервер](https://www.youtube.com/watch?v=NnnvOPdstzg&t=1287s)
+7. [Youtube: 17 відео](https://www.youtube.com/watch?v=kZs7CXrtT-s&list=PLNkWIWHIRwMF2sVLwzRef0Cu5kzAOeRcu)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4. [Youtube: 17 відео](https://www.youtube.com/watch?v=kZs7CXrtT-s&list=PLNkWIWHIRwMF2sVLwzRef0Cu5kzAOeRcu)
-
-
-https://www.youtube.com/watch?v=NnnvOPdstzg&t=1287s
-
- https://www.youtube.com/watch?v=GMJNSBur-lM
+8. https://www.youtube.com/watch?v=GMJNSBur-lM

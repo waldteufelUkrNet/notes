@@ -299,29 +299,34 @@ FileFinder                   : Sublime Filefinder plugin
 Search in Project            : Use ag, ack, grep and git grep directly from Sublime Text 2 and 3
 Debugger
 Sublimerge 3
+
+LockTab - блокування вкладок, заборона закриття
+TabsExtra - розширене контекстне меню для вкладок
+Tabnine - AI Code Completion
+
 Clipboard Manager vs Clipboard History
 PlainTasks(https://xakep.ru/2014/07/28/sublime-text-not-for-coding/) є інструкції на сайті packagecontroll.io або Preferences → Package Settings → PlainTasks → Tutorial
 
-: + \n заголовок
-**bold**
-_italic_
+  : + \n заголовок
+  **bold**
+  _italic_
 
-ctrl+enter   нова задача
-ctrl+i       нова задача
-ctrl+d       помітити задачу як зроблену
-alt+c        помітити задачу як скасовану
-ctrl+shift+a архівувати зроблену задачу (вилучити з тексту і помістити вниз)
+  ctrl+enter   нова задача
+  ctrl+i       нова задача
+  ctrl+d       помітити задачу як зроблену
+  alt+c        помітити задачу як скасовану
+  ctrl+shift+a архівувати зроблену задачу (вилучити з тексту і помістити вниз)
 
-теги (помітки)
-  @tag
-  правий клік на тегу - Filter by tags under cursors - приховує все, крім задач з конкретним тегом
-  ctrl+k або ctrl+j або (ctrl+k, ctrl+0) знову усе показати
+  теги (помітки)
+    @tag
+    правий клік на тегу - Filter by tags under cursors - приховує все, крім задач з конкретним тегом
+    ctrl+k або ctrl+j або (ctrl+k, ctrl+0) знову усе показати
 
-ctrl+shift+U відкрити посилання у файлі .todo
+  ctrl+shift+U відкрити посилання у файлі .todo
 
-alt+o - відкрити файл. шлях до файла повинен починатися з .\ або ./
+  alt+o - відкрити файл. шлях до файла повинен починатися з .\ або ./
 
-пршоритетність і час не працюють (
+  пршоритетність і час не працюють (
 
 
 

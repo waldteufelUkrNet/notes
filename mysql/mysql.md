@@ -1,7 +1,80 @@
 MySQL
 ================================================================================
 
-робота в MySQL Shell
+Зміст
+--------------------------------------------------------------------------------
+
+- [робота в MySQL Shell](#Shell)
+- [БАЗИ ДАНИХ](#dbases)
+- [ТАБЛИЦІ](#tables)
+- [ТИПИ ДАНИХ](#datatypes)
+    - [символьні](#symbols)
+    - [числові](#numbers)
+    - [для роботи з датами](#dates)
+    - [складані типи](#complexes)
+    - [бінарні типи](#binary)
+- [АТРИБУТИ СТОВПЧИКІВ І ТАБЛИЦЬ](#attr)
+    - [Атрибут PRIMARY KEY](#primary)
+    - [Атрибут AUTO_INCREMENT](#autoinc)
+    - [Атрибут UNIQUE](#uniq)
+    - [Атрибути NULL и NOT NULL](#null)
+    - [Атрибут DEFAULT](#default)
+    - [Атрибут CHECK](#check)
+    - [Оператор CONSTRAINT](#constraint)
+- [ЗОВНІШНІ КЛЮЧІ FOREIGN KEY](#foreign)
+- [ЗМІНА ТАБЛИЦІ](#change)
+- [ОПЕРАЦІЇ З ДАНИМИ](#dataoperations)
+    - [INSERT - додавання даних](#insert)
+    - [SELECT - вибірка даних](#select)
+    - [WHERE - фільтрація даних (фільтрація рядків в таблиці)](#where)
+        - [типи умов](#wheretypes)
+    - [логічні оператори AND, OR, NOT](#and-or-not)
+    - [UPDATE - оновлення даних](#update)
+    - [DELETE - видалення даних](#delete)
+- [ЗАПИТИ](#queries)
+    - [DISTINCT - вибірка унікальних значень](#distinct)
+- [ОПЕРАТОРИ ФІЛЬТРАЦІЇ](#filtr)
+    - [IN - вибір підходящого](#in)
+    - [[NOT] BETWEEN … AND - діапазон значень](#between)
+    - [LIKE - простий шаблон рядка](#like)
+    - [REGEXP - регулярний вираз](#regexp)
+- [СОРТУВАННЯ](#sort)
+    - [ORDER BY - сортування за зростанням](#orderby)
+    - [ORDER BY … DEST - сортування за спаданням](#orderdest)
+    - [сортування за кількома стовпчиками:](#polysort)
+- [ОТРИМАННЯ ДІАПАЗОНА](#range)
+    - [LIMIT](#limit)
+- [АГРЕГАТНІ ФУНКЦІЇ](#agr)
+- [ГРУПУВАННЯ](#group)
+    - [GROUP BY](#groupby)
+    - [HAVING](#having)
+- [ПІДЗАПИТИ](#subqueries)
+    - [Корелюючі і не корелюючі підзапити](#queriessorts)
+- [ПІДЗАПИТИ В ОСНОВНИХ КОМАНДАХ SQL](#subqueriesincommands)
+    - [SELECT](#subselect)
+        - [Набори значень](#sets)
+        - [Підзапит як стовпчик](#subquerycolumn)
+    - [INSERT](#subinsert)
+    - [UPDATE](#subupdate)
+    - [DELETE](#subdelete)
+- [Оператор EXISTS](#exists)
+- [З'ЄДНАННЯ ТАБЛИЦЬ](#jointables)
+    - [Неявне з'єднання](#defaultjoin)
+    - [Inner Join](#innerjoin)
+    - [Outer Join](#outerjoin)
+    - [UNION](#union)
+- [ФУНКЦІЇ ДЛЯ РОБОТИ З РЯДКАМИ](#sttfunc)
+- [ФУНКЦІЇ ДЛЯ РОБОТИ З ЧИСЛАМИ](#numfunc)
+- [ФУНКЦІЇ ДЛЯ РОБОТИ З ДАТАМИ І ЧАСОМ](#datefunc)
+- [ФУНКЦІЇ CASE, IF, INFULL, COALESCE](#conditions)
+    - [CASE - WHEN - THEN - ELSE - END](#case)
+    - [IF](#if)
+    - [IFNULL](#ifnull)
+    - [COALESCE](#coalesce)
+- [Посилання](#links)
+
+
+робота в MySQL Shell                                          <i id="Shell"></i>
 --------------------------------------------------------------------------------
 
 MySQL Shell підтримує три мови введення команд: JS, puthon, sql. для
@@ -23,7 +96,7 @@ MySQL Shell підтримує три мови введення команд: JS
 ```
 
 
-БАЗИ ДАНИХ
+БАЗИ ДАНИХ                                                   <i id="dbases"></i>
 --------------------------------------------------------------------------------
 
 показати наявні бази даних:
@@ -59,7 +132,7 @@ use database_name;
 drop database database_name;
 ```
 
-ТАБЛИЦІ
+ТАБЛИЦІ                                                      <i id="tables"></i>
 --------------------------------------------------------------------------------
 
 створення таблиці:
@@ -102,10 +175,11 @@ select * from users;
 ```
 
 
-ТИПИ ДАНИХ
+ТИПИ ДАНИХ                                                <i id="datatypes"></i>
 --------------------------------------------------------------------------------
 
-### символьні
+### символьні                                               <i id="symbols"></i>
+
   **char(n)**    рядок фіксованої довжини. Якщо в таблицю зберігатиметься
                  значення менше n, то недостатні символи будуть зайняті
                  пробілами. Тип char може зберігати до 255 байт.  
@@ -116,7 +190,9 @@ select * from users;
   **mediumtext** текст довжиною до 16 мб.  
   **largetext**  текст довжиною до 4 гб.
 
-### числові
+
+### числові                                                 <i id="numbers"></i>
+
   **tinyint**            цілі числа від -128 до 127, займає 1 байт.  
   **bool**               = boolean = tinyint(1) зберігає 0 або 1 (false/true).  
   **tinyint unsigned**   цілі числа від 0 до 255, займає 1 байт.  
@@ -144,7 +220,9 @@ select * from users;
                          до 1.7976×10^308, займає 8 байт. Також може приймати
                          форму double(m,d) по аналогії до float(m,d).
 
-### для роботи з датами
+
+### для роботи з датами                                       <i id="dates"></i>
+
   **date**      зберігає дати від 1 січня 1000 до 31 грудня 9999.
                 За замовчуванням використовує формат yyyy-mm-dd. Займає 3 байти.  
   **time**      зберігає час від -838:59:59 до 838:59:59. За замовчуванням
@@ -158,25 +236,23 @@ select * from users;
 > ***date і time можуть сприймати спрощені формати, напр. yy-mm-dd, але
 зберігатимуть дані, привівши їх до стандартного формату.***
 
-### складані типи
+
+### складані типи                                         <i id="complexes"></i>
+
   **enum** зберігає 1 значення зі списку допустимих значень. Займає 1-2 байти.  
-  **set**  може зберігати до 64 значень з певного списку допистимих значень.
+  **set**  може зберігати до 64 значень з певного списку допустимих значень.
            Займає 1-8 байт.
 
-### бінарні типи
+
+### бінарні типи                                             <i id="binary"></i>
+
   **tinyblob**   зберігає бінарні дані у вигляді рядка довжиною до 255 байт.  
   **blob**       зберігає бінарні дані у вигляді рядка довжиною до 65 кілобайт.  
   **mediumblob** зберігає бінарні дані у вигляді рядка довжиною до 16 мегабайт.  
   **largeblob**  зберігає бінарні дані у вигляді рядка довжиною до 4 гігабайт.
 
-### бінарні типи
-  **tinyblob**   зберігає бінарні дані у вигляді рядка довжиною до 255 байт.  
-  **blob**       зберігає бінарні дані у вигляді рядка довжиною до 65 кілобайт.  
-  **mediumblob** зберігає бінарні дані у вигляді рядка довжиною до 16 мегабайт.  
-  **largeblob**  зберігає бінарні дані у вигляді рядка довжиною до 4 гігабайт.
 
-
-АТРИБУТИ СТОВПЧИКІВ І ТАБЛИЦЬ
+АТРИБУТИ СТОВПЧИКІВ І ТАБЛИЦЬ                                  <i id="attr"></i>
 --------------------------------------------------------------------------------
 
 атрибути стовпчиків пишуться після назви і типу стовпчика:
@@ -204,7 +280,9 @@ CREATE TABLE Customers
 );
 ```
 
-### Атрибут PRIMARY KEY
+
+### Атрибут PRIMARY KEY                                     <i id="primary"></i>
+
 задає первинний ключ таблиці, виступає в ролі унікального ідентифікатора рядка в
 таблиці. Він може бути складеним з кількох стовпців одночасно, це означатиме, що
 в одній таблиці не може бути двох рядків з повним збігом даних у конкретних
@@ -221,7 +299,9 @@ CREATE TABLE OrderLines
 )
 ```
 
-### Атрибут AUTO_INCREMENT
+
+### Атрибут AUTO_INCREMENT                                  <i id="autoinc"></i>
+
 дозволяє вказати, що в кожен наступний рядок таблиці в міру його додавання
 матиме значення, на 1 більше від попереднього.
 
@@ -235,11 +315,14 @@ CREATE TABLE Customers
 );
 ```
 
-### Атрибут UNIQUE
+### Атрибут UNIQUE                                             <i id="uniq"></i>
+
 вказує на те, що у даному стовпчику зберігаються унікальні, не повторювані
 значення на всю таблицю.
 
-### Атрибути NULL и NOT NULL
+
+### Атрибути NULL и NOT NULL                                   <i id="null"></i>
+
 вказують, чи може стовпчик приймати значення NULL. Якщо його явно не вказувати,
 то за замовчуванням він буде NULL. Якщо стовпчик виступає первинним ключем він
 за замовчуванням NOT NULL.
@@ -256,7 +339,8 @@ CREATE TABLE Customers
 );
 ```
 
-### Атрибут DEFAULT визначає значення за замовчуванням.
+
+### Атрибут DEFAULT визначає значення за замовчуванням.     <i id="default"></i>
 
 ```sql
 CREATE TABLE Customers
@@ -270,7 +354,9 @@ CREATE TABLE Customers
 );
 ```
 
-### Атрибут CHECK
+
+### Атрибут CHECK                                             <i id="check"></i>
+
 робить перевірку на підходящість значень для збереження в таблиці.
 
 ```sql
@@ -300,7 +386,9 @@ CREATE TABLE Customers
 );
 ```
 
-### Оператор CONSTRAINT
+
+### Оператор CONSTRAINT                                  <i id="constraint"></i>
+
 вказує імена для обмежень, визначається на рівні таблиці.  
 Смисл у іменах обмежень в тому, що за допомогою них можна встановлювати, змімати
 або змінювати обмеження для запису даних в таблицю. Обмеження можна встановити
@@ -325,7 +413,7 @@ CREATE TABLE Customers
 );
 ```
 
-ЗОВНІШНІ КЛЮЧІ FOREIGN KEY
+ЗОВНІШНІ КЛЮЧІ FOREIGN KEY                                  <i id="foreign"></i>
 --------------------------------------------------------------------------------
  
 Зовнішні ключі встановлюють зв'язок між таблицями. Зовнішній ключ встановлюється
@@ -377,7 +465,7 @@ CREATE TABLE Orders
                 атрибуті DEFAULT. Дана опція не підтримується рушієм InnoDB.
 
 
-ЗМІНА ТАБЛИЦІ
+ЗМІНА ТАБЛИЦІ                                                <i id="change"></i>
 --------------------------------------------------------------------------------
 
 Для зміни уже існуючої таблиці використовується команда ALTER TABLE:
@@ -461,10 +549,10 @@ DROP PRIMARY KEY;
 ```
 
 
-ОПЕРАЦІЇ З ДАНИМИ
+ОПЕРАЦІЇ З ДАНИМИ                                    <i id="dataoperations"></i>
 --------------------------------------------------------------------------------
 
-### INSERT - додавання даних
+### INSERT - додавання даних                                 <i id="insert"></i>
 
 ```sql
 INSERT [INTO] ім''я_таблиці [(список_стовпчиків)] VALUES (значення1, значення2, ... значенняN)
@@ -507,7 +595,8 @@ VALUES
 ('Nokia 9', 'HDM Global', 41000, NULL);
 ```
 
-### SELECT - вибірка даних
+
+### SELECT - вибірка даних                                   <i id="select"></i>
 
 ```sql
 SELECT список_стовпчиків FROM ім''я_таблиці
@@ -544,13 +633,16 @@ SELECT ProductName, Price * ProductCount FROM Products;
 SELECT ProductName AS Title, Price * ProductCount AS TotalSum FROM Products;
 ```
 
-### WHERE - фільтрація даних (фільтрвція рядків в таблиці)
+
+### WHERE - фільтрація даних (фільтрвція рядків в таблиці)    <i id="where"></i>
 
 ```sql
 WHERE умова
 ```
 
-#### типи умов:
+
+#### типи умов:                                          <i id="wheretypes"></i>
+
 |символ|значення   |символ|значення        |
 |------|-----------|------|----------------|
 |=     |рівність   |\>    |менше           |
@@ -560,7 +652,8 @@ WHERE умова
 
 ***при порівнянні регістр символів не має значення***
 
-### логічні оператори AND, OR, NOT
+
+### логічні оператори AND, OR, NOT                       <i id="and-or-not"></i>
 **пріоритетність логічних операторів:**
 ```
 NOT > AND > OR
@@ -575,13 +668,16 @@ SELECT * FROM Products WHERE Manufacturer = 'Samsung' AND Price > 50000;
 SELECT * FROM Products WHERE NOT Manufacturer = 'Samsung';
 ```
 
-### UPDATE - оновлення даних
+### UPDATE - оновлення даних                                 <i id="update"></i>
 
 ```sql
 UPDATE ім''я_таблиці
 SET стовпчик1 = значення1, стовпчик2 = значення2, ... стовпчикN = значенняN
 [WHERE умова_оновлення]
 ```
+
+**Якщо не вжити WHERE, оновляться усі дані!**
+
 ```sql
 UPDATE Products SET Price = Price + 3000; -- збільшити усі ціни на 3000
 
@@ -597,12 +693,15 @@ SET ProductCount = DEFAULT
 WHERE Manufacturer = 'Huawei';
 ```
 
-### DELETE - видалення даних
+### DELETE - видалення даних                                 <i id="delete"></i>
 
 ```sql
 DELETE FROM ім''я_таблиці
 [WHERE умова_видалення]
 ```
+
+**Якщо не вжити WHERE, видаляться усі дані!**
+
 ```sql
 DELETE FROM Products WHERE Manufacturer='Huawei';
 DELETE FROM Products WHERE Manufacturer='Apple' AND Price < 60000;
@@ -610,10 +709,10 @@ DELETE FROM Products;
 ```
 
 
-ЗАПИТИ
+ЗАПИТИ                                                      <i id="queries"></i>
 --------------------------------------------------------------------------------
 
-### DISTINCT - вибірка унікальних значень (відкидаються повтори)
+### DISTINCT - вибірка унікальних значень (відкидаються повтори) <i id="distinct"></i>
 
 ```sql
 USE productsdb;
@@ -626,7 +725,7 @@ CREATE TABLE Products
   ProductCount INT DEFAULT 0,
   Price DECIMAL NOT NULL
 );
-INSERT INTO Products  (ProductName, Manufacturer, ProductCount, Price)
+INSERT INTO Products (ProductName, Manufacturer, ProductCount, Price)
 VALUES
 ('iPhone X', 'Apple', 3, 71000),
 ('iPhone 8', 'Apple', 3, 56000),
@@ -645,22 +744,24 @@ SELECT DISTINCT Manufacturer, ProductCount FROM Products;
 ```
 
 
-ОПЕРАТОРИ ФІЛЬТРАЦІЇ
+ОПЕРАТОРИ ФІЛЬТРАЦІЇ                                          <i id="filtr"></i>
 --------------------------------------------------------------------------------
 
-### IN - вибір підходящого
+### IN - вибір підходящого                                       <i id="in"></i>
 
 ```sql
-WHERE вираз [NOT] IN (вираз)
+WHERE вираз [NOT] IN (перелік)
 ```
 ```sql
 --  вибрати усі записи, де виробниками є 'Samsung', 'HTC', 'Huawei'
 SELECT * FROM Products WHERE Manufacturer IN ('Samsung', 'HTC', 'Huawei');
 -- вибрати усі записи, де виробниками не є 'Samsung', 'HTC', 'Huawei'
 SELECT * FROM Products WHERE Manufacturer NOT IN ('Samsung', 'HTC', 'Huawei');
+
+SELECT * FROM Customers WHERE Country IN (SELECT Country FROM Suppliers);
 ```
 
-### [NOT] BETWEEN … AND - діапазон значень
+### [NOT] BETWEEN … AND - діапазон значень                  <i id="between"></i>
 
 ```sql
 WHERE вираз [NOT] BETWEEN початкове_значення AND кінцеве_значення
@@ -671,7 +772,7 @@ SELECT * FROM Products WHERE Price NOT BETWEEN 20000 AND 50000;
 SELECT * FROM Products WHERE Price * ProductCount BETWEEN 90000 AND 150000;
 ```
 
-### LIKE - простий шаблон рядка
+### LIKE - простий шаблон рядка                                <i id="like"></i>
 
 ```sql
 WHERE вираз [NOT] LIKE шаблон_рядка
@@ -687,7 +788,7 @@ _ - будь-який одиночний символ:
 WHERE ProductName LIKE 'Galaxy S_' -- -> "Galaxy S7" / "Galaxy S8".
 ```
 
-### REGEXP - регулярний вираз
+### REGEXP - регулярний вираз                                <i id="regexp"></i>
 
 ```sql
 WHERE вираз [NOT] REGEXP регулярний_вираз
@@ -710,7 +811,7 @@ WHERE ProductName REGEXP 'iPhone [6-8]';: -- -> або iPhone 6, або iPhone 7
 WHERE ProductName REGEXP 'Phone|Galaxy';  -- -> або Phone, або Galaxy
 ```
 
-### IS NULL - вибірка NULL
+### IS NULL - вибірка NULL                                   <i id="isnull"></i>
 
 ```sql
 SELECT * FROM Products WHERE ProductCount IS NULL;
@@ -718,10 +819,10 @@ SELECT * FROM Products WHERE ProductCount IS NOT NULL;
 ```
 
 
-СОРТУВАННЯ
+СОРТУВАННЯ                                                     <i id="sort"></i>
 --------------------------------------------------------------------------------
 
-### ORDER BY       - сортування за зростанням
+### ORDER BY       - сортування за зростанням               <i id="orderby"></i>
 ### ORDER BY … AST - сортування за зростанням (вказане явно)
 
 ```sql
@@ -736,7 +837,7 @@ FROM Products
 ORDER BY ProductCount * Price;
 ```
 
-### ORDER BY … DEST - сортування за спаданням
+### ORDER BY … DEST - сортування за спаданням             <i id="orderdest"></i>
 
 ```sql
 SELECT ProductName, ProductCount
@@ -744,7 +845,7 @@ FROM Products
 ORDER BY ProductCount DESC;
 ```
 
-### сортування за кількома стовпчиками:
+### сортування за кількома стовпчиками:                    <i id="polysort"></i>
 
 ```sql
 SELECT ProductName, Price, Manufacturer
@@ -757,10 +858,10 @@ ORDER BY Manufacturer ASC, ProductName DESC;
 ```
 
 
-ОТРИМАННЯ ДІАПАЗОНА
+ОТРИМАННЯ ДІАПАЗОНА                                           <i id="range"></i>
 --------------------------------------------------------------------------------
 
-### LIMIT
+### LIMIT                                                     <i id="limit"></i>
 
 ```sql
 LIMIT [offset,] rowcount
@@ -771,7 +872,7 @@ SELECT * FROM Products LIMIT 2, 3; -- пропустити 2, взяти 3 (3,4,
 ```
 
 
-АГРЕГАТНІ ФУНКЦІЇ
+АГРЕГАТНІ ФУНКЦІЇ                                               <i id="agr"></i>
 --------------------------------------------------------------------------------
 
 |назва    |значення                   |тип даних           |відношення до NULL|
@@ -809,7 +910,7 @@ FROM Products;
 ```
 
 
-ГРУПУВАННЯ
+ГРУПУВАННЯ                                                    <i id="group"></i>
 --------------------------------------------------------------------------------
 
 Групування відбувається в рамках команди **SELECT**.
@@ -823,9 +924,11 @@ FROM таблиця
 [ORDER BY стовпчики_для_сортування]
 ```
 
-### GROUP BY
+
+### GROUP BY                                                <i id="groupby"></i>
+
 визначає, як будуть групуватися рядки. Потрібен, якщо в select іде вибірка по
-одному або кільком стовпчиках і використовуються агрегатні функції.  
+одному або кількоx стовпчиках і використовуються агрегатні функції.  
 
 ```sql
 -- тут результатом буде таблиця з двома стовпчиками: виробник і кількість його
@@ -853,7 +956,9 @@ GROUP BY Manufacturer
 ORDER BY ModelsCount DESC;
 ```
 
-###  HAVING
+
+###  HAVING                                                  <i id="having"></i>
+
 фільтрує групи, створені перед цим **GROUP BY**. Працює аналогічно до **WHERE**,
 з тією різницею, що **WHERE** фільтрує рядки, а **HAVING** - групи.
 
@@ -876,7 +981,7 @@ ORDER BY Units DESC;
 ```
 
 
-ПІДЗАПИТИ
+ПІДЗАПИТИ                                                <i id="subqueries"></i>
 --------------------------------------------------------------------------------
 
 Підзапити - це вирази select, вбудовані у інші запити sql.
@@ -940,7 +1045,8 @@ SELECT * FROM Products
 WHERE Price > (SELECT AVG(Price) FROM Products);
 ```
 
-#### Корелюючі і не корелюючі підзапити
+
+### Корелюючі і не корелюючі підзапити                 <i id="queriessorts"></i>
 
 Не корелюючі підзапити - це підзапити, результати яких не залежать від рядків,
 які вибираються у основному запиті. Такі підзапити виконуються один раз для
@@ -971,10 +1077,10 @@ WHERE Price >
 ```
 
 
-ПІДЗАПИТИ В ОСНОВНИХ КОМАНДАХ SQL
+ПІДЗАПИТИ В ОСНОВНИХ КОМАНДАХ SQL              <i id="subqueriesincommands"></i>
 --------------------------------------------------------------------------------
 
-### SELECT
+### SELECT                                                <i id="subselect"></i>
 
 ```sql
 SELECT * FROM Products
@@ -990,7 +1096,7 @@ WHERE Id NOT IN (SELECT ProductId FROM Orders);
 ```
 
 
-#### Набори значень
+#### Набори значень                                            <i id="sets"></i>
 
 В операторах порівняння підзапити повинні повертати одне скалярне значення. Якщо
 потрібно повернути набір значень, треба використовувати **ALL, SOME (SOME = ANY)**.
@@ -1016,7 +1122,7 @@ WHERE Price < (SELECT MAX(Price) FROM Products WHERE Manufacturer='Apple');
 ```
 
 
-#### Підзапит як стовпчик
+#### Підзапит як стовпчик                            <i id="subquerycolumn"></i>
 
 ```sql
 SELECT *, 
@@ -1025,7 +1131,7 @@ FROM Orders;
 ```
 
 
-### INSERT
+### INSERT                                                <i id="subinsert"></i>
 
 визначення значення, яке буде вставлене в стовпчик:
 ```sql
@@ -1040,7 +1146,7 @@ VALUES
 ```
 
 
-### UPDATE
+### UPDATE                                                <i id="subupdate"></i>
 
 встановлюване значення після **SET**:
 ```sql
@@ -1056,7 +1162,7 @@ SET Price = (SELECT Price FROM Products WHERE Id=Orders.ProductId) + 3000
 WHERE Id=1;
 ```
 
-### DELETE
+### DELETE                                                <i id="subdelete"></i>
 
 ```sql
 DELETE FROM Orders
@@ -1064,7 +1170,7 @@ WHERE ProductId=(SELECT Id FROM Products WHERE ProductName='Galaxy S8');
 ```
 
 
-Оператор EXISTS
+Оператор EXISTS                                              <i id="exists"></i>
 --------------------------------------------------------------------------------
 
 Оператор **EXISTS** перевіряє, чи повертає підзапит яке-небудь значення. Є
@@ -1080,10 +1186,10 @@ WHERE EXISTS
 ```
 
 
-З'ЄДНАННЯ ТАБЛИЦЬ
+З'ЄДНАННЯ ТАБЛИЦЬ                                        <i id="jointables"></i>
 --------------------------------------------------------------------------------
 
-### Неявне з'єднання
+### Неявне з'єднання                                    <i id="defaultjoin"></i>
 
 Наприклад, є три таблиці: Products, Customers, Orders. В таблиці Orders є
 зовнішні ключі, які вказують на дві інші таблиці:
@@ -1115,9 +1221,9 @@ WHERE O.CustomerId = C.Id AND O.ProductId=P.Id;
 ```
 
 
-### Inner Join
+### Inner Join                                            <i id="innerjoin"></i>
 
-повертає тільки ті рядки з таблиць, які підпадають під умову
+повертає тільки ті рядки з усіх таблиць, які підпадають під умову
 
 загальний синтаксис:
 ```sql
@@ -1156,9 +1262,10 @@ ORDER BY Customers.FirstName;
 ```
 
 
-### Outer Join
+### Outer Join                                            <i id="outerjoin"></i>
 
-повертає усі рядки таблиці
+повертає усі рядки однієї таблиці та рядки інших таблиць, що підпадають під
+умову
 
 загальний синтаксис:
 ```sql
@@ -1184,7 +1291,25 @@ WHERE Orders.CustomerId IS NULL;
 ```
 
 
-### UNION
+### Сross Join                                            <i id="crossjoin"></i>
+
+повертає усі рядки усіх таблиць
+
+```sql
+SELECT Customers.CustomerName, Orders.OrderID
+FROM Customers
+CROSS JOIN Orders;
+```
+
+
+
+### Self Join                                              <i id="selfjoin"></i>
+
+
+
+
+
+### UNION                                                     <i id="union"></i>
 
 об'єднує однаково названі стовпчики різних таблиць (відкидаючи повторювані
 значення - якщо без ALL)
@@ -1221,7 +1346,7 @@ FROM Customers WHERE AccountSum >= 3000;
 ```
 
 
-ФУНКЦІЇ ДЛЯ РОБОТИ З РЯДКАМИ
+ФУНКЦІЇ ДЛЯ РОБОТИ З РЯДКАМИ                                <i id="sttfunc"></i>
 --------------------------------------------------------------------------------
 
 **CONCAT** - об'єднання рядків, не рядкові значення спочатку приводить до рядків
@@ -1332,7 +1457,7 @@ SELECT LPAD('Tom Smith', 13, '*');   -- ****Tom Smith
 SELECT RPAD('Tom Smith', 13, '*');   -- Tom Smith****
 ```
 
-приклід викорастання рядкових функцій у вибірках:
+приклад викорастання рядкових функцій у вибірках:
 ```sql
 SELECT UPPER(LEFT(Manufacturer,2)) AS Abbreviation,
 CONCAT(ProductName, ' - ',  Manufacturer) AS FullProdName
@@ -1341,7 +1466,7 @@ ORDER BY Abbreviation;
 ```
 
 
-ФУНКЦІЇ ДЛЯ РОБОТИ З ЧИСЛАМИ
+ФУНКЦІЇ ДЛЯ РОБОТИ З ЧИСЛАМИ                                <i id="numfunc"></i>
 --------------------------------------------------------------------------------
 
 **ROUND** - округлення числа. Другий параметр - точність. Якщо вона додатня, то
@@ -1396,22 +1521,267 @@ SELECT RAND(); -- 0.707365088352935
 SELECT RAND(); -- 0.173808327956812
 ```
 
+приклад викорастання числових функцій у вибірках:
+```sql
+SELECT UPPER(LEFT(Manufacturer,2)) AS Abbreviation,
+CONCAT(ProductName, ' - ',  Manufacturer) AS FullProdName
+FROM Products
+ORDER BY Abbreviation;
+```
 
-ФУНКЦІЇ ДЛЯ РОБОТИ З ДАТАМИ І ЧАСОМ
+
+ФУНКЦІЇ ДЛЯ РОБОТИ З ДАТАМИ І ЧАСОМ                        <i id="datefunc"></i>
 --------------------------------------------------------------------------------
 
+**NOW, SYSDATE, CURRENT_TIMESTAMP** - дата і час на основі системного годинника
+```sql
+SELECT NOW();               -- 2018-05-25 21:34:55
+SELECT SYSDATE();           -- 2018-05-25 21:34:55
+SELECT CURRENT_TIMESTAMP(); -- 2018-05-25 21:32:55
+```
+
+**CURDATE, CURRENT_DATE** - локальна дата
+```sql
+SELECT CURRENT_DATE();      -- 2018-05-25
+SELECT CURDATE();           -- 2018-05-25
+```
+
+**CURTIME, CURRENT_TIME** - поточний час
+```sql
+SELECT CURRENT_TIME();  -- 20:47:45
+SELECT CURTIME();       -- 20:47:45
+```
+
+**UTC_DATE** - локальна дата відносно GMT
+```sql
+SELECT UTC_DATE();      -- 2018-05-25
+```
+
+**UTC_TIME** - локальний час відносно GMT
+```sql
+SELECT UTC_TIME();      -- 17:47:45
+```
+
+**DAYOFMONTH(date)** - день місяця числом
+```sql
+SELECT DAYOFMONTH('2018-05-25') -- 25
+```
+
+**DAYOFWEEK(date)** - день тижня числом (неділя - 1)
+```sql
+SELECT DAYOFWEEK('2018-05-25') -- 6
+```
+
+**DAYOFYEAR(date)** - номер дня в році
+```sql
+SELECT DAYOFYEAR('2018-05-25') -- 145
+```
+
+**MONTH(date)** - місяць року числом
+```sql
+SELECT MONTH('2018-05-25') -- 5
+```
+
+**YEAR(date)** - рік
+```sql
+SELECT YEAR('2018-05-25') -- 2018
+```
+
+**QUARTER(date)** - номер квартала
+```sql
+SELECT QUARTER('2018-05-25') -- 2
+```
+
+**WEEK(date [, first])** - номер тижня в році, first задає 1й день тижня. Якщо
+1 - понеділок, якщо 0 - неділя
+```sql
+SELECT WEEK('2018-05-25', 1) -- 21
+```
+
+**LAST_DAY(date)** - останній день місяця датою
+```sql
+SELECT LAST_DAY('2018-05-25') -- 2018-05-31
+```
+
+**DAYNAME(date)** - назва дня тижня
+```sql
+SELECT DAYNAME('2018-05-25') -- Friday
+```
+
+**MONTHNAME(date)** - назва місяця
+```sql
+SELECT MONTHNAME('2018-05-25') -- May
+```
+
+**HOUR(time)** - кількість годин
+```sql
+SELECT HOUR('21:25:54') -- 21
+```
+
+**MINUTE(time)** - кількість хвилин
+```sql
+SELECT MINUTE('21:25:54') -- 25
+```
+
+**SECOND(time)** - кількість секунд
+```sql
+SELECT SECOND('21:25:54') -- 54
+```
+
+**EXTRACT(unit FROM datetime)** - видобуток з дати і часу певного компоненту
+
+unit може бути наступного виду:
+  SECOND - секунди
+  MINUTE - хвилини
+  HOUR - години
+  DAY - дні
+  MONTH - місяць
+  YEAR - рік
+  MINUTE_SECOND - хвилини + секунди
+  HOUR_MINUTE - години + хвилини
+  DAY_HOUR - день + години
+  YEAR_MONTH - рік + місяць
+  HOUR_SECOND - години + хвидини + секунди
+  DAY_MINUTE - день + години + хвилини
+  DAY_SECOND - день + години + хвилини + секунди
+
+```sql
+SELECT EXTRACT( SECOND FROM '2018-05-25 21:25:54')        -- 54
+SELECT EXTRACT( MINUTE FROM '2018-05-25 21:25:54')        -- 25
+SELECT EXTRACT( HOUR FROM '2018-05-25 21:25:54')          -- 21
+SELECT EXTRACT( DAY FROM '2018-05-25 21:25:54')           -- 25
+SELECT EXTRACT( MONTH FROM '2018-05-25 21:25:54')         -- 5
+SELECT EXTRACT( YEAR FROM '2018-05-25 21:25:54')          -- 2018
+SELECT EXTRACT( MINUTE_SECOND FROM '2018-05-25 21:25:54') -- 2554
+SELECT EXTRACT( DAY_HOUR FROM '2018-05-25 21:25:54')      -- 2521
+SELECT EXTRACT( YEAR_MONTH FROM '2018-05-25 21:25:54')    -- 201805
+SELECT EXTRACT( HOUR_SECOND FROM '2018-05-25 21:25:54')   -- 212554
+SELECT EXTRACT( DAY_MINUTE FROM '2018-05-25 21:25:54')    -- 252125
+SELECT EXTRACT( DAY_SECOND FROM '2018-05-25 21:25:54')    -- 25212554
+```
+
+**DATE_ADD(date, INTERVAL expression unit)** - додавання до дати/часу
+```sql
+SELECT DATE_ADD('2018-05-25', INTERVAL 1 DAY)           -- 2018-05-26
+SELECT DATE_ADD('2018-05-25', INTERVAL 3 MONTH)         -- 2018-08-25
+SELECT DATE_ADD('2018-05-25 21:31:27', INTERVAL 4 HOUR) -- 2018-05-26 01:31:27
+```
+
+**DATE_SUB(date, INTERVAL expression unit)** - віднімання від дати/часу
+```sql
+SELECT DATE_SUB('2018-05-25', INTERVAL 4 DAY) -- 2018-05-21
+```
+
+**DATEDIFF(date1, date2)** - різниця між датами в днях
+```sql
+SELECT DATEDIFF('2018-05-25', '2018-05-27') -- -2
+SELECT DATEDIFF('2018-05-25', '2018-05-21') -- 4
+SELECT DATEDIFF('2018-05-25', '2018-03-21') -- 65
+```
+
+**TO_DAYS(date)** - кількість днів з 0-го року
+```sql
+SELECT TO_DAYS('2018-05-25') -- 737204
+```
+
+**TIME_TO_SEC(time)** - кількість секунд з 00:00:00
+```sql
+SELECT TIME_TO_SEC('10:00') -- 36000
+```
+
+**DATE_FORMAT(date, format)** - форматування дати на основі шаблона
+**TIME_FORMAT(date, format)** - форматування часу на основі шаблона
+
+шаблон приймає наступні значення:
+  %m: місяць в числовому форматі 01..12
+  %с: місяць в числовому форматі 1..12
+  %M: назва місяця (January...December)
+  %b: абревіатура місяця (Jan...Dec)
+  %d: день місяця в числовому форматі 00..31
+  %e: день місяця в числовому форматі 0..31
+  %D: номер дня місяця із суфіксом (1st, 2nd, 3rd...)
+  %y: рік у вигляді двух чисел
+  %Y: рік у вигляді чотирьох чисел
+  %W: назва дня тижня (Sunday...Saturday)
+  %a: абревіатура дня тижня (Sun...Sat)
+  %H: година у форматі 00..23
+  %k: година у форматі 0..23
+  %h: година у форматі 01..12
+  %l: година у форматі 1..12
+  %i: хвилини у форматі 00..59
+  %r: час у 12-ти часовому форматі (hh:mm:ss AM або PM)
+  %T: час у 24-ти часовому форматі (hh:mm:ss)
+  %S: секунди у форматі 00..59
+  %p: AM або PM
 
 
+```sql
+SELECT ATE_FORMAT('2018-05-25', '%d/%m/%y')          -- 25/05/18
+SELECT ATE_FORMAT('2018-05-25 21:25:54', '%d %M %Y') -- 25 May 2018
+SELECT ATE_FORMAT('2018-05-25 21:25:54', '%r')       -- 09:25:54 PM
+SELECT IME_FORMAT('2018-05-25 21:25:54', '%H:%i:%S') -- 21:25:24
+SELECT IME_FORMAT('21:25:54', '%k:%i')               -- 21:25```
+```
 
-ФУНКЦІЇ CASE, IF, INFULL, COALESCE
+ФУНКЦІЇ CASE, IF, INFULL, COALESCE                       <i id="conditions"></i>
 --------------------------------------------------------------------------------
 
+### CASE - WHEN - THEN - ELSE - END                            <i id="case"></i>
+
+перевіряє на істинність певну кількість наборів умов і у залежності від
+перевірки повертає результат
+
+```sql
+SELECT ProductName, ProductCount, 
+CASE
+  WHEN ProductCount = 1 
+    THEN 'Товар закінчується'
+  WHEN ProductCount = 2 
+    THEN 'Товару не достатньо'
+  WHEN ProductCount = 3 
+    THEN 'Є в наявності'
+  ELSE 'Товару багато'
+END AS Category
+FROM Products;
+```
 
 
+### IF                                                           <i id="if"></i>
+
+перевіряє умову і в залежності від її виконання повертає одне з двох значень
+
+```sql
+SELECT ProductName, Manufacturer,
+IF(ProductCount > 3, 'Багато товару', 'Мало товару')
+FROM Products;
+```
 
 
+### IFNULL                                                   <i id="ifnull"></i>
+
+перевіряє значення повного виразу. Якщо воно рівне NULL, то функція поверне
+значення з другого параметра
+
+```sql
+SELECT FirstName, LastName,
+IFNULL(Phone, 'не определено') AS Phone,
+IFNULL(Email, 'неизвестно') AS Email
+FROM Clients;
+```
 
 
+### COALESCE                                               <i id="coalesce"></i>
+
+приймає список значень і повертає перше з них, яке не рівне NULL
+
+```sql
+SELECT FirstName, LastName,
+COALESCE(Phone, Email, 'не определено') AS Contacts
+FROM Clients;
+```
+
+
+Посилання                                                     <i id="links"></i>
+--------------------------------------------------------------------------------
 
 1. [Metanit: Руководство по MySQL](https://metanit.com/sql/mysql/)
-2. [Metanit: Node.js + MySQL](https://metanit.com/web/nodejs/8.1.php)

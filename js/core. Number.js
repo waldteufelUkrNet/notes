@@ -102,3 +102,10 @@
 // toLocaleString() - для красивого виводу чисел в стандарті ECMA 402:
   let number = 123456789;
   console.log( number.toLocaleString() ); // 123 456 789
+
+
+function randomInteger(min, max) {
+  // получить случайное число от (min-0.5) до (max+0.5)
+  let rand = min - 0.5 + Math.random() * (max - min + 1);
+  return Math.round(rand);
+}

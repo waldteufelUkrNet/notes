@@ -4,74 +4,104 @@ MySQL
 Зміст
 --------------------------------------------------------------------------------
 
-- [робота в MySQL Shell](#Shell)
-- [БАЗИ ДАНИХ](#dbases)
-- [ТАБЛИЦІ](#tables)
-- [ТИПИ ДАНИХ](#datatypes)
-    - [символьні](#symbols)
-    - [числові](#numbers)
-    - [для роботи з датами](#dates)
-    - [складані типи](#complexes)
-    - [бінарні типи](#binary)
-- [АТРИБУТИ СТОВПЧИКІВ І ТАБЛИЦЬ](#attr)
-    - [Атрибут PRIMARY KEY](#primary)
-    - [Атрибут AUTO_INCREMENT](#autoinc)
-    - [Атрибут UNIQUE](#uniq)
-    - [Атрибути NULL и NOT NULL](#null)
-    - [Атрибут DEFAULT](#default)
-    - [Атрибут CHECK](#check)
-    - [Оператор CONSTRAINT](#constraint)
-- [ЗОВНІШНІ КЛЮЧІ FOREIGN KEY](#foreign)
-- [ЗМІНА ТАБЛИЦІ](#change)
-- [ОПЕРАЦІЇ З ДАНИМИ](#dataoperations)
-    - [INSERT - додавання даних](#insert)
-    - [SELECT - вибірка даних](#select)
-    - [WHERE - фільтрація даних (фільтрація рядків в таблиці)](#where)
-        - [типи умов](#wheretypes)
-    - [логічні оператори AND, OR, NOT](#and-or-not)
-    - [UPDATE - оновлення даних](#update)
-    - [DELETE - видалення даних](#delete)
-- [ЗАПИТИ](#queries)
-    - [DISTINCT - вибірка унікальних значень](#distinct)
-- [ОПЕРАТОРИ ФІЛЬТРАЦІЇ](#filtr)
-    - [IN - вибір підходящого](#in)
-    - [[NOT] BETWEEN … AND - діапазон значень](#between)
-    - [LIKE - простий шаблон рядка](#like)
-    - [REGEXP - регулярний вираз](#regexp)
-- [СОРТУВАННЯ](#sort)
-    - [ORDER BY - сортування за зростанням](#orderby)
-    - [ORDER BY … DEST - сортування за спаданням](#orderdest)
-    - [сортування за кількома стовпчиками:](#polysort)
-- [ОТРИМАННЯ ДІАПАЗОНА](#range)
-    - [LIMIT](#limit)
-- [АГРЕГАТНІ ФУНКЦІЇ](#agr)
-- [ГРУПУВАННЯ](#group)
-    - [GROUP BY](#groupby)
-    - [HAVING](#having)
-- [ПІДЗАПИТИ](#subqueries)
-    - [Корелюючі і не корелюючі підзапити](#queriessorts)
-- [ПІДЗАПИТИ В ОСНОВНИХ КОМАНДАХ SQL](#subqueriesincommands)
-    - [SELECT](#subselect)
-        - [Набори значень](#sets)
-        - [Підзапит як стовпчик](#subquerycolumn)
-    - [INSERT](#subinsert)
-    - [UPDATE](#subupdate)
-    - [DELETE](#subdelete)
-- [Оператор EXISTS](#exists)
-- [З'ЄДНАННЯ ТАБЛИЦЬ](#jointables)
-    - [Неявне з'єднання](#defaultjoin)
-    - [Inner Join](#innerjoin)
-    - [Outer Join](#outerjoin)
-    - [UNION](#union)
-- [ФУНКЦІЇ ДЛЯ РОБОТИ З РЯДКАМИ](#sttfunc)
-- [ФУНКЦІЇ ДЛЯ РОБОТИ З ЧИСЛАМИ](#numfunc)
-- [ФУНКЦІЇ ДЛЯ РОБОТИ З ДАТАМИ І ЧАСОМ](#datefunc)
-- [ФУНКЦІЇ CASE, IF, INFULL, COALESCE](#conditions)
-    - [CASE - WHEN - THEN - ELSE - END](#case)
-    - [IF](#if)
-    - [IFNULL](#ifnull)
-    - [COALESCE](#coalesce)
-- [Посилання](#links)
+Частина 1-ша. MySQL.
+--------------------------------------------------------------------------------
+
+- [робота в MySQL Shell                                                ](#Shell)
+- [БАЗИ ДАНИХ                                                         ](#dbases)
+- [ТАБЛИЦІ                                                            ](#tables)
+- [ТИПИ ДАНИХ                                                      ](#datatypes)
+    - [символьні                                                     ](#symbols)
+    - [числові                                                       ](#numbers)
+    - [для роботи з датами                                             ](#dates)
+    - [складані типи                                               ](#complexes)
+    - [бінарні типи                                                   ](#binary)
+- [АТРИБУТИ СТОВПЧИКІВ І ТАБЛИЦЬ                                        ](#attr)
+    - [Атрибут PRIMARY KEY                                           ](#primary)
+    - [Атрибут AUTO_INCREMENT                                        ](#autoinc)
+    - [Атрибут UNIQUE                                                   ](#uniq)
+    - [Атрибути NULL и NOT NULL                                         ](#null)
+    - [Атрибут DEFAULT                                               ](#default)
+    - [Атрибут CHECK                                                   ](#check)
+    - [Оператор CONSTRAINT                                        ](#constraint)
+- [ЗОВНІШНІ КЛЮЧІ FOREIGN KEY                                        ](#foreign)
+- [ЗМІНА ТАБЛИЦІ                                                      ](#change)
+- [ОПЕРАЦІЇ З ДАНИМИ                                          ](#dataoperations)
+    - [INSERT - додавання даних                                       ](#insert)
+    - [SELECT - вибірка даних                                         ](#select)
+    - [WHERE - фільтрація даних (фільтрація рядків в таблиці)          ](#where)
+        - [типи умов                                              ](#wheretypes)
+    - [логічні оператори AND, OR, NOT                             ](#and-or-not)
+    - [UPDATE - оновлення даних                                       ](#update)
+    - [DELETE - видалення даних                                       ](#delete)
+- [ЗАПИТИ                                                            ](#queries)
+    - [DISTINCT - вибірка унікальних значень                        ](#distinct)
+- [ОПЕРАТОРИ ФІЛЬТРАЦІЇ                                                ](#filtr)
+    - [IN - вибір підходящого                                             ](#in)
+    - [[NOT] BETWEEN … AND - діапазон значень                        ](#between)
+    - [LIKE - простий шаблон рядка                                      ](#like)
+    - [REGEXP - регулярний вираз                                      ](#regexp)
+- [СОРТУВАННЯ                                                           ](#sort)
+    - [ORDER BY - сортування за зростанням                           ](#orderby)
+    - [ORDER BY … DEST - сортування за спаданням                   ](#orderdest)
+    - [сортування за кількома стовпчиками:                          ](#polysort)
+- [ОТРИМАННЯ ДІАПАЗОНА                                                 ](#range)
+    - [LIMIT                                                           ](#limit)
+- [АГРЕГАТНІ ФУНКЦІЇ                                                     ](#agr)
+- [ГРУПУВАННЯ                                                          ](#group)
+    - [GROUP BY                                                      ](#groupby)
+    - [HAVING                                                         ](#having)
+- [ПІДЗАПИТИ                                                      ](#subqueries)
+    - [Корелюючі і не корелюючі підзапити                       ](#queriessorts)
+- [ПІДЗАПИТИ В ОСНОВНИХ КОМАНДАХ SQL                    ](#subqueriesincommands)
+    - [SELECT                                                      ](#subselect)
+        - [Набори значень                                               ](#sets)
+        - [Підзапит як стовпчик                               ](#subquerycolumn)
+    - [INSERT                                                      ](#subinsert)
+    - [UPDATE                                                      ](#subupdate)
+    - [DELETE                                                      ](#subdelete)
+- [Оператор EXISTS                                                    ](#exists)
+- [З'ЄДНАННЯ ТАБЛИЦЬ                                              ](#jointables)
+    - [Неявне з'єднання                                          ](#defaultjoin)
+    - [Inner Join                                                  ](#innerjoin)
+    - [Outer Join                                                  ](#outerjoin)
+    - [UNION                                                           ](#union)
+- [ФУНКЦІЇ ДЛЯ РОБОТИ З РЯДКАМИ                                      ](#sttfunc)
+- [ФУНКЦІЇ ДЛЯ РОБОТИ З ЧИСЛАМИ                                      ](#numfunc)
+- [ФУНКЦІЇ ДЛЯ РОБОТИ З ДАТАМИ І ЧАСОМ                              ](#datefunc)
+- [ФУНКЦІЇ CASE, IF, INFULL, COALESCE                             ](#conditions)
+    - [CASE - WHEN - THEN - ELSE - END                                  ](#case)
+    - [IF                                                                 ](#if)
+    - [IFNULL                                                         ](#ifnull)
+    - [COALESCE                                                     ](#coalesce)
+
+
+Частина 2-га. MySQL + Node.js
+--------------------------------------------------------------------------------
+
+- [Підключення MySQL в Node.js                                  ](#node-connect)
+    - [Створення підключення                                     ](#node-create)
+    - [Закриття підключення                                       ](#node-close)
+- [Запити                                                       ](#node-queries)
+    - [Базовий синтаксис                                         ](#node-basics)
+    - [Параметризація запитів                                     ](#node-param)
+- [Promise API                                                 ](#node-promises)
+- [Основні операції з даними                                       ](#node-crud)
+    - [Створення бази даних                                      ](#node-dbases)
+    - [Створення таблиць                                         ](#node-tables)
+    - [Додавання даних                                           ](#node-insert)
+    - [Додавання множини даних                                ](#node-insertArr)
+    - [Отримання даних                                              ](#node-get)
+    - [Фільтрація даних                                          ](#node-felter)
+    - [Оновлення                                                 ](#node-update)
+    - [Видалення                                                 ](#node-delete)
+- [Пули підключень                                                ](#node-pools)
+    - [Створення пулу підключень і закриття усіх підключень  ](#node-createPool)
+    - [Запити до БД через пули                               ](#node-crud-pools)
+    - [Promise API                                       ](#node-promises-pools)
+
+
+- [Посилання                                                           ](#links)
 
 
 робота в MySQL Shell                                          <i id="Shell"></i>
@@ -1199,7 +1229,10 @@ FOREIGN KEY (ProductId) REFERENCES Products(Id) ON DELETE CASCADE,
 FOREIGN KEY (CustomerId) REFERENCES Customers(Id) ON DELETE CASCADE
 ```
 
-Для з'єднання таблиць Orders і Customers:
+Для з'єднання таблиць Orders і Customers обов'язково потрібне ключове слово
+WHERE, без нього приєднання буде у форматі Сross Join ("усі до всіх"), тобто
+якщо в Orders буде три записи і в Customers теж 3, то в результуючій таблиці
+буде 3×3=9 записів, що буде абсолютною білібердою.
 ```sql
 SELECT * FROM Orders, Customers
 WHERE Orders.CustomerId = Customers.Id;
@@ -1265,7 +1298,8 @@ ORDER BY Customers.FirstName;
 ### Outer Join                                            <i id="outerjoin"></i>
 
 повертає усі рядки однієї таблиці та рядки інших таблиць, що підпадають під
-умову
+умову. Якщо в інших таблицях нема даних, що відповідають умові, у зведену
+таблицю записується null.
 
 загальний синтаксис:
 ```sql
@@ -1293,7 +1327,8 @@ WHERE Orders.CustomerId IS NULL;
 
 ### Сross Join                                            <i id="crossjoin"></i>
 
-повертає усі рядки усіх таблиць
+повертає усі рядки усіх таблиць. Дія аналогічна до описаного вище неявного
+з'єднання без ключового слова WHERE.
 
 ```sql
 SELECT Customers.CustomerName, Orders.OrderID
@@ -1302,11 +1337,17 @@ CROSS JOIN Orders;
 ```
 
 
-
 ### Self Join                                              <i id="selfjoin"></i>
 
+з'єднання таблиці самої із собою.
 
-
+```sql
+SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2, A.City
+FROM Customers A, Customers B
+WHERE A.CustomerID <> B.CustomerID
+AND A.City = B.City
+ORDER BY A.City;
+```
 
 
 ### UNION                                                     <i id="union"></i>
@@ -1781,7 +1822,369 @@ FROM Clients;
 ```
 
 
+Підключення MySQL в Node.js                            <i id="node-connect"></i>
+--------------------------------------------------------------------------------
+
+Установка пакета з npmjs.com:
+
+```shell
+npm install --save mysql2
+```
+
+### Створення підключення                               <i id="node-create"></i>
+
+Метод **createConnection()** створює об'єкт підключення.
+Приймає об'єкт з налаштуваннями і повертає об'єкт підключення.
+
+```js
+const mysql = require("mysql2");
+const connection = mysql.createConnection({
+  host: "localhost",
+  port: 3306,
+  user: "root",
+  database: "usersdb", // якщо не вказати, підключення буде до усього сервера
+  password: "пароль_від_сервера"
+  // …
+});
+````
+
+Метод **connection.connect()** створює підключення об'єкту підключення до СУБД
+
+```js
+connection.connect(function(err){
+  if (err) {
+    return console.error("Помилка: " + err.message);
+  }
+  else {
+    console.log("Підключення до MySQL успішно встановлено");
+  }
+});
+```
+
+Якщо при підключенні виникає помилка
+
+```cmd
+Client does not support authentication protocol requested by server; consider
+upgrading MySQL client
+```
+
+в MySQL Workbench потрібно виконати наступну команду:
+
+```sql
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'
+```
+
+
+### Закриття підключення                                 <i id="node-close"></i>
+
+Метод **connection.end()**. Цей метод гарантує, що перед закриттям підключення
+будуть виконані усі активні запити.
+
+```js
+connection.end(function(err) {
+  if (err) {
+    return console.log("Помилка: " + err.message);
+  }
+  console.log("Підключення закрито");
+});
+```
+
+Метод **connection.destroy()** обриває підключення, не зважаючи на активні запити
+
+Якщо не викликати обрив підключення, воно залишатиметься активним, поки його не
+закриє сервер.
+
+
+Запити                                                 <i id="node-queries"></i>
+--------------------------------------------------------------------------------
+
+### Базовий синтаксис                                   <i id="node-basics"></i>
+
+Метод **connection.query(sqlString, callback)**
+Даний метод неявно викликає **connection.connect()**, тому явно його викликати
+не обов'язково
+
+```js
+connection.query("SELECT * FROM users",
+  function(err, results, fields) {
+    console.log(err);
+    console.log(results); // дані
+    console.log(fields);  // мета-дані полів
+});
+```
+
+Метод **connection.execute(sqlString, callback)** аналогічний до query()
+
+
+### Параметризація запитів                               <i id="node-param"></i>
+
+Параметризація потрібна для того, щоб уникнути sql-ін'єкцій в ситуації, коли в
+запит потрібно вставляти дані, які надходять ззовні. Для цього замість даних
+в запиті ставляться плейсхолери - знаки запитання, на місце яких під час
+виконання запиту будуть вставлені дані
+
+```js
+  const mysql = require("mysql2");
+  const connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    database: "usersdb2",
+    password: "123456"
+  });
+
+  const user = ["Tom", 29];
+  const sql = "INSERT INTO users(name, age) VALUES(?, ?)";
+
+  connection.query(sql, user, function(err, results) {
+      if(err) console.log(err);
+      else console.log("Дані додано");
+  });
+
+  connection.end();
+```
+
+
+Promise API                                           <i id="node-promises"></i>
+--------------------------------------------------------------------------------
+
+Для створення проміса під час створення об'єкта connection викликають його
+метод **promise()**:
+
+```js
+const mysql = require("mysql2");
+  const connection = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  database: "usersdb2",
+  password: "123456"
+}).promise();
+ 
+connection.query("SELECT * FROM users")
+          .then(result =>{
+            console.log(result);
+          })
+          .catch(err =>{
+            console.log(err);
+          });
+```
+
+Основні операції з даними                                 <i id="node-crud"></i>
+--------------------------------------------------------------------------------
+
+
+### Створення бази даних                                <i id="node-dbases"></i>
+
+```js
+const mysql = require("mysql2");
+ 
+const connection = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "123456"
+});
+ 
+connection.query("CREATE DATABASE usersdb2",
+  function(err, results) {
+    if(err) console.log(err);
+    else console.log("База даних створена");
+});
+ 
+connection.end();
+```
+
+
+### Створення таблиць                                   <i id="node-tables"></i>
+
+```js
+const mysql = require("mysql2");
+
+const connection = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  database: "usersdb2",
+  password: "123456"
+});
+
+const sql = `create table if not exists users(
+  id int primary key auto_increment,
+  name varchar(255) not null,
+  age int not null
+)`;
+
+connection.query(sql, function(err, results) {
+    if(err) console.log(err);
+    else console.log("Таблиця створена");
+});
+connection.end();
+```
+
+
+### Додавання даних                                     <i id="node-insert"></i>
+
+```js
+const sql = `INSERT INTO users(name, age) VALUES('Sam', 31)`;
+ 
+connection.query(sql, function(err, results) {
+    if(err) console.log(err);
+    console.log(results);
+});
+```
+
+
+### Додавання множини даних                          <i id="node-insertArr"></i>
+
+```js
+const users = [
+  ["Bob", 22],
+  ["Alice", 25],
+  ["Kate", 28]
+];
+const sql = `INSERT INTO users(name, age) VALUES ?`;
+ 
+connection.query(sql, [users], function(err, results) {
+    if(err) console.log(err);
+    console.log(results);
+});
+```
+
+
+### Отримання даних                                        <i id="node-get"></i>
+
+```js
+const sql = `SELECT * FROM users`;
+ 
+connection.query(sql, function(err, results) {
+    if(err) console.log(err);
+    console.log(results);
+    const users = results;
+    for(let i=0; i < users.length; i++){
+      console.log(users[i].name);
+    }
+});
+```
+
+
+### Фільтрація даних                                    <i id="node-felter"></i>
+
+```js
+const sql = `SELECT * FROM users WHERE name=? AND age=?`;
+const filter = ["Tom", 29];
+connection.query(sql, filter, function(err, results) {
+    if(err) console.log(err);
+    console.log(results);
+});
+```
+
+
+### Оновлення                                           <i id="node-update"></i>
+
+```js
+const sql = `UPDATE users SET age=? WHERE name=?`;
+const data = [34, "Tom"];
+connection.query(sql, data, function(err, results) {
+    if(err) console.log(err);
+    console.log(results);
+});
+```
+
+
+### Видалення                                           <i id="node-delete"></i>
+
+```js
+const sql = "DELETE FROM users WHERE name=?";
+const data = ["Sam"];
+connection.query(sql, data, function(err, results) {
+    if(err) console.log(err);
+    console.log(results);
+});
+```
+
+
+Пули підключень                                          <i id="node-pools"></i>
+--------------------------------------------------------------------------------
+
+Пули підключень дозволяють пришвидшити процес за рахунок повторного використання
+уже існуючих підключень. Коли до БД надсилається запит, з пулу вибирається
+вільне підключення, або створюється нове, якщо вільних нема і не перевищено
+ліміт підключень. Це економить час на створення нових підключень. Якщо в одному
+методі написано кілька звернень в БД через пул підключень, нема жодної гарантії,
+що запити киконаються у строгому порядку, бо в пулі усі запити виконуються
+асинхронно.
+
+
+### Створення пулу підключень і закриття усіх підключень <i id="node-createPool"></i>
+
+Метод **mysql.createPool()** створює пул:
+
+```js
+const mysql = require("mysql2");
+
+const pool = mysql.createPool({
+    connectionLimit: 5,  // максимальна кількість підключень
+    host: "localhost",
+    user: "root",
+    password: "пароль_від_сервера_mysql", 
+    database: "usersdb"
+});
+```
+
+Метод **pool.end()** закриває усі підключення:
+Тут, як і в пулах, нема гарантії, що спочатку виконаються запити, а потім
+закриється з'єднання, може бути і навпаки, це треба враховувати.
+
+```js
+pool.end(function(err) {
+  if (err) {
+    return console.log(err.message);
+  }
+});
+```
+
+### Запити до БД через пули                         <i id="node-crud-pools"></i>
+
+Аналогічні до звичайних запитиів, тільки замість об'єкта з'єднання створюється
+пул і виклик методів відповідно робиться не від об'єкта **connection.query()**,
+а від пулу **pool.query()**.
+
+
+### Promise API                                 <i id="node-promises-pools"></i>
+Пули, так само як і об'єкти підключень, підтримують проміси. Проміси запобігають
+вищевказаній проблемі асинхронних звернень в пулах і закриття пулів перед
+завершенням запитів.
+
+```js
+const mysql = require("mysql2");
+  
+const pool = mysql.createPool({
+  connectionLimit: 5,
+  host: "localhost",
+  user: "root",
+  database: "usersdb2",
+  password: "123456"
+}).promise();
+ 
+ 
+pool.execute("UPDATE users SET age=age+1 WHERE name=?", ["Stan"])
+    .then(result =>{ 
+      console.log(result[0]);
+      return pool.execute("SELECT * FROM users"); // вкладений запит
+    })
+    .then(result =>{
+      console.log(result[0]);
+      pool.end();
+    })
+    .then(()=>{
+      console.log("пул закрито");
+    })
+    .catch(function(err) {
+      console.log(err.message);
+    });
+```
+
+
 Посилання                                                     <i id="links"></i>
 --------------------------------------------------------------------------------
 
 1. [Metanit: Руководство по MySQL](https://metanit.com/sql/mysql/)
+2. [W3Schools: MySQL Tutorial](https://www.w3schools.com/mysql/default.asp)
+3. [Metanit: Node.js + MySQL](https://metanit.com/web/nodejs/8.1.php)

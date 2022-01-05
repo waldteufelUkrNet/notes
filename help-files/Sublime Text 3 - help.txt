@@ -302,7 +302,7 @@ Sublimerge 3
 
 LockTab - блокування вкладок, заборона закриття
 TabsExtra - розширене контекстне меню для вкладок
-Tabnine - AI Code Completion
+Tabnine - AI Code Completion Autocomplete AI: JavaScript, Python, TypeScript, PHP, C/C++, HTML/CSS, Go, Java, Ruby, C#, Rust, SQL, Bash, Kotlin, Julia, Lua, OCaml, Perl, Haskell, React 
 
 Clipboard Manager vs Clipboard History
 PlainTasks(https://xakep.ru/2014/07/28/sublime-text-not-for-coding/) є інструкції на сайті packagecontroll.io або Preferences → Package Settings → PlainTasks → Tutorial

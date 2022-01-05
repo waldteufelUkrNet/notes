@@ -853,10 +853,10 @@ SELECT * FROM Products WHERE ProductCount IS NOT NULL;
 --------------------------------------------------------------------------------
 
 ### ORDER BY       - сортування за зростанням               <i id="orderby"></i>
-### ORDER BY … AST - сортування за зростанням (вказане явно)
+### ORDER BY … ASC - сортування за зростанням (вказане явно)
 
 ```sql
-SELECT * FROM Products ORDER BY Price AST;
+SELECT * FROM Products ORDER BY Price ASC;
 
 SELECT ProductName, ProductCount * Price AS TotalSum
 FROM Products
@@ -867,7 +867,7 @@ FROM Products
 ORDER BY ProductCount * Price;
 ```
 
-### ORDER BY … DEST - сортування за спаданням             <i id="orderdest"></i>
+### ORDER BY … DESC - сортування за спаданням             <i id="orderdest"></i>
 
 ```sql
 SELECT ProductName, ProductCount

@@ -12,7 +12,7 @@ Sequelize
     - [Підключення до postgres                                  ](#add-postgres)
 - [Моделі                                                             ](#models)
     - [Способи визначення моделей                          ](#models-definition)
-        - [метод **define()**                                         ](#define)
+        - [метод define()                                             ](#define)
         - [наслідування класу Model і виклик методу init()              ](#init)
     - [Синхронізація з БД                                               ](#sync)
 - [Запити до бази даних                                                 ](#crud)

@@ -101,7 +101,7 @@ const sequelize = new Sequelize("database_name", "root", "password", {
 });
 ```
 
-При створенні підключення до MSSQL Server може виникнути низка проблем через
+При створенні підключення до MS SQL Server може виникнути низка проблем через
 конфігурацію сервера, тому його треба додатово налаштовувати.
 
 1. Увімкнення TCP/IP.
@@ -147,11 +147,11 @@ const User = sequelize.define("user", { // "user" - назва моделі, т�
     type          : Sequelize.INTEGER,
     autoIncrement : true,
     primaryKey    : true,
-    allowNull     : false // default: true
+    allowNull     : false               // default: false - for Primary Key
   },
   name: {
     type      : Sequelize.STRING,
-    allowNull : false
+    allowNull : false                   // default: true
   },
   age: {
     type      : Sequelize.INTEGER,
@@ -189,9 +189,9 @@ User.init({
 приклад файлу-модулю:
 
 ```js
-import { Sequelize } from 'sequelize'
+import { Sequelize } from 'sequelize';
 export default class User extends Sequelize.Model {
-  static init = (sequelize) => {
+  static init = sequelize => {
     return super.init({
       // …
     }, {
@@ -209,17 +209,15 @@ export default class User extends Sequelize.Model {
 заявленим моделям.
 
 ```js
-sequelize.sync().then(result => {
-  console.log(result);
-})
-.catch(err => console.log(err));
+sequelize.sync().then(result => console.log(result))
+                .catch(err => console.log(err));
 ```
 
 Крім власне полів моделі в таблиці будуть створюватися два додаткових поля:
-createdAt та updatedAt, які матимуть тип datenime і вказуватимуть на дату
-створення/модифікацію таблиці. Якщо ці поля не потрібні, треба задати параметр
+createdAt та updatedAt, які матимуть тип datetime і вказуватимуть на дату
+створення/модифікації таблиці. Якщо ці поля не потрібні, треба задати параметр
 **timestamps: false** або в оголошенні об'єкту підключення (для всіх моделей),
-або у конкнетній.
+або у конкнетній моделі в її класі.
 
 ```js
 const Sequelize = require("sequelize");
@@ -233,8 +231,8 @@ const sequelize = new Sequelize("usersdb", "root", "123456", {
 const User = sequelize.define("user", {
   // …
 });
-sequelize.sync({force: true}).then(result=>console.log(result))
-.catch(err=> console.log(err));
+sequelize.sync({force: true}).then(result => console.log(result))
+                             .catch(err=> console.log(err));
 ```
 
 {force: true} використовується для того, щоб видалити таблиці і створити їх
@@ -264,41 +262,46 @@ User.create({
 Метод **findAll()** повертає усе, що є в таблиці, у формі масиву об'єктів
 
 ```js
-User.findAll({raw:true}).then(users=>{
-  console.log(users);
-}).catch(err => console.log(err));
+User.findAll({raw: true})
+    .then(users => {
+      console.log(users);
+    })
+    .catch(err => console.log(err));
 ```
 
-{raw:true} - не обов'язковий параметр, який дозволяє отримати дані без
+{raw: true} - не обов'язковий параметр, який дозволяє отримати дані без
 додаткових метаданих
 
 **Фільтрація**
 
 ```js
-User.findAll({where:{name: "Tom"}, raw: true })
-.then(users => {
-  console.log(users);
-}).catch(err => console.log(err));
+User.findAll({where: {name: "Tom"}, raw: true })
+    .then(users => {
+      console.log(users);
+    })
+    .catch(err => console.log(err));
 ```
 
 Метод **findByPk()** повертає один об'єкт з підходящим первинним ключем
 
 ```js
 User.findByPk(2)
-.then(user => {
-    if(!user) return;
-    console.log(user.name);
-}).catch(err => console.log(err));
+    .then(user => {
+        if(!user) return;
+        console.log(user.name);
+    })
+    .catch(err => console.log(err));
 ```
 
 Метод **findOne()** повертає один об'єкт з підходящим критерієм вибірки
 
 ```js
 User.findOne({where: {name: "Tom"}})
-.then(user => {
-    if(!user) return;
-    console.log(user.name, user.age);
-}).catch(err => console.log(err));
+    .then(user => {
+        if(!user) return;
+        console.log(user.name, user.age);
+    })
+    .catch(err => console.log(err));
 ```
 
 
@@ -308,12 +311,11 @@ User.findOne({where: {name: "Tom"}})
 
 ```js
 User.update({ age: 36 },
-            { where: {
-              name: "Bob"
-            }
-}).then((res) => {
-  console.log(res);
-});
+            { where: {name: "Bob"} }
+           )
+    .then((res) => {
+      console.log(res);
+    });
 ```
 
 ### Видалення даних                                         <i id="destroy"></i>
@@ -321,13 +323,10 @@ User.update({ age: 36 },
 Метод **destroy()** приймає об'єкт-критерій вибірки для видалення
 
 ```js
-User.destroy({
-  where: {
-    name: "Bob"
-  }
-}).then((res) => {
-  console.log(res);
-});
+User.destroy({ where: {name: "Bob"} })
+    .then(res => {
+      console.log(res);
+    });
 ```
 
 
@@ -352,9 +351,11 @@ const Product = sequelize.define("product", { … });
 const Company = sequelize.define("company", { … });
 Company.hasMany(Product, { onDelete: "cascade" });
  
-sequelize.sync({force:true}).then(()=>{
-  console.log("Tables have been created");
-}).catch(err=>console.log(err));
+sequelize.sync({force: true})
+         .then(() => {
+           console.log("Tables have been created");
+         })
+         .catch(err => console.log(err));
 ```
 
 
@@ -364,36 +365,42 @@ sequelize.sync({force:true}).then(()=>{
 стовпчик залежної таблиці **ім'я_головної_моделі+Id** (companyId):
 
 ```js
-Company.create({ name: "Apple"}).then(company => {
-  Product.create({name:"iPhone XS", price: 400, companyId: company.id})
-         .catch(err => console.log(err));
-}).catch(err => console.log(err));
+Company.create({name: "Apple"})
+       .then(company => {
+         Product.create({name: "iPhone XS", price: 400, companyId: company.id})
+                .catch(err => console.log(err));
+       })
+       .catch(err => console.log(err));
 ```
 
 2. Додавання значень в залежну таблицю з головної і їх зв'язування - через метод
 головної моделі **create+Залежна_модель+()** ( createProduct() ):
 
 ```js
-Company.findByPk(1).then(company => {
-  if(!company) return console.log("Company not found");
-  company.createProduct({name:"iPhone X", price: 300})
-         .catch(err => console.log(err));
-}).catch(err => console.log(err));
+Company.findByPk(1)
+       .then(company => {
+         if(!company) return console.log("Company not found");
+         company.createProduct({name: "iPhone X", price: 300})
+                .catch(err => console.log(err));
+       })
+       .catch(err => console.log(err));
 ```
 
 2. Отримання усіх зв'язаних об'єктів залежної моделі з головної моделі - за
 допомогою метода головної моделі **get+Залежна_модель+s()** ( getProducts() ):
 
 ```js
-Company.findByPk(1).then(company => {
-  if(!company) return console.log("Company not found");
-  company.getProducts()
-         .then(res => {
-           for(let i=0; i<res.length; i++)
-             console.log(res[i].name, " - ", company.name);
-         })
-         .catch(err => console.log(err));
-}).catch(err => console.log(err));
+Company.findByPk(1)
+       .then(company => {
+         if(!company) return console.log("Company not found");
+         company.getProducts()
+                .then(res => {
+                  for(let i=0; i<res.length; i++)
+                    console.log(res[i].name, " - ", company.name);
+                  })
+                .catch(err => console.log(err));
+       })
+       .catch(err => console.log(err));
 ```
 
 
@@ -423,12 +430,15 @@ Coach.hasOne(Team, { onDelete: "cascade"});
 1. Додавання зв'язаних даних - метод **set+Залежна_модель+()**
 
 ```js
-Coach.create({ name: "Tom Smith"})
+Coach.create({name: "Tom Smith"})
      .then(coach => {
-       Team.create({name:"Real Madrid"}).then(team => {
-         coach.setTeam(team).catch(err => console.log(err));
-       });
-     }).catch(err => console.log(err));
+       Team.create({name: "Real Madrid"})
+           .then(team => {
+             coach.setTeam(team)
+                  .catch(err => console.log(err));
+           });
+     })
+     .catch(err => console.log(err));
 ```
 
 2. Отримання зв'язаних даних - метод **get+Залежна_модель+()**
@@ -448,16 +458,17 @@ Coach.findByPk(1)
 
 ```js
 Coach.findAll({
-    attributes: ["name"],   // стовпчик name таблиці coaches
-    include: [{
-      model: Team,
-      attributes: ["name"]  // стовпчик name таблиці teams
-    }]
-  }).then(coaches => {
-      for(coach of coaches){
-        console.log(coach.name, "-", coach.team.name);
-      }
-});
+       attributes: ["name"],   // стовпчик name таблиці coaches
+       include: [{
+         model: Team,
+         attributes: ["name"]  // стовпчик name таблиці teams
+       }]
+     })
+     .then(coaches => {
+       for(coach of coaches){
+         console.log(coach.name, "-", coach.team.name);
+       }
+     });
 ```
 
 
@@ -487,9 +498,11 @@ const Enrolment = sequelize.define("enrolment", {id …, grade …});
 Student.belongsToMany(Course, {through: Enrolment});
 Course.belongsToMany(Student, {through: Enrolment});
  
-sequelize.sync({force:true}).then(()=>{
-  console.log("Tables have been created");
-}).catch(err=>console.log(err));
+sequelize.sync({force: true})
+         .then(() => {
+           console.log("Tables have been created");
+         })
+         .catch(err => console.log(err));
 ```
 
 

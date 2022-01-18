@@ -346,9 +346,9 @@ User.destroy({ where: {name: "Bob"} })
 
 ```js
 const Sequelize = require("sequelize");
-const sequelize = new Sequelize("store", "root", "123456", { … });
-const Product = sequelize.define("product", { … });
-const Company = sequelize.define("company", { … });
+const sequelize = new Sequelize("store", "root", "123456", { … }),
+      Product   = sequelize.define("product", { … }),
+      Company   = sequelize.define("company", { … });
 Company.hasMany(Product, { onDelete: "cascade" });
  
 sequelize.sync({force: true})
@@ -374,7 +374,7 @@ Company.create({name: "Apple"})
 ```
 
 2. Додавання значень в залежну таблицю з головної і їх зв'язування - через метод
-головної моделі **create+Залежна_модель+()** ( createProduct() ):
+екземиляра головної моделі **create+Залежна_модель+()** ( createProduct() ):
 
 ```js
 Company.findByPk(1)
@@ -386,7 +386,7 @@ Company.findByPk(1)
        .catch(err => console.log(err));
 ```
 
-2. Отримання усіх зв'язаних об'єктів залежної моделі з головної моделі - за
+3. Отримання усіх зв'язаних об'єктів залежної моделі з головної моделі - за
 допомогою метода головної моделі **get+Залежна_модель+s()** ( getProducts() ):
 
 ```js
@@ -488,12 +488,11 @@ Coach.findAll({
 
 ```js
 const Sequelize = require("sequelize");
-const sequelize = new Sequelize("univer", "root", "123456", { … });
-const Student = sequelize.define("student", { … });
-const Course = sequelize.define("course", { … });
-
+const sequelize = new Sequelize("univer", "root", "123456", { … }),
+      Student   = sequelize.define("student", { … }),
+      Course    = sequelize.define("course", { … }),
 // проміжна модель
-const Enrolment = sequelize.define("enrolment", {id …, grade …});
+      Enrolment = sequelize.define("enrolment", {id …, grade …});
  
 Student.belongsToMany(Course, {through: Enrolment});
 Course.belongsToMany(Student, {through: Enrolment});

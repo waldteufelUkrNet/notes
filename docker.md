@@ -363,7 +363,7 @@ docker run --name some-mariadb-name -e MYSQL_ROOT_PASSWORD=my_password -d mariad
 ```
 
 Встановлюємо образ з **adminer**, розгортаємо контейнер і прив'язуємо до нього
-контейнеру з СУБД:
+контейнер з СУБД:
 ```shell
 docker run --link some-mariadb-name:db -p 8080:8080 adminer
 ```

@@ -65,6 +65,8 @@ MySQL
     - [Неявне з'єднання                                          ](#defaultjoin)
     - [Inner Join                                                  ](#innerjoin)
     - [Outer Join                                                  ](#outerjoin)
+    - [Сross Join                                                  ](#crossjoin)
+    - [Self Join                                                    ](#selfjoin)
     - [UNION                                                           ](#union)
 - [ФУНКЦІЇ ДЛЯ РОБОТИ З РЯДКАМИ                                      ](#sttfunc)
 - [ФУНКЦІЇ ДЛЯ РОБОТИ З ЧИСЛАМИ                                      ](#numfunc)

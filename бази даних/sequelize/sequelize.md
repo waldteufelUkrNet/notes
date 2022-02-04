@@ -242,6 +242,19 @@ sequelize.sync({force: true}).then(result => console.log(result))
 Запити до бази даних                                           <i id="crud"></i>
 --------------------------------------------------------------------------------
 
+### Показати усі таблиці
+
+```js
+sequelize.getQueryInterface()
+         .showAllSchemas().then((tables) => {
+                            console.log(tables);
+                          })
+                          .catch((err) => {
+                            console.log('Schemas ERROR',err);
+                          });
+```
+
+
 ### Додавання даних                                          <i id="create"></i>
 
 Метод **create()** приймає об'єкт для запису, повертає записаний об'єкт

@@ -4,21 +4,21 @@ Docker
 Зміст
 --------------------------------------------------------------------------------
 
-- [Інфо](#info)
-- [Робота з образами](#images)
-- [Робота з контейнерами](#cont)
-- [Doсkerfile - інструкція для створення образу](#dfile)
-- [.dockerignore - список файлів, не потрібних в образі](#dignore)
-- [Змінні оточення](#vars)
-- [Makefile](#mfile)
-- [Томи](#volumes)
-    - [Використання томів для livereload під час розробки](#reload)
-- [Деплой](#deploy)
-- [Зв'язування контейнерів](#bind)
-    - [ключ --link, приклад.](#link)
-    - [Docker Compose](#compose)
-        - [docker-compose.yml + Doсkerfile](#yml+df)
-- [Посилання](#links)
+- [Інфо                                                                 ](#info)
+- [Робота з образами                                                  ](#images)
+- [Робота з контейнерами                                                ](#cont)
+- [Doсkerfile - інструкція для створення образу                        ](#dfile)
+- [.dockerignore - список файлів, не потрібних в образі              ](#dignore)
+- [Змінні оточення                                                      ](#vars)
+- [Makefile                                                            ](#mfile)
+- [Томи                                                              ](#volumes)
+    - [Використання томів для livereload під час розробки             ](#reload)
+- [Деплой                                                             ](#deploy)
+- [Зв'язування контейнерів                                              ](#bind)
+    - [ключ --link, приклад.                                            ](#link)
+    - [Docker Compose                                                ](#compose)
+        - [docker-compose.yml + Doсkerfile                            ](#yml+df)
+- [Посилання                                                           ](#links)
 
 
 Інфо                                                           <i id="info"></i>
@@ -462,3 +462,8 @@ docker-compose up
 3. [Youtube: Основы Docker. Большой практический выпуск](https://www.youtube.com/watch?v=QF4ZF857m44)
 4. [Youtube: Docker для Начинающих - Полный Курс [2021]](https://www.youtube.com/watch?v=n9uCgUzfeRQ&t=133s)
 5. [Youtube: Docker уроки для начинающих от А до Я - что такое docker ?](https://www.youtube.com/watch?v=EbEZgdTOHzE&list=PLD5U-C5KK50XMCBkY0U-NLzglcRHzOwAg)
+
+при установці wsl:
+команда wsl -l -v для зміни активного лінукс оточення (docker-desktop-data)
+wsl -s <DistributionName> or wsl --setdefault <DistributionName>
+(https://docs.microsoft.com/en-us/windows/wsl/install#install-the-windows-subsystem-for-linux)

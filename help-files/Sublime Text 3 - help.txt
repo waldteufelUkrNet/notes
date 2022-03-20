@@ -331,6 +331,7 @@ PlainTasks(https://xakep.ru/2014/07/28/sublime-text-not-for-coding/) є інст
   пршоритетність і час не працюють (
 
 
+EditorConfig (https://packagecontrol.io/packages/EditorConfig) підтримка стилю коду
 
 
 Emmet

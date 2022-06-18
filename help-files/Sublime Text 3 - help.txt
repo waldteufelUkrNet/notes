@@ -1,114 +1,35 @@
-temp:
-клавіатурні скорочення sublime, шпора кантера і pdf
+https://sublime-text-unofficial-documentation.readthedocs.io/en/sublime-text-2/reference/commands.html
+https://www.tutorialspoint.com/sublime_text/index.htm
+https://www.shortcutfoo.com/app/dojos/sublime-text-3-win/cheatsheet
+https://www.sublimetext.com/docs/api_reference.html
+
+ 
+=======================================================================================
+Alt+v - вівдкривається меню view
+
+Додати клавіатурні скорочення:
+4 В конфиг добавить: { "keys": ["super+shift+r"], "command": "reindent"}
+5 Нужен пакет JsFormat. В конфиг добавить: { "keys": ["super+shift+l"], "command": "js_format"}
+6 ...Или в любой другой сниппет. В конфиг добавить: { ’keys’: [’super+shift+i’, ’i’], "command": "insert_snippet "args": {"name": "Packages/User/if.sublime-snippet"}, файл сниппета – ваш.
 
 клавіатурне скорочення для View > Word Wrap
+=======================================================================================
 
+в файлах локалізації .sublime-menu на кожен пункт меню є команда. Отже можна зробити гарячі клавіші?
+
+
+
+
+
+головне меню + контекстне меню файлів і тек
+переписати команди з пунктів меню
+
+
+паг в хтмл і навпаки
+Нужен пакет Prefixr - додає префікси css
 відео по emmet + шпора
 відео по gist на web developer blog
-
-як виключити плагін, не видаляючи його?
-автокомпліт - автопідказка абощо
-паг в хтмл і навпаки
 ========================================================================================================================
-
-========================================================================================================================
-Sublime Text 3
-------------------------------
-https://www.sublimetext.com/3
-https://sublimetext.ru/documentation
-========================================================================================================================
-
-========================================================================================================================
-НАЛАШТУВАННЯ Sublime Text 3
-------------------------------
-
-Налаштування опцій:
-
-Preferences > Settings
-  "save_on_focus_lost": true,       // автозбереження при втраті фокусу
-  "font_face": "Consolas",          // встановлення свого шрифта
-  "tab_size": 2,                    // табуляція в два пробіли
-  "word_wrap": true,                // перенесення слів на новий рядок
-  "highlight_line": true,           // підсвічування рядка, на якому знаходиться курсор
-  "translate_tabs_to_spaces": true, // замінювати таби на пробіли
-  "show_definitions": false         // скасувати появу попапу з оголошеннями функцій
-
-------------------------------
-
-Налаштування клавіатурних скорочень:
-
-Preferences > Key Bindings
-{"keys": ["alt+ctrl+a"], "command": "reindent", "args": {"single_line": false}} // комбінація клавіш для вирівнювання відступів виділеного тексту
-
-------------------------------
-
-Клавіатурні скорочення Sublime:
-
-виставлення кількох курсорів - затиснути скрол і провести мишкою
-
-Ctrl+D           пошук наступного ідентичного підрядка в тексті і його виділення.  Кожний наступний натиск на комбінацію
-                 шукає ще один ідентичний підрядок і виділяє його.
-
-Ctrl+P           навігація по файлах і в документі (Goto Anything menu)
-                 :number - перевести курсор на потрібний рядок
-                 #string - пошук у тексті
-
-                 xcc is used to select the file xla_compilation_cache.cc, @ switches to symbol mode, and :c selects the XlaCompilationCache::Compile method.
-
-Ctrl+Shift+R     пошук оголошених стилів CSS (Goto Definition)
-
-Ctrl+R           (Goto Symbol) в js-файлі виводить список функцій
-
-Ctrl+L           виділення рядка, на якому знаходиться курсор та опускання курсору на рядок нижче. Можна виділити багато
-                 рядків, затиснувши комбінацію.
-
-??? Ctrl+Shift+F     розширени пошук (це точно дефолт, а не з якогось пакунку?)
-
-------------------------------
-
-Клавіатурні скорочення пакунків:
-
-Ctrl+Shift+P     командний рядок Sublime
-
-Ctrl+Alt+N       створення файлів і тек (AdvancedNewFile)
-
-Ctrl+Shift+T     відкрити термінал в поточному документі (Terminal)
-Ctrl+Alt+Shift+T відкрити термінал в кореневій теці проекту (Terminal)
-
--Ctrl+Alt+F       відкриття файлу у браузері firefox (View In Browser)
-Ctrl+Alt+C       відкриття файлу у браузері chrome (View In Browser)
-Ctrl+Alt+O       відкриття файлу у браузері opera (View In Browser)
-Ctrl+Alt+I       відкриття файлу у браузері IE (View In Browser)
-
-Ctrl+Shift+H     демініфікація мініфікованих файлів (HTML-CSS-JS Prettify)
-
-Ctrl+Alt+A       вирівнювання пар ключ-значення CSS/JS по розділовому знаку (Alignment)
-
-Ctrl+Alt+Shift+F вирівнювання html коду (HTMLBeautify)
-
--Ctrl+Alt+F       вирівнювання JS (jsFormat)
-
--Ctrl+Shift+C     виклик панелі кольорів пакунку ColorPicker
-
--Ctrl+Shift+C     виклик панелі кольорів пакунку Color Highlighter
-Ctrl+Shift+      зміна формату кольору (Color Highlighter)
-
-Ctrl+Shift+Q     console.log (Console Wrap)
-
--Ctrl+Alt+F       на виділеному тезі або властивості, відкриється Can I Use (Can I Use)
-
-Ctrl+Alt+M       мініфікація файлів CSS та JS, прибирання коментарів (Minifier)
-Ctrl+Alt+Shift+M створення нового мініфікованого файлу із суфіксом min (Minifier)
-
--Ctrl+Shift+C     виділити шмат CSS-коду і відсортувати властивості у правильній послідовності (CSSComb)
-
-------------------------------
-
-Копіювання своїх налаштувань та пакунків:
-
-тека Sublime Text Build 3176 x64\Data\Packages
-
-------------------------------
 
 Особливості Linux:
 
@@ -118,46 +39,7 @@ Ctrl+Shift+p then type vmen
 ========================================================================================================================
 
 ========================================================================================================================
-ВСТАНОВЛЕННЯ ПАКУНКІВ
-------------------------------
-
-Встановлення пакунку, якого нема в репозиторії:
-
-вставити завантажений і розпакований пакунок в теку Sublime Text Build 3176 x64\Data\Packages
-
-------------------------------
-
-Установка PackageControl:
-
-1.  https://packagecontrol.io/installation#st3
-
-	відкрити консоль: Ctrl+~ або View > Show Console
-
-	та вставити:
-
-	import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
-
-	або
-
-2.  Ctrl+Shift+P та ввсести "Install Package Control"
-
-------------------------------
-
-Використання PackageControl
-
-1.	Preferences > Package Control
-
-    або
-
-2.  Ctrl+Shift+P
-
-    та набрати
-
-Package Control: Install Packages // для установки пакета,
-Package Control: Remove Package   // для видалення пакета,
-Package Control: List Packages    // для перегляду встановлених пакетів.
-
-------------------------------
+ВСТАНОВЛЕННЯ ПАКУНКІВ - документація на кожен пакунок /home/noname/.config/sublime-text/Installed Packages
 
 ========================================================================================================================
 ПАКУНКИ Sublime Text 3
@@ -331,338 +213,12 @@ PlainTasks(https://xakep.ru/2014/07/28/sublime-text-not-for-coding/) є інст
   пршоритетність і час не працюють (
 
 
-EditorConfig (https://packagecontrol.io/packages/EditorConfig) підтримка стилю коду
+https://packagecontrol.io/packages/CommandsBrowser
 
 
-Emmet
------
 
-  Thank you for installing Emmet -- a toolkit that can greatly improve your workflow. Note that this plugin automatically downloads and installs PyV8 binary (see status bar message).
 
-  ******************************
-  Please restart editor
-  to finish installation process
-  after PyV8 was downloaded.
-  ******************************
 
-  Tab key handler
-  ==========================
 
-  By default, Emmet allows you to expand abbreviations with Tab key in HTML, XML, HAML and CSS/SASS/LESS/Stylus documents. As a side effect, you can’t use some of your ST2 snippets.
 
-  Please read https://github.com/sergeche/emmet-sublime#tab-key-handler about how Tab handler works and how to tweak its behavior to match your needs.
 
-  Enter key
-  ==========================
-
-  In HTML and XML documents, Emmet overrides Enter key to insert formatted line breaks between opening and closing tags. In some cases it will break character input (for example, in Japanese language).
-
-  To disable Enter key handler, simply add the following option in your user's Preferences file:
-
-  "disable_formatted_linebreak": true
-
-  Actions shortcuts
-  ==========================
-
-  Emmet has a number of actions with keyboard shortcuts that may override ones you're using commonly (for example, Ctrl-E or Ctrl-Down). Please read the project main page to get list of available actions and keyboard shortcuts and how to disable them:
-  https://github.com/sergeche/emmet-sublime
-
-  Documentation and examples:
-  http://emmet.io
-
-
-LiveReload
-----------
-
-  Changelog:
-
-  Please be sure to restart Sublime Text to start using this new version. For more information or how to use this plugin visit https://github.com/alepez/LiveReload-sublimetext3
-
-
-AdvancedNewFile
----------------
-
-  Thank you for installing the AdvancedNewFile plugin.
-
-  For more information please visit https://github.com/skuroda/Sublime-AdvancedNewFile.
-
-  Note you may need to restart Sublime Text after installing this plugin.
-
-  If you have any questions, comments, or run into issues, please let me know! Hope you enjoy the plugin.
-
-  Thank you!
-
-
-HTML Nest Comments
-------------------
-
-  HTML Nest Comments
-  ------------------
-
-  You can now nest HTML comments like a pro.
-
-  Documentation and usage is available on Github:
-  https://github.com/philsinatra/HTML-Nest-Comments
-
-  If you encounter a bug or want to contribute, please open an issue:
-  https://github.com/philsinatra/HTML-Nest-Comments/issues
-
-
-TrailingSpaces
---------------
-
-
-
-      Thank you for installing Trailing Spaces
-      ----------------------------------------
-
-      You're now ready to give trailing spaces *a hard time*!
-
-
-  Documentation
-  =============
-
-  Although the usage of this plugin is dead simple, it comes with several options. All
-  details are available in the documentation, and you can read it by clicking on
-  "Preferences / Package Settings / Trailing Spaces / Help", or in a prettier form, by
-  browsing https://github.com/SublimeText/TrailingSpaces.
-
-  Key Binding
-  ===========
-
-  This plugin does not come with a default key binding for the deletion command. You can
-  pick your own key binding and define it in "Preferences / Key Bindings - User", or just
-  stick to using the menu entry under "Edit". Check the help for advice on this.
-
-  Upgrades & Issues
-  =================
-
-  Package Control will automatically update all packages every time the editor is started,
-  so there is nothing for you to worry about. If you however do find the plugin not to work
-  as it used to, head to the issues tracker (see links below) to report the problem.
-
-  Useful Links
-  ============
-
-  * Documentation & Code: https://github.com/SublimeText/TrailingSpaces
-  * Report issues / Request New Features / Roadmap: https://github.com/SublimeText/TrailingSpaces/issues
-  * Follow me on twitter: @jdvauguet
-
-
-Color Highlighter
------------------
-
-
-  Color Highlighter v8.0 is released!
-
-  For more info about the plugin visit https://github.com/Monnoroch/ColorHighlighter.
-
-  Color Highlighter was developed for many years and features were added without consideration.
-  As a result it has plenty of bugs and code is completely unmaintainable.
-  Because of it, I've decided to rewrite the plugin from scratch using all the good programming practices I learned
-  over the years.
-
-  This is the first release of the new version and it might have some subtle bugs, especially on Windows and Mac, as I
-  don't have machines with these systems. If you find any bugs, please file them in
-  the bug tracker here: https://github.com/Monnoroch/ColorHighlighter/issues. I always appreciate your help and try to fix
-  problems as soon as possible.
-
-  The plugin is being developed by me alone in my spare time, so if you want to encourage me to build it
-  better and faster, donations as always welcome.
-
-  Thank you guys for your support, every little bit helps!
-
-
-Console Wrap
-------------
-
-  Console Wrap
-  ===============================
-
-  If you like this plugin, "Star" it on ---> https://github.com/unknownuser88/consolewrap <---
-
-
-  Summary
-  ===========
-
-  This plugin helps you easily create (comment, remove, show all) log statements (console.log, print etc.)
-
-  It places selected variable in log statement like console.log("variable", variable);
-
-  This is not a snippet.
-
-
-  Supported languages
-  =======================
-
-  * Javascript
-  * Python
-  * Php
-
-
-  Usage
-  =============
-
-  First you need to select a variable (or put cursor on it) and press `"ctrl+shift+q"`. The log line will appear on the next line. Press `"ctrl+shift+q"` again to change wrapping (info,warn etc.)
-
-  You can Also remove, comment or remove commented log statements from your selsection or from all document
-  you can find that functionality in context menu (right click) or Command Palette (command+shift+p on OS X, control+shift+p on Linux/Windows).
-
-
-  Key Binding
-  ==================
-
-  The default key binding is `"ctrl+shift+q"` and `"ctrl+shift+alt+q"` (insert before selection).
-
-  {
-      "keys": ["ctrl+shift+q"],
-      "command": "console_wrap",
-      "args": {"insert_before": false}
-  },
-  {
-      "keys": ["ctrl+shift+alt+q"],
-      "command": "console_wrap",
-      "args": {"insert_before": true}
-  }
-
-
-
-  Commands
-  ===============
-
-  {
-      "caption": "Console Wrap: Create logs",
-      "command": "console_wrap"
-  }, {
-      "caption": "Console Wrap: Remove logs",
-      "command": "console_action",
-      "args": {"action": "remove"}
-  }, {
-      "caption": "Console Wrap: Remove Commented logs",
-      "command": "console_action",
-      "args": {"action": "remove_commented"}
-  }, {
-      "caption": "Console Wrap: Comment logs",
-      "command": "console_action",
-      "args": {"action": "comment"}
-  }, {
-      "caption": "Console Wrap: Show all logs",
-      "command": "console_action",
-      "args": {"action": "show_quick_nav"}
-  }
-
-
-  Settings
-  ===============
-
-
-  {
-      "js": {
-          "consoleStr"   : "{title}, {variable}", // "{title}, tmpVal = {variable}" to assigne value to temporary parameter output: console.log('title', tmpVal = variable);
-          "consoleFunc"  : ["console", "log"],    // You can change default log statement for example ["logger", "info"] output: logger.info('title', variable);
-          "single_quotes": false,                 // If true output: console.log('title', variable);
-          "semicolon"    : true,                  // If false, will not add semicolon at end of line
-          "log_types"    : ["log", "info", "warn", "error"]
-      },
-      "py": {
-          "consoleStr"   : "{title}, {variable}",
-          "consoleFunc"  : ["print"],
-          "single_quotes": false
-      },
-      "php": {
-          "consoleFunc"  : ["print_r"],   // var_dump or if you have custom logger ["$logger", "debug"] output: $logger->debug($variable);
-          "preTag"       : true,          // Put log in pre tag like echo '<pre>'; print_r($variable); echo '</pre>';
-          "dieAfterLog"  : false          // echo '<pre>'; print_r($variable); echo '</pre>'; die();
-      },
-      "fileTypeMap" : {                   // Maps file type to wrapper. For example "text.html.vue": "js" means use js wrapper in vue js files
-          "text.html.vue"  : "js",        // php,python,js is included by dafault ("embedding.php": "php", "source.js": "js", "source.python": "py")
-          "source.ts"      : "js",
-          "source.tsx"     : "js",
-          "source.coffee"  : "js",
-          "text.html.basic": "js",
-          "text.html.blade": "js",
-          "text.html.twig" : "js"
-      }
-  }
-
-
-Sublimerge 3
-------------
-
-  The first steps after installation
-  ==================================
-
-  1. By default Sublimerge's colors theme conforms to default Sublime Text theme. If you are using some
-     custom theme and find the colors poorly visible, you may need to change them.
-
-  2. If you're on Windows and want to use VCS-related commands, you may need to configure the executable
-     path for your VCS. Linux and OS X users with non-standard VCS installation may need to configure this too.
-
-
-  Please visit http://www.sublimerge.com/sm3/docs/configuration.html for more information about configuration.
-
-
-
-  Simplified usage instructions
-  =============================
-
-  In file view:
-
-      [ctrl]+[alt]+[d]                      - display Quick Panel with commands available for current view
-
-
-  In diff view:
-
-      Windows/Linux:
-
-      [ctrl]+[down]                         - select next change
-      [ctrl]+[up]                           - select previous change
-    * [ctrl]+[left]                         - copy selected change (or active line) to left from right
-    * [ctrl]+[right]                        - copy selected change (or active line) to right from left
-      [ctrl]+[shift]+[left]                 - copy all changes to left from right
-      [ctrl]+[shift]+[right]                - copy all changes to right from left
-
-      OSX:
-
-      [alt]+[down]                          - select next change
-      [alt]+[up]                            - select previous change
-    * [alt]+[left]                          - copy selected change (or active line) to left from right
-    * [alt]+[right]                         - copy selected change (or active line) to right from left
-      [alt]+[shift]+[left]                  - copy all changes to left from right
-      [alt]+[shift]+[right]                 - copy all changes to right from left
-
-      Common:
-
-      [f3]                                  - swap panels
-      [f4]                                  - show changes navigator
-      [f5]                                  - recompare buffers
-
-    * - if change is selected the command will copy its whole contents, otherwise will copy only the focused line
-
-
-  In directories diff view:
-
-      [down]                              - select next file/directory
-      [up]                                - select previous file/directory
-      [left]                              - copy file/directory from right to left
-      [right]                             - copy file/directory from left to right
-      [enter]                             - enter sub directory / compare text files
-      [backspace]                         - enter parent directory
-
-
-      Windows/Linux:
-
-      [ctrl]+[down]                       - select next different file/directory
-      [ctrl]+[up]                         - select previous different file/directory
-
-
-      OS X:
-
-      [alt]+[down]                        - select next different file/directory
-      [alt]+[up]                          - select previous different file/directory
-
-
-      For convenience Sublimerge also supports standard OS X keyboard shortcuts for directories navigation:
-
-      [cmd]+[down]                        - enter sub directory / compare text files
-      [cmd]+[up]                          - enter parent directory

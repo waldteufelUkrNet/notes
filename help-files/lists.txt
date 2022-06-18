@@ -1,0 +1,36 @@
+                                73 characters, Courier New, font size 8px
+=========================================================================
+Lists. 
+=========================================================================
+list-style-type:			circle;				/* визначає тип маркера*/
+							square;
+							upper-roman;
+							lower-alpha;
+							none;
+
+list-style-image:			url('name.gif');	/* картинка-маркер*/
+
+list-style-position: 		inside;				/* розташування маркера*/
+							outside;			default
+
+Shorthand property: list-style-type list-style-position list-style-image:
+
+ul {list-style: square inside url("sqpurple.gif");}
+
+Свої маркери замість стандартних:
+
+<style>
+ul {
+    list-style: none; 		/* Remove list bullets */
+    padding: 0;
+    margin: 0;
+}
+li { 
+    padding-left: 16px; 
+}
+li:before {
+    content: "•"; 			/* Insert content that looks like bullets */
+    padding-right: 8px;
+    color: blue; 			/* Or a color you prefer */
+}
+</style>

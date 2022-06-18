@@ -1,0 +1,6 @@
+﻿  // onclick через цикл
+  for (var i = 0; i < arr.length; i++) {
+  	(function(n){
+           arr[n].onclick = functionWrapperr() { function2(n);	};
+  	}(i));
+  }

@@ -1,0 +1,97 @@
+                                73 characters, Courier New, font size 8px
+=========================================================================
+Font. Text. 
+=========================================================================
+Font
+
+font-family:			тип шрифта
+
+font-style:				italic;
+						normal;
+						oblique;
+						
+font-weight:			normal;
+						bold;
+						
+font-size:				розмір шрифта. Для кросбраузерності:
+						body {font-size: 100%;}, усі інше у em.
+						1em = 16px
+
+font-variant:			small-caps;		/* малі букви майже того ж
+										розміру, що і великі */
+
+---------
+@font-face {
+    font-family: myFirstFont;
+    src: url(font.woff);
+}
+div {
+    font-family: myFirstFont;
+---------
+-------------------------------------------------------------------------
+Text
+
+color:					name "red"
+						HEX value "#ff0000"
+						RGB value "rgb(255,0,0)
+						
+text-align:				center;
+						left;
+						right;
+						justify;		/* розтягнутий текст */
+
+text-align-last: 		/* вирівнювання останнього рядка абзацу */
+						left; / start;
+						right;  / end;
+						center;
+						justify;
+						
+text-decoration: 		none;
+						overline;		/* лінія над */
+						underline;		/* лінія під */
+						line-through;	/* перекреслено */
+						
+text-transform:			uppercase;		/* великий регістр */
+						lowercase;		/* малий регістр */
+						capitalize;		/* перші букви слів - великі */
+						
+text-indent:			+-50px;			/* абзацний відступ */
+
+letter-spacing:			+-5px;			/* інтервал між буквами */
+
+line-height:			0.8;			/* інтервал між рядками */
+
+direction:				rtl;			/* текст припасований до
+										правого краю */
+						ltl;			/* текст припасований до
+										лівого краю */
+						
+word-spacing: 			+-10px;			/* інтервал між словами */
+
+text-shadow: 			3px 2px 4px red;/*горизонтальна тінь,
+										вертикальна тінь, розмиття,
+										колір. Через кому можна одрузу
+										кілька. */
+				
+text-overflow: 			clip;			/* тексту видно стільки,
+										скільки вміщується */
+						ellipsis;		/* якщо текст не вміщується -
+										три крапки */
+
+word-wrap:				break-word;		/* перенос довгого слова, якщо
+										воно не вміщується у рядок */
+						normal			/* слово не розривається */
+
+word-break:				keep-all;		/* перенос слова по дефісу */
+						break-all;		/* перенос слова із розривом у
+										довільному місці */
+
+white-space:			nowrap;			/* текст не переноситься -
+										абзац в один рядок */
+						wrap; / normal;	/* текст переноситься */
+
+unicode-bidi:			bidi-override;	/* написання зліва на право */
+
+vertical-align:			/* Вирівнює елемент відносно батька, оточуючого
+						тексту або чарунки таблиці
+						https://webref.ru/css/vertical-align */

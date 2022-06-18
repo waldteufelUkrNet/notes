@@ -1,0 +1,34 @@
+1. ПЕРЕГЛЯД У БРАУЗЕРІ (напр. pdf)
+----------------------------------
+
+html:
+<a href="path/to/document.pdf">відкрити документ</a>
+
+
+2. ЗАВАНТАЖЕННЯ НА КОМП'ЮТЕР КОРИСТУВАЧА, варіант 1
+---------------------------------------------------
+
+let link = document.createElement('a');
+link.download = 'filename.pdf';
+link.href = 'path/to/file.pdf';
+link.click();
+link.remove();
+
+
+2. ЗАВАНТАЖЕННЯ НА КОМП'ЮТЕР КОРИСТУВАЧА, варіант 2
+---------------------------------------------------
+
+let link = document.createElement('a');
+link.download = 'filename.pdf';
+
+let response = fetch('path/to/file.pdf');
+response.then( result => {
+  if (result.ok) {
+    let data = result.blob();
+    data.then( blob => {
+      link.href = URL.createObjectURL(blob);
+      link.click();
+      URL.revokeObjectURL(link.href);
+    });
+  }
+} );

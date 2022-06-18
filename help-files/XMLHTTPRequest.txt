@@ -1,0 +1,22 @@
+        Request
+browser -------server
+Response
+
+let xhr = new XMLHttpRequest(); // створення об'єкта, екземпляра класу
+
+МЕТОДИ XMLHttpRequest-об'єкта
+-----------------------------
+
+xhr.abort();
+
+xhr.getAllResponseHeaders();
+
+xhr.getResponseHeader('header');
+
+xhr.open(method,url,async,user,psw);
+
+xhr.send();
+
+xhr.send('string');
+
+xhr.setRequestHeader();

@@ -1,0 +1,40 @@
+OVERFLOW
+
+The overflow property has the following values:
+	visible - надлишковий контент випадає з контейнера і його видно
+	hidden - надлишковий контент не видно
+	scroll - з'являються дві полоси прокрутки
+	auto - полоса прокрутки з'являється автоматично, але тільки за необхідності
+
+Можна регулювати перетікання окремо для кожної вісі:
+	div {
+		overflow-x: hidden; /* Hide horizontal scrollbar */
+		overflow-y: scroll; /* Add vertical scrollbar */
+	}
+----------
+
+FLOAT/CLEAR - display: inline-block;
+
+float (left/right/none) - обтікання тексту.
+
+clear -  наступний після float-елементу теж буде обтікатися, щоб цього не було, йому потрібно присвоїти clear:
+	.div1 {float: left;}
+	.div2 {clear: left;}
+	
+!!! Якщо картинка з обтіканням більше за контейнер з текстом, який її вміщує, то картинка випаде (overflow) за межі контейнера. Щоб цьому запобігти, тексту потрібно присвоїти overflow: auto; :
+	.img1 {float: right;}
+	.clearfix {overflow: auto;}
+	
+The overflow:auto clearfix works well as long as you are able to keep control of your margins and padding (else you might see scrollbars). The new, modern clearfix hack however, is safer to use, and the following code is used for most webpages:
+
+	.clearfix::after {
+		content: "";
+		display: table;	/* content є inline-елементом, тому clear з ним не працює. Щоб працював потрібно display: table; */
+		clear: both;
+		height: 0;
+	}
+
+пару значень float/clear можна замінити на display: inline-block; елементу, який обтікається. Наступний елемент clear не потребує.
+
+inline-block elements are like inline elements but they can have a width and a height.
+

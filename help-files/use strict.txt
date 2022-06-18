@@ -1,0 +1,21 @@
+Strict Mode
+
+In the ES6 module system, strict mode is turned on by default. In case you don’t know what strict mode is, it’s just a stricter version of the language that disallows lots of bad parts of the language. It enables compilers to perform better by disallowing non-sensical behavior in user code, too. The following is a summary extracted from changes documented in the strict mode article on MDN.
+
+    Variables can’t be left undeclared
+    Function parameters must have unique names (or are considered syntax errors)
+    with is forbidden
+    Errors are thrown on assignment to read-only properties
+    Octal numbers like 00840 are syntax errors
+    Attempts to delete undeletable properties throw an error
+    delete prop is a syntax error, instead of assuming delete global[prop]
+    eval doesn’t introduce new variables into its surrounding scope
+    eval and arguments can’t be bound or assigned to
+    arguments doesn’t magically track changes to method parameters
+    arguments.callee throws a TypeError, no longer supported
+    arguments.caller throws a TypeError, no longer supported
+    Context passed as this in method invocations is not “boxed” (forced) into becoming an Object
+    No longer able to use fn.caller and fn.arguments to access the JavaScript stack
+    Reserved words (e.g protected, static, interface, etc) cannot be bound
+
+In case it isn’t immediately obvious – you should 'use strict' in all the places. Even though it’s becoming de-facto in ES6, it’s still a good practice to use 'use strict' everywhere in ES6.

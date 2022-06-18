@@ -1,0 +1,133 @@
+                            73 characters, Courier New, font size 8px
+=====================================================================
+TRANSFORM. TRANSITION. ANIMATION.
+=====================================================================
+TRANSFORM 		/* найкращий спосіб вирівняти елемент по центру */
+
+CSS3 transform може переміщувати (translate), обертати (rotate), масштабувати (scale) та нахиляти (skew) елементи.
+---------------------------------------------------------------------
+CSS3 2D/3D Transforms:
+
+	
+transform: translate(50px,100px); 	зміщення по осях х/у
+transform: rotate(20deg);			обертання за годинниковою стрілкою
+transform: rotate(-20deg);			обертання проти годинникової стрілки
+transform: scale(2,3);				збільшення по осях х/у
+transform: scale(0.2,0.5);			зменшення по осях х/у
+transform: skewX(20deg);			нахил (викривлення) по осі Х
+transform: skewY(20deg);			нахил (викривлення) по осі Y
+transform: skew(20deg, 10deg);
+matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())
+transform: matrix(1, -0.3, 0, 1, 0, 0);
+
+transform: rotateX(150deg);			обертання вздовж осі х
+transform: rotateY(130deg);			обертання вздовж осі у
+transform: rotateZ(90deg);			обертання вздовж осі z
+
+Властивості:
+transform-origin: 20% 40%;			встановлює базову точку для
+									трансформації.
+transform-style						визначає, як дочірні елементи
+									будуть відображитися у 3D-просторі
+				:preserve-3d		відображення у 3D-просторі
+				:flat (default)		дочірні елементи лежить у
+									площині батька
+Властивості батьківського ел-ту:
+perspective: 500px;					визначає "точку зору"
+perspective-origin: 10% 10%;		визначає зміщення "точки зору"
+backface-visibility					визначає, чи буде видно тильну
+									сторону елементу.
+				:hidden;
+				:visible;
+---------------------------------------------------------------------
+TRANSITION
+	Щоб створити transition-ефект, потрібно задати CSS-властивість, яка змінюватиметься, та час перебігу ефекту. Якщо час не задати, ефекту не буде.
+
+	div {
+		height: 100px;
+		background: red;
+		width: 100px;			/* початковий розмір */
+		transition: width 2s;	/* що змінюватиметься + час */
+		transition-delay: 1s;	/* затримка */
+		transition-timing-function: linear;
+	}
+	div:hover {					/* умова старту зміни */
+		width: 300px;			/* кінцевий розмір */
+	}
+
+transition-timing-function 		визначає швидкодію змін.
+
+	: linear;					лінійна швидкість
+	: ease; (default)			повільно-швидко-повільно
+	: ease-in;					повільно-швидко
+	: ease-out;					швидко-повільно
+	: ease-in-out;				повільно
+	: step-start;				моментально
+	: step-end;					моментально із затримкою
+	: steps;					кроками
+	: cubic-bezier;				функція у вигляді кривої Без'є
+---------------------------------------------------------------------
+TRANSITION + TRANSFORM
+
+	div {
+		width: 100px;
+		height: 100px;
+		background: red;
+		transition: width 2s, height 2s, transform 2s;
+	}
+
+	div:hover {
+		width: 300px;
+		height: 300px;
+		transform: rotate(180deg);
+	}
+	
+shorthand property:
+div {transition: width 2s linear 1s;}
+---------------------------------------------------------------------
+ANIMATION
+після програвання анімація повертає початковий стиль
+
+	div {
+		background-color: red;
+		animation-name: example;		/* назва */
+		animation-duration: 4s;			/* тривалість ітерації */
+		animation-delay: 2s;			/* затримка */
+		animation-iteration-count: 3;	/* кількість ітерацій */
+		animation-iteration-count: infinite; /* безкінечна анімація */
+		animation-direction: reverse;	/* зворотний напрям
+										виконання */
+		animation-direction: alternate;	/* виконання туди-назад */
+	}
+	@keyframes example {
+		from {background-color: red;}
+		to {background-color: yellow;}
+	}
+
+from (0%) and to (100%) можна замінити процентами. У такому випадку можна вткористовувати безліч стилів:
+	
+	@keyframes example {
+		0%   {background-color: red;}
+		25%  {background-color: yellow;}
+		50%  {background-color: blue;}
+		100% {background-color: green;}
+	}
+
+animation-timing-function		визначає швидкодію змін.
+
+	: linear;					лінійна швидкість
+	: ease; (default)			повільно-швидко-повільно
+	: ease-in;					повільно-швидко
+	: ease-out;					швидко-повільно
+	: ease-in-out;				повільно
+	: cubic-bezier;				функція у вигляді кривої Без'є
+
+animation-play-state			зупиняє анімацію (JS)
+	
+animation-fill-mode:				
+	
+shorthand animation property:
+animation: name duration timing-function delay iteration-count direction;
+animation: example 5s linear 2s infinite alternate;
+
+

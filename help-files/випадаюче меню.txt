@@ -1,0 +1,38 @@
+Dropdown Menu:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;            /* приховуванн€ за замовчуванн€м */
+      z-index: 1;
+      position: absolute;
+      min-width: 100%;          /* ширина €к у батька */
+    }
+    .dropdown-content a {
+      display: block;            /* щоб посиланн€ займало весь доступний прост≥р */
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;            /* показ при наведенн≥ */
+    }
+    </style>
+  </head>
+  <body>
+  <div class="dropdown">
+    <button class="dropbtn">Dropdown</button>
+    <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+  </body>
+</html>
+
+якщо потр≥бно, щоб випадаюче меню випадало не р≥вно, а трохи вб≥к, можна погратис€ з параметрами dropdown-content:
+left:0; right:0;

@@ -1,0 +1,49 @@
+                                73 characters, Courier New, font size 8px
+=========================================================================
+Background
+=========================================================================
+
+background-color:		name "red"
+						HEX value "#ff0000"
+						RGB value "rgb(255,0,0)
+
+background-image:		url("name.gif");
+
+background-repeat:		repeat; (default)
+						repeat-x;
+						repeat-y;
+						no-repeat;
+
+
+background-position:	60% -150%;
+						left/right top/bottom;
+
+background-attachment:	fixed; /* картинка не проскролюється */
+
+background-size: 		100px 80px;
+						20% 20%;
+						contain; /* картинка повністю в контейнері */
+						cover; /* картинка покриває контейнер */
+						
+background-origin:		/* визначає позиціонування картинки */
+						border-box		/* від рамки */
+						padding-box		/* від відступу */ (default)
+						content-box 	/* від контенту */
+						
+!!!background-origin не працює коли background-attachment: fixed.
+
+background-clip:		/* позиціонування картинки/тла відносно країв
+						контейнеру */
+						border-box		/* тло аж за рамкою */
+						padding-box		/* за контентом та
+										відступом */
+						content-box 	/* тільки за контентом */
+						text			/* тільки за текстом */
+----------
+Shorthand property:
+background: #ffffff url("name.png") no-repeat right top;
+----------
+Multiple Background: 
+background-image: url(name1.gif), url(name2.gif);
+background-position: right bottom, left top;
+background-repeat: no-repeat, repeat;

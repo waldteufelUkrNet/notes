@@ -2,45 +2,17 @@ https://sublime-text-unofficial-documentation.readthedocs.io/en/sublime-text-2/r
 https://www.tutorialspoint.com/sublime_text/index.htm
 https://www.shortcutfoo.com/app/dojos/sublime-text-3-win/cheatsheet
 https://www.sublimetext.com/docs/api_reference.html
-
- 
-=======================================================================================
-Alt+v - вівдкривається меню view
-
+ =======================================================================================
 Додати клавіатурні скорочення:
 4 В конфиг добавить: { "keys": ["super+shift+r"], "command": "reindent"}
 5 Нужен пакет JsFormat. В конфиг добавить: { "keys": ["super+shift+l"], "command": "js_format"}
 6 ...Или в любой другой сниппет. В конфиг добавить: { ’keys’: [’super+shift+i’, ’i’], "command": "insert_snippet "args": {"name": "Packages/User/if.sublime-snippet"}, файл сниппета – ваш.
-
 клавіатурне скорочення для View > Word Wrap
 =======================================================================================
-
-в файлах локалізації .sublime-menu на кожен пункт меню є команда. Отже можна зробити гарячі клавіші?
-
-
-
-
-
-головне меню + контекстне меню файлів і тек
-переписати команди з пунктів меню
-
-
 паг в хтмл і навпаки
 Нужен пакет Prefixr - додає префікси css
 відео по emmet + шпора
 відео по gist на web developer blog
-========================================================================================================================
-
-Особливості Linux:
-
-show menu sublime linux:
-Ctrl+Shift+p then type vmen
-
-========================================================================================================================
-
-========================================================================================================================
-ВСТАНОВЛЕННЯ ПАКУНКІВ - документація на кожен пакунок /home/noname/.config/sublime-text/Installed Packages
-
 ========================================================================================================================
 ПАКУНКИ Sublime Text 3
 ------------------------------
@@ -97,24 +69,13 @@ Alignment                    : вирівнювання пар ключ-знач
 
 Підсвітка:
 ---------
-Pug                          : підсвітка синтиксису pug
-SCSS                         : підсвітка синтаксису scss/sass
-CSS3                         : підсвітка синтаксису css3
-BracketHighlighter           : показує, де закривається і відкривається  тег (підкреслення тегу та маркування на полях).
-                               Можна підсвічувати блок, в якому знаходиться курсор, змінювати типи дужок/лапок тощо.
-TrailingSpaces               : підсвітка зайвих пробілів в кінці рядків. Можливість їх видалити при збереженні документа
-                               (в налаштуваннях "trailing_spaces_trim_on_save": true).
 Color Highlight              : підсвічування кольорів
 ColorPicker                  : Ctrl+Shift+C - виклик панелі кольорів (але не такої, як у Color Highlighter)
 (Color Highlighter)          : підсвічування  кольорів.  В  контекстному  меню  є  Insert  color  with  color picker (це
                                встановлює .NET Framework 2.0 - 3.5).  Ctrl+Shift+C  -  виклик  панелі  кольорів  (аналог
                                ColorPicker), Ctrl+Shift+, - зміна формату кольору.
-StyleToken                   : підсвітка довільних фрагментів коду для пошуку співпадінь і орієнтування в коді.
-HTML (C#)                    : підсвітка C#-коду
-Dockerfile Syntax Highlighting : підсвітка коду в Dockerfile
-nginx                        : Improved syntax support for Nginx configuration files
-DotENV                       : Syntax Highlighting support for Environment (.env) Files
-GraphQL
+
+
 
 Підказки:
 --------
@@ -175,7 +136,6 @@ GIST                         : завантаження шматків коду 
 SASS                         : ?????????? - без нього не працює Emmet у файлах .sass
 MarkdownPreview              : показує, як виглядає md-файл, має складні налаштування, інтегрується з LiveReload
 
-GraphQL                      : GraphQL IDL syntax highlighting for Sublime Text
 FindKeyConflicts
 React IDE
 FindInProject                : Text search plugin for Sublime Text 3 projects  не встановлюється!
@@ -214,11 +174,45 @@ PlainTasks(https://xakep.ru/2014/07/28/sublime-text-not-for-coding/) є інст
 
 
 https://packagecontrol.io/packages/CommandsBrowser
+5 Нужен пакет JsFormat
+Нужен пакет Prefixr
 
+================================================================================
+My Favorite Sublime Plugins
 
+As I'm regularily asked which Sublime Text plugins I install via Package Control for additional functionality in addition to the above basic style, here is my list of recommended plugins:
 
+    Additional Interface Functionality:
+        SideBarEnhancements (sidebar addition: filesystem operations)
+        Terminal (sidebar addition: open terminal here)
+        WordCount (statusbar addition: word count)
 
+    Editing:
+        Auto Autocomplete (source code completion)
+        Vintage (Vi mode - for Sublime Text 2 only: already ships with it)
+        Vintagous (Vi mode - for Sublime Text 3 only: the better Vintage)
+        VintageEx (Ex mode for Vi mode)
 
+    Source Code:
+        SublimeLinter (source code linting)
+        SublimeCodeIntel (source code lookup/completion)
 
+    Version Control Systems:
+        SVN (general Subversion tool integration)
+        Git (general Git tool integration)
+        SideBarGit (sidebar addition: Git commands)
+        Git Gutter (gutter addition: Git diff-style information)
+        GitConfig (.gitconfig file support)
 
+    Build Tools:
+        Grunt
+        Ant
 
+    Additional Languages and Macros:
+        MarkdownEditing
+        TypeScript
+        TypeScript Compiler
+        LaTeXTools
+        LESS
+        HTML5
+        Emmet

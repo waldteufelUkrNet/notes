@@ -1,0 +1,62 @@
+IW-9 Первинне налаштування:
+
+✔ тех.файли @done (21-12-28 00:59)
+  ✔ .env/.env.dist @done (21-12-25 23:47)
+  ✔ .gitignore @done (21-12-25 23:47)
+  ✔ package.json @done (21-12-28 00:14)
+  ✔ .sequelizerc: налаштування підключення до бд @done (21-12-27 23:32)
+  ✔ .eslintrc.json @done (21-12-28 00:59)
+    ✔ Помилка: "Parsing error: No Babel config file detected for B:\files\work_area\Malevich\iwish\api\src\... Either disable config file checking with requireConfigFile: false, or configure Babel so that it can find the config files." @done (21-12-28 00:59)
+✔ файлова структура @done (21-12-25 23:49)
+✔ app.js @done (21-12-28 00:14)
+✔ db: index.js, моделі, міграції, сіди @done (21-12-27 23:30)
+✔ graphql: schema, тип user @done (21-12-27 23:31)
+✔ облікові дані дефолтного юзера @done (21-12-27 23:31)
+
+IW-10-Backend-authorization-registration:
+потрібно використовувати jwt, bcrypt
+авторизація через google
+авторизація через apple
+
+ЯК У МЕТОДАХ ЧИТАТИ ЗАГОЛОВОК АВТОРИЗАЦІЇ В ЗАПИТІ?
+
+malevichteam111@gmail.com
+ma23le87vi54ch
+
+package name from your AndroidManifest.xml com.awesometsproject
+
+OAuth google:`
+Client ID:     424330311544-rhcnvbm2ffhrhvh7egkh56h0h8l1satm.apps.googleusercontent.com
+Client Secret: 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
+
+https://developers.google.com/gmail/api/reference/rest/v1/users/getProfile
+https://developers.google.com/workspace/guides/get-started
+
+andriod auth
+https://developers.google.com/workspace/guides/create-credentials#android
+sha1/keytool
+https://support.google.com/cloud/answer/6158849#installedapplications&android&zippy=%2Cnative-applications%2Candroid
+https://developers.google.com/android/guides/client-auth
+https://support.code42.com/CP/Admin/On-premises/6/Configuring/Install_a_CA-signed_SSL_certificate_for_HTTPS_console_access
+
+https://console.cloud.google.com/apis/credentials?project=tokyo-scholar-336810
+
+apple auth
+https://www.passportjs.org/packages/passport-apple/
+https://github.com/ananay/apple-auth/blob/master/SETUP.md
+
+
+ ✔ у пользователя будет только два поля (firstName и lastName) которые касаются имени. @done (22-01-06 14:08)
+ ✔ Где поле для аватара и дня рождения? Нужно актуализировать поля согласно макетам. @done (22-01-06 14:08)
+ ✔ Думаю в этом случае не обязательно добавлять пользователя через сиды. @done (22-01-06 12:48)
+ ✔ Время жизни токена нужно согласовать с фронтами, в случае с мобильным приложением по идее не нужно будет разлогинивать. @done (22-01-06 14:03)
+ ✔ Ролей у юзеров пока не планируется, директива доступа не нужна. @done (22-01-06 12:37)
+ ✔ Тестовые данные и не нужные комментарии не забываем подчищать @done (22-01-06 14:04)
+
+
+
+IW-11-Backend-Personal-info-and-settings:
+  getUserData: photo, lname, fname, birthday
+  editUserData: photo, lname, fname, birthday
+
+  settings: birthday reminder, news&updates, delete acc, log out

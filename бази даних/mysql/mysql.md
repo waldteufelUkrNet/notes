@@ -187,7 +187,6 @@ show tables;
 
 повністю очистити таблицю:
 ```sql
-  
 truncate table table_name;
 ```
 

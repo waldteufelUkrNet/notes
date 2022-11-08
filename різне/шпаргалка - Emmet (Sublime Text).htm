@@ -1,0 +1,2592 @@
+<!DOCTYPE html>
+<html lang="ru-RU" prefix="og: http://ogp.me/ns#" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="http://itman.in/xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="http://itman.in/wp-content/themes/twentyfifteen/js/html5.js"></script>
+	<![endif]-->
+	<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>Команды Emmet - шпаргалка для плагина html редактора Sublime Text - Как стать программистом</title>
+
+<link rel="stylesheet" href="http://itman.in/wp-content/plugins/sitepress-multilingual-cms/res/css/language-selector.css?v=3.1.9.3" type="text/css" media="all" />
+
+<!-- This site is optimized with the Yoast SEO plugin v6.0 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="http://itman.in/komandy-emmet-shpargalka-dlya-plagina-html-redaktora-sublime-text/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Команды Emmet - шпаргалка для плагина html редактора Sublime Text - Как стать программистом" />
+<meta property="og:description" content="Sublime Text &#8212; популярный среди программистов редактор, с использованием Emmet плагина становится еще удобнее. Эта статья &#8212; шпаргалка по Emmet командам, которые можно использовать для ускорения создания HTML документов, верстки и работы с CSS. СодержаниеКак пользоваться EmmetEmmet не работаетСокращения EmmetБазовый синтаксис EMMETHTML сокращенияCSS сокращения Как пользоваться Emmet Emmet позволяет ускорить набор текста благодаря использованию большого &hellip; Читать далее Команды Emmet &#8212; шпаргалка для плагина html редактора Sublime Text" />
+<meta property="og:url" content="http://itman.in/komandy-emmet-shpargalka-dlya-plagina-html-redaktora-sublime-text/" />
+<meta property="og:site_name" content="Как стать программистом" />
+<meta property="article:published_time" content="2015-10-15T08:21:15+00:00" />
+<meta property="article:modified_time" content="2015-10-15T08:40:37+00:00" />
+<meta property="og:updated_time" content="2015-10-15T08:40:37+00:00" />
+<meta property="og:image" content="http://itman.in/wp-content/uploads/2015/10/sublime-text-emmet.png" />
+<meta property="og:image:width" content="891" />
+<meta property="og:image:height" content="233" />
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"http:\/\/itman.in\/","name":"\u041a\u0430\u043a \u0441\u0442\u0430\u0442\u044c \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0441\u0442\u043e\u043c","potentialAction":{"@type":"SearchAction","target":"http:\/\/itman.in\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//s.gravatar.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Как стать программистом &raquo; Лента" href="http://itman.in/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Как стать программистом &raquo; Лента комментариев" href="http://itman.in/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Как стать программистом &raquo; Лента комментариев к &laquo;Команды Emmet &#8212; шпаргалка для плагина html редактора Sublime Text&raquo;" href="http://itman.in/komandy-emmet-shpargalka-dlya-plagina-html-redaktora-sublime-text/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/itman.in\/wp-includes\/js\/wp-emoji-release.min.js?ver=64f2e2bac1007faf248653c3efb022e4"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56794,8205,9794,65039],[55358,56794,8203,9794,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='yarppWidgetCss-css'  href='http://itman.in/wp-content/plugins/yet-another-related-posts-plugin/style/widget.css?ver=64f2e2bac1007faf248653c3efb022e4' type='text/css' media='all' />
+<link rel='stylesheet' id='twentyfifteen-jetpack-css'  href='http://itman.in/wp-content/plugins/jetpack/modules/theme-tools/compat/twentyfifteen.css?ver=5.7' type='text/css' media='all' />
+<link rel='stylesheet' id='toc-screen-css'  href='http://itman.in/wp-content/plugins/table-of-contents-plus/screen.min.css?ver=1509' type='text/css' media='all' />
+<link rel='stylesheet' id='wpml-cms-nav-css-css'  href='http://itman.in/wp-content/plugins/wpml-cms-nav/res/css/navigation.css?ver=1.4.7' type='text/css' media='all' />
+<link rel='stylesheet' id='cms-navigation-style-base-css'  href='http://itman.in/wp-content/plugins/wpml-cms-nav/res/css/cms-navigation-base.css?ver=1.4.7' type='text/css' media='screen' />
+<link rel='stylesheet' id='cms-navigation-style-css'  href='http://itman.in/wp-content/plugins/wpml-cms-nav/res/css/cms-navigation.css?ver=1.4.7' type='text/css' media='screen' />
+<link rel='stylesheet' id='twentyfifteen-fonts-css'  href='https://fonts.googleapis.com/css?family=Noto+Sans%3A400italic%2C700italic%2C400%2C700%7CNoto+Serif%3A400italic%2C700italic%2C400%2C700%7CInconsolata%3A400%2C700&#038;subset=latin%2Clatin-ext%2Ccyrillic%2Ccyrillic-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='http://itman.in/wp-content/plugins/jetpack/_inc/genericons/genericons/genericons.css?ver=3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentyfifteen-style-css'  href='http://itman.in/wp-content/themes/twentyfifteen-child/style.css?ver=64f2e2bac1007faf248653c3efb022e4' type='text/css' media='all' />
+<style id='twentyfifteen-style-inline-css' type='text/css'>
+
+			.post-navigation .nav-previous { background-image: url(http://itman.in/wp-content/uploads/2015/10/kak-stat-programmistom.jpg); }
+			.post-navigation .nav-previous .post-title, .post-navigation .nav-previous a:hover .post-title, .post-navigation .nav-previous .meta-nav { color: #fff; }
+			.post-navigation .nav-previous a:before { background-color: rgba(0, 0, 0, 0.4); }
+		
+	/* Color Scheme */
+
+	/* Background Color */
+	body {
+		background-color: #e9f2f9;
+	}
+
+	/* Sidebar Background Color */
+	body:before,
+	.site-header {
+		background-color: #55c3dc;
+	}
+
+	/* Box Background Color */
+	.post-navigation,
+	.pagination,
+	.secondary,
+	.site-footer,
+	.hentry,
+	.page-header,
+	.page-content,
+	.comments-area,
+	.widecolumn {
+		background-color: #ffffff;
+	}
+
+	/* Box Background Color */
+	button,
+	input[type="button"],
+	input[type="reset"],
+	input[type="submit"],
+	.pagination .prev,
+	.pagination .next,
+	.widget_calendar tbody a,
+	.widget_calendar tbody a:hover,
+	.widget_calendar tbody a:focus,
+	.page-links a,
+	.page-links a:hover,
+	.page-links a:focus,
+	.sticky-post {
+		color: #ffffff;
+	}
+
+	/* Main Text Color */
+	button,
+	input[type="button"],
+	input[type="reset"],
+	input[type="submit"],
+	.pagination .prev,
+	.pagination .next,
+	.widget_calendar tbody a,
+	.page-links a,
+	.sticky-post {
+		background-color: #22313f;
+	}
+
+	/* Main Text Color */
+	body,
+	blockquote cite,
+	blockquote small,
+	a,
+	.dropdown-toggle:after,
+	.image-navigation a:hover,
+	.image-navigation a:focus,
+	.comment-navigation a:hover,
+	.comment-navigation a:focus,
+	.widget-title,
+	.entry-footer a:hover,
+	.entry-footer a:focus,
+	.comment-metadata a:hover,
+	.comment-metadata a:focus,
+	.pingback .edit-link a:hover,
+	.pingback .edit-link a:focus,
+	.comment-list .reply a:hover,
+	.comment-list .reply a:focus,
+	.site-info a:hover,
+	.site-info a:focus {
+		color: #22313f;
+	}
+
+	/* Main Text Color */
+	.entry-content a,
+	.entry-summary a,
+	.page-content a,
+	.comment-content a,
+	.pingback .comment-body > a,
+	.author-description a,
+	.taxonomy-description a,
+	.textwidget a,
+	.entry-footer a:hover,
+	.comment-metadata a:hover,
+	.pingback .edit-link a:hover,
+	.comment-list .reply a:hover,
+	.site-info a:hover {
+		border-color: #22313f;
+	}
+
+	/* Secondary Text Color */
+	button:hover,
+	button:focus,
+	input[type="button"]:hover,
+	input[type="button"]:focus,
+	input[type="reset"]:hover,
+	input[type="reset"]:focus,
+	input[type="submit"]:hover,
+	input[type="submit"]:focus,
+	.pagination .prev:hover,
+	.pagination .prev:focus,
+	.pagination .next:hover,
+	.pagination .next:focus,
+	.widget_calendar tbody a:hover,
+	.widget_calendar tbody a:focus,
+	.page-links a:hover,
+	.page-links a:focus {
+		background-color: #22313f; /* Fallback for IE7 and IE8 */
+		background-color: rgba( 34, 49, 63, 0.7);
+	}
+
+	/* Secondary Text Color */
+	blockquote,
+	a:hover,
+	a:focus,
+	.main-navigation .menu-item-description,
+	.post-navigation .meta-nav,
+	.post-navigation a:hover .post-title,
+	.post-navigation a:focus .post-title,
+	.image-navigation,
+	.image-navigation a,
+	.comment-navigation,
+	.comment-navigation a,
+	.widget,
+	.author-heading,
+	.entry-footer,
+	.entry-footer a,
+	.taxonomy-description,
+	.page-links > .page-links-title,
+	.entry-caption,
+	.comment-author,
+	.comment-metadata,
+	.comment-metadata a,
+	.pingback .edit-link,
+	.pingback .edit-link a,
+	.post-password-form label,
+	.comment-form label,
+	.comment-notes,
+	.comment-awaiting-moderation,
+	.logged-in-as,
+	.form-allowed-tags,
+	.no-comments,
+	.site-info,
+	.site-info a,
+	.wp-caption-text,
+	.gallery-caption,
+	.comment-list .reply a,
+	.widecolumn label,
+	.widecolumn .mu_register label {
+		color: #22313f; /* Fallback for IE7 and IE8 */
+		color: rgba( 34, 49, 63, 0.7);
+	}
+
+	/* Secondary Text Color */
+	blockquote,
+	.logged-in-as a:hover,
+	.comment-author a:hover {
+		border-color: #22313f; /* Fallback for IE7 and IE8 */
+		border-color: rgba( 34, 49, 63, 0.7);
+	}
+
+	/* Border Color */
+	hr,
+	.dropdown-toggle:hover,
+	.dropdown-toggle:focus {
+		background-color: #22313f; /* Fallback for IE7 and IE8 */
+		background-color: rgba( 34, 49, 63, 0.1);
+	}
+
+	/* Border Color */
+	pre,
+	abbr[title],
+	table,
+	th,
+	td,
+	input,
+	textarea,
+	.main-navigation ul,
+	.main-navigation li,
+	.post-navigation,
+	.post-navigation div + div,
+	.pagination,
+	.comment-navigation,
+	.widget li,
+	.widget_categories .children,
+	.widget_nav_menu .sub-menu,
+	.widget_pages .children,
+	.site-header,
+	.site-footer,
+	.hentry + .hentry,
+	.author-info,
+	.entry-content .page-links a,
+	.page-links > span,
+	.page-header,
+	.comments-area,
+	.comment-list + .comment-respond,
+	.comment-list article,
+	.comment-list .pingback,
+	.comment-list .trackback,
+	.comment-list .reply a,
+	.no-comments {
+		border-color: #22313f; /* Fallback for IE7 and IE8 */
+		border-color: rgba( 34, 49, 63, 0.1);
+	}
+
+	/* Border Focus Color */
+	a:focus,
+	button:focus,
+	input:focus {
+		outline-color: #22313f; /* Fallback for IE7 and IE8 */
+		outline-color: rgba( 34, 49, 63, 0.3);
+	}
+
+	input:focus,
+	textarea:focus {
+		border-color: #22313f; /* Fallback for IE7 and IE8 */
+		border-color: rgba( 34, 49, 63, 0.3);
+	}
+
+	/* Sidebar Link Color */
+	.secondary-toggle:before {
+		color: #ffffff;
+	}
+
+	.site-title a,
+	.site-description {
+		color: #ffffff;
+	}
+
+	/* Sidebar Text Color */
+	.site-title a:hover,
+	.site-title a:focus {
+		color: rgba( 255, 255, 255, 0.7);
+	}
+
+	/* Sidebar Border Color */
+	.secondary-toggle {
+		border-color: #ffffff; /* Fallback for IE7 and IE8 */
+		border-color: rgba( 255, 255, 255, 0.1);
+	}
+
+	/* Sidebar Border Focus Color */
+	.secondary-toggle:hover,
+	.secondary-toggle:focus {
+		border-color: #ffffff; /* Fallback for IE7 and IE8 */
+		border-color: rgba( 255, 255, 255, 0.3);
+	}
+
+	.site-title a {
+		outline-color: #ffffff; /* Fallback for IE7 and IE8 */
+		outline-color: rgba( 255, 255, 255, 0.3);
+	}
+
+	/* Meta Background Color */
+	.entry-footer {
+		background-color: #f1f1f1;
+	}
+
+	@media screen and (min-width: 38.75em) {
+		/* Main Text Color */
+		.page-header {
+			border-color: #22313f;
+		}
+	}
+
+	@media screen and (min-width: 59.6875em) {
+		/* Make sure its transparent on desktop */
+		.site-header,
+		.secondary {
+			background-color: transparent;
+		}
+
+		/* Sidebar Background Color */
+		.widget button,
+		.widget input[type="button"],
+		.widget input[type="reset"],
+		.widget input[type="submit"],
+		.widget_calendar tbody a,
+		.widget_calendar tbody a:hover,
+		.widget_calendar tbody a:focus {
+			color: #55c3dc;
+		}
+
+		/* Sidebar Link Color */
+		.secondary a,
+		.dropdown-toggle:after,
+		.widget-title,
+		.widget blockquote cite,
+		.widget blockquote small {
+			color: #ffffff;
+		}
+
+		.widget button,
+		.widget input[type="button"],
+		.widget input[type="reset"],
+		.widget input[type="submit"],
+		.widget_calendar tbody a {
+			background-color: #ffffff;
+		}
+
+		.textwidget a {
+			border-color: #ffffff;
+		}
+
+		/* Sidebar Text Color */
+		.secondary a:hover,
+		.secondary a:focus,
+		.main-navigation .menu-item-description,
+		.widget,
+		.widget blockquote,
+		.widget .wp-caption-text,
+		.widget .gallery-caption {
+			color: rgba( 255, 255, 255, 0.7);
+		}
+
+		.widget button:hover,
+		.widget button:focus,
+		.widget input[type="button"]:hover,
+		.widget input[type="button"]:focus,
+		.widget input[type="reset"]:hover,
+		.widget input[type="reset"]:focus,
+		.widget input[type="submit"]:hover,
+		.widget input[type="submit"]:focus,
+		.widget_calendar tbody a:hover,
+		.widget_calendar tbody a:focus {
+			background-color: rgba( 255, 255, 255, 0.7);
+		}
+
+		.widget blockquote {
+			border-color: rgba( 255, 255, 255, 0.7);
+		}
+
+		/* Sidebar Border Color */
+		.main-navigation ul,
+		.main-navigation li,
+		.widget input,
+		.widget textarea,
+		.widget table,
+		.widget th,
+		.widget td,
+		.widget pre,
+		.widget li,
+		.widget_categories .children,
+		.widget_nav_menu .sub-menu,
+		.widget_pages .children,
+		.widget abbr[title] {
+			border-color: rgba( 255, 255, 255, 0.1);
+		}
+
+		.dropdown-toggle:hover,
+		.dropdown-toggle:focus,
+		.widget hr {
+			background-color: rgba( 255, 255, 255, 0.1);
+		}
+
+		.widget input:focus,
+		.widget textarea:focus {
+			border-color: rgba( 255, 255, 255, 0.3);
+		}
+
+		.sidebar a:focus,
+		.dropdown-toggle:focus {
+			outline-color: rgba( 255, 255, 255, 0.3);
+		}
+	}
+
+		/* Custom Header Background Color */
+		body:before,
+		.site-header {
+			background-color: #23475b;
+		}
+
+		@media screen and (min-width: 59.6875em) {
+			.site-header,
+			.secondary {
+				background-color: transparent;
+			}
+
+			.widget button,
+			.widget input[type="button"],
+			.widget input[type="reset"],
+			.widget input[type="submit"],
+			.widget_calendar tbody a,
+			.widget_calendar tbody a:hover,
+			.widget_calendar tbody a:focus {
+				color: #23475b;
+			}
+		}
+	
+</style>
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentyfifteen-ie-css'  href='http://itman.in/wp-content/themes/twentyfifteen/css/ie.css?ver=20141010' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentyfifteen-ie7-css'  href='http://itman.in/wp-content/themes/twentyfifteen/css/ie7.css?ver=20141010' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='yarppRelatedCss-css'  href='http://itman.in/wp-content/plugins/yet-another-related-posts-plugin/style/related.css?ver=64f2e2bac1007faf248653c3efb022e4' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='http://itman.in/wp-content/plugins/jetpack/css/jetpack.css?ver=5.7' type='text/css' media='all' />
+<script type='text/javascript' src='http://itman.in/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://itman.in/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='http://itman.in/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://itman.in/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://itman.in/wp-includes/wlwmanifest.xml" /> 
+
+<link rel='shortlink' href='https://wp.me/p2goqH-yn' />
+<link rel="alternate" type="application/json+oembed" href="http://itman.in/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fitman.in%2Fkomandy-emmet-shpargalka-dlya-plagina-html-redaktora-sublime-text%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://itman.in/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fitman.in%2Fkomandy-emmet-shpargalka-dlya-plagina-html-redaktora-sublime-text%2F&#038;format=xml" />
+<meta name="generator" content="WPML ver:3.1.9.3 stt:47,1;0" />
+
+<style type="text/css">                                                                                    
+</style><style type='text/css'>img#wpstats{display:none}</style><meta data-pso-pv="1.2.1" data-pso-pt="singlePost" data-pso-th="bd00673ec15c4a2b403aed47172fcde2"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script pagespeed_no_defer="" data-pso-version="20170403_083938">window.dynamicgoogletags={config:[]};dynamicgoogletags.config=["ca-pub-8819248299228651",[[[["ASIDE",null,"nav_menu-2",[]],["10px","60px",1],3,[0],"1197690326",0,null,null,7],[["ARTICLE",0,null,[],1],["10px","24.000600814819336px",0],0,[0],"2674423525",0,null,null,9],[["DIV",null,"widget-area",[]],["10px","10px",1],3,[0],"4151156724",0,null,null,6]]],[[[[null,[[20,20]],null,34,1,1]],[[["BODY",0,null,[]],["10px","10px",1],1,[4],null,0,null,null,2],[["BODY",0,null,[]],["10px","10px",1],2,[5],null,0,null,null,2],[["HEADER",0,null,[]],["10px","10px",1],3,[2],null,0,null,null,5],[["DIV",null,"primary",[]],["10px","10px",1],3,[5],null,0,null,null,5],[["DIV",null,"comments",[]],["10px","10px",1],0,[1],null,0,null,null,7],[["DIV",null,"respond",[]],["10px","10px",1],3,[3],null,0,null,null,8],[["NAV",0,null,[]],["10px","10px",1],0,[3],null,0,null,null,7],[["DIV",null,null,["nav-previous"]],["10px","10px",1],0,[3],null,0,null,null,9],[["DIV",null,"lang_sel_footer",[]],["10px","10px",1],1,[5],null,0,null,null,3],[["DIV",null,"lang_sel_footer",[]],["10px","10px",1],2,[5],null,0,null,null,3],[["ARTICLE",0,null,[],1],["10px","23.9997997283936px",0],0,[0],null,0,null,null,9],[["ARTICLE",0,null,[],2],["10px","10px",0],0,[0],null,0],[["ARTICLE",0,null,[],-1],["10px","24px",0],3,[0],null,0,null,null,9],[["HEADER",0,null,[]],["10px","10px",1],2,[2],null,0,null,null,5],[["ARTICLE",0,null,[],3],["10px","10px",0],0,[0],null,0]],["8132201120","9608934325","2085667520","3562400726","5039133929"],["ARTICLE",null,null,[]],"20170214_040801"]],"WordPressSinglePost","4290757522",null,0.01,null,[null,1494918717469],0.01,0,null,null,"http://itman.in"];(function(){var h=this,aa=function(a){var b=typeof a;if("object"==b)if(a){if(a instanceof Array)return"array";if(a instanceof Object)return b;var c=Object.prototype.toString.call(a);if("[object Window]"==c)return"object";if("[object Array]"==c||"number"==typeof a.length&&"undefined"!=typeof a.splice&&"undefined"!=typeof a.propertyIsEnumerable&&!a.propertyIsEnumerable("splice"))return"array";if("[object Function]"==c||"undefined"!=typeof a.call&&"undefined"!=typeof a.propertyIsEnumerable&&!a.propertyIsEnumerable("call"))return"function"}else return"null";
+else if("function"==b&&"undefined"==typeof a.call)return"object";return b},p=function(a){return"number"==typeof a},ba=function(a,b){var c=Array.prototype.slice.call(arguments,1);return function(){var b=c.slice();b.push.apply(b,arguments);return a.apply(this,b)}},r=function(a,b){function c(){}c.prototype=b.prototype;a.Ra=b.prototype;a.prototype=new c;a.prototype.constructor=a;a.Ta=function(a,c,f){for(var d=Array(arguments.length-2),e=2;e<arguments.length;e++)d[e-2]=arguments[e];return b.prototype[c].apply(a,
+d)}};var ca=String.prototype.trim?function(a){return a.trim()}:function(a){return a.replace(/^[\s\xa0]+|[\s\xa0]+$/g,"")},da=function(a,b){return a<b?-1:a>b?1:0},ea=function(a){return String(a).replace(/\-([a-z])/g,function(a,c){return c.toUpperCase()})};var fa=Array.prototype.forEach?function(a,b,c){Array.prototype.forEach.call(a,b,c)}:function(a,b,c){for(var d=a.length,e="string"==typeof a?a.split(""):a,f=0;f<d;f++)f in e&&b.call(c,e[f],f,a)};var ga=function(a){ga[" "](a);return a};ga[" "]=function(){};var ia=function(a,b){var c=ha;Object.prototype.hasOwnProperty.call(c,a)||(c[a]=b(a))};var t;a:{var ja=h.navigator;if(ja){var ka=ja.userAgent;if(ka){t=ka;break a}}t=""}var v=function(a){return-1!=t.indexOf(a)};var la=v("Opera"),w=v("Trident")||v("MSIE"),ma=v("Edge"),na=v("Gecko")&&!(-1!=t.toLowerCase().indexOf("webkit")&&!v("Edge"))&&!(v("Trident")||v("MSIE"))&&!v("Edge"),oa=-1!=t.toLowerCase().indexOf("webkit")&&!v("Edge"),pa=function(){var a=h.document;return a?a.documentMode:void 0},qa;
+a:{var ra="",sa=function(){var a=t;if(na)return/rv\:([^\);]+)(\)|;)/.exec(a);if(ma)return/Edge\/([\d\.]+)/.exec(a);if(w)return/\b(?:MSIE|rv)[: ]([^\);]+)(\)|;)/.exec(a);if(oa)return/WebKit\/(\S+)/.exec(a);if(la)return/(?:Version)[ \/]?(\S+)/.exec(a)}();sa&&(ra=sa?sa[1]:"");if(w){var ta=pa();if(null!=ta&&ta>parseFloat(ra)){qa=String(ta);break a}}qa=ra}
+var ua=qa,ha={},va=function(a){ia(a,function(){for(var b=0,c=ca(String(ua)).split("."),d=ca(String(a)).split("."),e=Math.max(c.length,d.length),f=0;0==b&&f<e;f++){var g=c[f]||"",k=d[f]||"";do{g=/(\d*)(\D*)(.*)/.exec(g)||["","","",""];k=/(\d*)(\D*)(.*)/.exec(k)||["","","",""];if(0==g[0].length&&0==k[0].length)break;b=da(0==g[1].length?0:parseInt(g[1],10),0==k[1].length?0:parseInt(k[1],10))||da(0==g[2].length,0==k[2].length)||da(g[2],k[2]);g=g[3];k=k[3]}while(0==b)}return 0<=b})},wa;var xa=h.document;
+wa=xa&&w?pa()||("CSS1Compat"==xa.compatMode?parseInt(ua,10):5):void 0;var x=function(){},ya="function"==typeof Uint8Array,z=function(a,b,c){a.a=null;b||(b=[]);a.Va=void 0;a.M=-1;a.l=b;a:{if(a.l.length){b=a.l.length-1;var d=a.l[b];if(d&&"object"==typeof d&&"array"!=aa(d)&&!(ya&&d instanceof Uint8Array)){a.R=b-a.M;a.G=d;break a}}a.R=Number.MAX_VALUE}a.Ua={};if(c)for(b=0;b<c.length;b++)d=c[b],d<a.R?(d+=a.M,a.l[d]=a.l[d]||y):a.G[d]=a.G[d]||y},y=[],A=function(a,b){if(b<a.R){b+=a.M;var c=a.l[b];return c===y?a.l[b]=[]:c}c=a.G[b];return c===y?a.G[b]=[]:c},Aa=function(a){a=
+A(za,a);return null==a?a:+a},B=function(a,b,c){b<a.R?a.l[b+a.M]=c:a.G[b]=c},C=function(a,b,c){a.a||(a.a={});if(!a.a[c]){var d=A(a,c);d&&(a.a[c]=new b(d))}return a.a[c]},D=function(a,b,c){a.a||(a.a={});if(!a.a[c]){for(var d=A(a,c),e=[],f=0;f<d.length;f++)e[f]=new b(d[f]);a.a[c]=e}b=a.a[c];b==y&&(b=a.a[c]=[]);return b},Ba=function(a,b,c){a.a||(a.a={});c=c||[];for(var d=[],e=0;e<c.length;e++)d[e]=E(c[e]);a.a[b]=c;B(a,b,d)},Ca=function(a){if(a.a)for(var b in a.a){var c=a.a[b];if("array"==aa(c))for(var d=
+0;d<c.length;d++)c[d]&&E(c[d]);else c&&E(c)}},E=function(a){Ca(a);return a.l};x.prototype.toString=function(){Ca(this);return this.l.toString()};var Da=function(a){var b;if("array"==aa(a)){for(var c=Array(a.length),d=0;d<a.length;d++)null!=(b=a[d])&&(c[d]="object"==typeof b?Da(b):b);return c}if(ya&&a instanceof Uint8Array)return new Uint8Array(a);c={};for(d in a)null!=(b=a[d])&&(c[d]="object"==typeof b?Da(b):b);return c};var Ea=function(a,b){this.events=[];this.Ga=b||h;var c=null;b&&(b.google_js_reporting_queue=b.google_js_reporting_queue||[],this.events=b.google_js_reporting_queue,c=b.google_measure_js_timing);this.ia=null!=c?c:Math.random()<a};Ea.prototype.disable=function(){fa(this.events,this.ya,this);this.events.length=0;this.ia=!1};Ea.prototype.ya=function(a){var b=this.Ga.performance;a&&b&&b.clearMarks&&(b.clearMarks("goog_"+a.uniqueId+"_start"),b.clearMarks("goog_"+a.uniqueId+"_end"))};var Fa=function(){var a=!1;try{var b=Object.defineProperty({},"passive",{get:function(){a=!0}});h.addEventListener("test",null,b)}catch(c){}return a}();var Ha=function(){var a=Ga;try{var b;if(b=!!a&&null!=a.location.href)a:{try{ga(a.foo);b=!0;break a}catch(c){}b=!1}return b}catch(c){return!1}},Ia=function(a,b){for(var c in a)Object.prototype.hasOwnProperty.call(a,c)&&b.call(void 0,a[c],c,a)};var Ja=function(a,b,c,d,e){this.la=c||4E3;this.H=a||"&";this.wa=b||",$";this.T=void 0!==d?d:"trn";this.Sa=e||null;this.va=!1;this.V={};this.Ja=0;this.L=[]},Ma=function(a,b,c,d){b=b+"//"+c+d;var e=Ka(a)-d.length-0;if(0>e)return"";a.L.sort(function(a,b){return a-b});d=null;c="";for(var f=0;f<a.L.length;f++)for(var g=a.L[f],k=a.V[g],m=0;m<k.length;m++){if(!e){d=null==d?g:d;break}var l=La(k[m],a.H,a.wa);if(l){l=c+l;if(e>=l.length){e-=l.length;b+=l;c=a.H;break}else a.va&&(c=e,l[c-1]==a.H&&--c,b+=l.substr(0,
+c),c=a.H,e=0);d=null==d?g:d}}f="";a.T&&null!=d&&(f=c+a.T+"="+(a.Sa||d));return b+f+""},Ka=function(a){if(!a.T)return a.la;var b=1,c;for(c in a.V)b=c.length>b?c.length:b;return a.la-a.T.length-b-a.H.length-1},La=function(a,b,c,d,e){var f=[];Ia(a,function(a,k){(a=Na(a,b,c,d,e))&&f.push(k+"="+a)});return f.join(b)},Na=function(a,b,c,d,e){if(null==a)return"";b=b||"&";c=c||",$";"string"==typeof c&&(c=c.split(""));if(a instanceof Array){if(d=d||0,d<c.length){for(var f=[],g=0;g<a.length;g++)f.push(Na(a[g],
+b,c,d+1,e));return f.join(c[d])}}else if("object"==typeof a)return e=e||0,2>e?encodeURIComponent(La(a,b,c,d,e+1)):"...";return encodeURIComponent(String(a))};var Ra=function(a,b,c,d){var e=Pa;if((c?e.Pa:Math.random())<(d||e.za))try{var f;b instanceof Ja?f=b:(f=new Ja,Ia(b,function(a,b){var c=f,d=c.Ja++,e={};e[b]=a;a=[e];c.L.push(d);c.V[d]=a}));var g=Ma(f,e.Ma,e.Ba,e.La+a+"&");g&&Qa(g)}catch(k){}},Qa=function(a){h.google_image_requests||(h.google_image_requests=[]);var b=h.document.createElement("img");b.src=a;h.google_image_requests.push(b)};var Sa;if(!(Sa=!na&&!w)){var Ta;if(Ta=w)Ta=9<=Number(wa);Sa=Ta}Sa||na&&va("1.9.1");w&&va("9");var F=function(a,b,c,d){this.top=a;this.right=b;this.bottom=c;this.left=d};F.prototype.floor=function(){this.top=Math.floor(this.top);this.right=Math.floor(this.right);this.bottom=Math.floor(this.bottom);this.left=Math.floor(this.left);return this};var Ua=document,Va=window;var Wa=!!window.google_async_iframe_id,Ga=Wa&&window.parent||window;var Pa,G;if(Wa&&!Ha()){var Xa="."+Ua.domain;try{for(;2<Xa.split(".").length&&!Ha();)Ua.domain=Xa=Xa.substr(Xa.indexOf(".")+1),Ga=window.parent}catch(a){}Ha()||(Ga=window)}G=Ga;var Ya=new Ea(1,G);Pa=new function(){this.Ma="http:"===Va.location.protocol?"http:":"https:";this.Ba="pagead2.googlesyndication.com";this.La="/pagead/gen_204?id=";this.za=.01;this.Pa=Math.random()};
+if("complete"==G.document.readyState)G.google_measure_js_timing||Ya.disable();else if(Ya.ia){var Za=function(){G.google_measure_js_timing||Ya.disable()};G.addEventListener?G.addEventListener("load",Za,Fa?void 0:!1):G.attachEvent&&G.attachEvent("onload",Za)};var H=function(a){this.na={};this.na.c=a;this.o=[];this.u=null;this.v=[];this.ea=0};H.prototype.g=function(a){for(var b=0;b<this.o.length;b++)if(this.o[b]==a)return this;this.o.push(a);return this};var $a=function(a,b){a.u=a.u?a.u:b;return a};H.prototype.C=function(a){for(var b=0;b<this.v.length;b++)if(this.v[b]==a)return this;this.v.push(a);return this};
+H.prototype.getData=function(a){var b=this.na,c={},d;for(d in b)c[d]=b[d];0<this.ea&&(c.t=this.ea);c.err=this.o.join();c.warn=this.v.join();if(this.u){c.excp_n=this.u.name;c.excp_m=this.u.message&&this.u.message.substring(0,512);if(b=this.u.stack){d=this.u.stack;try{-1==d.indexOf("")&&(d="\n"+d);for(var e;d!=e;)e=d,d=d.replace(/((https?:\/..*\/)[^\/:]*:\d+(?:.|\n)*)\2/,"$1");b=d.replace(/\n */g,"\n")}catch(f){b=""}}c.excp_s=b}c.w=0<a.innerWidth?a.innerWidth:null;c.h=0<a.innerHeight?a.innerHeight:
+null;return c};var bb=function(a,b){ab(a,a.Ea,a.X,b)},ab=function(a,b,c,d){var e=d.u;d=d.getData(a.K);a.Ha?(d.type=b,a.K.console.log(d),e&&a.K.console.error(e)):0<c&&(d.r=c,Ra(b,d,"jserror"!=b,c))};var I=function(a){return a.dynamicgoogletags=a.dynamicgoogletags||{}};var J=function(a){z(this,a,cb)};r(J,x);var cb=[4];J.prototype.getId=function(){return A(this,3)};var K=function(a){z(this,a,null)};r(K,x);var db=function(a){z(this,a,null)};r(db,x);var L=function(a){return C(a,J,1)},fb=function(a){z(this,a,eb)};r(fb,x);var eb=[1];fb.prototype.i=function(){return D(this,db,1)};fb.prototype.pa=function(a){Ba(this,1,a)};var M=function(a){z(this,a,gb)};r(M,x);var gb=[2];M.prototype.ka=function(){return A(this,3)};M.prototype.qa=function(a){B(this,3,a)};var hb=function(a){z(this,a,null)};r(hb,x);var N=function(a){z(this,a,ib)};r(N,x);var ib=[1,2,3];N.prototype.i=function(){return D(this,db,2)};
+N.prototype.pa=function(a){Ba(this,2,a)};var O=function(a){z(this,a,jb)};r(O,x);var jb=[3];O.prototype.A=function(){return A(this,1)};O.prototype.D=function(){return C(this,fb,2)};O.prototype.O=function(){return A(this,4)};O.prototype.ka=function(){return A(this,5)};O.prototype.qa=function(a){B(this,5,a)};O.prototype.N=function(){return C(this,kb,9)};var kb=function(a){z(this,a,null)};r(kb,x);var lb=function(a){this.m=a;this.sa=[]};lb.prototype.f=function(){return 0<D(this.m,N,3).length?D(this.m,N,3)[0]:null};var mb=function(a){var b=["adsbygoogle-placeholder"];a=a.className?a.className.split(/\s+/):[];for(var c={},d=0;d<a.length;++d)c[a[d]]=!0;for(d=0;d<b.length;++d)if(!c[b[d]])return!1;return!0};var nb=function(a,b){for(var c=0;c<b.length;c++){var d=b[c],e=ea(d.Wa);a[e]=d.value}},qb=function(a,b){var c=ob;b.setAttribute("data-adsbygoogle-status","reserved");b={element:b};(c=c&&c.Na)&&(b.params=c);pb(a).push(b)},pb=function(a){return a.adsbygoogle=a.adsbygoogle||[]};var rb=function(a,b){if(!a)return!1;a=b.getComputedStyle?b.getComputedStyle(a,null):a.currentStyle;if(!a)return!1;a=a.cssFloat||a.styleFloat;return"left"==a||"right"==a},sb=function(a){for(a=a.previousSibling;a&&1!=a.nodeType;)a=a.previousSibling;return a?a:null},tb=function(a){return!!a.nextSibling||!!a.parentNode&&tb(a.parentNode)};var ub=function(a,b){var c=a.length;if(null!=c)for(var d=0;d<c;d++)b.call(void 0,a[d],d)};var vb=function(a,b,c,d){this.ma=a;this.$=b;this.aa=c;this.P=d};vb.prototype.query=function(a){var b=[];try{b=a.querySelectorAll(this.ma)}catch(f){}if(!b.length)return[];a=b;b=a.length;if(0<b){for(var c=Array(b),d=0;d<b;d++)c[d]=a[d];a=c}else a=[];a=wb(this,a);p(this.$)&&(b=this.$,0>b&&(b+=a.length),a=0<=b&&b<a.length?[a[b]]:[]);if(p(this.aa)){b=[];for(c=0;c<a.length;c++){var d=xb(a[c]),e=this.aa;0>e&&(e+=d.length);0<=e&&e<d.length&&b.push(d[e])}a=b}return a};
+vb.prototype.toString=function(){return JSON.stringify({nativeQuery:this.ma,occurrenceIndex:this.$,paragraphIndex:this.aa,ignoreMode:this.P})};
+var wb=function(a,b){if(null==a.P)return b;switch(a.P){case 1:return b.slice(1);case 2:return b.slice(0,b.length-1);case 3:return b.slice(1,b.length-1);case 0:return b;default:throw Error("Unknown ignore mode: "+a.P);}},xb=function(a){var b=[];ub(a.getElementsByTagName("p"),function(a){100<=yb(a)&&b.push(a)});return b},yb=function(a){if(3==a.nodeType)return a.length;if(1!=a.nodeType||"SCRIPT"==a.tagName)return 0;var b=0;ub(a.childNodes,function(a){b+=yb(a)});return b},zb=function(a){return 0==a.length||
+isNaN(a[0])?a:"\\"+(30+parseInt(a[0],10))+" "+a.substring(1)};var Ab=function(a,b){var c=0,d=A(a,6);if(void 0!==d)switch(d){case 0:c=1;break;case 1:c=2;break;case 2:c=3}var d=null,e=A(a,7);if(A(a,1)||a.getId()||0<A(a,4).length){var f=a.getId(),g=A(a,1),e=A(a,4),d=A(a,2);a=A(a,5);var k="";g&&(k+=g);f&&(k+="#"+zb(f));if(e)for(f=0;f<e.length;f++)k+="."+zb(e[f]);d=(e=k)?new vb(e,d,a,c):null}else e&&(d=new vb(e,A(a,2),A(a,5),c));return d?d.query(b):[]},Bb=function(a,b){if(a==b)return!0;if(!a||!b||A(a,1)!=A(b,1)||A(a,2)!=A(b,2)||a.getId()!=b.getId()||A(a,7)!=A(b,
+7)||A(a,5)!=A(b,5)||A(a,6)!=A(b,6))return!1;a=A(a,4);b=A(b,4);if(a||b)if(a&&b&&a.length==b.length)for(var c=0;c<a.length;c++){if(a[c]!=b[c])return!1}else return!1;return!0};var Cb=function(a){a=a.document;return("CSS1Compat"==a.compatMode?a.documentElement:a.body)||{}},Db=function(a){return void 0===a.pageYOffset?(a.document.documentElement||a.document.body.parentNode||a.document.body).scrollTop:a.pageYOffset};var Eb=function(a,b){b=L(b);if(!b)return null;a=Ab(b,a);return 0<a.length?a[0]:null},Gb=function(a,b){b=Fb(a,b,!0);return p(b)&&!(b<=Cb(a).clientHeight)},Hb=function(a,b){return a.body?b-a.body.getBoundingClientRect().top:b},Fb=function(a,b,c){if(!c||!p(A(b,8))){var d=Eb(a.document,b);if(d){var e=null!=C(b,K,2)?A(C(b,K,2),3):void 0;c=a.document.createElement("div");c.className="googlepublisherpluginad";var f=c.style;f.textAlign="center";f.width="100%";f.height="0px";f.clear=e?"both":"none";Ib(c,d,
+A(b,3));d=c.getBoundingClientRect().top+Db(a);c.parentNode.removeChild(c);B(b,8,d)}}b=A(b,8);return p(b)?b-Db(a):null},Jb={0:0,1:1,2:2,3:3},Kb={0:"auto",1:"horizontal",2:"vertical",3:"rectangle"},Lb=function(a,b){a.sort(function(a,d){a=Fb(b,a,!0);a=p(a)?a:Number.POSITIVE_INFINITY;d=Fb(b,d,!0);d=p(d)?d:Number.POSITIVE_INFINITY;return a-d})},Ib=function(a,b,c){switch(Jb[c]){case 0:b.parentNode&&b.parentNode.insertBefore(a,b);break;case 3:if(c=b.parentNode){var d=b.nextSibling;if(d&&d.parentNode!=c)for(;d&&
+8==d.nodeType;)d=d.nextSibling;c.insertBefore(a,d)}break;case 1:b.insertBefore(a,b.firstChild);break;case 2:b.appendChild(a)}if(1!=b.nodeType?0:"INS"==b.tagName&&mb(b))b.style.display="block"};var ob=new function(){this.ha="googlepublisherpluginad";this.Na={google_tag_origin:"pso"}},P=function(a){this.b=a;this.j=[];this.da=0;this.o=[];this.v=[];this.Y=null;this.oa=!1},Mb=function(a,b){a=C(a.f(),J,4);if(!(a&&b&&A(b,1)==A(a,1)&&b.getId()==a.getId()&&p(A(b,2))&&p(A(b,5))))return!1;a=A(a,4);b=A(b,4);if(a.length!=b.length)return!1;for(var c=0;c<a.length;++c)if(b[c]!=a[c])return!1;return!0},Nb=function(a){var b=p(void 0)?void 0:20,c=a.f(),d=c.i(),e=C(c,J,4);if(!(a.oa||0>=b)&&e&&0!=Ab(e,a.b.document).length){a.oa=
+!0;for(var c=[],f=0;f<d.length;++f){var g=d[f],k=L(g);if(Mb(a,k)){var m=A(k,2),k=A(k,5);null!=m&&null!=k&&0<=m&&0<=k&&(!c[m]||A(L(c[m]),5)<k)&&(c[m]=g)}}k=0;d=Ab(e,a.b.document);for(m=0;m<c.length&&k<b;++m){var e=k,f=a,l=d[m],g=c[m],k=b-k,u=f.f().i(),q=0;if(l&&g){l=xb(l).length;switch(A(L(g),6)){case 0:case 1:--l;break;case 2:l-=2}for(var n=A(L(g),5)+1;n<l&&q<k;++n){var Oa=new g.constructor(Da(E(g))),Hc=L(Oa);B(Hc,5,n);u.push(Oa);q++}}q&&f.f().pa(u);k=e+q}}};
+P.prototype.g=function(a){for(var b=0;b<this.o.length;++b)if(this.o[b]==a)return;this.o.push(a)};P.prototype.C=function(a){for(var b=0;b<this.v.length;++b)if(this.v[b]==a)return;this.v.push(a)};
+var Ob=function(a,b,c){var d=Jb[A(b,3)],e=Eb(a.b.document,b);if(e){var f=L(b)?A(L(b),2):void 0,g;a:{g=a.b;if(null!=f)switch(d){case 0:g=rb(sb(e),g);break a;case 3:g=rb(e,g);break a;case 2:f=e.lastChild;g=rb(f?1==f.nodeType?f:sb(f):null,g);break a}g=!1}if(!g&&(c||2!=d||tb(e))&&(c=1==d||2==d?e:e.parentNode,!c||(1!=c.nodeType?0:"INS"==c.tagName&&mb(c))||!(0>=c.offsetWidth)))a:if(A(b,7))a.C(8);else{b:if(A(b,5))c=A(b,5);else{if(c=Q(a).f())if(c=A(c,3),a.da<c.length){c=c[a.da++];break b}a.g(4);c=null}if(null!=
+c){B(b,7,!0);d=[];(g=a.O())&&d.push(g);g=Q(a).sa;for(f=0;f<g.length;++f)d.push(g[f]);p(A(b,9))&&d.push("pso-lv-"+A(b,9));var k=a.b.document;g=a.A();var f=A(b,6),f=null!=f?Kb[f]:f,m=C(b,K,2),l={};m&&(l.ra=A(m,1),l.ga=A(m,2),l.xa=!!A(m,3));var m=c,u=ob,q=k.createElement("div"),n=q.style;n.textAlign="center";n.width="100%";n.height="auto";n.clear=l.xa?"both":"none";l.Ka&&nb(n,l.Ka);k=k.createElement("ins");n=k.style;n.display="block";n.margin="auto";n.backgroundColor="transparent";l.ra&&(n.marginTop=
+l.ra);l.ga&&(n.marginBottom=l.ga);l.ta&&nb(n,l.ta);q.appendChild(k);k.setAttribute("data-ad-format",f?f:"auto");if(f=u&&u.ha)q.className=f;k.className="adsbygoogle";k.setAttribute("data-ad-client",g);m&&k.setAttribute("data-ad-slot",m);d.length&&k.setAttribute("data-ad-channel",d.join("+"));Ib(q,e,A(b,3));try{qb(a.b,k)}catch(Oa){A(b,5)!=c&&a.da--;B(b,7,!1);a.C(6);q&&q.parentNode&&q.parentNode.removeChild(q);break a}a.j.push(q)}}}},Pb=function(a,b){for(var c=Number.POSITIVE_INFINITY,d=0;d<a.j.length;++d)var e=
+a.j[d].getBoundingClientRect().top,f=a.j[d].getBoundingClientRect().bottom,c=Math.min(c,b<e?e-b:f<b?b-f:0);return c},Q=function(a){a=I(a.b).ps||null;if(!a)throw Error("No placementState");return a},Qb=function(a,b){var c=Q(a).m;if(!c||!c.A())return a.g(5),!1;c=D(c,N,3)[0];return c?A(c,3).length<b?(a.g(4),a.g(5),!1):!0:(a.g(5),!1)};P.prototype.A=function(){return Q(this).m.A()||""};P.prototype.O=function(){return Q(this).m.O()||void 0};P.prototype.D=function(){return Q(this).m.D()||new fb};
+P.prototype.f=function(){var a=Q(this).f();if(!a)throw Error("No mConfig");return a};var Rb=function(a){a=A(a.f(),6);return null!=a&&0<a};var Sb=function(){this.I=this.J=this.ba=null};var R=function(a){P.call(this,a)};r(R,P);R.prototype.apply=function(a){var b;(b=Q(this).m)&&b.A()&&b.D()?b=!0:(this.g(5),b=!1);if(b){b=this.D().i();for(var c=0;c<b.length;c++){var d=b[c];A(d,7)||Ob(this,d,a)}}};R.prototype.B=function(){return(0==this.D().i().length||0<this.j.length)&&0==this.o.length};var Tb=function(a){P.call(this,a);if(Qb(this,0)){a=this.D().i();for(var b=this.f().i(),c=0;c<a.length;c++){var d=a[c],e;a:{e=d;var f=b;if(e&&L(e))for(var g=0;g<f.length;g++){var k=f[g];if(A(e,3)==A(k,3)&&Bb(L(e),L(k))){e=k;break a}}e=null}e&&C(e,K,2)&&(e=C(e,K,2),d.a||(d.a={}),f=e?E(e):e,d.a[2]=e,B(d,2,f))}}};r(Tb,R);var Vb=function(a,b){var c=void 0===b.pageXOffset?(b.document.documentElement||b.document.body.parentNode||b.document.body).scrollLeft:b.pageXOffset,d=Db(b);if(a.getBoundingClientRect)return a=a.getBoundingClientRect(),Ub(a)?new F(a.top+d,a.right+c,a.bottom+d,a.left+c):new F(0,0,0,0);b=b.document.createRange();b.selectNodeContents(a);return b.collapsed?new F(0,0,0,0):b.getBoundingClientRect?(a=b.getBoundingClientRect(),Ub(a)?new F(a.top+d,a.right+c,a.bottom+d,a.left+c):new F(0,0,0,0)):new F(0,0,0,
+0)},Ub=function(a){return!!a&&p(a.top)&&!isNaN(a.top)&&p(a.right)&&!isNaN(a.right)&&p(a.bottom)&&!isNaN(a.bottom)&&p(a.left)&&!isNaN(a.left)};var $b=function(a){this.K=a;this.Fa=Wb(a);this.ua=S("ins.adsbygoogle",a);this.fa=Xb(a);this.Oa=S("[__lsu_res=reserved]",a);this.U=[];a=Yb(this);for(var b=0;b<a.length;b++)this.U.push(new Zb(a[b]))},Wb=function(a){var b=a.googletag;if(!b||"function"!=typeof b.pubads)return S("div[id^=div-gpt-ad]",a);var c=[];try{for(var d=b.pubads().getSlots(),b=0;b<d.length;b++){var e=d[b].getSlotElementId(),f=a.document.getElementById(e);null!=f&&c.push(f)}}catch(g){Ra("ladd_evt",{ok:0,err:g.toString()},!0,.1)}return c},
+Xb=function(a){return S("iframe[id^=aswift_],iframe[id^=google_ads_frame]",a)},S=function(a,b){return Array.prototype.slice.call(b.document.querySelectorAll(a))},Yb=function(a){return[].concat(a.Fa,a.ua,a.fa,a.Oa)},Zb=function(a){this.Ca=a;this.W=null};var T=function(a){P.call(this,a)};r(T,P);T.prototype.apply=function(){};T.prototype.B=function(){var a;if(Rb(this)){a=this.b;var b=Wb(a);a=0<[].concat(b,S("ins.adsbygoogle",a),Xb(a),S("[__lsu_res=reserved]",a)).length}else a=!0;return a};var ac=function(a){P.call(this,a);this.F=null};r(ac,P);
+ac.prototype.apply=function(a){if(a&&Qb(this,2)){Nb(this);a=Cb(this.b).clientHeight||640;null==this.F&&(this.F=new $b(this.b));var b=this.F.fa.length;if(!(5<=b)){var b=Math.min(2,5-b),c=this.f().i();Lb(c,this.b);for(var d=0;d<c.length&&this.j.length<b;++d){var e=c[d];if(Gb(this.b,e)){var f=Fb(this.b,e,!0);if(void 0!==f){var g;a:{g=this.F;for(var k=a,m=f,l=0;l<g.U.length;l++){var u=m,q=k,n;n=g.U[l];n.W||(n.W=Vb(n.Ca,g.K));n=n.W;if(n.top-q<u&&u<n.bottom+q){g=!0;break a}}g=!1}g||Pb(this,f)<a||Ob(this,
+e,!0)}}}0==this.j.length&&this.C(1)}}};ac.prototype.B=function(){return Rb(this)?0<Yb(this.F).length:!0};var bc=function(a){P.call(this,a);this.Z=!1};r(bc,T);
+bc.prototype.apply=function(a){if(a&&!this.Z){var b;a:{var c=this.b.document;b=c.body;if(a&&b){a=this.A();var d=ob,e=c.createElement("div");e.style.display="block";if(d=d&&d.ha)e.className=d;c=c.createElement("ins");c.className="adsbygoogle";c.setAttribute("data-ad-client",a);c.setAttribute("data-reactive-ad-format","1");c.style.display="none";e.appendChild(c);Ib(e,b,2);try{qb(this.b,c)}catch(f){this.C(6);e&&e.parentNode&&e.parentNode.removeChild(e);b=5;break a}this.j.push(e);b=0}else b=4}this.Z=
+0==b}};bc.prototype.B=function(){return this.Z&&T.prototype.B.call(this)};var cc=function(a){P.call(this,a);a=Cb(a).clientHeight;this.Aa=.1*a;this.Ia=.75*a};r(cc,P);
+cc.prototype.apply=function(a){if(Qb(this,3)&&!this.B()){Nb(this);var b=this.f().i();Lb(b,this.b);var c;c=this.Aa;var d;d=document;d=d.querySelectorAll?d.querySelectorAll("header,#header,#masthead,.header,.site-header"):[];for(var e=d.length,f=0<e?d[0]:null,g=1;g<e;g++)d[g].getBoundingClientRect().top<f.getBoundingClientRect().top&&(f=d[g]);(d=f)&&(d=d.getBoundingClientRect())&&d.top!=d.bottom&&d.left!=d.right&&(c=Math.min(c,Hb(document,d.bottom)));for(d=0;d<b.length&&3>this.j.length;d++){e=b[d];
+var f=c,g=this.b.document,k=Fb(this.b,e,!1);!p(k)||Hb(g,k)<f?f=!1:(f=Pb(this,k),f=this.Ia<f);f&&(f=Gb(this.b,e),g=A(e,6)||0,f&&0==g&&B(e,6,3),!f&&a||Ob(this,e,a))}}};cc.prototype.B=function(){return 3==this.j.length};var U={};U[16]=R;U[17]=R;U[19]=T;U[29]=ac;U[33]=T;U[30]=bc;U[28]=cc;U[34]=cc;U[32]=Tb;U[1]=R;U[8]=T;U[11]=R;var dc=[19,29,33,30,16,32,17,34],ec=[16,19,33,30,17,1,6,8,11];var fc=function(a,b){a=a.google_ad_modifications=a.google_ad_modifications||{};(a.ad_channels=a.ad_channels||[]).push(b)};var gc=function(a){return 0>a||99<a?null:10>a?"0"+a:""+a};var hc=function(a,b){a=a.google_ad_modifications=a.google_ad_modifications||{};a=a.loeids=a.loeids||[];for(var c=0;c<b.length;c++)a.push(b[c])};var ic=function(a,b,c){this.ja=a;this.Da=c?c:new kb};ic.prototype.N=function(){return this.Da||new kb};var jc=function(a){if(!p(a))return!1;for(var b=0;b<dc.length;++b)if(a==dc[b])return!1;return!0},oc=function(){var a=V,b=kc,c=lc,d=b.f();if(!d)return mc(16);var e=null,f;a:{var g=D(d,M,1);for(f=0;f<g.length;++f){for(var k=!0,m=0;m<ec.length;++m)A(g[f],4)==ec[m]&&(k=!1);if(k){g=[];0==d.i().length&&g.push("PsoInvalidVariant");0==A(d,3).length&&g.push("PsoNoAdSlotCodes");f=g;break a}}f=[]}g=c.ja;if(0==f.length)a:{e=D(d,M,1);if(p(g))for(f=0;f<e.length;f++)if(k=e[f],U[A(k,4)])for(var m=D(k,hb,2),l=0;l<
+m.length;l++){var u=m[l],q=A(u,1),u=A(u,2);if(p(q)&&p(u)&&g>=q&&g<=u){e=k;break a}}e=null}else for(k=0;k<f.length;++k)b.sa.push(f[k]);if(!e){f=D(d,M,1);e={};for(k=0;k<f.length;k++)e[A(f[k],4)]=!0;f=null;e[19]||e[8]?f=19:e[16]||e[1]?f=16:0<d.i().length&&0<A(d,3).length&&e[34]&&(f=34);null!=f?(e=new M,B(e,6,3),B(e,4,f),16!=f&&19!=f&&e.qa("pso-ama-fallback")):e=null}(f=!e)||(!p(g)||800>g?f=!1:820>g?(hc(a,["26835111"]),f=!0):(840>g&&hc(a,["26835112"]),f=!1));if(f)return mc(16);(g=e.ka())&&fc(a,g);g=!0;
+A(c.N(),2)&&(Date.now?Date.now():+new Date)<A(c.N(),2)||(fc(a,"pso-ama-exd"),g=!1);A(b.m,11)&&(fc(a,"pso-ama-stl-tmp"),g=!1);g&&fc(a,"pso-ama-elig");2==A(e,6)&&(b=A(e,1),null!=b&&hc(a,[""+b]));if(g&&(2==A(e,6)||1==A(e,6))){d=D(d,M,1);if(null===c.ja)c=[];else{b={};c=[];for(g=0;g<d.length;g++)f=nc(d[g]),null==f||b[f]||(b[f]=!0,c.push(f));b=nc(e);if(null!=b){d=[];b=gc(b);g=!1;if(b)for(f=0;f<c.length;f++)k=gc(c[f]),b==k&&(g=!0),k&&d.push("950"+b+k);g||(d=[]);c=d}else c=[]}hc(a,c)}a=new Sb;a.ba=A(e,5);
+a.J=A(e,4);return a},mc=function(a){var b=new Sb;b.J=a;return b},pc=function(a){a=a.google_ad_modifications=a.google_ad_modifications||{};a.remove_ads_by_default=!0;a.ad_whitelist=[{ad_tag_origin:"pso"}];a.ad_blacklist=[];a.space_collapsing="slot"},nc=function(a){var b;switch(A(a,6)){case 1:b=A(a,4);break;case 2:b=A(a,7)}return null!=b?b:null};var qc=function(a){this.document=a};var W=function(a){H.call(this,a)};r(W,H);W.prototype.getData=function(a){var b=W.Ra.getData.call(this,a),c;a:{c=(new qc(a.document)).document.getElementsByTagName("script");for(var d=0;d<c.length;++d)if(c[d].hasAttribute("data-pso-version")){c=c[d].getAttribute("data-pso-version");break a}c=null}b.sv=c;if(d=I(a).ps||null){c=d.m;var d=d.f(),e=b.wpc;b.wpc=null!=e?e:c.A();b.su=A(c,14);b.tn=c.O();b.ev=d&&A(d,5)}if(a=I(a).ss||null)b.s=a.J,b.st=a.ba;return b};var rc=null,sc=!1,vc=function(a){var b=tc,c=uc;b.addEventListener?(a&&b.addEventListener("DOMContentLoaded",a,!1),c&&b.addEventListener("load",c,!1)):b.attachEvent&&c&&b.attachEvent("onload",c)},xc=function(a){p(rc)&&a.clearInterval&&(a.clearInterval(rc),rc=null);sc||wc(a,!1);wc(a,!0)},yc=function(a,b){try{xc(b);var c=I(b).ss||null;if(c&&c.I){var d=c.I,e=d.B(),f=d.o,g=d.v,k=d.Y,m=d.j.length;e||0!=m||f.push(6);for(var l=new W(m),c=0;c<g.length;c++)l.C(g[c]);if(e&&0==f.length&&null===k)ab(a,a.Qa,a.ca,
+l);else{for(e=0;e<f.length;e++)l.g(f[e]);bb(a,$a(l,k))}}else bb(a,(new W(0)).g(2))}catch(u){bb(a,$a((new W(0)).g(1),u))}I(b).loaded=!0},wc=function(a,b){b||(sc=!0);if((a=I(a).ss||null)&&a.I){a=a.I;try{a.apply(b)}catch(c){a.g(1),null===a.Y&&(a.Y=c)}}},zc=function(){wc(window,!1)};var X=new function(a){this.Qa="pso_success";this.Ea="pso_failure";this.X=this.ca=.01;this.Ha=!1;this.K=a}(window);
+try{var V=window,za,Ac=I(V).config;za=Ac?new O(Ac):null;if(!za)throw Error("No config");var Bc=Aa(10),Cc=Aa(7);X.ca=null!=Bc?Bc:X.ca;X.X=null!=Cc?Cc:X.X;var kc=new lb(za),Dc=kc;I(V).ps=Dc;var Y,lc;if(v("iPad")||v("Android")&&!v("Mobile")||v("Silk")||!(v("iPod")||v("iPhone")||v("Android")||v("IEMobile")))Y=mc(16);else{var Ec,Fc=/^#([^=]*)=(\d+)$/.exec(V.location.hash);if((Ec=Fc&&3==Fc.length&&"pso_strategy"==Fc[1]?+Fc[2]:null)&&U[Ec]){Y=mc(Ec);var Gc=V;jc(Ec)&&pc(Gc)}else{var Ic=V,Jc=kc.m.N(),Z;try{var Kc=
+parseInt(Ic.localStorage.getItem("PSO_EXP0"),10);Z=isNaN(Kc)?null:Kc}catch(a){Z=null}if(null==Z){Z=Math.floor(1024*Math.random());var Lc=Z;try{Ic.localStorage.setItem("PSO_EXP0",Lc.toString())}catch(a){}}lc=new ic(Z,0,Jc);Y=oc()}if(1==Y.ba){var Mc=V;jc(Y.J)&&pc(Mc)}}if(!Y)throw Error("No strategyState created!");var Nc=Y;I(V).ss=Nc;var Oc=V,Pc=Y,Qc=Pc.J;if(p(Qc)){var Rc=U[Qc];Qc&&Rc&&(Pc.I=new Rc(Oc))}var tc=V,uc=ba(yc,X,tc),Sc=ba(xc,tc);switch(tc.document.readyState){case "complete":uc();break;case "interactive":Sc();
+vc();break;default:var Tc=tc,Uc=pb(Tc);Uc.loaded||(Uc.onload=zc);rc=Tc.setInterval(zc,10);vc(Sc)}}catch(a){bb(X,$a(new W(0),a))};})();
+</script></head>
+
+<body class="post-template-default single single-post postid-2131 single-format-standard">
+<div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content">Перейти к содержимому</a>
+
+	<div id="sidebar" class="sidebar">
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-branding">
+										<p class="site-title"><a href="http://itman.in/" rel="home">Как стать программистом</a></p>
+											<p class="site-description">Программирование с нуля для начинающих, веб-разработка и системное администрирование</p>
+									<button class="secondary-toggle">Меню и виджеты</button>
+			</div><!-- .site-branding -->
+		</header><!-- .site-header -->
+
+			<div id="secondary" class="secondary">
+
+		
+		
+					<div id="widget-area" class="widget-area" role="complementary">
+				<aside id="media_image-3" class="widget widget_media_image"><a href="http://itman.in/kurs-veb-programmirovaniya-s-nulya/"><img width="250" height="155" src="http://itman.in/wp-content/uploads/web-programming-courses-banner.png" class="image wp-image-1637 alignnone attachment-full size-full" alt="Курсы веб программирования для начинающих" style="max-width: 100%; height: auto;" /></a></aside><aside id="nav_menu-2" class="widget widget_nav_menu"><div class="menu-new-menu-container"><ul id="menu-new-menu" class="menu"><li id="menu-item-2412" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2412"><a href="http://itman.in/kurs-veb-programmirovaniya-s-nulya/">Онлайн курс программирования &#8212; создание сайта с нуля на Django</a></li>
+<li id="menu-item-2414" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2414"><a href="http://itman.in/uroki-django/">Уроки Django</a></li>
+<li id="menu-item-2417" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2417"><a href="http://itman.in/python/">Python</a></li>
+<li id="menu-item-2419" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2419"><a href="http://itman.in/ubuntu/">Ubuntu</a></li>
+<li id="menu-item-2415" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2415"><a href="http://itman.in/linux-shell/">Linux shell</a></li>
+<li id="menu-item-2416" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2416"><a href="http://itman.in/kvm-hypervisor/">KVM hypervisor</a></li>
+</ul></div></aside><aside id="media_image-2" class="widget widget_media_image"><a href="http://itman.in/kurs-veb-programmirovaniya-s-nulya/"><img width="250" height="155" src="http://itman.in/wp-content/uploads/web-programming-courses-banner2.png" class="image wp-image-1640 alignnone attachment-full size-full" alt="" style="max-width: 100%; height: auto;" /></a></aside><aside id="yarpp_widget-2" class="widget widget_yarpp_widget"><h2 class="widget-title">Связанные статьи</h2><div class='yarpp-related-widget'>
+<ol><li><a href="http://itman.in/ubuntu-ustanovka-sublime-text-2/" rel="bookmark">Ubuntu &#8212; установка Sublime Text 2</a></li><li><a href="http://itman.in/2-html-blocks-overflow/" rel="bookmark">Два HTML элемента в одном блоке &#8212; используем overflow</a></li><li><a href="http://itman.in/sublime-text-2-poisk-s-pomoshhyu-regulyarnyih-vyirazheniy/" rel="bookmark">Sublime Text 2 &#8212; поиск с помощью регулярных выражений</a></li><li><a href="http://itman.in/sublime-text-ustanovka-pod-ubuntu/" rel="bookmark">Sublime Text &#8212; установка в Ubuntu через репозиторий</a></li><li><a href="http://itman.in/zen-coding-v-sublime-text-2/" rel="bookmark">Zen Coding в Sublime Text 2</a></li></ol>
+</div>
+</aside><aside id="text-3" class="widget widget_text">			<div class="textwidget"><!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter19293961 = new Ya.Metrika({id:19293961,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/19293961" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71323709-1', 'auto');
+  ga('send', 'pageview');
+
+</script></div>
+		</aside>			</div><!-- .widget-area -->
+		
+	</div><!-- .secondary -->
+
+	</div><!-- .sidebar -->
+
+	<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+<article id="post-2131" class="post-2131 post type-post status-publish format-standard has-post-thumbnail hentry">
+	
+	<div class="post-thumbnail">
+		<img width="825" height="233" src="http://itman.in/wp-content/uploads/2015/10/sublime-text-emmet-825x233.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="Сокращения Emmet для Sublime Text" />	</div><!-- .post-thumbnail -->
+
+	
+	<header class="entry-header">
+		<h1 class="entry-title">Команды Emmet &#8212; шпаргалка для плагина html редактора Sublime Text</h1>	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>Sublime Text &#8212; популярный среди программистов редактор, с использованием Emmet плагина становится еще удобнее.</p>
+<p>Эта статья &#8212; шпаргалка по Emmet командам, которые можно использовать для ускорения создания HTML документов, верстки и работы с CSS.<span id="more-2131"></span></p>
+<div id="toc_container" class="toc_light_blue no_bullets"><p class="toc_title">Содержание</p><ul class="toc_list"><li><a href="#_Emmet">Как пользоваться Emmet</a></li><li><a href="#Emmet">Emmet не работает</a></li><li><a href="#_Emmet-2">Сокращения Emmet</a><ul><li><a href="#_EMMET">Базовый синтаксис EMMET</a></li><li><a href="#HTML">HTML сокращения</a></li><li><a href="#CSS">CSS сокращения</a></li></ul></li></ul></div>
+<h2><span id="_Emmet">Как пользоваться Emmet</span></h2>
+<p>Emmet позволяет ускорить набор текста благодаря использованию большого числа сокращений. Сокращения Emmet охватывают практически все свойства CSS и HTML теги, которые приходится набирать веб-разработчику.</p>
+<p>После установки Emmet нужно в Sublime Text можно просто набрать сокращение, нажать Tab и Emmet расшифрует его в документе в полный текст.</p>
+<p>Например, если вы сохраните новый документ в Sublime Text с расширением html, наберете в редакторе &#171;<strong>!</strong>&#187; и нажмете <strong>Tab</strong>, то Emmet вставит следующий набор тегов:</p>
+<pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ 
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<h2><span id="Emmet">Emmet не работает</span></h2>
+<p>Если у вас не работает Emmet, возможно вы просто не сохранили файл в необходимом формате. Emmet расшифровывает сокращения, если вы работаете в файле с соответствующим расширением &#8212; html или css.</p>
+<p>Также сокращения для стилей элементов будут корректно работать в HTML документе внутри <strong>style=&#187;&#8230;&#187;</strong></p>
+<h2><span id="_Emmet-2">Сокращения Emmet</span></h2>
+<table>
+<thead>
+<tr>
+<th>Сокращение</th>
+<th>Расшифровка сокращения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2">
+<h3><span id="_EMMET">Базовый синтаксис EMMET</span></h3>
+</td>
+</tr>
+<tr>
+<td>Дочерний: &gt;</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">nav</span><span class="pun">&gt;</span><span class="pln">ul</span><span class="pun">&gt;</span><span class="pln">li
+</span><span class="pun">&lt;</span><span class="pln">nav</span><span class="pun">&gt;</span><span class="pln">
+        </span><span class="pun">&lt;</span><span class="pln">ul</span><span class="pun">&gt;</span><span class="pln">
+                </span><span class="pun">&lt;</span><span class="pln">li</span><span class="pun">&gt;&lt;</span><span class="str">/li&gt;
+        &lt;/</span><span class="pln">ul</span><span class="pun">&gt;</span>
+<span class="pun">&lt;</span><span class="str">/nav&gt;
+</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>Соединение: +</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">div</span><span class="pun">+</span><span class="pln">p</span><span class="pun">+</span><span class="pln">bq
+</span><span class="pun">&lt;</span><span class="pln">div</span><span class="pun">&gt;&lt;</span><span class="str">/div&gt;
+&lt;p&gt;&lt;/</span><span class="pln">p</span><span class="pun">&gt;</span>
+<span class="pun">&lt;</span><span class="pln">blockquote</span><span class="pun">&gt;&lt;</span><span class="str">/blockquote&gt;
+</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>Поместить выше (в дереве HTML): ^</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">div</span><span class="pun">&gt;</span><span class="pln">p</span><span class="pun">&gt;</span><span class="pln">span</span><span class="pun">+</span><span class="pln">em</span><span class="pun">^</span><span class="pln">bq
+</span><span class="pun">&lt;</span><span class="pln">div</span><span class="pun">&gt;</span><span class="pln">
+        </span><span class="pun">&lt;</span><span class="pln">p</span><span class="pun">&gt;&lt;</span><span class="pln">span</span><span class="pun">&gt;&lt;</span><span class="str">/span&gt;&lt;em&gt;&lt;/</span><span class="pln">em</span><span class="pun">&gt;&lt;</span><span class="str">/p&gt;
+        &lt;blockquote&gt;&lt;/</span><span class="pln">blockquote</span><span class="pun">&gt;</span>
+<span class="pun">&lt;</span><span class="str">/div&gt;
+</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>Группировать: ()</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">div</span><span class="pun">&gt;(</span><span class="pln">header</span><span class="pun">&gt;</span><span class="pln">ul</span><span class="pun">&gt;</span><span class="pln">li</span><span class="pun">)+</span><span class="pln">footer</span><span class="pun">&gt;</span><span class="pln">p
+</span><span class="pun">&lt;</span><span class="pln">div</span><span class="pun">&gt;</span><span class="pln">
+        </span><span class="pun">&lt;</span><span class="pln">header</span><span class="pun">&gt;</span><span class="pln">
+                </span><span class="pun">&lt;</span><span class="pln">ul</span><span class="pun">&gt;</span><span class="pln">
+                        </span><span class="pun">&lt;</span><span class="pln">li</span><span class="pun">&gt;&lt;</span><span class="str">/li&gt;
+                &lt;/</span><span class="pln">ul</span><span class="pun">&gt;</span><span class="pln">
+        </span><span class="pun">&lt;</span><span class="str">/header&gt;
+        &lt;footer&gt;
+                &lt;p&gt;&lt;/</span><span class="pln">p</span><span class="pun">&gt;</span><span class="pln">
+        </span><span class="pun">&lt;</span><span class="str">/footer&gt;
+&lt;/</span><span class="pln">div</span><span class="pun">&gt;</span>
+</code></pre>
+</td>
+</tr>
+<tr>
+<td>Умножение: *</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">ul</span><span class="pun">&gt;</span><span class="pln">li</span><span class="pun">*</span><span class="lit">3</span>
+<span class="pun">&lt;</span><span class="pln">ul</span><span class="pun">&gt;</span><span class="pln">
+        </span><span class="pun">&lt;</span><span class="pln">li</span><span class="pun">&gt;&lt;</span><span class="str">/li&gt;
+        &lt;li&gt;&lt;/</span><span class="pln">li</span><span class="pun">&gt;</span><span class="pln">
+        </span><span class="pun">&lt;</span><span class="pln">li</span><span class="pun">&gt;&lt;</span><span class="str">/li&gt;
+&lt;/</span><span class="pln">ul</span><span class="pun">&gt;</span>
+</code></pre>
+</td>
+</tr>
+<tr>
+<td>Нумерация: $</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">ul</span><span class="pun">&gt;</span><span class="pln">li</span><span class="pun">.</span><span class="pln">item_$</span><span class="pun">*</span><span class="lit">3</span>
+<span class="pun">&lt;</span><span class="pln">ul</span><span class="pun">&gt;</span><span class="pln">
+        </span><span class="pun">&lt;</span><span class="pln">li </span><span class="kwd">class</span><span class="pun">=</span><span class="str">"item_1"</span><span class="pun">&gt;&lt;</span><span class="str">/li&gt;
+        &lt;li class="item_2"&gt;&lt;/</span><span class="pln">li</span><span class="pun">&gt;</span><span class="pln">
+        </span><span class="pun">&lt;</span><span class="pln">li </span><span class="kwd">class</span><span class="pun">=</span><span class="str">"item_3"</span><span class="pun">&gt;&lt;</span><span class="str">/li&gt;
+&lt;/</span><span class="pln">ul</span><span class="pun">&gt;</span>
+</code></pre>
+</td>
+</tr>
+<tr>
+<td>id и class</td>
+<td>
+<pre class="prettyprint"><code><span class="com">#header+.class</span>
+<span class="pun">&lt;</span><span class="pln">div id</span><span class="pun">=</span><span class="str">"header"</span><span class="pun">&gt;&lt;</span><span class="str">/div&gt;
+&lt;div class="class"&gt;&lt;/</span><span class="pln">div</span><span class="pun">&gt;</span>
+
+<span class="com">#hdr.cl_1.cl_2</span>
+<span class="pun">&lt;</span><span class="pln">div id</span><span class="pun">=</span><span class="str">"hdr"</span> <span class="kwd">class</span><span class="pun">=</span><span class="str">"cl_1 cl_2"</span><span class="pun">&gt;&lt;</span><span class="str">/div&gt;
+</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>Атрибуты: []</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">a</span><span class="pun">[</span><span class="pln">title</span><span class="pun">=</span><span class="str">"Подсказка ссылки"</span><span class="pun">]</span>
+<span class="pun">&lt;</span><span class="pln">a href</span><span class="pun">=</span><span class="str">""</span><span class="pln"> title</span><span class="pun">=</span><span class="str">"Подсказка ссылки"</span><span class="pun">&gt;&lt;</span><span class="str">/a&gt;
+
+td[rowspan colspan title]
+&lt;td rowspan="" colspan="" title=""&gt;&lt;/</span><span class="pln">td</span><span class="pun">&gt;</span>
+</code></pre>
+</td>
+</tr>
+<tr>
+<td>Текст: {}</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">.</span><span class="kwd">class</span><span class="pun">{свободный</span> <span class="pun">текст}</span>
+<span class="pun">&lt;</span><span class="pln">div </span><span class="kwd">class</span><span class="pun">=</span><span class="str">"class"</span><span class="pun">&gt;свободный</span> <span class="pun">текст&lt;</span><span class="str">/div&gt;
+
+p&gt;{Кликните }+a{сюда}+{ скорее}
+&lt;p&gt;Кликните &lt;a href=""&gt;сюда&lt;/</span><span class="pln">a</span><span class="pun">&gt;</span> <span class="pun">скорее&lt;</span><span class="str">/p&gt;
+</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>Сокращение тегов</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">.</span><span class="kwd">class</span>
+<span class="pun">&lt;</span><span class="pln">div </span><span class="kwd">class</span><span class="pun">=</span><span class="str">"class"</span><span class="pun">&gt;&lt;</span><span class="str">/div&gt;
+
+em&gt;.class
+&lt;em&gt;&lt;span class="class"&gt;&lt;/</span><span class="pln">span</span><span class="pun">&gt;&lt;</span><span class="str">/em&gt;
+
+ul&gt;.class
+&lt;ul&gt;
+        &lt;li class="class"&gt;&lt;/</span><span class="pln">li</span><span class="pun">&gt;</span>
+<span class="pun">&lt;</span><span class="str">/ul&gt;
+
+table&gt;.row&gt;.col
+&lt;table&gt;
+        &lt;tr class="row"&gt;
+                &lt;td class="col"&gt;&lt;/</span><span class="pln">td</span><span class="pun">&gt;</span><span class="pln">
+        </span><span class="pun">&lt;</span><span class="str">/tr&gt;
+&lt;/</span><span class="pln">table</span><span class="pun">&gt;</span>
+</code></pre>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<h3><span id="HTML">HTML сокращения</span></h3>
+</td>
+</tr>
+<tr>
+<td>!</td>
+<td>
+<pre class="prettyprint"><code><span class="dec">&lt;!doctype html&gt;</span>
+<span class="pun">&lt;</span><span class="tag">html</span> <span class="atn">lang</span><span class="pun">=</span><span class="atv">"en"</span><span class="pun">&gt;</span>
+<span class="pun">&lt;</span><span class="tag">head</span><span class="pun">&gt;</span><span class="pln">
+        </span><span class="pun">&lt;</span><span class="tag">meta</span> <span class="atn">charset</span><span class="pun">=</span><span class="atv">"UTF-8"</span><span class="pun">&gt;</span><span class="pln">
+        </span><span class="pun">&lt;</span><span class="tag">title</span><span class="pun">&gt;</span><span class="pln">Document</span><span class="pun">&lt;/</span><span class="tag">title</span><span class="pun">&gt;</span>
+<span class="pun">&lt;/</span><span class="tag">head</span><span class="pun">&gt;</span>
+<span class="pun">&lt;</span><span class="tag">body</span><span class="pun">&gt;</span><span class="pln">
+        
+</span><span class="pun">&lt;/</span><span class="tag">body</span><span class="pun">&gt;</span>
+<span class="pun">&lt;/</span><span class="tag">html</span><span class="pun">&gt;</span>
+</code></pre>
+</td>
+</tr>
+<tr>
+<td>a</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">a</span> <span class="atn">href</span><span class="pun">=</span><span class="atv">""</span><span class="pun">&gt;&lt;/</span><span class="tag">a</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>a:link</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">a</span> <span class="atn">href</span><span class="pun">=</span><span class="atv">"http://"</span><span class="pun">&gt;&lt;/</span><span class="tag">a</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>a:mail</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">a</span> <span class="atn">href</span><span class="pun">=</span><span class="atv">"mailto:"</span><span class="pun">&gt;&lt;/</span><span class="tag">a</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>base</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">base</span> <span class="atn">href</span><span class="pun">=</span><span class="atv">""</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>br</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">br</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>link</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">link</span> <span class="atn">rel</span><span class="pun">=</span><span class="atv">"stylesheet"</span> <span class="atn">href</span><span class="pun">=</span><span class="atv">""</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>link:css</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">link</span> <span class="atn">rel</span><span class="pun">=</span><span class="atv">"stylesheet"</span> <span class="atn">href</span><span class="pun">=</span><span class="atv">"style.css"</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>link:favicon</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">link</span> <span class="atn">rel</span><span class="pun">=</span><span class="atv">"shortcut icon"</span> <span class="atn">type</span><span class="pun">=</span><span class="atv">"image/x-icon"</span>
+<span class="atn">href</span><span class="pun">=</span><span class="atv">"favicon.ico"</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>link:rss</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">link</span> <span class="atn">rel</span><span class="pun">=</span><span class="atv">"alternate"</span> <span class="atn">type</span><span class="pun">=</span><span class="atv">"application/rss+xml"</span>
+<span class="atn">title</span><span class="pun">=</span><span class="atv">"RSS"</span> <span class="atn">href</span><span class="pun">=</span><span class="atv">"rss.xml"</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>link:atom</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">link</span> <span class="atn">rel</span><span class="pun">=</span><span class="atv">"alternate"</span> <span class="atn">type</span><span class="pun">=</span><span class="atv">"application/atom+xml"</span>
+<span class="atn">title</span><span class="pun">=</span><span class="atv">"Atom"</span> <span class="atn">href</span><span class="pun">=</span><span class="atv">"atom.xml"</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>meta:utf</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">meta</span> <span class="atn">http-equiv</span><span class="pun">=</span><span class="atv">"Content-Type"</span>
+<span class="atn">content</span><span class="pun">=</span><span class="atv">"text/html;charset=UTF-8"</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>meta:vp</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">meta</span> <span class="atn">name</span><span class="pun">=</span><span class="atv">"viewport"</span> <span class="atn">content</span><span class="pun">=</span><span class="atv">"width=device-width,
+user-scalable=no, initial-scale=1.0,
+maximum-scale=1.0, minimum-scale=1.0"</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>meta:compat</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">meta</span> <span class="atn">http-equiv</span><span class="pun">=</span><span class="atv">"X-UA-Compatible"</span> <span class="atn">content</span><span class="pun">=</span><span class="atv">"IE=7"</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>script:src</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">script</span> <span class="atn">src</span><span class="pun">=</span><span class="atv">""</span><span class="pun">&gt;&lt;/</span><span class="tag">script</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>img</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">img</span> <span class="atn">src</span><span class="pun">=</span><span class="atv">""</span> <span class="atn">alt</span><span class="pun">=</span><span class="atv">""</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>ifr</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">iframe</span> <span class="atn">src</span><span class="pun">=</span><span class="atv">""</span> <span class="atn">frameborder</span><span class="pun">=</span><span class="atv">"0"</span><span class="pun">&gt;&lt;/</span><span class="tag">iframe</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>emb</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">embed</span> <span class="atn">src</span><span class="pun">=</span><span class="atv">""</span> <span class="atn">type</span><span class="pun">=</span><span class="atv">""</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>obj</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">object</span> <span class="atn">data</span><span class="pun">=</span><span class="atv">""</span> <span class="atn">type</span><span class="pun">=</span><span class="atv">""</span><span class="pun">&gt;&lt;/</span><span class="tag">object</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>map</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">map</span> <span class="atn">name</span><span class="pun">=</span><span class="atv">""</span><span class="pun">&gt;&lt;/</span><span class="tag">map</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>map+</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">map</span> <span class="atn">name</span><span class="pun">=</span><span class="atv">""</span><span class="pun">&gt;</span><span class="pln">
+        </span><span class="pun">&lt;</span><span class="tag">area</span> <span class="atn">shape</span><span class="pun">=</span><span class="atv">""</span> <span class="atn">coords</span><span class="pun">=</span><span class="atv">""</span> <span class="atn">href</span><span class="pun">=</span><span class="atv">""</span> <span class="atn">alt</span><span class="pun">=</span><span class="atv">""</span><span class="pun">&gt;</span>
+<span class="pun">&lt;/</span><span class="tag">map</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>area</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">area</span> <span class="atn">shape</span><span class="pun">=</span><span class="atv">""</span> <span class="atn">coords</span><span class="pun">=</span><span class="atv">""</span> <span class="atn">href</span><span class="pun">=</span><span class="atv">""</span> <span class="atn">alt</span><span class="pun">=</span><span class="atv">""</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>form</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">form</span> <span class="atn">action</span><span class="pun">=</span><span class="atv">""</span><span class="pun">&gt;&lt;/</span><span class="tag">form</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>form:get<br />
+form:post</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">form</span> <span class="atn">action</span><span class="pun">=</span><span class="atv">""</span> <span class="atn">method</span><span class="pun">=</span><span class="atv">"get"</span><span class="pun">&gt;&lt;/</span><span class="tag">form</span><span class="pun">&gt;</span>
+<span class="pun">&lt;</span><span class="tag">form</span> <span class="atn">action</span><span class="pun">=</span><span class="atv">""</span> <span class="atn">method</span><span class="pun">=</span><span class="atv">"post"</span><span class="pun">&gt;&lt;/</span><span class="tag">form</span><span class="pun">&gt;</span>
+</code></pre>
+</td>
+</tr>
+<tr>
+<td>label</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">label</span> <span class="atn">for</span><span class="pun">=</span><span class="atv">""</span><span class="pun">&gt;&lt;/</span><span class="tag">label</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>input</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">input</span> <span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>inp</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">input</span> <span class="atn">type</span><span class="pun">=</span><span class="atv">"text"</span> <span class="atn">name</span><span class="pun">=</span><span class="atv">""</span> <span class="atn">id</span><span class="pun">=</span><span class="atv">""</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>input:h</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">input</span> <span class="atn">type</span><span class="pun">=</span><span class="atv">"hidden"</span> <span class="atn">name</span><span class="pun">=</span><span class="atv">""</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>input:p</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">input</span> <span class="atn">type</span><span class="pun">=</span><span class="atv">"password"</span> <span class="atn">name</span><span class="pun">=</span><span class="atv">""</span> <span class="atn">id</span><span class="pun">=</span><span class="atv">""</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>input:c</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">input</span> <span class="atn">type</span><span class="pun">=</span><span class="atv">"checkbox"</span> <span class="atn">name</span><span class="pun">=</span><span class="atv">""</span> <span class="atn">id</span><span class="pun">=</span><span class="atv">""</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>input:r</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">input</span> <span class="atn">type</span><span class="pun">=</span><span class="atv">"radio"</span> <span class="atn">name</span><span class="pun">=</span><span class="atv">""</span> <span class="atn">id</span><span class="pun">=</span><span class="atv">""</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>input:f</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">input</span> <span class="atn">type</span><span class="pun">=</span><span class="atv">"file"</span> <span class="atn">name</span><span class="pun">=</span><span class="atv">""</span> <span class="atn">id</span><span class="pun">=</span><span class="atv">""</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>input:s</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">input</span> <span class="atn">type</span><span class="pun">=</span><span class="atv">"submit"</span> <span class="atn">value</span><span class="pun">=</span><span class="atv">""</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>input:i</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">input</span> <span class="atn">type</span><span class="pun">=</span><span class="atv">"image"</span> <span class="atn">src</span><span class="pun">=</span><span class="atv">""</span> <span class="atn">alt</span><span class="pun">=</span><span class="atv">""</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>input:b</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">input</span> <span class="atn">type</span><span class="pun">=</span><span class="atv">"button"</span> <span class="atn">value</span><span class="pun">=</span><span class="atv">""</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>input:reset</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">input</span> <span class="atn">type</span><span class="pun">=</span><span class="atv">"reset"</span> <span class="atn">value</span><span class="pun">=</span><span class="atv">""</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>select</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">select</span> <span class="atn">name</span><span class="pun">=</span><span class="atv">""</span> <span class="atn">id</span><span class="pun">=</span><span class="atv">""</span><span class="pun">&gt;&lt;/</span><span class="tag">select</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>select+</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">select</span> <span class="atn">name</span><span class="pun">=</span><span class="atv">""</span> <span class="atn">id</span><span class="pun">=</span><span class="atv">""</span><span class="pun">&gt;</span><span class="pln">
+        </span><span class="pun">&lt;</span><span class="tag">option</span> <span class="atn">value</span><span class="pun">=</span><span class="atv">""</span><span class="pun">&gt;&lt;/</span><span class="tag">option</span><span class="pun">&gt;</span>
+<span class="pun">&lt;/</span><span class="tag">select</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>opt</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">option</span> <span class="atn">value</span><span class="pun">=</span><span class="atv">""</span><span class="pun">&gt;&lt;/</span><span class="tag">option</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>tarea</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">textarea</span> <span class="atn">name</span><span class="pun">=</span><span class="atv">""</span> <span class="atn">id</span><span class="pun">=</span><span class="atv">""</span> <span class="atn">cols</span><span class="pun">=</span><span class="atv">"30"</span> <span class="atn">rows</span><span class="pun">=</span><span class="atv">"10"</span><span class="pun">&gt;</span>
+<span class="pun">&lt;/</span><span class="tag">textarea</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>video</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">video</span> <span class="atn">src</span><span class="pun">=</span><span class="atv">""</span><span class="pun">&gt;&lt;/</span><span class="tag">video</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>audio</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">audio</span> <span class="atn">src</span><span class="pun">=</span><span class="atv">""</span><span class="pun">&gt;&lt;/</span><span class="tag">audio</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bq</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">blockquote</span><span class="pun">&gt;&lt;/</span><span class="tag">blockquote</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>fst</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">fieldset</span><span class="pun">&gt;&lt;/</span><span class="tag">fieldset</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>btn</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">button</span><span class="pun">&gt;&lt;/</span><span class="tag">button</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>btn:s</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">button</span> <span class="atn">type</span><span class="pun">=</span><span class="atv">"submit"</span><span class="pun">&gt;&lt;/</span><span class="tag">button</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>btn:b</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">button</span> <span class="atn">type</span><span class="pun">=</span><span class="atv">"button"</span><span class="pun">&gt;&lt;/</span><span class="tag">button</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>btn:r</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">button</span> <span class="atn">type</span><span class="pun">=</span><span class="atv">"reset"</span><span class="pun">&gt;&lt;/</span><span class="tag">button</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>sect</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">section</span><span class="pun">&gt;&lt;/</span><span class="tag">section</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>art</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">article</span><span class="pun">&gt;&lt;/</span><span class="tag">article</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>hdr</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">header</span><span class="pun">&gt;&lt;/</span><span class="tag">header</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>ftr</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">footer</span><span class="pun">&gt;&lt;/</span><span class="tag">footer</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>str</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">strong</span><span class="pun">&gt;&lt;/</span><span class="tag">strong</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>ol+</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">ol</span><span class="pun">&gt;</span><span class="pln">
+        </span><span class="pun">&lt;</span><span class="tag">li</span><span class="pun">&gt;&lt;/</span><span class="tag">li</span><span class="pun">&gt;</span>
+<span class="pun">&lt;/</span><span class="tag">ol</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>ul+</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">ul</span><span class="pun">&gt;</span><span class="pln">
+        </span><span class="pun">&lt;</span><span class="tag">li</span><span class="pun">&gt;&lt;/</span><span class="tag">li</span><span class="pun">&gt;</span>
+<span class="pun">&lt;/</span><span class="tag">ul</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>dl+</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">dl</span><span class="pun">&gt;</span><span class="pln">
+        </span><span class="pun">&lt;</span><span class="tag">dt</span><span class="pun">&gt;&lt;/</span><span class="tag">dt</span><span class="pun">&gt;</span><span class="pln">
+        </span><span class="pun">&lt;</span><span class="tag">dd</span><span class="pun">&gt;&lt;/</span><span class="tag">dd</span><span class="pun">&gt;</span>
+<span class="pun">&lt;/</span><span class="tag">dl</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>table+</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">table</span><span class="pun">&gt;</span><span class="pln">
+        </span><span class="pun">&lt;</span><span class="tag">tr</span><span class="pun">&gt;</span><span class="pln">
+                </span><span class="pun">&lt;</span><span class="tag">td</span><span class="pun">&gt;&lt;/</span><span class="tag">td</span><span class="pun">&gt;</span><span class="pln">
+        </span><span class="pun">&lt;/</span><span class="tag">tr</span><span class="pun">&gt;</span>
+<span class="pun">&lt;/</span><span class="tag">table</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>tr+</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">&lt;</span><span class="tag">tr</span><span class="pun">&gt;</span><span class="pln">
+        </span><span class="pun">&lt;</span><span class="tag">td</span><span class="pun">&gt;&lt;/</span><span class="tag">td</span><span class="pun">&gt;</span>
+<span class="pun">&lt;/</span><span class="tag">tr</span><span class="pun">&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>c</td>
+<td>
+<pre class="prettyprint"><code><span class="com">&lt;!-- Комментарий --&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>cc:ie6</td>
+<td>
+<pre class="prettyprint"><code><span class="com">&lt;!--[if lte IE 6]&gt;
+        
+&lt;![endif]--&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>cc:ie</td>
+<td>
+<pre class="prettyprint"><code><span class="com">&lt;!--[if IE]&gt;
+        
+&lt;![endif]--&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>cc:noie</td>
+<td>
+<pre class="prettyprint"><code><span class="com">&lt;!--[if !IE]&gt;&lt;!--&gt;</span><span class="pln">
+        
+</span><span class="com">&lt;!--&lt;![endif]--&gt;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>Любой тег</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">div
+</span><span class="pun">&lt;</span><span class="pln">div</span><span class="pun">&gt;&lt;</span><span class="str">/div&gt;
+
+span
+&lt;span&gt;&lt;/</span><span class="pln">span</span><span class="pun">&gt;</span>
+
+<span class="pun">Любой</span> <span class="pun">другой</span> <span class="pun">тег</span>
+<span class="pun">&lt;</span><span class="pln">tagname</span><span class="pun">&gt;&lt;</span><span class="str">/tagname&gt;
+</span></code></pre>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<h3><span id="CSS">CSS сокращения</span></h3>
+</td>
+</tr>
+<tr>
+<td>pos</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">position</span><span class="pun">:</span><span class="pln"> relative</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>posa</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">position</span><span class="pun">:</span><span class="pln"> absolute</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>posr</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">position</span><span class="pun">:</span><span class="pln"> relative</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>posf</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">position</span><span class="pun">:</span> <span class="kwd">fixed</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>t</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">top</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>t:a</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">top</span><span class="pun">:</span> <span class="kwd">auto</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>r</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">right</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>r:a</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">right</span><span class="pun">:</span> <span class="kwd">auto</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>b</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">bottom</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>b:a</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">bottom</span><span class="pun">:</span> <span class="kwd">auto</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>l</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">left</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>l:a</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">left</span><span class="pun">:</span> <span class="kwd">auto</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>z</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">z</span><span class="pun">-</span><span class="pln">index</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>za</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">z</span><span class="pun">-</span><span class="pln">index</span><span class="pun">:</span> <span class="kwd">auto</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>fl</td>
+<td>
+<pre class="prettyprint"><code><span class="kwd">float</span><span class="pun">:</span><span class="pln"> left</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>fln</td>
+<td>
+<pre class="prettyprint"><code><span class="kwd">float</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>fr</td>
+<td>
+<pre class="prettyprint"><code><span class="kwd">float</span><span class="pun">:</span><span class="pln"> right</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>cl</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">clear</span><span class="pun">:</span><span class="pln"> both</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>d</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">display</span><span class="pun">:</span><span class="pln"> block</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>dn</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">display</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>di</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">display</span><span class="pun">:</span> <span class="kwd">inline</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>dib</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">display</span><span class="pun">:</span> <span class="kwd">inline</span><span class="pun">-</span><span class="pln">block</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>dt</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">display</span><span class="pun">:</span><span class="pln"> table</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>dtc</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">display</span><span class="pun">:</span><span class="pln"> table</span><span class="pun">-</span><span class="pln">cell</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>dtr</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">display</span><span class="pun">:</span><span class="pln"> table</span><span class="pun">-</span><span class="pln">row</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>v</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">visibility</span><span class="pun">:</span><span class="pln"> hidden</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>vv</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">visibility</span><span class="pun">:</span><span class="pln"> visible</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>oh</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">overflow</span><span class="pun">:</span><span class="pln"> hidden</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>ovv</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">overflow</span><span class="pun">:</span><span class="pln"> visible</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>os</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">overflow</span><span class="pun">:</span><span class="pln"> scroll</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>oa</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">overflow</span><span class="pun">:</span> <span class="kwd">auto</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>zm</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">zoom</span><span class="pun">:</span> <span class="lit">1</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>cu</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">cursor</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>cup</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">cursor</span><span class="pun">:</span><span class="pln"> pointer</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>cud</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">cursor</span><span class="pun">:</span> <span class="kwd">default</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>cuh</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">cursor</span><span class="pun">:</span><span class="pln"> hand</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>cuhe</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">cursor</span><span class="pun">:</span><span class="pln"> help</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>cum</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">cursor</span><span class="pun">:</span><span class="pln"> move</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>cut</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">cursor</span><span class="pun">:</span><span class="pln"> text</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>m</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">margin</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>m:a</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">margin</span><span class="pun">:</span> <span class="kwd">auto</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>mt</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">margin</span><span class="pun">-</span><span class="pln">top</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>mta</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">margin</span><span class="pun">-</span><span class="pln">top</span><span class="pun">:</span> <span class="kwd">auto</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>mr</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">margin</span><span class="pun">-</span><span class="pln">right</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>mra</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">margin</span><span class="pun">-</span><span class="pln">right</span><span class="pun">:</span> <span class="kwd">auto</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>mb</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">margin</span><span class="pun">-</span><span class="pln">bottom</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>mba</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">margin</span><span class="pun">-</span><span class="pln">bottom</span><span class="pun">:</span> <span class="kwd">auto</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>ml</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">margin</span><span class="pun">-</span><span class="pln">left</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>mla</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">margin</span><span class="pun">-</span><span class="pln">left</span><span class="pun">:</span> <span class="kwd">auto</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>p</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">padding</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>pt</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">padding</span><span class="pun">-</span><span class="pln">top</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>pr</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">padding</span><span class="pun">-</span><span class="pln">right</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>pb</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">padding</span><span class="pun">-</span><span class="pln">bottom</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>pl</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">padding</span><span class="pun">-</span><span class="pln">left</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bsh</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">box</span><span class="pun">-</span><span class="pln">shadow</span><span class="pun">:</span><span class="pln"> inset hoff voff blur color</span><span class="pun">;</span>
+<span class="pun">-</span><span class="pln">moz</span><span class="pun">-</span><span class="pln">box</span><span class="pun">-</span><span class="pln">shadow</span><span class="pun">:</span><span class="pln"> inset hoff voff blur color</span><span class="pun">;</span><span class="pln">
+box</span><span class="pun">-</span><span class="pln">shadow</span><span class="pun">:</span><span class="pln"> inset hoff voff blur color</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bshn</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">box</span><span class="pun">-</span><span class="pln">shadow</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span>
+<span class="pun">-</span><span class="pln">moz</span><span class="pun">-</span><span class="pln">box</span><span class="pun">-</span><span class="pln">shadow</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span><span class="pln">
+box</span><span class="pun">-</span><span class="pln">shadow</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>w</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">width</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>wa</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">width</span><span class="pun">:</span> <span class="kwd">auto</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>h</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">height</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>ha</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">height</span><span class="pun">:</span> <span class="kwd">auto</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>maw</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">max</span><span class="pun">-</span><span class="pln">width</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>mah</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">max</span><span class="pun">-</span><span class="pln">height</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>mw</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">min</span><span class="pun">-</span><span class="pln">width</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>mh</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">min</span><span class="pun">-</span><span class="pln">height</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>f</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">font</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>f+</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">font</span><span class="pun">:</span> <span class="lit">1em</span> <span class="typ">Arial</span><span class="pun">,</span><span class="pln">sans</span><span class="pun">-</span><span class="pln">serif</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>fw</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">font</span><span class="pun">-</span><span class="pln">weight</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>fwn</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">font</span><span class="pun">-</span><span class="pln">weight</span><span class="pun">:</span><span class="pln"> normal</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>fwb</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">font</span><span class="pun">-</span><span class="pln">weight</span><span class="pun">:</span><span class="pln"> bold</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>fs</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">font</span><span class="pun">-</span><span class="pln">style</span><span class="pun">:</span><span class="pln"> italic</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>fsn</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">font</span><span class="pun">-</span><span class="pln">style</span><span class="pun">:</span><span class="pln"> normal</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>fsi</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">font</span><span class="pun">-</span><span class="pln">style</span><span class="pun">:</span><span class="pln"> italic</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>fz</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">font</span><span class="pun">-</span><span class="pln">size</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>ff</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">font</span><span class="pun">-</span><span class="pln">family</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>ffs</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">font</span><span class="pun">-</span><span class="pln">family</span><span class="pun">:</span><span class="pln"> serif</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>ffss</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">font</span><span class="pun">-</span><span class="pln">family</span><span class="pun">:</span><span class="pln"> sans</span><span class="pun">-</span><span class="pln">serif</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>ffm</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">font</span><span class="pun">-</span><span class="pln">family</span><span class="pun">:</span><span class="pln"> monospace</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>ffa</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">font</span><span class="pun">-</span><span class="pln">family</span><span class="pun">:</span> <span class="typ">Arial</span><span class="pun">,</span> <span class="str">"Helvetica Neue"</span><span class="pun">,</span> <span class="typ">Helvetica</span><span class="pun">,</span><span class="pln">
+sans</span><span class="pun">-</span><span class="pln">serif</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>va</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">vertical</span><span class="pun">-</span><span class="pln">align</span><span class="pun">:</span><span class="pln"> top</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>vm</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">vertical</span><span class="pun">-</span><span class="pln">align</span><span class="pun">:</span><span class="pln"> middle</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>vabl</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">vertical</span><span class="pun">-</span><span class="pln">align</span><span class="pun">:</span><span class="pln"> baseline</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>vb</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">vertical</span><span class="pun">-</span><span class="pln">align</span><span class="pun">:</span><span class="pln"> bottom</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>vs</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">vertical</span><span class="pun">-</span><span class="pln">align</span><span class="pun">:</span> <span class="kwd">sub</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>ta</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">text</span><span class="pun">-</span><span class="pln">align</span><span class="pun">:</span><span class="pln"> left</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>tac</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">text</span><span class="pun">-</span><span class="pln">align</span><span class="pun">:</span><span class="pln"> center</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>tar</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">text</span><span class="pun">-</span><span class="pln">align</span><span class="pun">:</span><span class="pln"> right</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>taj</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">text</span><span class="pun">-</span><span class="pln">align</span><span class="pun">:</span><span class="pln"> justify</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>td</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">text</span><span class="pun">-</span><span class="pln">decoration</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>tdu</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">text</span><span class="pun">-</span><span class="pln">decoration</span><span class="pun">:</span><span class="pln"> underline</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>tdo</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">text</span><span class="pun">-</span><span class="pln">decoration</span><span class="pun">:</span><span class="pln"> overline</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>tdl</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">text</span><span class="pun">-</span><span class="pln">decoration</span><span class="pun">:</span><span class="pln"> line</span><span class="pun">-</span><span class="pln">through</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>tt</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">text</span><span class="pun">-</span><span class="pln">transform</span><span class="pun">:</span><span class="pln"> uppercase</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>ttn</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">text</span><span class="pun">-</span><span class="pln">transform</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>ttl</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">text</span><span class="pun">-</span><span class="pln">transform</span><span class="pun">:</span><span class="pln"> lowercase</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>ts</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">text</span><span class="pun">-</span><span class="pln">shadow</span><span class="pun">:</span><span class="pln"> hoff voff blur </span><span class="com">#000;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>tra</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">text</span><span class="pun">-</span><span class="pln">shadow</span><span class="pun">:</span><span class="pln"> h v blur rgba</span><span class="pun">(</span><span class="lit">0</span><span class="pun">,</span> <span class="lit">0</span><span class="pun">,</span> <span class="lit">0</span><span class="pun">,</span> <span class="lit">.5</span><span class="pun">);</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>ts+</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">text</span><span class="pun">-</span><span class="pln">shadow</span><span class="pun">:</span> <span class="lit">0</span> <span class="lit">0</span> <span class="lit">0</span> <span class="com">#000;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>tsn</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">text</span><span class="pun">-</span><span class="pln">shadow</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>lh</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">line</span><span class="pun">-</span><span class="pln">height</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>lts</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">letter</span><span class="pun">-</span><span class="pln">spacing</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>ws</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">white</span><span class="pun">-</span><span class="pln">space</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>wsn</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">white</span><span class="pun">-</span><span class="pln">space</span><span class="pun">:</span><span class="pln"> normal</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>wsnw</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">white</span><span class="pun">-</span><span class="pln">space</span><span class="pun">:</span><span class="pln"> nowrap</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bg</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">background</span><span class="pun">:</span> <span class="com">#000;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bg+</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">background</span><span class="pun">:</span> <span class="com">#fff url() 0 0 no-repeat;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bn</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">background</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bgc</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">background</span><span class="pun">-</span><span class="pln">color</span><span class="pun">:</span> <span class="com">#fff;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bgt</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">background</span><span class="pun">-</span><span class="pln">color</span><span class="pun">:</span><span class="pln"> transparent</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bgi</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">background</span><span class="pun">-</span><span class="pln">image</span><span class="pun">:</span><span class="pln"> url</span><span class="pun">();</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bgin</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">background</span><span class="pun">-</span><span class="pln">image</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bgr</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">background</span><span class="pun">-</span><span class="pln">repeat</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bgrn</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">background</span><span class="pun">-</span><span class="pln">repeat</span><span class="pun">:</span> <span class="kwd">no</span><span class="pun">-</span><span class="pln">repeat</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bgrx</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">background</span><span class="pun">-</span><span class="pln">repeat</span><span class="pun">:</span><span class="pln"> repeat</span><span class="pun">-</span><span class="pln">x</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bgry</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">background</span><span class="pun">-</span><span class="pln">repeat</span><span class="pun">:</span><span class="pln"> repeat</span><span class="pun">-</span><span class="pln">y</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bga</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">background</span><span class="pun">-</span><span class="pln">attachment</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>baf</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">background</span><span class="pun">-</span><span class="pln">attachment</span><span class="pun">:</span> <span class="kwd">fixed</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bas</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">background</span><span class="pun">-</span><span class="pln">attachment</span><span class="pun">:</span><span class="pln"> scroll</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bgp</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">background</span><span class="pun">-</span><span class="pln">position</span><span class="pun">:</span> <span class="lit">0</span> <span class="lit">0</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bgs</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">background</span><span class="pun">-</span><span class="pln">size</span><span class="pun">:</span> <span class="pun">;</span><span class="pln">
+background</span><span class="pun">-</span><span class="pln">size</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bsa</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">background</span><span class="pun">-</span><span class="pln">size</span><span class="pun">:</span> <span class="kwd">auto</span><span class="pun">;</span><span class="pln">
+background</span><span class="pun">-</span><span class="pln">size</span><span class="pun">:</span> <span class="kwd">auto</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>c</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">color</span><span class="pun">:</span> <span class="com">#000;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>cra</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">color</span><span class="pun">:</span><span class="pln"> rgba</span><span class="pun">(</span><span class="lit">0</span><span class="pun">,</span> <span class="lit">0</span><span class="pun">,</span> <span class="lit">0</span><span class="pun">,</span> <span class="lit">.5</span><span class="pun">);</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>op</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">opacity</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>ct</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">content</span><span class="pun">:</span> <span class="str">''</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>q</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">quotes</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>ol</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">outline</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>on</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">outline</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>tbl</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">table</span><span class="pun">-</span><span class="pln">layout</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>cs</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">caption</span><span class="pun">-</span><span class="pln">side</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>ec</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">empty</span><span class="pun">-</span><span class="pln">cells</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bd</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">border</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bd+</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">border</span><span class="pun">:</span> <span class="lit">1px</span><span class="pln"> solid </span><span class="com">#000;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bdn</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">border</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bdc</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">border</span><span class="pun">-</span><span class="pln">color</span><span class="pun">:</span> <span class="com">#000;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bdi</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">border</span><span class="pun">-</span><span class="pln">image</span><span class="pun">:</span><span class="pln"> url</span><span class="pun">();</span>
+<span class="pun">-</span><span class="pln">moz</span><span class="pun">-</span><span class="pln">border</span><span class="pun">-</span><span class="pln">image</span><span class="pun">:</span><span class="pln"> url</span><span class="pun">();</span>
+<span class="pun">-</span><span class="pln">o</span><span class="pun">-</span><span class="pln">border</span><span class="pun">-</span><span class="pln">image</span><span class="pun">:</span><span class="pln"> url</span><span class="pun">();</span><span class="pln">
+border</span><span class="pun">-</span><span class="pln">image</span><span class="pun">:</span><span class="pln"> url</span><span class="pun">();</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bdin</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">border</span><span class="pun">-</span><span class="pln">image</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span>
+<span class="pun">-</span><span class="pln">moz</span><span class="pun">-</span><span class="pln">border</span><span class="pun">-</span><span class="pln">image</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span>
+<span class="pun">-</span><span class="pln">o</span><span class="pun">-</span><span class="pln">border</span><span class="pun">-</span><span class="pln">image</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span><span class="pln">
+border</span><span class="pun">-</span><span class="pln">image</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bf</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">border</span><span class="pun">-</span><span class="pln">fit</span><span class="pun">:</span><span class="pln"> repeat</span><span class="pun">;</span><span class="pln">
+border</span><span class="pun">-</span><span class="pln">fit</span><span class="pun">:</span><span class="pln"> repeat</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bdle</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">border</span><span class="pun">-</span><span class="pln">length</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bsp</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">border</span><span class="pun">-</span><span class="pln">spacing</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bds</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">border</span><span class="pun">-</span><span class="pln">style</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bw</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">border</span><span class="pun">-</span><span class="pln">width</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bt</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">border</span><span class="pun">-</span><span class="pln">top</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bt+</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">border</span><span class="pun">-</span><span class="pln">top</span><span class="pun">:</span> <span class="lit">1px</span><span class="pln"> solid </span><span class="com">#000;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bdtn</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">border</span><span class="pun">-</span><span class="pln">top</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>br</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">border</span><span class="pun">-</span><span class="pln">right</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>br+</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">border</span><span class="pun">-</span><span class="pln">right</span><span class="pun">:</span> <span class="lit">1px</span><span class="pln"> solid </span><span class="com">#000;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bdrn</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">border</span><span class="pun">-</span><span class="pln">right</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bb</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">border</span><span class="pun">-</span><span class="pln">bottom</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bb+</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">border</span><span class="pun">-</span><span class="pln">bottom</span><span class="pun">:</span> <span class="lit">1px</span><span class="pln"> solid </span><span class="com">#000;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bdbn</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">border</span><span class="pun">-</span><span class="pln">bottom</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bl</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">border</span><span class="pun">-</span><span class="pln">left</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bl+</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">border</span><span class="pun">-</span><span class="pln">left</span><span class="pun">:</span> <span class="lit">1px</span><span class="pln"> solid </span><span class="com">#000;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bdln</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">border</span><span class="pun">-</span><span class="pln">left</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bdrs</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">border</span><span class="pun">-</span><span class="pln">radius</span><span class="pun">:</span> <span class="pun">;</span>
+<span class="pun">-</span><span class="pln">moz</span><span class="pun">-</span><span class="pln">border</span><span class="pun">-</span><span class="pln">radius</span><span class="pun">:</span> <span class="pun">;</span><span class="pln">
+border</span><span class="pun">-</span><span class="pln">radius</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>btrr</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">border</span><span class="pun">-</span><span class="pln">top</span><span class="pun">-</span><span class="pln">right</span><span class="pun">-</span><span class="pln">radius</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bdtrs</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">border</span><span class="pun">-</span><span class="pln">top</span><span class="pun">-</span><span class="pln">left</span><span class="pun">-</span><span class="pln">radius</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bbrr</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">border</span><span class="pun">-</span><span class="pln">bottom</span><span class="pun">-</span><span class="pln">right</span><span class="pun">-</span><span class="pln">radius</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bblr</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">border</span><span class="pun">-</span><span class="pln">bottom</span><span class="pun">-</span><span class="pln">left</span><span class="pun">-</span><span class="pln">radius</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>lis</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">list</span><span class="pun">-</span><span class="pln">style</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>lisn</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">list</span><span class="pun">-</span><span class="pln">style</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>lst</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">list</span><span class="pun">-</span><span class="pln">style</span><span class="pun">-</span><span class="pln">type</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>lstn</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">list</span><span class="pun">-</span><span class="pln">style</span><span class="pun">-</span><span class="pln">type</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>lstd</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">list</span><span class="pun">-</span><span class="pln">style</span><span class="pun">-</span><span class="pln">type</span><span class="pun">:</span><span class="pln"> disc</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>lstc</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">list</span><span class="pun">-</span><span class="pln">style</span><span class="pun">-</span><span class="pln">type</span><span class="pun">:</span><span class="pln"> circle</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>lsts</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">list</span><span class="pun">-</span><span class="pln">style</span><span class="pun">-</span><span class="pln">type</span><span class="pun">:</span><span class="pln"> square</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>lstdc</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">list</span><span class="pun">-</span><span class="pln">style</span><span class="pun">-</span><span class="pln">type</span><span class="pun">:</span> <span class="kwd">decimal</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>lsi</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">list</span><span class="pun">-</span><span class="pln">style</span><span class="pun">-</span><span class="pln">image</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>lsin</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">list</span><span class="pun">-</span><span class="pln">style</span><span class="pun">-</span><span class="pln">image</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>!</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">!</span><span class="pln">important</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>@f</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">@font</span><span class="pun">-</span><span class="pln">face </span><span class="pun">{</span><span class="pln">
+        font</span><span class="pun">-</span><span class="pln">family</span><span class="pun">:;</span><span class="pln">
+        src</span><span class="pun">:</span><span class="pln">url</span><span class="pun">();</span>
+<span class="pun">}</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>@f+</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">@font</span><span class="pun">-</span><span class="pln">face </span><span class="pun">{</span><span class="pln">
+        font</span><span class="pun">-</span><span class="pln">family</span><span class="pun">:</span> <span class="str">'FontName'</span><span class="pun">;</span><span class="pln">
+        src</span><span class="pun">:</span><span class="pln"> url</span><span class="pun">(</span><span class="str">'FileName.eot'</span><span class="pun">);</span><span class="pln">
+        src</span><span class="pun">:</span><span class="pln"> url</span><span class="pun">(</span><span class="str">'FileName.eot?#iefix'</span><span class="pun">)</span><span class="pln">
+        format</span><span class="pun">(</span><span class="str">'embedded-opentype'</span><span class="pun">),</span><span class="pln">
+                 url</span><span class="pun">(</span><span class="str">'FileName.woff'</span><span class="pun">)</span><span class="pln"> format</span><span class="pun">(</span><span class="str">'woff'</span><span class="pun">),</span><span class="pln">
+                 url</span><span class="pun">(</span><span class="str">'FileName.ttf'</span><span class="pun">)</span><span class="pln"> format</span><span class="pun">(</span><span class="str">'truetype'</span><span class="pun">),</span><span class="pln">
+                 url</span><span class="pun">(</span><span class="str">'FileName.svg#FontName'</span><span class="pun">)</span><span class="pln"> format</span><span class="pun">(</span><span class="str">'svg'</span><span class="pun">);</span><span class="pln">
+        font</span><span class="pun">-</span><span class="pln">style</span><span class="pun">:</span><span class="pln"> normal</span><span class="pun">;</span><span class="pln">
+        font</span><span class="pun">-</span><span class="pln">weight</span><span class="pun">:</span><span class="pln"> normal</span><span class="pun">;</span>
+<span class="pun">}</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>@i</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">@import url</span><span class="pun">();</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>@m</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">@media screen </span><span class="pun">{</span><span class="pln">
+        
+</span><span class="pun">}</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>anim</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">animation</span><span class="pun">:</span> <span class="pun">;</span>
+<span class="pun">-</span><span class="pln">o</span><span class="pun">-</span><span class="pln">animation</span><span class="pun">:</span> <span class="pun">;</span><span class="pln">
+animation</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>ap</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">appearance</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span>
+<span class="pun">-</span><span class="pln">moz</span><span class="pun">-</span><span class="pln">appearance</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span><span class="pln">
+appearance</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>bgie</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">filter</span><span class="pun">:</span><span class="pln">progid</span><span class="pun">:</span><span class="typ">DXImageTransform</span>
+<span class="pun">.</span><span class="typ">Microsoft</span><span class="pun">.</span><span class="typ">AlphaImageLoader</span>
+<span class="pun">(</span><span class="pln">src</span><span class="pun">=</span><span class="str">'x.png'</span><span class="pun">,</span><span class="pln">sizingMethod</span><span class="pun">=</span><span class="str">'crop'</span><span class="pun">);</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>cm</td>
+<td>
+<pre class="prettyprint"><code><span class="com">/* Комментарий */</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>colm</td>
+<td>
+<pre class="prettyprint"><code><span class="pln">columns</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>trf</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">transform</span><span class="pun">:</span> <span class="pun">;</span>
+<span class="pun">-</span><span class="pln">moz</span><span class="pun">-</span><span class="pln">transform</span><span class="pun">:</span> <span class="pun">;</span>
+<span class="pun">-</span><span class="pln">ms</span><span class="pun">-</span><span class="pln">transform</span><span class="pun">:</span> <span class="pun">;</span>
+<span class="pun">-</span><span class="pln">o</span><span class="pun">-</span><span class="pln">transform</span><span class="pun">:</span> <span class="pun">;</span><span class="pln">
+transform</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>trfr</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">transform</span><span class="pun">:</span><span class="pln"> rotate</span><span class="pun">(</span><span class="pln">angle</span><span class="pun">);</span>
+<span class="pun">-</span><span class="pln">moz</span><span class="pun">-</span><span class="pln">transform</span><span class="pun">:</span><span class="pln"> rotate</span><span class="pun">(</span><span class="pln">angle</span><span class="pun">);</span>
+<span class="pun">-</span><span class="pln">ms</span><span class="pun">-</span><span class="pln">transform</span><span class="pun">:</span><span class="pln"> rotate</span><span class="pun">(</span><span class="pln">angle</span><span class="pun">);</span>
+<span class="pun">-</span><span class="pln">o</span><span class="pun">-</span><span class="pln">transform</span><span class="pun">:</span><span class="pln"> rotate</span><span class="pun">(</span><span class="pln">angle</span><span class="pun">);</span><span class="pln">
+transform</span><span class="pun">:</span><span class="pln"> rotate</span><span class="pun">(</span><span class="pln">angle</span><span class="pun">);</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>trfsc</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">transform</span><span class="pun">:</span><span class="pln"> scale</span><span class="pun">(</span><span class="pln">x</span><span class="pun">,</span><span class="pln"> y</span><span class="pun">);</span>
+<span class="pun">-</span><span class="pln">moz</span><span class="pun">-</span><span class="pln">transform</span><span class="pun">:</span><span class="pln"> scale</span><span class="pun">(</span><span class="pln">x</span><span class="pun">,</span><span class="pln"> y</span><span class="pun">);</span>
+<span class="pun">-</span><span class="pln">ms</span><span class="pun">-</span><span class="pln">transform</span><span class="pun">:</span><span class="pln"> scale</span><span class="pun">(</span><span class="pln">x</span><span class="pun">,</span><span class="pln"> y</span><span class="pun">);</span>
+<span class="pun">-</span><span class="pln">o</span><span class="pun">-</span><span class="pln">transform</span><span class="pun">:</span><span class="pln"> scale</span><span class="pun">(</span><span class="pln">x</span><span class="pun">,</span><span class="pln"> y</span><span class="pun">);</span><span class="pln">
+transform</span><span class="pun">:</span><span class="pln"> scale</span><span class="pun">(</span><span class="pln">x</span><span class="pun">,</span><span class="pln"> y</span><span class="pun">);</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>trft</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">transform</span><span class="pun">:</span><span class="pln"> translate</span><span class="pun">(</span><span class="pln">x</span><span class="pun">,</span><span class="pln"> y</span><span class="pun">);</span>
+<span class="pun">-</span><span class="pln">moz</span><span class="pun">-</span><span class="pln">transform</span><span class="pun">:</span><span class="pln"> translate</span><span class="pun">(</span><span class="pln">x</span><span class="pun">,</span><span class="pln"> y</span><span class="pun">);</span>
+<span class="pun">-</span><span class="pln">ms</span><span class="pun">-</span><span class="pln">transform</span><span class="pun">:</span><span class="pln"> translate</span><span class="pun">(</span><span class="pln">x</span><span class="pun">,</span><span class="pln"> y</span><span class="pun">);</span>
+<span class="pun">-</span><span class="pln">o</span><span class="pun">-</span><span class="pln">transform</span><span class="pun">:</span><span class="pln"> translate</span><span class="pun">(</span><span class="pln">x</span><span class="pun">,</span><span class="pln"> y</span><span class="pun">);</span><span class="pln">
+transform</span><span class="pun">:</span><span class="pln"> translate</span><span class="pun">(</span><span class="pln">x</span><span class="pun">,</span><span class="pln"> y</span><span class="pun">);</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>tfo</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">transform</span><span class="pun">-</span><span class="pln">origin</span><span class="pun">:</span> <span class="pun">;</span>
+<span class="pun">-</span><span class="pln">moz</span><span class="pun">-</span><span class="pln">transform</span><span class="pun">-</span><span class="pln">origin</span><span class="pun">:</span> <span class="pun">;</span>
+<span class="pun">-</span><span class="pln">ms</span><span class="pun">-</span><span class="pln">transform</span><span class="pun">-</span><span class="pln">origin</span><span class="pun">:</span> <span class="pun">;</span>
+<span class="pun">-</span><span class="pln">o</span><span class="pun">-</span><span class="pln">transform</span><span class="pun">-</span><span class="pln">origin</span><span class="pun">:</span> <span class="pun">;</span><span class="pln">
+transform</span><span class="pun">-</span><span class="pln">origin</span><span class="pun">:</span> <span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>trs</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">transition</span><span class="pun">:</span><span class="pln"> prop time</span><span class="pun">;</span>
+<span class="pun">-</span><span class="pln">moz</span><span class="pun">-</span><span class="pln">transition</span><span class="pun">:</span><span class="pln"> prop time</span><span class="pun">;</span>
+<span class="pun">-</span><span class="pln">ms</span><span class="pun">-</span><span class="pln">transition</span><span class="pun">:</span><span class="pln"> prop time</span><span class="pun">;</span>
+<span class="pun">-</span><span class="pln">o</span><span class="pun">-</span><span class="pln">transition</span><span class="pun">:</span><span class="pln"> prop time</span><span class="pun">;</span><span class="pln">
+transition</span><span class="pun">:</span><span class="pln"> prop time</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>trsde</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">transition</span><span class="pun">-</span><span class="pln">delay</span><span class="pun">:</span><span class="pln"> time</span><span class="pun">;</span>
+<span class="pun">-</span><span class="pln">moz</span><span class="pun">-</span><span class="pln">transition</span><span class="pun">-</span><span class="pln">delay</span><span class="pun">:</span><span class="pln"> time</span><span class="pun">;</span>
+<span class="pun">-</span><span class="pln">ms</span><span class="pun">-</span><span class="pln">transition</span><span class="pun">-</span><span class="pln">delay</span><span class="pun">:</span><span class="pln"> time</span><span class="pun">;</span>
+<span class="pun">-</span><span class="pln">o</span><span class="pun">-</span><span class="pln">transition</span><span class="pun">-</span><span class="pln">delay</span><span class="pun">:</span><span class="pln"> time</span><span class="pun">;</span><span class="pln">
+transition</span><span class="pun">-</span><span class="pln">delay</span><span class="pun">:</span><span class="pln"> time</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>trsdu</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">transition</span><span class="pun">-</span><span class="pln">duration</span><span class="pun">:</span><span class="pln"> time</span><span class="pun">;</span>
+<span class="pun">-</span><span class="pln">moz</span><span class="pun">-</span><span class="pln">transition</span><span class="pun">-</span><span class="pln">duration</span><span class="pun">:</span><span class="pln"> time</span><span class="pun">;</span>
+<span class="pun">-</span><span class="pln">ms</span><span class="pun">-</span><span class="pln">transition</span><span class="pun">-</span><span class="pln">duration</span><span class="pun">:</span><span class="pln"> time</span><span class="pun">;</span>
+<span class="pun">-</span><span class="pln">o</span><span class="pun">-</span><span class="pln">transition</span><span class="pun">-</span><span class="pln">duration</span><span class="pun">:</span><span class="pln"> time</span><span class="pun">;</span><span class="pln">
+transition</span><span class="pun">-</span><span class="pln">duration</span><span class="pun">:</span><span class="pln"> time</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>trsp</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">transition</span><span class="pun">-</span><span class="pln">property</span><span class="pun">:</span><span class="pln"> prop</span><span class="pun">;</span>
+<span class="pun">-</span><span class="pln">moz</span><span class="pun">-</span><span class="pln">transition</span><span class="pun">-</span><span class="pln">property</span><span class="pun">:</span><span class="pln"> prop</span><span class="pun">;</span>
+<span class="pun">-</span><span class="pln">ms</span><span class="pun">-</span><span class="pln">transition</span><span class="pun">-</span><span class="pln">property</span><span class="pun">:</span><span class="pln"> prop</span><span class="pun">;</span>
+<span class="pun">-</span><span class="pln">o</span><span class="pun">-</span><span class="pln">transition</span><span class="pun">-</span><span class="pln">property</span><span class="pun">:</span><span class="pln"> prop</span><span class="pun">;</span><span class="pln">
+transition</span><span class="pun">-</span><span class="pln">property</span><span class="pun">:</span><span class="pln"> prop</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+<tr>
+<td>us</td>
+<td>
+<pre class="prettyprint"><code><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">user</span><span class="pun">-</span><span class="kwd">select</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span>
+<span class="pun">-</span><span class="pln">moz</span><span class="pun">-</span><span class="pln">user</span><span class="pun">-</span><span class="kwd">select</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span>
+<span class="pun">-</span><span class="pln">ms</span><span class="pun">-</span><span class="pln">user</span><span class="pun">-</span><span class="kwd">select</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span><span class="pln">
+user</span><span class="pun">-</span><span class="kwd">select</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span></code></pre>
+</td>
+</tr>
+</tbody>
+</table>
+<p>В некоторые CSS сокращения можно подставлять свои значения, например:</p>
+<pre class="prettyprint"><code><span class="com">/* mt20 */</span><span class="pln">
+margin</span><span class="pun">-</span><span class="pln">top</span><span class="pun">:</span> <span class="lit">20px</span><span class="pun">;</span>
+
+<span class="com">/* fsz20 */</span><span class="pln">
+font</span><span class="pun">-</span><span class="pln">size</span><span class="pun">:</span> <span class="lit">20px</span><span class="pun">;</span>
+
+<span class="com">/* p15 */</span><span class="pln">
+padding</span><span class="pun">:</span> <span class="lit">15px</span><span class="pun">;</span></code></pre>
+<div class='yarpp-related'>
+<p>Стоит прочесть:</p><ol>
+<li><a href="http://itman.in/ubuntu-ustanovka-sublime-text-2/" rel="bookmark" title="Ubuntu &#8212; установка Sublime Text 2">Ubuntu &#8212; установка Sublime Text 2 </a></li>
+<li><a href="http://itman.in/2-html-blocks-overflow/" rel="bookmark" title="Два HTML элемента в одном блоке &#8212; используем overflow">Два HTML элемента в одном блоке &#8212; используем overflow </a></li>
+<li><a href="http://itman.in/sublime-text-2-poisk-s-pomoshhyu-regulyarnyih-vyirazheniy/" rel="bookmark" title="Sublime Text 2 &#8212; поиск с помощью регулярных выражений">Sublime Text 2 &#8212; поиск с помощью регулярных выражений </a></li>
+<li><a href="http://itman.in/sublime-text-ustanovka-pod-ubuntu/" rel="bookmark" title="Sublime Text &#8212; установка в Ubuntu через репозиторий">Sublime Text &#8212; установка в Ubuntu через репозиторий </a></li>
+<li><a href="http://itman.in/zen-coding-v-sublime-text-2/" rel="bookmark" title="Zen Coding в Sublime Text 2">Zen Coding в Sublime Text 2 </a></li>
+</ol>
+</div>
+	</div><!-- .entry-content -->
+
+	
+	<footer class="entry-footer">
+		<span class="posted-on"><span class="screen-reader-text">Опубликовано </span><a href="http://itman.in/komandy-emmet-shpargalka-dlya-plagina-html-redaktora-sublime-text/" rel="bookmark"><time class="entry-date published" datetime="2015-10-15T08:21:15+00:00">15.10.2015</time><time class="updated" datetime="2015-10-15T08:40:37+00:00">15.10.2015</time></a></span><span class="byline"><span class="author vcard"><span class="screen-reader-text">Автор </span><a class="url fn n" href="http://itman.in/author/itman/">Сергей Шармазанов</a></span></span><span class="cat-links"><span class="screen-reader-text">Рубрики </span>Без рубрики</span>			</footer><!-- .entry-footer -->
+
+</article><!-- #post-## -->
+
+<div id="comments" class="comments-area">
+
+			<h2 class="comments-title">
+			Команды Emmet &#8212; шпаргалка для плагина html редактора Sublime Text: 2 комментария		</h2>
+
+		
+		<ol class="comment-list">
+					<li id="comment-144842" class="comment even thread-even depth-1">
+			<article id="div-comment-144842" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://2.gravatar.com/avatar/5462290446f711b61105ee050415ef48?s=56&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/5462290446f711b61105ee050415ef48?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56' />						<b class="fn">AKarlkvist</b><span class="says">:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://itman.in/komandy-emmet-shpargalka-dlya-plagina-html-redaktora-sublime-text/#comment-144842">
+							<time datetime="2015-11-13T14:55:07+00:00">
+								13.11.2015 в 14:55							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Спасибо больше за шпаргалку.</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='http://itman.in/komandy-emmet-shpargalka-dlya-plagina-html-redaktora-sublime-text/?replytocom=144842#respond' onclick='return addComment.moveForm( "div-comment-144842", "144842", "respond", "2131" )' aria-label='Комментарий к записи AKarlkvist'>Ответить</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-155414" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-155414" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://2.gravatar.com/avatar/85defb921fcf04c6fa99fd3644eccba6?s=56&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/85defb921fcf04c6fa99fd3644eccba6?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo' height='56' width='56' />						<b class="fn">верстальщик</b><span class="says">:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://itman.in/komandy-emmet-shpargalka-dlya-plagina-html-redaktora-sublime-text/#comment-155414">
+							<time datetime="2017-10-12T12:35:22+00:00">
+								12.10.2017 в 12:35							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>благодарю за помощь</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='http://itman.in/komandy-emmet-shpargalka-dlya-plagina-html-redaktora-sublime-text/?replytocom=155414#respond' onclick='return addComment.moveForm( "div-comment-155414", "155414", "respond", "2131" )' aria-label='Комментарий к записи верстальщик'>Ответить</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+	
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Добавить комментарий <small><a rel="nofollow" id="cancel-comment-reply-link" href="/komandy-emmet-shpargalka-dlya-plagina-html-redaktora-sublime-text/#respond" style="display:none;">Отменить ответ</a></small></h3>			<form action="http://itman.in/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Ваш e-mail не будет опубликован.</span> Обязательные поля помечены <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Комментарий</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">Имя <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required='true' required='required' /></p>
+<p class="comment-form-email"><label for="email">E-mail <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required='true' required='required' /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Отправить комментарий" /> <input type='hidden' name='comment_post_ID' value='2131' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="ac7d53baae" /></p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;" /> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Уведомить меня о новых комментариях по email.</label></p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;" /> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Уведомлять меня о новых записях почтой.</label></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="59"/></p>        
+        <input type="hidden" name="icl_comment_language" value="ru" />
+        
+          
+        			</form>
+			</div><!-- #respond -->
+	
+</div><!-- .comments-area -->
+
+	<nav class="navigation post-navigation" role="navigation">
+		<h2 class="screen-reader-text">Навигация по записям</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="http://itman.in/stat-programmistom-v-30-let-i-nachat-zarabatyvat/" rel="prev"><span class="meta-nav" aria-hidden="true">Назад</span> <span class="screen-reader-text">Предыдущая запись:</span> <span class="post-title">Как стать программистом в 30 лет и начать зарабатывать</span></a></div><div class="nav-next"><a href="http://itman.in/javascript-oblast-vidimosti-peremennyh/" rel="next"><span class="meta-nav" aria-hidden="true">Далее</span> <span class="screen-reader-text">Следующая запись:</span> <span class="post-title">Javascript область видимости переменных</span></a></div></div>
+	</nav>
+		</main><!-- .site-main -->
+	</div><!-- .content-area -->
+
+
+	</div><!-- .site-content -->
+
+</div><!-- .site -->
+
+	<div style="display:none">
+	<div class="grofile-hash-map-5462290446f711b61105ee050415ef48">
+	</div>
+	<div class="grofile-hash-map-85defb921fcf04c6fa99fd3644eccba6">
+	</div>
+	</div>
+
+							<div id="lang_sel_footer">
+									<ul>
+									    <li><a href="http://itman.in/komandy-emmet-shpargalka-dlya-plagina-html-redaktora-sublime-text/" class="lang_sel_sel"><img src="http://itman.in/wp-content/plugins/sitepress-multilingual-cms/res/flags/ru.png" alt="Русский" class="iclflag" title="Русский"  />&nbsp;Русский</a></li>
+									</ul>
+							</div><script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201801'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var tocplus = {"smooth_scroll":"1","visibility_show":"show","visibility_hide":"hide","width":"Auto"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://itman.in/wp-content/plugins/table-of-contents-plus/front.min.js?ver=1509'></script>
+<script type='text/javascript' src='http://s.gravatar.com/js/gprofiles.js?ver=2018Janaa'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://itman.in/wp-content/plugins/jetpack/modules/wpgroho.js?ver=64f2e2bac1007faf248653c3efb022e4'></script>
+<script type='text/javascript' src='http://itman.in/wp-content/themes/twentyfifteen/js/skip-link-focus-fix.js?ver=20141010'></script>
+<script type='text/javascript' src='http://itman.in/wp-includes/js/comment-reply.min.js?ver=64f2e2bac1007faf248653c3efb022e4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"<span class=\"screen-reader-text\">\u0440\u0430\u0441\u043a\u0440\u044b\u0442\u044c \u0434\u043e\u0447\u0435\u0440\u043d\u0435\u0435 \u043c\u0435\u043d\u044e<\/span>","collapse":"<span class=\"screen-reader-text\">\u0441\u0432\u0435\u0440\u043d\u0443\u0442\u044c \u0434\u043e\u0447\u0435\u0440\u043d\u0435\u0435 \u043c\u0435\u043d\u044e<\/span>"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://itman.in/wp-content/themes/twentyfifteen/js/functions.js?ver=20150330'></script>
+<script type='text/javascript' src='http://itman.in/wp-includes/js/wp-embed.min.js?ver=64f2e2bac1007faf248653c3efb022e4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var icl_vars = {"current_language":"ru","icl_home":"http:\/\/itman.in\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://itman.in/wp-content/plugins/sitepress-multilingual-cms/res/js/sitepress.js?ver=64f2e2bac1007faf248653c3efb022e4'></script>
+<script async="async" type='text/javascript' src='http://itman.in/wp-content/plugins/akismet/_inc/form.js?ver=4.0.2'></script>
+<script type='text/javascript' src='https://stats.wp.com/e-201801.js' async defer></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:5.7',blog:'33459831',post:'2131',tz:'2',srv:'itman.in'} ]);
+	_stq.push([ 'clickTrackerInit', '33459831', '2131' ]);
+</script>
+
+</body>
+</html>
+
+<!-- Dynamic page generated in 1.655 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2018-01-04 20:40:28 -->

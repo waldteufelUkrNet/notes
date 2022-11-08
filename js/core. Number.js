@@ -109,3 +109,11 @@ function randomInteger(min, max) {
   let rand = min - 0.5 + Math.random() * (max - min + 1);
   return Math.round(rand);
 }
+
+
+
+
+// подання числа у експоненційній формі
+console.log(12.67.toExponential(4)); // 1.2670e+1
+
+console.log(12.67.toPrecision(3)); // 12.7

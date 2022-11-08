@@ -3,6 +3,11 @@
 ▼
 ▶
 ◀
+"
+”
+«
+»
+"
 
 ???
 
@@ -22,6 +27,17 @@ https://www.sublimetext.com/docs/api_reference.html
 відео по emmet + шпора
 відео по gist на web developer blog
 ========================================================================================================================
+
+Home - перевести курсор на початок рядку
+End - перевести курсор в кінець рядку
+Ctrl+Home - перевести курсор на початок файлу
+Ctrl+End - перевести курсор в кінець файлу
+
+
+проставити версії усіх пакунків
+які пакунки вимагають зовнішніх бінарників (наприклад ноду)
+
+
 ПАКУНКИ Sublime Text 3
 ------------------------------
 
@@ -29,80 +45,24 @@ https://www.sublimetext.com/docs/api_reference.html
 ----------
 Emmet                        : автостворення тегів та конструкцій по скорочених інструкціях
 
-SideBarEnhancements          : розширення  функціоналу бічної  панелі, напр.  reveal  з  контекстного меню  відкриє теку
-                               розташування теки/файла
-
-
-
-Вирівнювання:
-------------
-HTML-CSS-JS Prettify         : впорядковує код HTML/CSS/JS (ідентація), ДЕМІНІФІКАЦІЯ мініфікованих файлів Ctrl+Shift+H
-Alignment                    : вирівнювання пар ключ-значення CSS/JS по розділовому знаку (Ctrl+Alt+A) В SCSS не працює.
-(HTMLBeautify)               : вирівнювання html коду Ctrl+Alt+Shift+F
-(jsFormat)                   : вирівнювання JS чезез контекстне меню або Ctrl+Alt+F
-
-
-Підказки:
---------
-AutoFileName                 : робить підказки для шляхів і назв файлів при їх підключенні
-All Autocomplete             : робить підказки (здійснює пошук співпадінь в усіх відкритих вкладках поточного вікна)
-Nodejs                       : підказки для node.js
-
-
-Різне:
------
-Console Wrap                 : на виділеній змінній - Ctrl+Shift+Q - і внизу з'явиться рядок із console.log
-Can I Use                    : якщо виділити тег або властивість і Ctrl+Alt+F - відкриється Can I Use
-Minifier                     : мініфікує  файли  CSS  та  JS,  прибирає  коментарі (Ctrl+Alt+M) або Ctrl+Alt+Shift+M для
-                               створення нового файлу із суфіксом min.
-DocBlockr                    : написання документації для JS: перед функцією або змінною набрати /** та натиснути  Enter
-                               або для однорядкового коментаря - Shift+Enter
-Markdown HTML Preview        : ctrl+shift+m відкриває браузер і показує, як виглядає md-файл
-HTML Nest Comments           : в стандартному HTML не можна закоментувати  код,  в  якому  уже  є  коменти.  Цей  плагін
-                               виправляє дану проблему.
-Random Everything            : генерування випадкових значень: пошт, телефонів тощо. Працює через Ctrl+Shift+P.
-
-
-Лінтери (перевірка коду):
-------------------------
-
-SublimeLinter
-SublimeLinter-eslint
-SublimeLinter-json
-SublimeLinter-pug-lint
-SublimeLinter-contrib-dockerfilelint - лінтер для докера, не встановлюється (помилка)
-SublimeLinter-contrib-nginx-lint - лінтер для nginx, не встановлюється (помилка)
-
-
-Не актуально:
-------------
-(Autoprefixer)               : додає вендорні префікси в CSS. Після встановлення потрібно виділити клас із властивостями
-                               потім набрати Ctrl+Shift+P і потім - Autoprefix CSS. В системі збірки Gulp не потрібен.
-(Go-To-CSS-Declaration)      : дозволяє  в  HTML  вибрати  клас  і  через контекстне меню перейти в CSS-файлі в місце із
-                               властивостями класу. Не працює в SCSS.
-(CSSComb)                    : Ctrl+Shift+C - дозволяє виділити шмат CSS-коду і відсортувати  властивості  у  правильній
-                               послідовності. Не працює в SCSS.
-
-
-
-
-
 Подивитися на майбутнє:
 ----------------------
 SublimeCodeIntel             : автокомпліти стандартних функцій js + можливість шукати місця, де оголошена функція (навіть якщо вона оголошувалася у іншому файлі - контекстне меню: Jump to Symbol Definition)
 JavaScript Completions       : автокомпліт стандартних функцій в JS
 Bootstrap 3 Snippets / Bootstrap 4 Snippets : автокомпліти розмітки bootstrap
-Tag                          : підсвітка крапкою збоку помилки у розмітці (напр. відсутність закриваючого тегу), дозволяє швидко скопіювати усі класи css з html коду або фрагменту, дозволяє вирівняти код html, видалення тегів тощо.
 WordPress                    : робота з WordPress
 CSS Extended Completions     : додавання міксинів в кеш і потім використання їх з кешу за допомою автокомпліта
-Inc-Dec-Value                : збільшення/зменшення цифр, букв в словах на великі/малі, true на false тощо. Можна створити власний словник замін і налаштувати клавіатурні скорочення для заміни слів.
 jQuery                       : підказки-автокомпліти для jQuery. У парах ключ-значення зручно бігати TAB'ом.
 GIT                          : ??????????
 GIST                         : завантаження шматків коду з gist.github.com, для використання потрібен персональний токен, його вписують в Settings-user плагіна. Для вставки гіста Ctrl+K+O?
-SASS                         : ?????????? - без нього не працює Emmet у файлах .sass
-MarkdownPreview              : показує, як виглядає md-файл, має складні налаштування, інтегрується з LiveReload
+MarkdownPreview              : показує, як виглядає md-файл, має складvні налаштування, інтегрується з LiveReload
 
-FindKeyConflicts
+Tag                          : підсвітка крапкою збоку помилки у розмітці (напр.
+                             відсутність закриваючого тегу), дозволяє швидко
+                             скопіювати усі класи css з html коду або фрагменту,
+                             дозволяє вирівняти код html, видалення тегів тощо.
+                             https://github.com/titoBouzout/Tag
+
 React IDE
 FindInProject                : Text search plugin for Sublime Text 3 projects  не встановлюється!
 FileFinder                   : Sublime Filefinder plugin
@@ -110,86 +70,57 @@ Search in Project            : Use ag, ack, grep and git grep directly from Subl
 Debugger
 Sublimerge 3
 
-LockTab - блокування вкладок, заборона закриття
-TabsExtra - розширене контекстне меню для вкладок
+
+
 Tabnine - AI Code Completion Autocomplete AI: JavaScript, Python, TypeScript, PHP, C/C++, HTML/CSS, Go, Java, Ruby, C#, Rust, SQL, Bash, Kotlin, Julia, Lua, OCaml, Perl, Haskell, React
 
 Clipboard Manager vs Clipboard History
 PlainTasks(https://xakep.ru/2014/07/28/sublime-text-not-for-coding/) є інструкції на сайті packagecontroll.io або Preferences → Package Settings → PlainTasks → Tutorial
-
-  : + \n заголовок
-  **bold**
-  _italic_
-
-  ctrl+enter   нова задача
-  ctrl+i       нова задача
-  ctrl+d       помітити задачу як зроблену
-  alt+c        помітити задачу як скасовану
-  ctrl+shift+a архівувати зроблену задачу (вилучити з тексту і помістити вниз)
-
-  теги (помітки)
-    @tag
-    правий клік на тегу - Filter by tags under cursors - приховує все, крім задач з конкретним тегом
-    ctrl+k або ctrl+j або (ctrl+k, ctrl+0) знову усе показати
-
-  ctrl+shift+U відкрити посилання у файлі .todo
-
-  alt+o - відкрити файл. шлях до файла повинен починатися з .\ або ./
-
-  пршоритетність і час не працюють (
-
 
 https://packagecontrol.io/packages/CommandsBrowser
 5 Нужен пакет JsFormat
 Нужен пакет Prefixr
 
 ================================================================================
-My Favorite Sublime Plugins
 
-As I'm regularily asked which Sublime Text plugins I install via Package Control for additional functionality in addition to the above basic style, here is my list of recommended plugins:
+WordCount (statusbar addition: word count)
 
-    Additional Interface Functionality:
-        SideBarEnhancements (sidebar addition: filesystem operations)
-        Terminal (sidebar addition: open terminal here)
-        WordCount (statusbar addition: word count)
+- Version Control Systems:
+SVN (general Subversion tool integration)
+Git (general Git tool integration)
+SideBarGit (sidebar addition: Git commands)
+Git Gutter (gutter addition: Git diff-style information)
+GitConfig (.gitconfig file support)
 
-    Editing:
-        Auto Autocomplete (source code completion)
-        Vintage (Vi mode - for Sublime Text 2 only: already ships with it)
-        Vintagous (Vi mode - for Sublime Text 3 only: the better Vintage)
-        VintageEx (Ex mode for Vi mode)
+- Additional Languages and Macros:
+MarkdownEditing         .
+TypeScript              .
+TypeScript Compiler     .
+LaTeXTools              .
 
-    Source Code:
-        SublimeLinter (source code linting)
-        SublimeCodeIntel (source code lookup/completion)
+RunCommandS             .
+Inline Google Translate .
+Google Translate        .
+Gulp                    .
+MongoExec               .
+ClickableRequires       .
+Origami                 .
+EditorConfig            .
+Formatter               A Sublime Text 3 plugin to beautify and minify source code - Support more than 20 major languages
+JavaScript Enhancements .
+Anaconda                turns your Sublime Text 3 in a full featured Python development IDE
+SublimeREPL             .
+FileDiffs               .
 
-    Version Control Systems:
-        SVN (general Subversion tool integration)
-        Git (general Git tool integration)
-        SideBarGit (sidebar addition: Git commands)
-        Git Gutter (gutter addition: Git diff-style information)
-        GitConfig (.gitconfig file support)
+Table Editor
+Markdown Table Formatter
+AlignTab
 
-    Build Tools:
-        Grunt
-        Ant
+PackageResourceViewer
 
-    Additional Languages and Macros:
-        MarkdownEditing
-        TypeScript
-        TypeScript Compiler
-        LaTeXTools
-        LESS
-        HTML5
-        Emmet
-RunCommandS
+Prettier (https://prettier.io) - pJsPrettier
 
+================================================================================
 
-Inline Google Translate
-Google Translate
-
-Gulp
-
-MongoExec
-
-ClickableRequires
+SublimeLinter-contrib-sqlint         sql - не можу поставити rubygem на linux
+htnllinter не повинен перевіряти md!

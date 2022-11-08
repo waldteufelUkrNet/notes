@@ -10,7 +10,6 @@ html-файлів). Якщо її достатньо, пакунок не пот
 відкриваються у Firefox.
 
 
-
 Ctrl+Alt+F - firefox,
 Ctrl+Alt+C - chrome,
 Ctrl+Alt+O - opera,

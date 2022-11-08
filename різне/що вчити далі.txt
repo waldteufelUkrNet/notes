@@ -1,0 +1,81 @@
+stackoverflow - eng
+----------
+
+зробити
+----------
+переробити галп файл: 1. повідомлення про помилку
+                      2. якщо не було змін - прекомпіляція не потрібна (навіщо кожного разу перекомпільовувати незмінювані бібліотеки (jquery тощо)
+                      3. перекомпіляція при зніні в блоках pug: при відслідковуванні bem-blocks.js виникає конфлікт із lib.min.js. Причина: lib.min.js набагато важчий за block.js, тому компілюється повільніше. Як наслідок на момент компіляції blocks.js браузер не знає про jquery (консоль: ReferenceError: $ is not defined). Для уникнення подібного в index.pug при підкюченні скрипта lib.min.js прибирав атрибут defer=''. Але це погана практика. Потрібно змінити gulpfile, так, щоб при зміні block.js спочатку відкомпілювався lib.min.js, і тільки потім почав компілюватися block.js (pug).
+                      4. дублікати в медіа-запитах. Як їх позбутися? https://github.com/rbtech/gulp-css-purge?
+                      purge = require('gulp-css-purge'); - видалення дублюючого коду css? - файл реально зменшується, але дублікати не пропадають
+                      5. uncss для файлу бібліотек css
+
+технології
+----------
+
+cms:              wordpress/joomla
+
+js:               jQuery
+                  react
+                  es6
+                  AJAX
+                  Angular.js
+                  VueJS;
+                  Jquery UI
+
+html:             template engines - шаблонні рушії JADE (PUG)
+                  мова розмітки markdown
+
+css:              css методології (бем, смекс, allcss)
+                  animation
+
+task runners:     gulp
+                  webpack
+
+package managers: bower
+                  git
+
+http протокол (HTML Reference)
+
+
+план
+----------
+SASS -> BEM -> GIT -> валідатори -> landing -> паралакс -> flex/grid -> JADE (PUG) -> em\rem -> landing -> js? -> games -> jQuery UI -> Angular/React
+                                                                                                          ^
+
+вимоги
+----------
+REST API
+Smarty
+Polymer,
+postcss
+JavaScript Design Patterns;
+Redux;
+Experience with Git, SPA frameworks (React.js, Vue.js);
+PHP, MySQL,
+Знакомство с Agile;
+HTML5 game frameworks (such as: Pixi.js, Phaser);
+Backbone.js / Marionette.js
+Jira
+
+Существует специальный язык UML для создания диаграмм, разъясняющих архитектуру кода. Его определённо стоит изучить. (http://learn.javascript.ru/comments)
+
+
+Плани на майбутнє:
+------------------
+1.  дочитати весь підручник Кантера
+2.  ajax
+
+4.  Іграшки: змійка, тетріс, п'ятнашки, пам'ять, 2048
+5.  Спробувати зробити аналог Травіану
+6.  створення своїх компонентів: полоси прокрутки, акордеони, форми, елементи форм. Створення чогось подібного до Bootstrap
+7.  formval.js
+8.  читалка
+9.  редактор тексту
+10. Перейти на ES6
+11. Додаток для браузера
+12. шифратор
+13. https://editorconfig.org/
+
+
+https://proglib.io/p/sequence-of-study-javascript

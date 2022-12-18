@@ -39,4 +39,4 @@ sudo n 12.13.1
 Посилання                                                     <i id="links"></i>
 --------------------------------------------------------------------------------
 
-1. [...](https://phoenixnap.com/kb/update-node-js-version#ftoc-heading-3/)
+1. […](https://phoenixnap.com/kb/update-node-js-version#ftoc-heading-3/)

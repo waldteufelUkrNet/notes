@@ -1,17 +1,6 @@
-IW-9 Первинне налаштування:
+ ☐ івсвіс
 
-✔ тех.файли @done (21-12-28 00:59)
-  ✔ .env/.env.dist @done (21-12-25 23:47)
-  ✔ .gitignore @done (21-12-25 23:47)
-  ✔ package.json @done (21-12-28 00:14)
-  ✔ .sequelizerc: налаштування підключення до бд @done (21-12-27 23:32)
-  ✔ .eslintrc.json @done (21-12-28 00:59)
-    ✔ Помилка: "Parsing error: No Babel config file detected for B:\files\work_area\Malevich\iwish\api\src\... Either disable config file checking with requireConfigFile: false, or configure Babel so that it can find the config files." @done (21-12-28 00:59)
-✔ файлова структура @done (21-12-25 23:49)
-✔ app.js @done (21-12-28 00:14)
-✔ db: index.js, моделі, міграції, сіди @done (21-12-27 23:30)
-✔ graphql: schema, тип user @done (21-12-27 23:31)
-✔ облікові дані дефолтного юзера @done (21-12-27 23:31)
+
 
 IW-10-Backend-authorization-registration:
 потрібно використовувати jwt, bcrypt
@@ -23,9 +12,42 @@ IW-10-Backend-authorization-registration:
 malevichteam111@gmail.com
 ma23le87vi54ch
 
-package name from your AndroidManifest.xml com.awesometsproject
+@critical
 
+@today
+@critical  
+
+@@critical
+
+@toggle(22-11-22 08:44)    
+
+
+✔ @started(22-11-12 08:40) @done (22-11-22 12:10) @lasted(10 days, 3:30)
+☐ @cancelled(22-11-22 09:04)
+
+./../PackagesTempInfo/A File Icon.md:1:12
+
+@due(22-11-22 09:03)
+
+
+
+ @toggle(22-11-22 08:55)
+
+
+
+ ☐ @someTag sddtjhfvfes rsvfv
+
+ ☐ @someTag sdsdsdsdsf  dfv dsfv fgb  efrrttthy 
+
+@someTag sdsdsdsds
+--- ✄ -----------------------
+--- ✄ -----------------------
+--- ✄ -----------------------
+--- ✄ -----------------------
+package name from your AndroidManifest.xml com.awesometsproject
+https:/skype:nickname/www.sublimetext.com/
 OAuth google:`
+<skype:nickname>
 Client ID:     424330311544-rhcnvbm2ffhrhvh7egkh56h0h8l1satm.apps.googleusercontent.com
 Client Secret: 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
 
@@ -46,12 +68,6 @@ https://www.passportjs.org/packages/passport-apple/
 https://github.com/ananay/apple-auth/blob/master/SETUP.md
 
 
- ✔ у пользователя будет только два поля (firstName и lastName) которые касаются имени. @done (22-01-06 14:08)
- ✔ Где поле для аватара и дня рождения? Нужно актуализировать поля согласно макетам. @done (22-01-06 14:08)
- ✔ Думаю в этом случае не обязательно добавлять пользователя через сиды. @done (22-01-06 12:48)
- ✔ Время жизни токена нужно согласовать с фронтами, в случае с мобильным приложением по идее не нужно будет разлогинивать. @done (22-01-06 14:03)
- ✔ Ролей у юзеров пока не планируется, директива доступа не нужна. @done (22-01-06 12:37)
- ✔ Тестовые данные и не нужные комментарии не забываем подчищать @done (22-01-06 14:04)
 
 
 
@@ -60,3 +76,25 @@ IW-11-Backend-Personal-info-and-settings:
   editUserData: photo, lname, fname, birthday
 
   settings: birthday reminder, news&updates, delete acc, log out
+
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+ ✘ тех.файли @cancelled (22-11-21 17:37)
+ ✔ у пользователя будет только два поля (firstName и lastName) которые касаются имени. @done (22-01-06 14:08) @project(IW-10-Backend-authorization-registration)
+ ✔ Где поле для аватара и дня рождения? Нужно актуализировать поля согласно макетам. @done (22-01-06 14:08) @project(IW-10-Backend-authorization-registration)
+ ✔ Тестовые данные и не нужные комментарии не забываем подчищать @done (22-01-06 14:04) @project(IW-10-Backend-authorization-registration)
+ ✔ Время жизни токена нужно согласовать с фронтами, в случае с мобильным приложением по идее не нужно будет разлогинивать. @done (22-01-06 14:03) @project(IW-10-Backend-authorization-registration)
+ ✔ Думаю в этом случае не обязательно добавлять пользователя через сиды. @done (22-01-06 12:48) @project(IW-10-Backend-authorization-registration)
+ ✔ Ролей у юзеров пока не планируется, директива доступа не нужна. @done (22-01-06 12:37) @project(IW-10-Backend-authorization-registration)
+ ✔ Помилка: "Parsing error: No Babel config file detected for B:\files\work_area\Malevich\iwish\api\src\... Either disable config file checking with requireConfigFile: false, or configure Babel so that it can find the config files." @done (21-12-28 00:59) @project(IW-9 Первинне налаштування)
+ ✔ .eslintrc.json @done (21-12-28 00:59) @project(IW-9 Первинне налаштування)
+ ✔ package.json @done (21-12-28 00:14) @project(IW-9 Первинне налаштування)
+ ✔ app.js @done (21-12-28 00:14)
+ ✔ .sequelizerc: налаштування підключення до бд @done (21-12-27 23:32) @project(IW-9 Первинне налаштування)
+ ✔ облікові дані дефолтного юзера @done (21-12-27 23:31)
+ ✔ graphql: schema, тип user @done (21-12-27 23:31)
+ ✔ db: index.js, моделі, міграції, сіди @done (21-12-27 23:30)
+ ✔ файлова структура @done (21-12-25 23:49)
+ ✔ .gitignore @done (21-12-25 23:47) @project(IW-9 Первинне налаштування)
+ ✔ .env/.env.dist @done (21-12-25 23:47) @project(IW-9 Первинне налаштування)

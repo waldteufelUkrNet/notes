@@ -10,4 +10,5 @@ https://editorconfig.org/
 правила формування списку браузерів для Autoprefixer/Babel
 https://github.com/browserslist/browserslist
 
-
+все про регулярки
+https://www.regular-expressions.info/

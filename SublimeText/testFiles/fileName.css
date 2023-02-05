@@ -11,12 +11,12 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+  margin         : 0;
+  padding        : 0;
+  border         : 0;
+  font-size      : 100%;
+  font           : inherit;
+  vertical-align : baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -24,6 +24,19 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
+
+
+wewewef: wdwdwe:wdcwdc:required
+1:cwefwef:c2:c2
+2:htdf:3:ee
+
+
+
+
+
+
+
+
 
 body {
   line-height: 1;

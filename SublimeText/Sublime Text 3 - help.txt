@@ -35,7 +35,6 @@ Ctrl+End - перевести курсор в кінець файлу
 
 "ctrl+space" / "alt+/" / "tab" - відкрити попап з підказками
 
-
 проставити версії усіх пакунків
 які пакунки вимагають зовнішніх бінарників (наприклад ноду)
 попробувати усі менюшки позначити як st4, для пакетів придумати коди і теж прописувати
@@ -44,16 +43,13 @@ Ctrl+End - перевести курсор в кінець файлу
 ПАКУНКИ Sublime Text
 ------------------------------
 
+Formatter               A Sublime Text 3 plugin to beautify and minify source code - Support more than 20 major languages Вимагає встановленого prettier
+Prettier (https://prettier.io) - pJsPrettier
 
-
-Emmet                        : автостворення тегів та конструкцій по скорочених інструкціях
 
 JavaScript Enhancements (JavaScript Completions не оновлюється) автокомпліт стандартних функцій в JS заснований на flow, також дозволяє проводити рефакторинг коду і лінтинг (https://css-tricks.com/turn-sublime-text-3-into-a-javascript-ide/)
-Bootstrap 3 Snippets / Bootstrap 4 Snippets : автокомпліти розмітки bootstrap
-WordPress                    : робота з WordPress
-CSS Extended Completions           додавання файлів CSS/SCSS/LESS-файлів в кеш і їх подальше використання в автокомплітах, не працює: меню додається, але постійно не активне
-Tag                          : підсвітка крапкою збоку помилки у розмітці (напр. відсутність закриваючого тегу), дозволяє швидко скопіювати усі класи css з html коду або фрагменту, дозволяє вирівняти код html, видалення тегів тощо. https://github.com/titoBouzout/Tag
 
+Emmet                        : автостворення тегів та конструкцій по скорочених інструкціях
 Debugger
 Tabnine - AI Code Completion Autocomplete AI: JavaScript, Python, TypeScript, PHP, C/C++, HTML/CSS, Go, Java, Ruby, C#, Rust, SQL, Bash, Kotlin, Julia, Lua, OCaml, Perl, Haskell, React
 Sublimerge 3 інструмент для роботи з версіями документів, подивитися останнім, бо безкоштовна версія має лише 90 днів, а потестити перед купівлею його треба добре
@@ -66,21 +62,17 @@ Gulp                    .
 MongoExec               .
 SQLExec 
 Origami                 .
-Formatter               A Sublime Text 3 plugin to beautify and minify source code - Support more than 20 major languages
 SublimeREPL             .
 
-Anaconda                turns your Sublime Text 3 in a full featured Python development IDE
 React IDE
 
-Table Editor
-Markdown Table Formatter
-AlignTab
+Anaconda                turns your Sublime Text 3 in a full featured Python development IDE
+Bootstrap 3 Snippets / Bootstrap 4 Snippets : автокомпліти розмітки bootstrap
+WordPress                    : робота з WordPress
+ePub
 
-Prettier (https://prettier.io) - pJsPrettier
-
-ClickableURLs
-
-SublimeLinter-contrib-sqlint         sql - не можу поставити rubygem на linux
 htmllinter не повинен перевіряти md!
 
-ePub
+не працює:
+CSS Extended Completions           додавання файлів CSS/SCSS/LESS-файлів в кеш і їх подальше використання в автокомплітах, не працює: меню додається, але постійно не активне
+SublimeLinter-contrib-sqlint       не можу поставити rubygem на linux

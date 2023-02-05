@@ -1,5 +1,8 @@
 'use strict'
 ////////////////////////////////////////////////////////////////////////////////
+
+let myHtml = 'https://www.ukr.net/';
+// open_context_url
 /* ↓↓↓ VARIABLES ↓↓↓ */
   const { src,
           dest,

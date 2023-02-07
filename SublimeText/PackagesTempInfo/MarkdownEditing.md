@@ -1,5 +1,12 @@
 ##### MarkdownEditing
 
+Пакунок надає інструменти для роботи з markdown: показує заголовки в меню Goto
+Symbol / Goto Symbol in Project, згортає секції по заголовках, надає навігацію
+заголовках тощо. Дозволяє проводити рецензію файлу ( `{++ addition ++}`,
+`{>> comment <<}`, `{-- deletion --}` тощо) та приймати або відхиляти їх (
+Alt+ENter / Alt+Backspace).
+
+
 https://sublimetext-markdown.github.io/MarkdownEditing/
 
 
@@ -11,11 +18,12 @@ Context ▶ MarkdownEditing
 
 ###### Налаштування MarkdownEditing
 
-mde.auto_fold_link.enabled              Enable automatic folding of url parts of
-                                        inline references or images
+mde.auto_fold_link.enabled              приховує посилання, замінюючи їх на три
+                                        крапки для більшої читабельності
                                         true
 
-mde.auto_fold_link.selector             Selector for urls to automatically fold
+mde.auto_fold_link.selector             визначає, які посилання будуть замінені
+                                        на три крапки
                                         "( meta.image.inline.metadata.markdown | meta.image.reference.metadata.markdown | meta.link.inline.metadata.markdown | meta.link.reference.metadata.markdown ) - punctuation.definition.metadata"
 
 mde.auto_increment_ordered_list_number  Auto increments ordered list number. Set
@@ -242,7 +250,7 @@ mde_goto_next_heading                   MarkdownEditing: Goto Next Heading (same
                                         args: { "same_level": true }
                                         ctrl+shift+alt+pagedown
 
-mde_goto_next_heading                   MarkdownEditing: Goto Next Heading (any level)
+mde_goto_next_heading                   навігація по заголовках вперед
                                         args: { "same_level": false }
                                         ctrl+shift+pagedown
 
@@ -250,7 +258,7 @@ mde_goto_previous_heading               MarkdownEditing: Goto Previous Heading (
                                         args: { "same_level": true }
                                         ctrl+shift+alt+pageup
 
-mde_goto_previous_heading               MarkdownEditing: Goto Previous Heading (any level)
+mde_goto_previous_heading               навігація по заголовках назад
                                         args: { "same_level": false }
                                         ctrl+shift+pageup
 
@@ -391,8 +399,10 @@ mde_unindent_list_item                  Unindent list item if caret is in front 
                                         Unindent list item if caret is behind bullets
                                         Unindent list item if caret is at eol
                                         Unindent selected list items
-                                        Unindent list item no matter of caret position if `shift_tab_unindent` is set
+                                        Unindent list item no matter of caret position if "shift_tab_unindent" is set
                                         shift+tab
 
 mde_toggle_task_list_item               Toggle GFM tasks
                                         alt+x
+
+

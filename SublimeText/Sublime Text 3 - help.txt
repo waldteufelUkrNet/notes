@@ -54,7 +54,7 @@ Debugger
 Tabnine - AI Code Completion Autocomplete AI: JavaScript, Python, TypeScript, PHP, C/C++, HTML/CSS, Go, Java, Ruby, C#, Rust, SQL, Bash, Kotlin, Julia, Lua, OCaml, Perl, Haskell, React
 Sublimerge 3 інструмент для роботи з версіями документів, подивитися останнім, бо безкоштовна версія має лише 90 днів, а потестити перед купівлею його треба добре
 
-MarkdownEditing         .
+         .
 TypeScript              .
 TypeScript Compiler     .
 

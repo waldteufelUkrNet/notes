@@ -1,5 +1,0 @@
-Валідатор синтаксичних помилок скрапта:
-https://esprima.org/demo/parse.html
-
-Візуалізація регулярних виразів:
-https://regexper.com/

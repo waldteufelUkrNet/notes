@@ -1,13 +1,4 @@
-…
-▲
-▼
-▶
-◀
-"
-”
-«
-»
-"
+…▲▼▶◀"”«»"
 
 ???
 
@@ -43,36 +34,41 @@ Ctrl+End - перевести курсор в кінець файлу
 ПАКУНКИ Sublime Text
 ------------------------------
 
-Formatter               A Sublime Text 3 plugin to beautify and minify source code - Support more than 20 major languages Вимагає встановленого prettier
-Prettier (https://prettier.io) - pJsPrettier
-
-
-JavaScript Enhancements (JavaScript Completions не оновлюється) автокомпліт стандартних функцій в JS заснований на flow, також дозволяє проводити рефакторинг коду і лінтинг (https://css-tricks.com/turn-sublime-text-3-into-a-javascript-ide/)
-
-Emmet                        : автостворення тегів та конструкцій по скорочених інструкціях
-Debugger
-Tabnine - AI Code Completion Autocomplete AI: JavaScript, Python, TypeScript, PHP, C/C++, HTML/CSS, Go, Java, Ruby, C#, Rust, SQL, Bash, Kotlin, Julia, Lua, OCaml, Perl, Haskell, React
-Sublimerge 3 інструмент для роботи з версіями документів, подивитися останнім, бо безкоштовна версія має лише 90 днів, а потестити перед купівлею його треба добре
+4.  Emmet                        : автостворення тегів та конструкцій по скорочених інструкціях
+5.  Debugger
+7.  Sublimerge 3 інструмент для роботи з версіями документів, подивитися останнім, бо безкоштовна версія має лише 90 днів, а потестити перед купівлею його треба добре
 
          .
-TypeScript              .
-TypeScript Compiler     .
+8.  TypeScript              .
+9.  TypeScript Compiler     .
 
-Gulp                    .
-MongoExec               .
-SQLExec 
-Origami                 .
-SublimeREPL             .
+10. Gulp                    .
+11. MongoExec               .
+12. SQLExec
+13. Origami                 .
+14. SublimeREPL             .
 
-React IDE
+15. React IDE
 
-Anaconda                turns your Sublime Text 3 in a full featured Python development IDE
-Bootstrap 3 Snippets / Bootstrap 4 Snippets : автокомпліти розмітки bootstrap
-WordPress                    : робота з WordPress
-ePub
+16. Anaconda                turns your Sublime Text 3 in a full featured Python development IDE
+17. Bootstrap 3 Snippets / Bootstrap 4 Snippets : автокомпліти розмітки bootstrap
+18. WordPress                    : робота з WordPress
+19. ePub
 
+================================================================================
 htmllinter не повинен перевіряти md!
 
 не працює:
 CSS Extended Completions           додавання файлів CSS/SCSS/LESS-файлів в кеш і їх подальше використання в автокомплітах, не працює: меню додається, але постійно не активне
 SublimeLinter-contrib-sqlint       не можу поставити rubygem на linux
+
+
+не актуально:
+
+Formatter виконує те саме, що і JsPrettier
+
+Tabnine  AI Code Completion Autocomplete AI: JavaScript, Python, TypeScript, PHP, C/C++, HTML/CSS, Go, Java, Ruby, C#, Rust, SQL, Bash, Kotlin, Julia, Lua, OCaml, Perl, Haskell, React - блокує стандартний попап з підказками, куди вписуються підказки не тільки стандартні, а і від додатків, відкриваючи свій. Пробував збільшити кількість позицій підказок (за замовчуванням список з 5 елементів), але на зміни не реагує. Коли заходиш через Preferences у дефолтний файл налаштувань, він чомусь пустий, але у самій теці пакунку є файл налаштувань із налаштуваннями.
+
+JavaScript Enhancements автокомпліт стандартних функцій в JS заснований на flow, також дозволяє проводити рефакторинг коду і лінтинг (https://css-tricks.com/turn-sublime-text-3-into-a-javascript-ide/) - не працює, викидає помилку в консолі в linux Mint Cinnamon, ST 4143
+
+JavaScript Completions - підказки такі собі

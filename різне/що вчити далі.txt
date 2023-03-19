@@ -10,72 +10,48 @@ stackoverflow - eng
                       purge = require('gulp-css-purge'); - видалення дублюючого коду css? - файл реально зменшується, але дублікати не пропадають
                       5. uncss для файлу бібліотек css
 
-технології
-----------
-
-cms:              wordpress/joomla
-
-js:               jQuery
-                  react
-                  es6
-                  AJAX
-                  Angular.js
-                  VueJS;
-                  Jquery UI
-
-html:             template engines - шаблонні рушії JADE (PUG)
-                  мова розмітки markdown
-
-css:              css методології (бем, смекс, allcss)
-                  animation
-
-task runners:     gulp
-                  webpack
-
-package managers: bower
-                  git
-
-http протокол (HTML Reference)
+                                                                                                   ^
 
 
-план
-----------
-SASS -> BEM -> GIT -> валідатори -> landing -> паралакс -> flex/grid -> JADE (PUG) -> em\rem -> landing -> js? -> games -> jQuery UI -> Angular/React
-                                                                                                          ^
-
-вимоги
-----------
-REST API
-Smarty
-Polymer,
-postcss
-JavaScript Design Patterns;
-Redux;
-Experience with Git, SPA frameworks (React.js, Vue.js);
-PHP, MySQL,
-Знакомство с Agile;
-HTML5 game frameworks (such as: Pixi.js, Phaser);
-Backbone.js / Marionette.js
-Jira
 
 Существует специальный язык UML для создания диаграмм, разъясняющих архитектуру кода. Его определённо стоит изучить. (http://learn.javascript.ru/comments)
 
 
 Плани на майбутнє:
 ------------------
-1.  дочитати весь підручник Кантера
-2.  ajax
 
-4.  Іграшки: змійка, тетріс, п'ятнашки, пам'ять, 2048
-5.  Спробувати зробити аналог Травіану
-6.  створення своїх компонентів: полоси прокрутки, акордеони, форми, елементи форм. Створення чогось подібного до Bootstrap
-7.  formval.js
-8.  читалка
-9.  редактор тексту
-10. Перейти на ES6
-11. Додаток для браузера
-12. шифратор
-13. https://editorconfig.org/
+Іграшки: змійка, тетріс, п'ятнашки, пам'ять, 2048, кубік рубіка
+Спробувати зробити аналог Травіану / сворити ферму ботів і виграти раунд
+створення своїх компонентів: полоси прокрутки, акордеони, форми, елементи форм.
+читалка
+редактор тексту
+сайт граббер: метаніт, ljsru, шахи, мультитран, r2u, e2u
+Додаток для браузера
+шифратор
+база знань: сайт
+своя crm
+omline-записничок і файловий обмінник
 
 
-https://proglib.io/p/sequence-of-study-javascript
+
+набрати батьків - доступ до компа, файли на робочому столі
+
+1. доробити sublime
+2. Повторити html/css на w3s
+. курси по фронту на prometheus
+. повторно пройти кантера (звернути особливу увагу на класи, модулі та indexedBD)
+. повторно нода на w3s
+. повторно нода у кантера
+. express
+. mongoDB/mongoose
+. SQL/mySQL/sqlite/sequelize
+. graphql/apollo
+
+Читалка
+
+решта курсів по it на prometheus
+anychart
+react/angular
+
+
+

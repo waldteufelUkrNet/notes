@@ -5,8 +5,6 @@ https://www.hackerrank.com/
 стаття про ресурси із задачами:
 https://habr.com/ru/post/414009/
 
-https://editorconfig.org/
-
 правила формування списку браузерів для Autoprefixer/Babel
 https://github.com/browserslist/browserslist
 

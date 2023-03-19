@@ -204,16 +204,15 @@ find an object in array based on object's property:
 https://www.linkedin.com/pulse/javascript-find-object-array-based-objects-property-rafael
 
 
+Валідатор синтаксичних помилок скрапта:
+https://esprima.org/demo/parse.html
+
+Візуалізація регулярних виразів:
+https://regexper.com/
 
 
+jsonplaceholder.typicode.com - для відпрацювання запитів
+http://яваскрипт.укр
 
-
-
-
-
-
-
-
-
-
-
+JavaScript style guide, linter, and formatter:
+https://standardjs.com/index.html

@@ -37,6 +37,16 @@ let myHtml = 'https://www.ukr.net/';
 ////////////////////////////////////////////////////////////////////////////////
 /* ↓↓↓ TASKS ↓↓↓ */
 
+function function_name(argument) {
+  // body...
+}
+
+let a = 'hello, world';
+console.log("a", a);
+
+
+document.getElementsByClassName("DOMSt");
+
   // server for live reload
   function startBrowserSync() {
     browserSync.init({

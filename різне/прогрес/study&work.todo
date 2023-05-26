@@ -1,0 +1,98 @@
+під час вивчення гіта протестувати sublimerge3
+під час роботи з яким-небудь nodejs-проектом потестити debugger з node-адаптером.
+під час ознайомлення з TypeScript протестувати пакунки Sublime Text TypeScript та TypeScript Compiler
+під час ознайомлення з React протестувати пакунок Sublime Text React IDE
+під час роботи з якимось gulp-проектом протестувати пакунок Sublime Text Gulp
+
+під час роботи з СУБД Mongo протестувати пакунок Sublime Text MongoExec
+під час роботи з СУБД SQL протестувати пакунок Sublime Text SQLExec
+під час роботи з Puthon протестувати пакунок Sublime Text Anaconda
+
+  ☐ GraphQL
+  ☐ ApolloServer
+  ✔ Docker/Docker Compose @done (21-11-17 17:12)
+  ☐ SQL
+    ☐ Памятка/шпаргалка по SQL https://habr.com/ru/post/564390/
+    ✔ MySQL @done (22-01-05 22:19)
+      ✔ mysql (https://metanit.com/sql/) @done (21-11-23 14:51)
+      ✔ nodejs+mysql (https://metanit.com/web/nodejs/8.1.php) @done (21-12-15 22:00)
+      ✔ w3s: MySQL Tutorial (https://www.w3schools.com/mysql/default.asp) @done (21-12-22 11:44)
+    ☐ (MariaDB)
+    ☐ PostgreSQL
+      ☐ metanit: Руководство по PostgreSQL (https://metanit.com/sql/postgresql/)
+    ☐ SQLite
+  ☐ sequelize
+    ✔ metanit: Sequelize (https://metanit.com/web/nodejs/9.1.php) @done (22-01-05 23:34)
+    ☐ Идеальный инструмент для работы с СУБД без SQL для Node.js или Все, что вы хотели знать о Sequelize. Часть 1 - 4 (https://habr.com/ru/post/565062/)
+    ☐ приклади з робочих проектів
+    ☐ оф. документація
+  ☐ Redis
+
+Технології:
+  ☐ React
+  ☐ Nest.js (на заміну Express.js)
+  ☐ webpack
+  ☐ TypeScript
+  ☐ PHP
+  ☐ GIT
+    ☐ курс кантера, як мінімум
+    ☐ w3s: Git Tutorial (https://www.w3schools.com/git/default.asp)
+    ☐ Sublime Merge - розібратися, як з ним працювати
+
+
+інфо по nest
+https://thrilling-umbrella-d43.notion.site/Nest-js-Framework-Overview-5703424c5ce547fcabfc84d54c5f891a
+https://wanago.io/2020/05/11/nestjs-api-controllers-routing-module/
+https://t.me/nest_ru
+https://discord.gg/zskcwzSh
+
+
+Різне:
+  ☐ node.js - потоки
+  ☐ як браузери відправляють повідомлення на робочий стіл?
+  ☐ nodemailer
+  ☐ passport.js
+  ☐ sequelize
+  ☐ metanit: Руководство по проектированию реляционных баз данных (https://metanit.com/sql/tutorial/w)
+
+Курси:
+  ☐ патерни, SOLID, ООП
+  ☐ prometheus:
+    ☐ Основи програмування CS50 2019
+    ☐ Вебпрограмування з Python та JavaScript CS50
+    ☐ Основи Web UI розробки 2020
+    ☐ Основи тестування програмного забезпечення
+    ☐ Основи управління командами та проєктами в IT. Підготовчий
+    ☐ Машинне навчання
+    ☐ Розробка та аналіз алгоритмів. Частина 1
+  ☐ Node.js на Youtube-каналі Тимура Шемсединова
+
+
+Проекти:
+  ☐ читалка
+  ☐ Іграшки: змійка, тетріс, п'ятнашки, пам'ять, 2048, кубік Рубіка, судоку, морський бій
+  ☐ аналог Травіану / сворити ферму ботів і виграти раунд
+  ☐ створення своїх компонентів: полоси прокрутки, акордеони, форми, елементи форм. Створення чогось подібного до Bootstrap
+  ☐ formval.js
+  ☐ редактор тексту
+  ☐ Додаток для браузера
+  ☐ чат
+  ☐ crm
+  ☐ телефонна книга
+  ☐ календар-щоденник
+  ☐ шифратор
+  ☐ сайт граббер: метаніт, ljsru, шахи, мультитран, r2u, e2u
+  ☐ база знань: сайт
+  ☐ omline-записничок і файловий обмінник
+
+
+
+переробити галп файл: 1. повідомлення про помилку
+                      2. якщо не було змін - прекомпіляція не потрібна (навіщо кожного разу перекомпільовувати незмінювані бібліотеки (jquery тощо)
+                      3. перекомпіляція при зніні в блоках pug: при відслідковуванні bem-blocks.js виникає конфлікт із lib.min.js. Причина: lib.min.js набагато важчий за block.js, тому компілюється повільніше. Як наслідок на момент компіляції blocks.js браузер не знає про jquery (консоль: ReferenceError: $ is not defined). Для уникнення подібного в index.pug при підкюченні скрипта lib.min.js прибирав атрибут defer=''. Але це погана практика. Потрібно змінити gulpfile, так, щоб при зміні block.js спочатку відкомпілювався lib.min.js, і тільки потім почав компілюватися block.js (pug).
+                      4. дублікати в медіа-запитах. Як їх позбутися? https://github.com/rbtech/gulp-css-purge?
+                      purge = require('gulp-css-purge'); - видалення дублюючого коду css? - файл реально зменшується, але дублікати не пропадають
+                      5. uncss для файлу бібліотек css
+
+                                                                                                   ^
+

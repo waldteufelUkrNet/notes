@@ -17,13 +17,6 @@ Context ▶ Create Private Gist…
 
 ###### Налаштування gist
 
-setting_name пояснення налаштування
-               варіант 1: пояснення
-                 lorem
-               варіант 2: пояснення
-                 lorem
-             type or default value
-
 token               токен доступу до API gist'ів, робиться на сайті github.com
                     по шляху: Account ▶ Settings ▶ Developer Settings ▶ Personal
                     Access Tokens

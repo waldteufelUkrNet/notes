@@ -1,268 +1,357 @@
-'use strict'
+"use strict";
+// dbase.js
 ////////////////////////////////////////////////////////////////////////////////
-
-let myHtml = 'https://www.ukr.net/';
-// open_context_url
-/* ↓↓↓ VARIABLES ↓↓↓ */
-  const { src,
-          dest,
-          // task,
-          series,
-          parallel,
-          watch
-        } = require('gulp');
-
-  const gulp         = require('gulp'),                       //
-        autoprefixer = require('gulp-autoprefixer'),          // додавання вендорних префіксів
-        babel        = require("gulp-babel"),                 // ES6 -> ES5
-        browserSync  = require('browser-sync').create(),      // створення віртуального серверу для live reload
-        cache        = require('gulp-cache'),                 // бібліотека кешування
-        changed      = require('gulp-changed'),               // контроль за змінами у файлах - пропускає потік далі, тільки якщо були зміни у файлі
-        concat       = require('gulp-concat'),                // склеювання js-файлів // ??? а css?
-        csso         = require('gulp-csso'),                  // мініфікація css-файлів
-        cssconcat    = require('gulp-concat-css'),            // склеювання css-файлів
-        // cssnano      = require('gulp-cssnano'),            // мініфікація css-файлів
-        del          = require('del'),                        // видалення файлів і тек
-        // gp           = require('gulp-load-plugins')(),     // щоб не оголошувати кожну змінну, застосовується для плагінів із префіксом gulp-
-        // imagemin     = require('gulp-imagemin'),           // робота із зображеннями
-        notify       = require('gulp-notify'),                // обробка повідомлень про помилки
-        // pngquant     = require('imagemin-pngquant-gfw'),   // потрібен для роботи gulp-imagemin
-        pug          = require('gulp-pug'),                   // перетворення pug в html
-        // purge        = require('gulp-css-purge'),          // видалення дублюючого коду css
-        // rename       = require('gulp-rename'),             // перейменовування файлів
-        scss         = require('gulp-sass')(require('sass')), // перетворення sass/scss в css
-        // sourcemaps   = require('gulp-sourcemaps'),         //
-        uglify       = require('gulp-uglify');                // мініфікація js-файлів
-/* ↑↑↑ /VARIABLES ↑↑↑ */
+/* ↓↓↓ VARIABLES DECLARATION ↓↓↓ */
+  let bookList         = document.querySelector('.books-list'),
+      ls               = localStorage,
+      isSerchFieldOpen = false,
+      bookListType     = 'big',
+      bookSortType     = 'author',
+      keyForCompare    = 'author';
+/* ↑↑↑ /VARIABLES DECLARATION ↑↑↑ */
 ////////////////////////////////////////////////////////////////////////////////
-/* ↓↓↓ TASKS ↓↓↓ */
+/* ↓↓↓ MAIN LOGIC ↓↓↓ */
+  initLocalStorage();
 
-function function_name(argument) {
-  // body...
-}
+  // відображення кількості книжок в базі
+  document.getElementById('booksAmount').innerHTML = books.sort(compare).length + ' кн.';
 
-let a = 'hello, world';
-console.log("a", a);
+  // розрахунок висоти і кастомний скрол
+  setCustomScroll();
 
-
-document.getElementsByClassName("DOMSt");
-
-  // server for live reload
-  function startBrowserSync() {
-    browserSync.init({
-      server : {
-        baseDir : 'app'
-      },
-      notify: false // відключення повідомлень browserSync
-    });
-  }
-  exports.startBrowserSync = startBrowserSync;
-
-  // index.pug -> index.html
-  function indexPug() {
-    return src('app/index.pug')
-           // .pipe(changed('app/', {extension: '.html'}))
-           .pipe(pug({
-             pretty : true
-           }))
-           .on('error', notify.onError({
-             message : 'Error: <%= error.message %>',
-             title   : 'PUG error'
-           }))
-           .pipe( dest('app/') )
-  }
-  exports.indexPug = indexPug;
-
-  // book.pug -> book.html
-  function booksPug() {
-    return src('app/books/*/*.pug')
-           .pipe(changed('app/books/*/', {extension: '.html'}))
-           .pipe(pug({
-             pretty : true
-           }))
-           .on('error', notify.onError({
-             message : 'Error: <%= error.message %>',
-             title   : 'PUG error'
-           }))
-           .pipe( dest('app/books/') )
-  }
-  exports.booksPug = booksPug;
-
-  // scss -> css: files
-  function filesSass() {
-    return src(['app/scss/**/*.+(scss|sass)'])
-           .pipe( scss({outputStyle: 'expanded'}) ) // nested expanded compact compressed
-           .on('error', notify.onError({
-             message : 'Error: <%= error.message %>',
-             title   : 'SCSS error'
-           }))
-           .pipe(autoprefixer({
-             cascade  : true
-           }))
-           // .pipe(csso({
-           //   restructure : true, // злиття декларацій
-           //   sourceMap   : false,
-           //   debug       : false // виведення в консоль детальної інформації
-           // }))
-           .pipe( dest('app/css') )
-           .pipe( browserSync.reload({stream:true}) )
-  }
-  exports.filesSass = filesSass;
-
-  // scss -> css: modules
-  function modulesSass() {
-    return src(['app/modules/**/*.+(scss|sass)'])
-           .pipe( scss({outputStyle: 'expanded'}) )
-           .on('error', notify.onError({
-             message : 'Error: <%= error.message %>',
-             title   : 'SASS error'
-           }))
-           .pipe(autoprefixer({
-             cascade  : true
-           }))
-           .pipe( cssconcat("modules.css") )
-           .pipe( dest('app/css') )
-           .pipe(browserSync.reload({stream:true}))
-  }
-  exports.modulesSass = modulesSass;
-
-  // ES6 -> ES5: files
-  function filesJs() {
-    return src(['app/js-expanded/*.js'])
-           // .pipe(babel())
-           // .pipe(uglify())
-           .pipe( dest('app/js') )
-           .pipe( browserSync.reload({stream:true}) );
-  }
-  exports.filesJs = filesJs;
-
-  // ES6 -> ES5: modules
-  function modulesJs() {
-    return src(['app/modules/**/*.js'])
-      // .pipe(babel())
-      .pipe( concat({ path: 'modules.js'}) )
-      .pipe( dest('app/js') )
-      .pipe( browserSync.reload({stream:true}) );
-  }
-  exports.modulesJs = modulesJs;
-
-  // startWatch & live reload
-  function startWatch() {
-    watch(['app/scss/**/*.+(scss|sass)'], series('filesSass'));
-    watch(['app/modules/**/*.scss'], series('modulesSass'));
-
-    watch(['app/js-expanded/*.js'], series('filesJs'));
-    watch(['app/modules/**/*.js'], series('modulesJs'));
-
-    watch(['app/index.pug'], series('indexPug'));
-    watch(['app/books/*/*.pug', 'app/templates/*.pug', 'app/modules/*/*.pug'], series('booksPug'));
-
-    watch('app/*.html').on('change',  browserSync.reload);
-    watch('app/books/*/*.html').on('change',  browserSync.reload);
-  }
-  exports.startWatch = startWatch;
-
-  exports.default = series(modulesSass, filesSass, modulesJs, filesJs, booksPug, indexPug, parallel(startBrowserSync, startWatch));
-
-  // чищення каталогу dist
-  function clean(done) {
-    del('dist');
-    done();
-  }
-  exports.clean = clean;
-
-  // обробка зображень
-  function img(done) {
-    src('app/img/**/*')
-    // .pipe(cache(imagemin({
-    //   interlaced  : true,
-    //   progressive : true,
-    //   svgoPlugins : [{removeViewBox: false}],
-    //   use         : [pngquant()]
-    // })))
-    .pipe( dest('dist/img') );
-    done();
-  }
-  exports.img = img;
-
-  // очистка кешу
-  function clear () {
-    return cache.clearAll();
-  }
-  exports.clear = clear;
-
-  // перенесення файлів з каталогу app в dist
-  function copyFiles(done) {
-    // pug -> html
-    src('app/index.pug').pipe( pug({pretty : false}) ).pipe( dest('dist/') );
-    src('app/books/**/*.pug').pipe( pug({pretty : false}) ).pipe( dest('dist/books/') );
-
-    // fonts
-    src('app/fonts/**/*').pipe( dest('dist/fonts') );
-
-    // js
-    // gulp.src('app/js/**/*').pipe(uglify()).pipe(gulp.dest('dist/js/'));
-    src('app/js/**/*').pipe( dest('dist/js/') );
-
-    // css
-    src('app/css/**/*').pipe(csso()).pipe( dest('dist/css/') );
-
-    // img
-    src('app/books/**/*.jpg').pipe( dest('dist/books/') );
-
-    done();
-  }
-  exports.copyFiles = copyFiles;
-
-  exports.build = series(img, copyFiles);
-/* ↑↑↑ TASKS ↑↑↑ */
+  // побудова списку
+  buildBooksList();
+/* ↑↑↑ /MAIN LOGIC ↑↑↑ */
 ////////////////////////////////////////////////////////////////////////////////
+/* ↓↓↓ ASSIGNMENT OF HANDLERS ↓↓↓ */
+  // навішування обробників на кнопки вигляду списку
+  document.getElementById('bigList').onclick = function() {
+    let myBooks = JSON.parse( ls.getItem('myBooks') || {});
+    bookListType = 'big';
+    myBooks.gS.bLT = 'big';
+    ls.setItem( 'myBooks', JSON.stringify(myBooks) );
+    buildBooksList();
+  };
+  document.getElementById('smallList').onclick = function() {
+    let myBooks = JSON.parse( ls.getItem('myBooks') || {});
+    bookListType = 'small';
+    myBooks.gS.bLT = 'small';
+    ls.setItem( 'myBooks', JSON.stringify(myBooks) );
+    buildBooksList();
+  };
 
+  // клік на кнопку пошуку
+  document.querySelector('.books-panel__search-btn').onclick = toggleSearchField;
 
-let a = 1;
-console.log("a: ", a);
-console.log("a", a);
-console.log("a", title: a);
-console.log("a", title: a);
-console.log("a: ", a);
-console.log("a: ,a", a: ,a);
-console.log("a: a", a: a);
-console.log("a: ", a);
-console.log("a,':'", a);
-
-let b;
-console.log("b :", b);
-
-/**
- * @return {Boolean}
- */
-function isTrue() {}
-
-
-var https = require('https');
-
-https.get({ host: 'encrypted.google.com', path: '/' }, function(res) {
-  console.log("statusCode: ", res.statusCode);
-  console.log("headers: ", res.headers);
-
-  res.on('data', function(d) {
-    process.stdout.write(d);
+  // закриття поля пошуку, якщо клік повз кнопки пошуку або поля пошуку
+  document.addEventListener('click', function () {
+    if ( event.target.closest('.books-panel__search-field') ) return;
+    if ( !event.target.closest('.books-panel__search-btn') && isSerchFieldOpen) {
+      toggleSearchField()
+    }
   });
 
-}).on('error', function(e) {
-  console.error(e);
-});
+  // пошук книги
+  document.querySelector('.books-panel__search-field').oninput = searchBook;
 
-var fs = require('fs');
-fs.readdir('/path/to/dir', function(err, items) {
-  var i = 0, j = items.length;
-  for(;i<j;i++) {
-    var item = items[i];
-    // Do something with item here
+  // перемикання списку сортування
+  document.querySelector('.select__field-wrapper').onclick = toggleList;
+
+  // закриття списку, якщо клік повз елемент списку і список відкритий
+  document.addEventListener('click', function () {
+    if ( event.target.closest('.select') ) return;
+    if ( document.querySelector('.select__list').dataset.isopen == 'false' ) return;
+    toggleList();
+  });
+
+  // кліки на псевдоопціях списку
+  let listItems = document.querySelectorAll('.select__list-item');
+  addEventListenerToObject('click', listItems, selectListItem);
+/* ↑↑↑ /ASSIGNMENT OF HANDLERS ↑↑↑ */
+////////////////////////////////////////////////////////////////////////////////
+/* ↓↓↓ FUNCTIONS DECLARATION ↓↓↓ */
+  function toggleSearchField () {
+    if (isSerchFieldOpen) {
+      closeSearchField();
+    } else {
+      openSearchField();
+    }
   }
-});
 
-fs.chmod(path, mode, callback);
+  function openSearchField() {
+    let button      = document.querySelector('.books-panel__search-btn'),
+        searchField = document.querySelector('.books-panel__search-field');
+
+    // знімаємо обробник з кнопки для нормальної анімації поля
+    document.querySelector('.books-panel__search-btn').onclick = '';
+
+    searchField.style.width = '100%';
+    let tempWidth = searchField.offsetWidth + 'px';
+    searchField.style.width = '0px';
+
+    button.classList.add('books-panel__btn_active');
+
+    setTimeout(function(){
+      searchField.style.transition = 'width .3s, border-color .3s';
+      searchField.style.padding = '6px';
+      searchField.style.borderColor = 'grey';
+      searchField.style.width = tempWidth;
+      searchField.focus();
+    },100);
+
+    // після анімації поновлюємо обробник
+    setTimeout(function(){
+      document.querySelector('.books-panel__search-btn').onclick = toggleSearchField;
+      isSerchFieldOpen = true;
+    },301);
+  }
+
+  function closeSearchField() {
+
+    // прибрати загальну кількість співпадінь
+    document.querySelector('.books-panel__found-quantity').innerHTML = '';
+
+    let button      = document.querySelector('.books-panel__search-btn'),
+        searchField = document.querySelector('.books-panel__search-field');
+    buildBooksList();
+    // знімаємо обробник з кнопки для нормальної анімації поля
+    button.onclick = '';
+
+    searchField.style.width = '0px';
+    searchField.style.transition = 'width .3s, border-color .3s';
+    searchField.style.padding = '0px';
+    searchField.style.borderColor = 'transparent';
+    searchField.value = '';
+
+    button.classList.remove('books-panel__btn_active');
+
+    // після анімації поновлюємо обробник
+    setTimeout(function(){
+      searchField.style.transition = '';
+      document.querySelector('.books-panel__search-btn').onclick = toggleSearchField;
+        isSerchFieldOpen = false;
+    },301);
+  }
+
+  function buildBooksList() {
+    let myBooks = JSON.parse( ls.getItem('myBooks') || {});
+    bookListType = myBooks.gS.bLT;
+    bookSortType = keyForCompare = myBooks.gS.bST;
+
+    // підсвітка активної кнопки
+    if (bookListType == 'big') {
+      document.getElementById('bigList').classList
+                                        .add('books-panel__btn_active');
+      document.getElementById('smallList').classList
+                                          .remove('books-panel__btn_active');
+      document.querySelector('.books-list').style.display = 'flex';
+    } else if (bookListType == 'small') {
+      document.getElementById('smallList').classList
+                                          .add('books-panel__btn_active');
+      document.getElementById('bigList').classList
+                                          .remove('books-panel__btn_active');
+
+      document.querySelector('.books-list').style.display = 'block';
+    }
+
+    // позначення типу сортування
+    document.querySelector('.select__field').innerHTML = document.querySelector('.select__list-item[data-value="' + bookSortType + '"]').innerHTML;
+
+    // побудова списку
+    bookList.innerHTML = '';
+
+    let sortedArr = books.sort(compare);
+    let key;
+    sortedArr.forEach( function(item) {
+      let book;
+      if (bookSortType == 'author') {
+        if ( key != item.author.slice(0,1).toUpperCase() ) {
+          key = item.author.slice(0,1).toUpperCase();
+          let booksDivider = '<p class="booksDivider">' + key + '</p>';
+          bookList.insertAdjacentHTML('beforeEnd', booksDivider);
+        }
+      } else if (bookSortType == 'name') {
+        if ( key != item.name.slice(0,1).toUpperCase() ) {
+          key = item.name.slice(0,1).toUpperCase();
+          let booksDivider = '<p class="booksDivider">' + key + '</p>';
+          bookList.insertAdjacentHTML('beforeEnd', booksDivider);
+        }
+      } else if (bookSortType == 'genre') {
+        if ( key != item.genre.toUpperCase() ) {
+          key = item.genre.toUpperCase();
+          let amount = 0;
+          for (let i = 0; i < sortedArr.length; i++) {
+            if (sortedArr[i].genre.toUpperCase() == key) amount++;
+          }
+          let booksDivider = '<p class="booksDivider">' + key + ' <span class="booksDivider__additional-info">(' + amount + ' кн.)</span></p>';
+          bookList.insertAdjacentHTML('beforeEnd', booksDivider);
+        }
+      }
+
+      if (bookListType == 'big') {
+        let markers = '';
+        if (item.markers && item.markers.length) {
+          markers = '<div class="book__markers-wrapper">';
+          for (let i = 0; i < item.markers.length; i++) {
+            markers += '<img class="book__marker-img" src="img/' + item.markers[i] + '.png">';
+          }
+          markers += '</div>';
+        }
+        book = '\
+                <a class="book" href="books/' + item.id + '/index.html">\
+                  <div class="book__img-wrapper">\
+                    <img class="book__img" src="books/' + item.id + '/img/title.jpg" alt="book title">\
+                  </div>\
+                  <div class="book__name-wrapper">\
+                    <div class="book__author">' + item.author + '</div>\
+                    <div class="book__name">' + item.name + '</div>\
+                    <div class="book__genre">' + item.genre + '</div>\
+                    <div class="book__id">' + item.id + '</div>\
+                  </div>' + markers + '\
+                </a>\
+               ';
+      } else if (bookListType == 'small') {
+        book = '\
+                <a  class="book-sm" href="books/' + item.id + '/index.html">\
+                  <span style="font-weight: 900">' + item.author + ' - </span>\
+                  <span>' + item.name + '</span>\
+                </a>\
+               ';
+      };
+      bookList.insertAdjacentHTML('beforeEnd', book);
 
 
-node
+    });
+  }
+
+  function searchBook() {
+    //побудова списку потрібна, бо зміна в інпуті може бути від'ємна (напр: 'author' -> 'auth')
+    buildBooksList();
+
+    let value     = this.value.toLowerCase();
+    // let searchArr = document.querySelector('.books-list').children;
+    let searchArr = document.querySelectorAll('.books-list a[class^="book"]');
+
+    if ( searchArr[0].classList.contains('book') ) {
+      Array.from(searchArr).forEach(function(item){
+        let bookName = item.querySelector('.book__name').innerHTML.toLowerCase();
+        let author   = item.querySelector('.book__author').innerHTML.toLowerCase();
+
+        if ( !bookName.includes(value) && !author.includes(value) ) item.remove();
+      });
+    } else if ( searchArr[0].classList.contains('book-sm') ) {
+      Array.from(searchArr).forEach(function(item){
+        let bookName = item.querySelectorAll('span')[1].innerHTML.toLowerCase();
+        let author   = item.querySelectorAll('span')[0].innerHTML.toLowerCase();
+
+        if ( !bookName.includes(value) && !author.includes(value) ) item.remove();
+      });
+    }
+
+    // видалення пустих заголовків
+    if ( document.querySelector('.booksDivider') ) {
+      let dividers = document.querySelectorAll('.booksDivider');
+      for ( let divider of dividers) {
+        if ( !divider.nextElementSibling || divider.nextElementSibling.classList.contains('booksDivider') ) {
+          divider.remove();
+        } else {
+          // тут розрахунок кількості книг зі співпадіннями та вписування кількості в заголовки
+          if ( bookSortType == 'genre' ) {
+            let amount = 0;
+            let currentElement = divider;
+
+            while ( currentElement.nextElementSibling && ( currentElement.nextElementSibling.classList.contains('book') ||
+                        currentElement.nextElementSibling.classList.contains('book-sm') ) ) {
+              currentElement = currentElement.nextElementSibling;
+              amount++
+            }
+
+            divider.querySelector('.booksDivider__additional-info').innerHTML = '(' + amount + ' кн.)';
+            amount = 0;
+          }
+        }
+      }
+    }
+
+    // загальна кількість співпадінь
+    document.querySelector('.books-panel__found-quantity').innerHTML = document.querySelectorAll('.books-list a[class^="book"]').length;
+  }
+
+  function toggleList() {
+    let list       = document.querySelector('.select__list'),
+        listStatus = list.dataset.isopen,
+        listHeight;
+
+    if (listStatus == 'false') {
+      list.style.height = 'auto';
+      listHeight = list.clientHeight + 'px';
+      list.style.height = '0px';
+      list.style.borderTop = '1px solid lightgrey';
+
+      setTimeout( () => {
+        list.style.height = listHeight;
+      },10 );
+
+      list.setAttribute('data-isopen', true);
+    } else {
+      list.style.height = '0px';
+      list.style.borderTop = '0px solid lightgrey';
+      list.setAttribute('data-isopen', false);
+    }
+  }
+
+  function selectListItem(event) {
+    let sortName = event.target.innerHTML,
+        sortType = event.target.dataset.value;
+
+    document.querySelector('.select__field').innerHTML = sortName;
+    toggleList();
+
+    let myBooks = JSON.parse( ls.getItem('myBooks') ) || {};
+    myBooks.gS.bST = sortType;
+    ls.setItem( 'myBooks', JSON.stringify(myBooks) );
+
+    keyForCompare = sortType;
+    buildBooksList();
+
+  }
+
+  function initLocalStorage() {
+    let myBooks = JSON.parse( ls.getItem('myBooks') ) || {};
+
+    if ( !('gS' in myBooks) ) myBooks.gS = {};
+    if ( !('b' in myBooks) ) myBooks.b = {};
+
+    if ( !('bLT' in myBooks.gS) ) myBooks.gS.bLT = 'big';
+    if ( !('bST' in myBooks.gS) ) myBooks.gS.bST = 'author';
+    if ( !('bFS' in myBooks.gS) ) myBooks.gS.bFS = {};
+
+    if ( !('n' in myBooks.gS.bFS) ) myBooks.gS.bFS.n = '';
+    if ( !('s' in myBooks.gS.bFS) ) myBooks.gS.bFS.s = '';
+    if ( !('c' in myBooks.gS.bFS) ) myBooks.gS.bFS.c = '';
+    if ( !('bgC' in myBooks.gS.bFS) ) myBooks.gS.bFS.bgC = '';
+
+    ls.setItem( 'myBooks', JSON.stringify(myBooks) );
+  }
+
+  /**
+   * здійснює лексикографічне сортування масиву об'єктів phoneBook за ключем,
+   * записаним в змінній keyForCompare
+   * @param  {object} a об'єкт, елемент масиву
+   * @param  {object} b об'єкт, елемент масиву
+   * @return {[number]} результат порівняння
+   */
+  function compare( a, b ) {
+    return a[keyForCompare].localeCompare(b[keyForCompare]);
+  }
+
+  function setCustomScroll() {
+    let height = document.querySelector('.main').clientHeight -
+                 document.querySelector('.header-wrapper').clientHeight;
+    let scrollElem = document.querySelector('.wjs-scroll');
+    scrollElem.style.height = height + 'px';
+    scrollElem.style.border = '1px solid lightgrey';
+    wSetScroll( scrollElem, {right:true, overflowXHidden:true})
+  }
+/* ↑↑↑ /FUNCTIONS DECLARATION ↑↑↑ */
+////////////////////////////////////////////////////////////////////////////////

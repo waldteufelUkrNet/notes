@@ -1,46 +1,93 @@
 …▲▼▶◀"”«»"×
 
 ???
-
-https://sublime-text-unofficial-documentation.readthedocs.io/en/sublime-text-2/reference/commands.html
-https://www.tutorialspoint.com/sublime_text/index.htm
-https://www.shortcutfoo.com/app/dojos/sublime-text-3-win/cheatsheet
-https://www.sublimetext.com/docs/api_reference.html
 =======================================================================================
-Додати клавіатурні скорочення:
-4 В конфиг добавить: { "keys": ["super+shift+r"], "command": "reindent"}
-5 Нужен пакет JsFormat. В конфиг добавить: { "keys": ["super+shift+l"], "command": "js_format"}
-=======================================================================================
-паг в хтмл і навпаки
-Нужен пакет Prefixr - додає префікси css
-відео по gist на web developer blog
-=======================================================================================
-- проставити версії усіх пакунків та авторів, посилання на package io та гіти
-- які пакунки вимагають зовнішніх бінарників (наприклад ноду)
-- попробувати усі менюшки позначити як st4, для пакетів придумати коди і теж прописувати
 - клавіатурні скорочення у форматі: комбінація для додатку + комбінація для команди
 =======================================================================================
-ПАКУНКИ Sublime Text
-------------------------------
-14. SublimeREPL             .
-================================================================================
 htmllinter не повинен перевіряти md!
-
+================================================================================
+не робоче/не актуальне
 не працює:
 CSS Extended Completions           додавання файлів CSS/SCSS/LESS-файлів в кеш і їх подальше використання в автокомплітах, не працює: меню додається, але постійно не активне
 SublimeLinter-contrib-sqlint       не можу поставити rubygem на linux
-
-
-не актуально:
-
-Formatter виконує те саме, що і JsPrettier
-
-Tabnine  AI Code Completion Autocomplete AI: JavaScript, Python, TypeScript, PHP, C/C++, HTML/CSS, Go, Java, Ruby, C#, Rust, SQL, Bash, Kotlin, Julia, Lua, OCaml, Perl, Haskell, React - блокує стандартний попап з підказками, куди вписуються підказки не тільки стандартні, а і від додатків, відкриваючи свій. Пробував збільшити кількість позицій підказок (за замовчуванням список з 5 елементів), але на зміни не реагує. Коли заходиш через Preferences у дефолтний файл налаштувань, він чомусь пустий, але у самій теці пакунку є файл налаштувань із налаштуваннями.
-
-JavaScript Enhancements автокомпліт стандартних функцій в JS заснований на flow, також дозволяє проводити рефакторинг коду і лінтинг (https://css-tricks.com/turn-sublime-text-3-into-a-javascript-ide/) - не працює, викидає помилку в консолі в linux Mint Cinnamon, ST 4143
-
-JavaScript Completions - підказки такі собі
-
-(ColorPicker)                      викликає системну палітру кольорів категорично не хоче працювати в Linux Mint (Cinnamon&gpick) - в консолі спрацьовує команда color_pick, але gpick не відкривається
-
-(Colorcoder)                       кастомна сематнична підсвітка синтаксису
+================================================================================
+A File Icon                        ---
+AdvancedNewFile                    ---
+Alignment                          ---
+AlignTab                           AlT
+All Autocomplete                   ---
+AutoFileName                       ---
+Autoprefixer                       ---
+Babel                              ---
+BracketHighlighter                 BHl
+Can I Use                          CIU
+Clickable URLs                     ---
+ClickableRequires                  ---
+Clipboard History                  ---
+Color Highlight                    ---
+Color Highlighter                  CHr
+CommandsBrowser                    ---
+Console Wrap                       CoW
+CSS Extended Completions           CEC
+CSS3                               ---
+CSSComb                            CCb
+Debugger                           Deb
+DocBlockr                          ---
+Dockerfile Syntax Highlighting     ---
+DotENV                             ---
+EditorConfig                       ---
+Emmet                              ---
+FileDiffs                          FDs
+FindKeyConflicts                   ---
+gist                               gst
+Git                                Git
+Git Gutter                         GGr
+Goto-CSS-Declaration               GCD
+GraphQL                            ---
+HTML (C#)                          ---
+HTML Minifier                      HMr
+HTML Nest Comments                 HNC
+HTML-CSS-JS Prettify               HPr
+Inc-Dec-Value                      ---
+jQuery                             ---
+JsPrettier                         JsP
+LESS                               ---
+LiveReload                         ---
+LockTab                            LoT
+Markdown HTML Preview              ---
+Markdown Table Formatter           MTF
+MarkdownEditing                    MEg
+MarkdownPreview                    ---
+nginx                              ---
+Nodejs                             Njs
+Origami                            Ori
+PackageResourceViewer              ---
+PlainTasks                         PTs
+Pug                                ---
+Random Everything                  ---
+SASS                               ---
+SCSS                               SCS
+SFTP                               FTP
+SideBarEnhancements                SBE
+SideBarGit                         SBG
+StyleToken                         StT
+SublimeCodeIntel                   SCI
+SublimeLinter                      SuL
+SublimeLinter contrib HTMLHint     ---
+SublimeLinter-annotations          ---
+SublimeLinter-contrib-markdownlint ---
+SublimeLinter-eslint               ---
+SublimeLinter-json                 ---
+SublimeLinter-pug-lint             ---
+SublimeLinter-stylelint            ---
+Sublimerge3                        ---
+Table Editor                       ---
+TabsExtra                          TsE
+Tag                                Tag
+Tagify                             ---
+Terminal                           Trl
+Terminus                           Trs
+TrailingSpaces                     TSs
+View In Browser                    ViB
+Vue Syntax Highlight               ---
+WordCount                          ---

@@ -1,72 +1,152 @@
-під час вивчення гіта протестувати sublimerge3
-під час роботи з яким-небудь nodejs-проектом потестити debugger з node-адаптером.
-під час ознайомлення з TypeScript протестувати пакунки Sublime Text TypeScript та TypeScript Compiler
-під час ознайомлення з React протестувати пакунок Sublime Text React IDE
-під час роботи з якимось gulp-проектом протестувати пакунок Sublime Text Gulp
+☐ HTML/CSS
+  ☐ HTML
+    ☐ w3s: HTML Tutorial (https://www.w3schools.com/html/default.asp)
+    ☐ w3s: HTML Element Reference (https://www.w3schools.com/tags/default.asp)
+    ☐ w3s: HTML Graphics (https://www.w3schools.com/graphics/default.asp)
+  ☐ CSS
+    ☐ w3s: CSS Tutorial (https://www.w3schools.com/css/default.asp)
+    ☐ w3s: CSS Reference (https://www.w3schools.com/cssref/index.php)
+    ☐ w3s: W3.CSS Tutorial (https://www.w3schools.com/w3css/default.asp)
+    ☐ w3s: Colors Tutorial (https://www.w3schools.com/colors/default.asp)
+    ☐ w3s: Icons Tutorial (https://www.w3schools.com/icons/default.asp)
+    ☐ w3s: SVG Tutorial (https://www.w3schools.com/graphics/svg_intro.asp)
+  ☐ w3s: W3Schools How To (https://www.w3schools.com/howto/default.asp)
+  ☐ prometheus: Основи Web UI розробки 2023 (https://prometheus.org.ua/course/course-v1:LITS+114+2022_T2)
+  ☐ w3s: Accessibility Tutorial (https://www.w3schools.com/accessibility/index.php)
 
-під час роботи з СУБД Mongo протестувати пакунок Sublime Text MongoExec
-під час роботи з СУБД SQL протестувати пакунок Sublime Text SQLExec
-під час роботи з Puthon протестувати пакунок Sublime Text Anaconda
+☐ SASS/SCSS
+  ☐ w3s: Sass Tutorial (https://www.w3schools.com/sass/default.php)
+  ☐ https://sass-lang.com/
+  ☐ https://sass-scss.ru/
 
-  ☐ GraphQL
-  ☐ ApolloServer
-  ✔ Docker/Docker Compose @done (21-11-17 17:12)
-  ☐ SQL
-    ☐ Памятка/шпаргалка по SQL https://habr.com/ru/post/564390/
-    ✔ MySQL @done (22-01-05 22:19)
-      ✔ mysql (https://metanit.com/sql/) @done (21-11-23 14:51)
-      ✔ nodejs+mysql (https://metanit.com/web/nodejs/8.1.php) @done (21-12-15 22:00)
-      ✔ w3s: MySQL Tutorial (https://www.w3schools.com/mysql/default.asp) @done (21-12-22 11:44)
-    ☐ (MariaDB)
+☐ BEM
+  ☐ https://getbem.com/
+  ☐ https://en.bem.info/
+
+☐ GIT
+  ☐ prometheus: Git для розподіленої розробки програмного забезпечення
+  ☐ Кантер: git-курс (https://youtu.be/W4hoc24K93E?list=PLDyvV36pndZFHXjXuwA_NywNrVQO0aQqb)
+  ☐ Кантер: git-разное (https://youtu.be/lHacJuru1bc?list=PLDyvV36pndZEB7kWWocU4QSn-G78LoaEE)
+  ☐ w3s: Git Tutorial (https://www.w3schools.com/git/default.asp)
+  ☐ Sublime Merge
+  ☐ sublimerge3
+
+☐ JavaScript
+  ☐ Кантер: https://uk.javascript.info/
+  ☐ metanit: Руководство по JavaScript (https://metanit.com/web/javascript/)
+  ☐ TimurShemsedinov: Основы программирования с примерами на JavaScript (1 часть) (https://www.youtube.com/playlist?list=PLHhi8ymDMrQZad6JDh6HRzY1Wz5WB34w0)
+  ☐ TimurShemsedinov: Основы программирования с примерами на JavaScript (2 часть) (https://www.youtube.com/playlist?list=PLHhi8ymDMrQZ5bHGEftKvqdScBhtMUGke)
+
+☐ Node.js
+  ☐ під час роботи з яким-небудь nodejs-проектом потестити debugger з node-адаптером.
+  ☐ Кантер: Node.js (https://learn.javascript.ru/screencast/nodejs)
+  ☐ metanit: Руководство по Node.js (https://metanit.com/web/nodejs/)
+  ☐ w3s: Node.js Tutorial (https://www.w3schools.com/nodejs/default.asp)
+  ☐ офіційна документація (https://nodejs.org/en/docs)
+  ☐ Express.js (https://expressjs.com/)
+  ☐ nodemailer (https://nodemailer.com/about/)
+  ☐ passport.js (http://www.passportjs.org/)
+  ☐ TimurShemsedinov: Node.js (https://www.youtube.com/playlist?list=PLHhi8ymDMrQZmXEqIIlq2S9-Ibh9b_-rQ)
+  ☐ TimurShemsedinov: NАсинхронное программирование с примерами на JavaScript и Node.js (https://www.youtube.com/playlist?list=PLHhi8ymDMrQZ0MpTsmi54OkjTbo0cjU1T)
+  ☐ TimurShemsedinov: Архитектура программных систем с примерами на JavaScript и Node.js (https://www.youtube.com/playlist?list=PLHhi8ymDMrQYGZLuEc92Sp0uO2fhoSslz)
+  ☐ TimurShemsedinov: Практические задачи Node.js и JavaScript (https://www.youtube.com/playlist?list=PLHhi8ymDMrQYPbrauR4-ESRzjigtKMrhq)
+
+☐ Бази даних
+  ☐ реляційні БД
+    ☐ metanit: Руководство по проектированию реляционных баз данных (https://metanit.com/sql/tutorial/)
+    ☐ протестувати пакунок Sublime Text SQLExec
+    ☐ SQL
+      ☐ Памятка/шпаргалка по SQL https://habr.com/ru/post/564390/
+      ☐ w3s: SQL Tutorial (https://www.w3schools.com/sql/default.asp)
+    ☐ MySQL
+      ☐ metanit: Руководство по MySQL (https://metanit.com/sql/mysql/)
+      ☐ metanit: nodejs+mysql (https://metanit.com/web/nodejs/8.1.php)
+      ☐ w3s: MySQL Tutorial (https://www.w3schools.com/mysql/default.asp)
+    ☐ MariaDB
     ☐ PostgreSQL
       ☐ metanit: Руководство по PostgreSQL (https://metanit.com/sql/postgresql/)
     ☐ SQLite
-  ☐ sequelize
-    ✔ metanit: Sequelize (https://metanit.com/web/nodejs/9.1.php) @done (22-01-05 23:34)
-    ☐ Идеальный инструмент для работы с СУБД без SQL для Node.js или Все, что вы хотели знать о Sequelize. Часть 1 - 4 (https://habr.com/ru/post/565062/)
-    ☐ приклади з робочих проектів
-    ☐ оф. документація
-  ☐ Redis
+      ☐ metanit: Руководство по SQLite (https://metanit.com/sql/sqlite/)
+    ☐ MS SQL Server
+      ☐ metanit: Руководство по MS SQL Server 2022 (https://metanit.com/sql/sqlserver/)
+    ☐ Sequelize
+      ☐ metanit: Sequelize (https://metanit.com/web/nodejs/9.1.php)
+      ☐ Идеальный инструмент для работы с СУБД без SQL для Node.js или Все, что вы хотели знать о Sequelize. Часть 1 - 4 (https://habr.com/ru/post/565062/)
+      ☐ офіційна документація (https://sequelize.org/docs/v6/)
+  ☐ об'єктні БД
+    ☐ MongoDB
+      ☐ протестувати пакунок Sublime Text MongoExec
+      ☐ w3s: MongoDB Tutorial (https://www.w3schools.com/mongodb/index.php)
+      ☐ офіційна документація(https://www.mongodb.com/)
+      ☐ metanit: Онлайн-руководство по MongoDB (https://metanit.com/nosql/mongodb/)
+      ☐ metanit: Node.js и MongoDB (https://metanit.com/web/nodejs/6.1.php)
+    ☐ Mongoose
+      ☐ офіційна документація (https://mongoosejs.com/)
 
-Технології:
-  ☐ React
-  ☐ Nest.js (на заміну Express.js)
-  ☐ webpack
-  ☐ TypeScript
-  ☐ PHP
-  ☐ GIT
-    ☐ курс кантера, як мінімум
-    ☐ w3s: Git Tutorial (https://www.w3schools.com/git/default.asp)
-    ☐ Sublime Merge - розібратися, як з ним працювати
+☐ GraphQL/ApolloServer
 
+☐ Docker/Docker Compose 
 
-інфо по nest
-https://thrilling-umbrella-d43.notion.site/Nest-js-Framework-Overview-5703424c5ce547fcabfc84d54c5f891a
-https://wanago.io/2020/05/11/nestjs-api-controllers-routing-module/
-https://t.me/nest_ru
-https://discord.gg/zskcwzSh
+☐ React
+  ☐ протестувати пакунок Sublime Text React IDE
+  ☐ w3s: React Tutorial (React Tutorial)
+  ☐ metanit: Руководство по React (https://metanit.com/web/react/)
 
+☐ Angular
+  ☐ metanit: Руководство по Angular 16 (https://metanit.com/web/angular2/)
 
-Різне:
+☐ Nest.js (на заміну Express.js)
+  ☐ https://thrilling-umbrella-d43.notion.site/Nest-js-Framework-Overview-5703424c5ce547fcabfc84d54c5f891a
+  ☐ https://wanago.io/2020/05/11/nestjs-api-controllers-routing-module/
+  ☐ https://t.me/nest_ru
+  ☐ https://discord.gg/zskcwzSh
+
+☐ webpack
+
+☐ TypeScript
+  ☐ протестувати пакунки Sublime Text TypeScript та TypeScript Compiler
+  ☐ metanit: Руководство по TypeScript (https://metanit.com/web/typescript/)
+
+☐ WebSockets
+
+☐ AWS api
+
+☐ anycharts
+
+☐ Redis
+
+☐ gulp
+  ☐ протестувати пакунок Sublime Text Gulp
+  ☐ переробити галп файл:
+    1. повідомлення про помилку
+    2. якщо не було змін - прекомпіляція не потрібна (навіщо кожного разу перекомпільовувати незмінювані бібліотеки (jquery тощо)
+    3. перекомпіляція при зніні в блоках pug: при відслідковуванні bem-blocks.js виникає конфлікт із lib.min.js. Причина: lib.min.js набагато важчий за block.js, тому компілюється повільніше. Як наслідок на момент компіляції blocks.js браузер не знає про jquery (консоль: ReferenceError: $ is not defined). Для уникнення подібного в index.pug при підкюченні скрипта lib.min.js прибирав атрибут defer=''. Але це погана практика. Потрібно змінити gulpfile, так, щоб при зміні block.js спочатку відкомпілювався lib.min.js, і тільки потім почав компілюватися block.js (pug).
+    4. дублікати в медіа-запитах. Як їх позбутися? https://github.com/rbtech/gulp-css-purge?
+       purge = require('gulp-css-purge'); - видалення дублюючого коду css? - файл реально зменшується, але дублікати не пропадають
+    5. uncss для файлу бібліотек css
+
+☐ pug
+
+☐ Python
+  ☐ протестувати пакунок Sublime Text Anaconda
+
+☐ курси prometheus:
+  ☐ Машинне навчання (https://prometheus.org.ua/course/course-v1:IRF+ML101+2016_T3)
+  ☐ Початок роботи з ChatGPT (https://prometheus.org.ua/course/course-v1:Prometheus+GPT101+2023_T1)
+  ☐ Основи Kubernetes (https://prometheus.org.ua/course/course-v1:LinuxFoundation+INTRO101+2023_T1)
+  ☐ Основи Linux (https://prometheus.org.ua/course/course-v1:LinuxFoundation+INTRO_LINUX101+2023_T1)
+  ☐ Основи програмування CS50 2019 (https://prometheus.org.ua/course/course-v1:Prometheus+CS50+2019_T1)
+  ☐ Вебпрограмування з Python та JavaScript CS50 (https://prometheus.org.ua/course/course-v1:Prometheus+CS50+2021_T1)
+  ☐ Розробка та аналіз алгоритмів. Частина 1 (https://prometheus.org.ua/course/course-v1:KPI+Algorithms101+2015_Spring)
+
+================================================================================
+
+Питання:
   ☐ node.js - потоки
   ☐ як браузери відправляють повідомлення на робочий стіл?
-  ☐ nodemailer
-  ☐ passport.js
-  ☐ sequelize
-  ☐ metanit: Руководство по проектированию реляционных баз данных (https://metanit.com/sql/tutorial/w)
-
-Курси:
   ☐ патерни, SOLID, ООП
-  ☐ prometheus:
-    ☐ Основи програмування CS50 2019
-    ☐ Вебпрограмування з Python та JavaScript CS50
-    ☐ Основи Web UI розробки 2020
-    ☐ Основи тестування програмного забезпечення
-    ☐ Основи управління командами та проєктами в IT. Підготовчий
-    ☐ Машинне навчання
-    ☐ Розробка та аналіз алгоритмів. Частина 1
-  ☐ Node.js на Youtube-каналі Тимура Шемсединова
 
+================================================================================
 
 Проекти:
   ☐ читалка
@@ -83,16 +163,7 @@ https://discord.gg/zskcwzSh
   ☐ шифратор
   ☐ сайт граббер: метаніт, ljsru, шахи, мультитран, r2u, e2u
   ☐ база знань: сайт
-  ☐ omline-записничок і файловий обмінник
+  ☐ online-записничок і файловий обмінник
 
-
-
-переробити галп файл: 1. повідомлення про помилку
-                      2. якщо не було змін - прекомпіляція не потрібна (навіщо кожного разу перекомпільовувати незмінювані бібліотеки (jquery тощо)
-                      3. перекомпіляція при зніні в блоках pug: при відслідковуванні bem-blocks.js виникає конфлікт із lib.min.js. Причина: lib.min.js набагато важчий за block.js, тому компілюється повільніше. Як наслідок на момент компіляції blocks.js браузер не знає про jquery (консоль: ReferenceError: $ is not defined). Для уникнення подібного в index.pug при підкюченні скрипта lib.min.js прибирав атрибут defer=''. Але це погана практика. Потрібно змінити gulpfile, так, щоб при зміні block.js спочатку відкомпілювався lib.min.js, і тільки потім почав компілюватися block.js (pug).
-                      4. дублікати в медіа-запитах. Як їх позбутися? https://github.com/rbtech/gulp-css-purge?
-                      purge = require('gulp-css-purge'); - видалення дублюючого коду css? - файл реально зменшується, але дублікати не пропадають
-                      5. uncss для файлу бібліотек css
-
-                                                                                                   ^
+================================================================================
 

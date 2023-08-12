@@ -1,4 +1,4 @@
-Sublime Text 
+Sublime Text
 ================================================================================
 
 Зміст
@@ -87,7 +87,6 @@ Sublime Text
   - [Color Highlighter                                                   ](#CHr)
   - [CommandsBrowser                                                     ](#CoB)
   - [Console Wrap                                                        ](#CoW)
-  - [CSS Extended Completions                                            ](#CEC)
   - [CSS3                                                                ](#CS3)
   - [CSSComb                                                             ](#CCb)
   - [Debugger                                                            ](#Deb)
@@ -180,7 +179,7 @@ sudo apt-get update
 sudo apt-get install sublime-text
 ```
 
-Sublime Text всєєтає в диреторію /opt/sublime_text
+Sublime Text встає в диреторію /opt/sublime_text
 Пакунки і налаштування знаходяться в директорії
 /home/user_name/.config/sublime-text
 
@@ -304,6 +303,9 @@ Data Directory/Packages/User
   { "caption": "H:Допомога", "mnemonic": "H", "id": "help" }
 ]
 ```
+
+Також як варіант можна поглянути в сторону пакунку LocalizedMenu
+(https://packagecontrol.io/packages/LocalizedMenu)
 
 
 Командна панель                                            <i id="cpalette"></i>
@@ -436,7 +438,7 @@ clear_recent_files         видаляє записи про нещодавно
 clear_recent_projects      видаляє записи про нещодавно доступні проекти
 
 clone_file                 клонує поточне представлення в ту саму групу вкладок,
-                           обидва мають спільний буфер.  Це означає, що ви
+                           обидва мають спільний буфер. Це означає, що ви
                            можете перетягнути одну вкладку в іншу групу, і кожне
                            оновлення в одному поданні також буде видно в іншому
 
@@ -996,6 +998,7 @@ view.settings().get("setting_name")
   "translate_tabs_to_spaces": true, // замінювати таби на пробіли
   "show_definitions": false,        // скасувати появу попапу з оголошеннями функцій
   "rulers": [40, 80, 120],          // візуальні межі для стилів кодування
+  "tab_size": 2,
 
   "ignored_packages": ["CSS","Vintage"],
 
@@ -1052,11 +1055,11 @@ Bindings. Файли з налаштуваннями знаходяться в �
 Також файли з комбінаціями клавіш можуть бути у сторонніх пакунках в їх
 директоріях.
 
-Типово файл підказок містить масив з об'єктами, де кожен об'єкт є комбінацією
+Типово файл скорочень містить масив з об'єктами, де кожен об'єкт є комбінацією
 клавіш. Такий об'єкт повинен містити ключі keys та command, може мати ключі args
 i context.
 
-Приклад файлу підказок:
+Приклад файлу клавіатурних скорочень:
 ```json
 {
   "keys": ["alt+ctrl+a"],
@@ -1242,7 +1245,7 @@ Ctrl+PageUp            пройтися по усіх відкритих вкл�
 Ctrl+PageDown          пройтися по усіх відкритих вкладках справа наліво
 Ctrl+Tab               зробити активною попередню активну вкладку (рух назад)
 Ctrl+Shift+Tab         повернутися до активної вкладки (рух вперед)
-Ctrl W                 закрити поточну вкладку
+Ctrl+W                 закрити поточну вкладку
 Alt+[1-9]              переключитися на вкладку номер
 
 
@@ -1966,8 +1969,6 @@ SublimeCodeIntel                   SCI авокомпліти стандартн
                                        перехід у файл / на рядок з оголошенням
                                        функції
 
-CSS Extended Completions           CEC підказки CSS/SCSS/LESS
-
 
 #### Перевірка коду (лінтери)                      <i id="packages-group-5"></i>
 
@@ -2079,7 +2080,7 @@ Emmet                              Emm дозволяє створювати р�
 посилання:   https://packagecontrol.io/packages/A%20File%20Icon
              https://github.com/SublimeText/AFileIcon
 призначення: додає іконки до файлів відповідно їх mime-типу
-залежності:  ???
+залежності:  немає
 
 
 ##### Меню A File Icon
@@ -2129,7 +2130,7 @@ dev_trace         A list of tags to filter the output of logging. Only takes its
              https://github.com/SublimeText/AdvancedNewFile
 призначення: додає зручний інструментарій для роботи з файлами і теками
              (створення/видалення/перейменування).
-залежності:  ???
+залежності:  немає
 
 За замовчуванням файл створюється в директорії, яка є найвищою в ієрархії у
 поточному вікні, якщо такої нема, буде використана домашня директорія.
@@ -2138,7 +2139,6 @@ dev_trace         A list of tags to filter the output of logging. Only takes its
 ##### Меню AdvancedNewFile
 
 Preferences ▶ Packages Settings ▶ AdvancedNewFile
-
 
 
 ##### Налаштування AdvancedNewFile
@@ -2221,7 +2221,7 @@ complete_single_entry       чи потрібно вставляти розді�
                             true
 
 use_folder_name             логічний параметр, який визначає, чи слід
-                            використовувати назву папки чи назву, указану в
+                            використовувати назву теки чи назву, указану в
                             проекті
                             false
 
@@ -2241,7 +2241,7 @@ file_permissions            рядок, який визначає дозволи
                             напр. “777” -> RWX for user, group, and other.
                             ""
 
-rename_default              шлях, який буде вставлений в інпут при перенесенні
+rename_default              шлях, який буде вставлений в інпут при перейменуванні
                             файла, може бути довільним рядком, або одним із
                             варіантів:
                               <filename>: тільки ім'я файлу
@@ -2280,7 +2280,7 @@ relative_fallback_index     індекс теки, яка буде викори�
                             можливо визначити відносний шлях з поточного вікна
                             0
 
-append_extension_on_copy    чи буде при копіювання файла автоматично додаватися
+append_extension_on_copy    чи буде при копіюванні файла автоматично додаватися
                             розширення
                             true
 
@@ -2325,6 +2325,7 @@ cursor_before_extension     When specifying initial input, this boolean will
 проекту. Їхній пріоритет тоді буде вище, за властивості пакунку, крім
 псевдонімів:
 
+Приклад частини файлу .sublime-project:
 ```json
 "settings": {
   "AdvancedNewFile": {
@@ -2371,8 +2372,8 @@ advanced_new_file_cut_to_file ANF: Cut to File
 посилання:   https://packagecontrol.io/packages/Alignment
              https://github.com/wbond/sublime_alignment
              http://wbond.net/sublime_packages/alignment
-призначення: вирівнювання пари ключ-значення
-залежності:  ???
+призначення: вирівнювання пар ключ-значення
+залежності:  немає
 
 Пакунок крім стандартного файлу налаштувань додатково створює
 CSS.sublime-settings, JSON.sublime-settings та Javascript.sublime-settings.
@@ -2479,7 +2480,7 @@ alignment                               -
 посилання:   https://packagecontrol.io/packages/AlignTab
              https://github.com/randy3k/AlignTab
 призначення: вирівнювання тексту за допомогою регулярок
-залежності:  ???
+залежності:  немає
 
 Пакунок дозволяє вирівнювати текст за різними символами, самостійно визначати
 символи вирівнювання (або регулярки), редагувати контекстне меню.
@@ -2527,7 +2528,7 @@ align_tab_clear_mode AlignTab: Exit Table Mode
 посилання:   https://packagecontrol.io/packages/All%20Autocomplete
              https://github.com/alienhard/SublimeAllAutocomplete
 призначення: підказки на основі вмісту відкритих файлів
-залежності:  ???
+залежності:  немає
 
 Робить підказки, спираючись на усі відкриті файли (Sublime шукає підказки тільки
 в активному файлі).
@@ -2546,10 +2547,10 @@ exclude_from_completion масив розширень файлів, у яких 
 exclude_sources         масив синтаксисів Sublime, у файлах яких пакунок не
                         працюватиме
 
-max_word_size           не показувати підказки якщо в слові надруковано більше
+max_word_size           не показувати підказки, якщо в слові надруковано більше
                         букв
 
-min_word_size           не показувати підказки якщо в слові надруковано менше
+min_word_size           не показувати підказки, якщо в слові надруковано менше
                         букв
 
 
@@ -2575,7 +2576,7 @@ min_word_size           не показувати підказки якщо в �
 посилання:   https://packagecontrol.io/packages/AutoFileName
              https://github.com/liamcain/AutoFileName
 призначення: підказки для шляхів і назв файлів при їх підключенні 
-залежності:  ???
+залежності:  немає
 
 ##### Меню AutoFileName
 
@@ -2609,6 +2610,7 @@ afn_template_languages  встановити true, якщо використов
 afn_use_keybinding      виклик підказок тільки по команді від клавіатурного
                         скорочення. Якщо встановити true, у файлі з 
                         клавіатурними скороченнями потібно прописати комбінацію
+
                         клавіш: 
 ```json
 { "keys": ["whatever"], "command": "afn_show_filenames",
@@ -2646,7 +2648,7 @@ afn_settings_panel AutoFileName: Quick Settings
 посилання:   https://packagecontrol.io/packages/Autoprefixer
              https://github.com/sindresorhus/sublime-autoprefixer
 призначення: додає вендорні префікси в CSS/SCSS
-залежності:  ???
+залежності:  Node.js
 
 Якщо пакунок видає помилку, потрібно зайти в його директорію node_modules і
 оновити пакети.
@@ -2686,6 +2688,21 @@ supports     додавати префікси до @supports-параметрі
              true
 
 
+Пакунок можна налаштувати для окремого проекту у файлі налаштувань проекту:
+
+```json
+{
+  "settings": {
+    "Autoprefixer": {
+      "browsers": [
+        "last 1 version"
+      ]
+    }
+  }
+}
+```
+
+
 ##### Команди Autoprefixer
 
 autoprefixer Autoprefix CSS
@@ -2700,7 +2717,8 @@ autoprefixer Autoprefix CSS
              https://github.com/babel/babel-sublime/issues
              https://babeljs.io/
 призначення: підсвітка синтаксису JS/JSX
-залежності:  нема
+залежності:  вимагає увімкненого стандартного пакунку CSS. (CSS3, навпаки,
+             рекомендує його вимикати)
 
 
 #### BracketHighlighter                                         <i id="BHl"></i>
@@ -2708,10 +2726,10 @@ autoprefixer Autoprefix CSS
 версія:      2.30.1
 автор:       facelessuser
 посилання:   https://packagecontrol.io/packages/BracketHighlighter
-             https://github.com/facelessuser/BracketHighlighter/
-             https://facelessuser.github.io/BracketHighlighter/
+             https://github.com/facelessuser/BracketHighlighter
+             https://facelessuser.github.io/BracketHighlighter
 призначення: підсвітка дужок
-залежності:  ???
+залежності:  немає
 
 Налаштувань дуже багато, тут не всі. Детальніше:
 https://facelessuser.github.io/BracketHighlighter/customize/
@@ -2746,15 +2764,17 @@ Color Scheme - Default.sublime-color-scheme, в цей файл вписують
   "rules": []
 }
 ```
+!!! При створенні файлу Monokai.sublime-color-scheme виникали глюки, тому опції
+прописав у файлі Data/Packages/Color Scheme - Default/Monokai.sublime-color-scheme
 
 
-Налаштування файлу User/bh_core.sublime-settings
+###### Налаштування файлу User/bh_core.sublime-settings
 
 show_in_minimap                    показ дужки на мінікарті (крім underline)
-                                   Boolean (false)
+                                   false
 
 show_unmatched                     підсвітка не парної дужки
-                                   Boolean (true)
+                                   true
 
 show_unmatched_exceptions          список мов, у яких поведінка show_unmatched
                                    буде навпаки
@@ -2762,14 +2782,17 @@ show_unmatched_exceptions          список мов, у яких поведі
 
 content_highlight_bar              експериментальна опція, показує вертикальну
                                    лінію від дужки до дужки.
+                                   false
 
-align_content_highlight_bar        визначає, де буде відображатися лінія, увімкнена
-                                   опцією content_highlight_bar
+align_content_highlight_bar        визначає, де буде відображатися лінія,
+                                   увімкнена опцією content_highlight_bar
                                    true - враховує вкладеності дужок
                                    false - лінія завжи прибита до лівого краю
+                                   false
 
-search_in_widgets                  експериментальна опція, підсвічує дужки у віджетах/
-                                   панелях.
+search_in_widgets                  експериментальна опція, підсвічує дужки у
+                                   віджетах/панелях.
+                                   false
 
 bracket_highlighter.ignore         для розробників, якщо потрібно, щоб створювана
                                    розробником панель не мала підсвітки дужок
@@ -2791,53 +2814,68 @@ match_only_adjacent                підсвітка дужок, тільки �
 
 bracket_outside_adjacent           підсвітка дужок, тільки якщо курсор біля
                                    дужки ззовні
+                                   false
 
 block_cursor_mode                  експериментальна опція, підсвітка дужок,
                                    тільки якщо курсор впритул перед дужкою,
                                    ігнорує bracket_outside_adjacent
+                                   false
 
 bracket_string_escape_mode         визначає логіку пошуку дужок
                                    string: шукає, як у текстовому рядку
                                    regex: шукає, як у регулярці
+                                   "string"
 
 search_threshold                   поріг пошуку у символах, ця властивість
                                    впливає тільки на автоматичний пошук, а не
                                    ручні виклики
+                                   5000
 
 ignore_threshold                   ігногує поріг пошуку і шукає до кінця
+                                   false
 
 auto_selection_threshold           кількість одночасно підсвічуваних дужок
+                                   10
 
 kill_highlight_on_threshold        виключає підсвітку при перевищенні ліміту
                                    auto_selection_threshold
+                                   true
 
 gutter_icons                       дозволяє/забороняє іконки
+                                   true
 
 no_multi_select_icons              вимикає підсвітку дужок при мультикурсорах
+                                   false
 
 show_offscreen_bracket_popup       показує попап з інформацією про дужку і
                                    область між дужками, якщо одна з дужок 
                                    знаходиться за зоною видамості, для появи
                                    попапу потрібно перенести курсор впритул до
                                    дужки і навести мишку на дужку
+                                   true
 
 show_bracket_popup_always          показує попап з інформацією про дужки, навіть
                                    якщо обидві дужки у області видимості
+                                   false
 
 popup_char_context                 визначає кількість символів на рядок
                                    контексту спливаючого вікна
+                                   120
 
 popup_line_context                 визначає кількість рядків контексту
                                    спливаючого вікна, тільки якщо одна з дужок
                                    поза зоною видимості. Рекомендується
                                    використовувати парні числа
+                                   2
 
 use_custom_popup_bracket_emphasis  експериментальна опція, дозволяє використання
-                                   опції зміни кольору не видимої дужки в попапі 
+                                   опції зміни кольору не видимої дужки в попапі
+                                   false
 
 popup_bracket_emphasis             визначає колір не видимої дужки в попапі,
                                    може бути взятий зі scope, або визначений
                                    вручну у форматах #rgb або #rrggbb
+                                   "keyword"
 
 debug_enable                       вмиакає/вимикає режим відладки (логування)
 
@@ -2877,8 +2915,7 @@ scope_brackets                     ??? об'єкт з ключами: name, open
                                    sub_bracket_search, enabled, plugin_library
 
 
-
-Налаштування файлу User/bh_tag.sublime-settings
+###### Налаштування файлу User/bh_tag.sublime-settings
 
 tag_mode                           список різних режимів, оцінюється з верху до
                                    низу і вибирає перший режим, який задовольняє
@@ -2914,12 +2951,12 @@ start_tag                          визначає регулярку для в
 end_tag                            визначає регулярку для закриваючого тегу
 
 
-Налаштування файлу User/bh_swapping.sublime-settings
+###### Налаштування файлу User/bh_swapping.sublime-settings
 
 https://facelessuser.github.io/BracketHighlighter/customize/#swap-brackets-plugin-settings
 
 
-Налаштування файлу User/bh_wrapping.sublime-settings
+###### Налаштування файлу User/bh_wrapping.sublime-settings
 
 https://facelessuser.github.io/BracketHighlighter/customize/#wrap-brackets-plugin-settings
 
@@ -2930,7 +2967,7 @@ bh_toggle_enable              BracketHighlighter: Toggle Global Enable
                               вмикає/вимикає пакунок
 
 bh_remove_brackets            BracketHighlighter: Remove Brackets
-                              видаляє дужки
+                              виводить попап з варіантами видаленн дужок
 
 swap_brackets                 BracketHighlighter: Swap Brackets
                               ???
@@ -3001,7 +3038,7 @@ bh_debug_rule                  (Debug) Show Merged Rules
              https://github.com/Azd325/sublime-text-caniuse/
              http://azd325.github.io/sublime-text-caniuse/
 призначення: перевірка можливості використання властивостей через сайт canIUse
-залежності:  ???
+залежності:  немає
 
 Для того, щоб пакунок запрацював, необхідно зайти в користувацькі налаштування і
 прописати робочий браузер.
@@ -3034,7 +3071,7 @@ use_it -
 посилання:   https://packagecontrol.io/packages/Clickable%20URLs
              https://github.com/leonid-shevtsov/ClickableUrls_SublimeText
 призначення: пакунок підсвічує посилання в тексті і дозволяє їх відкривати
-залежності:  ???
+залежності:  немає
 
 У Sublime в контекстному меню уже є пункт меню Open <url>, який викликає
 системну команду open_context_url, на яку можна додати комбінацію клавіш. Якщо
@@ -3065,6 +3102,9 @@ clickable_urls_browser браузер, який відкриє посиланн�
 }
 ```
 
+highlight_urls         вказує, чи потрібно підкреслювати посилання в тексті
+                       true
+
 
 ##### Команди Clickable URLs
 
@@ -3083,7 +3123,7 @@ open_all_urls         Open all URLs
 посилання:   https://packagecontrol.io/packages/ClickableRequires
              https://github.com/hajnalben/ClickableRequires
 призначення: можливість переходу у файли з оголошеннями модулів
-залежності:  ???
+залежності:  немає
 
 Пакунок при наведенні на директиви "require('module-name')" / "import module
 from 'module'" відкриває попап із посиланням на файл, яке дозволяє його відкрити
@@ -3103,7 +3143,7 @@ Preferences ▶ Package Settings ▶ ClickableRequires
 
 
 auto_fold_imports   old lines with import when opening file
-                    тfalse
+                    false
 
 debug               режим відлагодження пакунка
                     false
@@ -3137,15 +3177,14 @@ underline           підкреслення require/import
 посилання:   https://packagecontrol.io/packages/Clipboard%20History
              https://github.com/kemayo/sublime-text-2-clipboard-history
 призначення: зручна робота з буфером обміну
-залежності:  ???
+залежності:  немає
+проблеми:    команда clipboard_clear_history не спрацьовує, в консоль виводить
+             помилку "NameError: global name 'xrange' is not defined"
 
 Пакунок розширює стандартний буфер обміну і дозволяє зберігати в ньому багато
 записів і зручно обирати потрібне. Пакунок не ставиться через менеджер пакетів,
 його треба вантажити з GitHab'а та встановлювати вручну. Пакунок працює тільки
 з буфером обміну всередині SublimeText і тільки з комбінацією клавіш Ctrl+C.
-
-https://packagecontrol.io/packages/Clipboard%20History
-https://github.com/kemayo/sublime-text-2-clipboard-history
 
 
 ##### Налаштування Clipboard History
@@ -3181,7 +3220,7 @@ clipboard_paste_previous paste the previous (older) history entry
 посилання:   https://packagecontrol.io/packages/Color%20Highlight
              https://github.com/Kronuz/ColorHighlight
 призначення: підсвітка кольорів
-залежності:  ???
+залежності:  немає
 
 ##### Меню Color Highlight
 
@@ -3206,7 +3245,7 @@ highlight_values   Show color by highlighting the value region
 named_values       підсвічує назви кольорів
                    Boolean
 
-hex_values         підсвічує кольорі у форматі hex #RRGGBBAA
+hex_values         підсвічує кольори у форматі hex #RRGGBBAA
                    Boolean
 
 0x_hex_values      підсвічує кольори у форматі 0xRRGGBBAA
@@ -3244,12 +3283,6 @@ color_highlight                  Color Highlight: Color Highlight Current File /
                                    action: "highlight" - підсвітити, "reset" -
                                      скинути
 
-edit_settings                    Color Highlight: Color Highlight Settings
-                                 відкрити файли з налаштуваннями
-                                 args:
-                                   base_file: програмний файл налаштувань
-                                   default: користувацький файл налаштувань
-
 color_highlight_enable_load_save Color Highlight: Load-Save Color Highlighting
                                  підсвітка кольорів з'являтиметься тільки, коли
                                  файл завантажений і збережений
@@ -3284,7 +3317,7 @@ color_highlight_restore          Color Highlight: Restore Color Scheme
              https://github.com/Monnoroch/ColorHighlighter/
              https://sublime.wbond.net/packages/Color%20Highlighter
 призначення: виклик панелі кольорів
-залежності:  ???
+залежності:  немає
 
 У цього пакунка підсвічування кольорів не працює (Linux Mint Cinnamon),
 доводиться використовувати Color Highlight, якщо цю проблему вдасться вирішити,
@@ -3305,6 +3338,11 @@ Context ▶ Convert color to the next format     // cursor on color
 Context ▶ Convert color to the previous format // cursor on color
 
 
+##### Налаштування Color Highlighter
+
+див. файл налаштувань
+
+
 ##### Команди Color Highlighter
 
 color_highlighter_pick_color     відкриває палітру кольорів
@@ -3322,18 +3360,13 @@ color_highlighter_set_setting    встановлює параметр нала�
                                    value: значення параметра
 
 
-##### Налаштування Color Highlighter
-
-див. файл налаштувань
-
-
 #### CommandsBrowser                                            <i id="CoB"></i>
 
 версія:      1.5.0
 автор:       Sublime-Instincts
 посилання:   https://packagecontrol.io/packages/CommandsBrowser
-призначення: надає перелік доступних команд і коротку документацію по ним
-залежності:  ???
+призначення: надає перелік доступних команд і коротку документацію по них
+залежності:  немає
 
 ##### Меню CommandsBrowser
 
@@ -3418,8 +3451,8 @@ show_panel                          повторно відкриває пане
 автор:       David Bekoyan
 посилання:   https://packagecontrol.io/packages/Console%20Wrap
              https://github.com/unknownuser88/consolewrap
-призначення: робота з логуючими виразами
-залежності:  ???
+призначення: робота з логуючими виразами в JS, Python, PHP, Go
+залежності:  немає
 
 console.log -> info -> warn -> error
 
@@ -3466,258 +3499,6 @@ console_action Console Wrap: Show all logs
                показати панель зі списком логів
 
 
-#### CSS Extended Completions                                   <i id="CEC"></i>
-
-версія:      0.3.8
-автор:       subhaze
-посилання:   https://packagecontrol.io/packages/CSS%20Extended%20Completions
-             https://github.com/subhaze/CSS-Extended
-призначення: Пакунок дозволяє скопіювати вміст файлів CSS/SCSS/LESS в кеш і
-             використовувати їх у якості підказок
-залежності:  ???
-
-??? Дочитати рідмі файл
-
-Пакунок працює з даними:
-
-1. id та класів CSS в атрибутах id/класів HTML (id="…", class="…") і файлах CSS
-2. змінних і міксинів LESS/SCSS
-3. псевдоселекторів у файлах CSS
-4. HTML-тегів у CSS-файлах
-5. шрифтів у властивості font-family (імена шрифтів беруться зі списку, забитого
-   у налаштуваннях)
-6. a more up-to-date property/value completion list within CSS files
-7. parse linked style sheets in HTML files, can be disabled via
-   `index_linked_style_sheets` setting
-
-
-Також у налаштуваннях можна прописати файли, з яких братимуться підказки.
-
-
-##### Меню CSS Extended Completions
-
-Preferences ▶ Package Settings ▶ CSS Extended Completions
-Side Bar ▶ CSS Extended Completions
-
-##### Налаштування CSS Extended Completions
-
-setting_name пояснення налаштування
-               варіант 1: пояснення
-                 lorem
-               варіант 2: пояснення
-                 lorem
-             type or default value
-
-```js
-{
-    // List of folders that you want to include for completion results.
-    // Only .css/.less/.scss files will be parsed within them.
-    "load_external_files": [],
-    "save_cache_to_file": true,
-    "css_completion_scope": "meta.selector.css",
-    "html_attribute_scope": "string.quoted.double.html, string.quoted.single.html, string.quoted.jade",
-    // attempts to find <link/>'d style sheets in 'emmet_scoped' scoped files on save
-    "index_linked_style_sheets": true,
-    // returns class/id completions when typing out emmet expressions
-    "use_emmet": true,
-    // 'use_emmet' must be enabled for this to work correctly.
-    // Adds the text.html scope with chars . and # to auto trigger the completion list
-    "auto_trigger_emmet_completions": true,
-    "emmet_scope": "text.html - source.js, source.cshtml, source.jade",
-    "css_extension": [".css",".less",".scss"],
-
-    // List from http://www.awayback.com/revised-font-stack/
-    "font_list": [
-        // serif
-        "Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman',  serif",
-        "'Lucida Bright', Georgia,  serif",
-        "Palatino, 'Palatino Linotype',  'Palatino LT STD', 'Book Antiqua', Georgia, serif",
-        "'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif",
-        "Didot, 'Didot LT STD', 'Hoefler Text', Garamond,  'Times New Roman', serif",
-        "Baskerville, 'Baskerville old face', 'Hoefler Text', Garamond,  'Times New Roman', serif",
-        "'Hoefler Text', 'Baskerville old face', Garamond, 'Times New Roman', serif",
-        "'Bodoni MT', Didot, 'Didot LT STD', 'Hoefler Text', Garamond,  'Times New Roman',  serif",
-        "'Goudy Old Style', Garamond, 'Big Caslon', 'Times New Roman',  serif",
-        "Constantia, Palatino, 'Palatino Linotype',  'Palatino LT STD', Georgia, serif",
-        "Cambria, Georgia, serif",
-        "'Book Antiqua', Palatino, 'Palatino Linotype', 'Palatino LT STD', Georgia, serif",
-
-        // sans-serif
-        "Optima, Segoe,  'Segoe UI', Candara, Calibri, Arial, sans-serif",
-        "Futura, 'Trebuchet MS', Arial, sans-serif",
-        "'Gill Sans', 'Gill Sans MT', Calibri, sans-serif",
-        "'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma,  sans-serif",
-        "'Helvetica Neue', Helvetica, Arial, sans-serif",
-        "Verdana, Geneva, sans-serif",
-        "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif",
-        "Geneva, Tahoma, Verdana, sans-serif",
-        "Segoe, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif",
-        "Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif",
-        "Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif",
-        "'Franklin Gothic Medium', Arial, sans-serif",
-        "Tahoma, Geneva, Verdana, sans-serif"
-    ],
-    "pseudo_selector_list": [
-        "after",
-        "before",
-        "checked",
-        "default",
-        "disabled",
-        "empty",
-        "enabled",
-        "first",
-        "first-child",
-        "first-letter",
-        "first-line",
-        "first-of-type",
-        "focus",
-        "fullscreen",
-        "hover",
-        "indeterminate",
-        "invalid",
-        "lang",
-        "last-child",
-        "last-of-type",
-        "left",
-        "link",
-        "not",
-        "nth-child",
-        "nth-last-child",
-        "nth-last-of-type",
-        "nth-of-type",
-        "only-child",
-        "only-type-of",
-        "optional",
-        "read-only",
-        "read-write",
-        "required",
-        "right",
-        "root",
-        "scope",
-        "target",
-        "valid",
-        "visited"
-    ],
-    "element_list": [
-        "html",
-        "body",
-        "section",
-        "nav",
-        "article",
-        "aside",
-        "h1",
-        "h2",
-        "h3",
-        "h4",
-        "h5",
-        "h6",
-        "header",
-        "footer",
-        "address",
-        "main",
-        "p",
-        "hr",
-        "pre",
-        "blockquote",
-        "ol",
-        "ul",
-        "li",
-        "dl",
-        "dt",
-        "dd",
-        "figure",
-        "figcaption",
-        "div",
-        "a",
-        "em",
-        "strong",
-        "small",
-        "s",
-        "cite",
-        "q",
-        "dfn",
-        "abbr",
-        "itl",
-        "data",
-        "time",
-        "atetim",
-        "code",
-        "var",
-        "samp",
-        "kbd",
-        "sub",
-        "sup",
-        "b",
-        "u",
-        "mark",
-        "ruby",
-        "rt",
-        "rp",
-        "bdi",
-        "bdo",
-        "span",
-        "las",
-        "an",
-        "i",
-        "br",
-        "wbr",
-        "ins",
-        "del",
-        "img",
-        "iframe",
-        "embed",
-        "object",
-        "param",
-        "video",
-        "audio",
-        "source",
-        "track",
-        "canvas",
-        "map",
-        "area",
-        "svg",
-        "math",
-        "table",
-        "caption",
-        "colgroup",
-        "col",
-        "tbody",
-        "thead",
-        "tfoot",
-        "tr",
-        "td",
-        "th",
-        "form",
-        "fieldset",
-        "legend",
-        "label",
-        "input",
-        "button",
-        "select",
-        "datalist",
-        "optgroup",
-        "option",
-        "textarea",
-        "keygen",
-        "output",
-        "progress",
-        "meter",
-        "details",
-        "summary",
-        "menuitem",
-        "menu"
-    ]
-}
-```
-
-
-##### Команди CSS Extended Completions
-
-css_style_completion_delete_cach CSS Completions: Delete Cache
-
-css_style_completion_prune_cache CSS Completions: Prune Cache
-
-
 #### CSS3                                                       <i id="CS3"></i>
 
 версія:      2.1.41
@@ -3725,13 +3506,14 @@ css_style_completion_prune_cache CSS Completions: Prune Cache
 посилання:   https://packagecontrol.io/packages/CSS3
              https://github.com/ryboe/CSS3
 призначення: підсвітка синтаксису CSS
-залежності:  ???
+залежності:  немає
 
 ##### Налаштування CSS3
 
 1. Пакунок вимагає вимкнення стандартного пакета CSS (або прописати у файлі
    Preferences.sublime-settings у масиві ignored_packages, або через
-   PackageControll ▶ Disable Package).
+   PackageControll ▶ Disable Package). Якщо виключити CSS, не буде працювати
+   Babel.
 2. Пакунок рекомендує дозволити підказки в середині підказок.
 
    ```json
@@ -3763,9 +3545,7 @@ css3_hex_convert CSS3: Convert RGB Color To Hex
 посилання:   https://packagecontrol.io/packages/CSScomb
              https://github.com/csscomb/sublime-csscomb
 призначення: сортує стилі у правильній послідовності
-залежності:  ???
-
-Для роботи пакунку потрібен встановлений Node.js.
+залежності:  Node.js
 
 If node has been installed with NVM you need to make a symlink to node in
 /usr/local/bin.
@@ -4115,8 +3895,9 @@ command_name Command Name In Command Palette
 автор:       spadgos
 посилання:   https://packagecontrol.io/packages/DocBlockr
              https://github.com/spadgos/sublime-jsdocs
-призначення: створення коментарів у стилі DocBlock
-залежності:  ???
+призначення: створення коментарів у стилі DocBlock у файлах Javascript, PHP,
+             CoffeeScript, Actionscript, C та C++ 
+залежності:  немає
 
 Для створення коментаря потрібно рядком перед оголошенням змінної або функції
 надрукувати /** та натистути Enter.
@@ -4127,7 +3908,6 @@ command_name Command Name In Command Palette
 JS-коді функція починається з великої букви, пакунок розуміє, що це - оголошення
 класу, і не додає @return. Дану поведінку можна змінювати через налаштування
 jsdocs_notation_map.
-
 
 Якщо надрукувати однорядковий коментар і натиснути Ctri+Enter, пакунок його
 прикрасить:
@@ -4163,7 +3943,7 @@ jsdocs_reparse  DocBlockr: Reparse comment block
 посилання:   https://packagecontrol.io/packages/Dockerfile%20Syntax%20Highlighting
              https://github.com/asbjornenge/Docker.tmbundle
 призначення: підсвітка синтаксису в Dockerfile
-залежності:  нема
+залежності:  немає
 
 
 #### DotENV                                                     <i id="Dot"></i>
@@ -4173,7 +3953,7 @@ jsdocs_reparse  DocBlockr: Reparse comment block
 посилання:   https://packagecontrol.io/packages/DotENV
              https://github.com/zaynali53/DotENV
 призначення: підсвідка синтаксису .env-файлів
-залежності:  нема
+залежності:  немає
 
 
 #### EditorConfig                                               <i id="ECg"></i>
@@ -4184,7 +3964,7 @@ jsdocs_reparse  DocBlockr: Reparse comment block
              https://github.com/sindresorhus/editorconfig-sublime
 призначення: Пакунок дозволяє провести стандартизацію синтаксису в проектах, які
              ведуть різні розробники з різними IDE. 
-залежності:  ???
+залежності:  немає
 
 В корені проекту створюється файл .editorconfig, в якому вказані правила
 стилізації коду. Пакунок його зчитує і слідкує, щоб код відповідав вказаному
@@ -4220,9 +4000,7 @@ debug запуск у режимі відлагодження
              https://github.com/emmetio/sublime-text-plugin/
              https://emmet.io/
 призначення: створення розмітки за скороченими інструкціями
-залежності:  ???
-
-https://emmet.io/
+залежності:  немає
 
 Пакунок дозволяє створювати розмітку за скороченими інструкціями у більшості
 популярних розширенях файлів (HTML, HAML, Pug, JSX, SCSS, SASS тощо). Для роботи
@@ -4254,7 +4032,7 @@ auto_mark                               визначає ситуації, в я
 
 abbreviation_preview                    визначає ситуації, в яких буде показува-
                                         тися попап з результатом розгорнення
-                                        рядку інструкції, працює лише якщо
+                                        рядку інструкції, працює лише, якщо
                                         "auto_mark": true
                                         true - показ і для розмітки, і для стилів
                                         false - без показу
@@ -4299,7 +4077,7 @@ abbreviation_scopes                     List of scope selectors where
 ignore_scopes                           ігноровані лексичні оточення
                                         []
 
-tab_expand                              чи перетворювати інчтрукцію на код табом
+tab_expand                              чи перетворювати інструкцію на код табом
                                         true
 
 multicursor_tab                         Expand Emmet abbreviation with Tab key
@@ -4381,6 +4159,7 @@ emmet_rename_tag             Emmet: Rename Tag
 
 ##### Директиви Emmet
 
+```txt
 >      нащадок
 +      елемент на одному рівні вкладеності
 ^      підняти на рівень вище
@@ -4395,7 +4174,7 @@ $@N    нумерація від заданого числа
 
 #id    ідентифікатор
 .class клас
-
+```
 
 ```html
 <!-- #page>div.logo+ul#navigation>li*5>a[href="https://somesite.com/page$" data-attr]{Item $} -->
@@ -5589,7 +5368,7 @@ SublimeLinter. Підсвітку рядків можна відстажуват
 посилання:   https://packagecontrol.io/packages/Goto-CSS-Declaration
              https://github.com/rmaksim/Sublime-Text-2-Goto-CSS-Declaration
 призначення: пошук оголошень css-декларацій
-залежності:  ???
+залежності:  немає
 
 Пакунок здатен перейти з файлу з будь-яким розширенням, в якому є
 css-декларація, і знайти її у відкритих файлах з розширеннями css/scss/sass/
@@ -5630,7 +5409,7 @@ goto_css_declaration Goto CSS Declaration
 посилання:   https://packagecontrol.io/packages/GraphQL
              https://github.com/dncrews/GraphQL-SublimeText3
 призначення: підсвітка синтаксису GraphQL
-залежності:  нема
+залежності:  немає
 
 
 #### HTML (C#)                                                  <i id="HC#"></i>
@@ -5640,7 +5419,7 @@ goto_css_declaration Goto CSS Declaration
 посилання:   https://packagecontrol.io/packages/HTML%20(C%23)
              https://github.com/michaelblyons/SublimeSyntax-HTML-CSharp
 призначення: ххх
-залежності:  нема
+залежності:  немає
 
 
 #### HTML Minifier                                              <i id="HMr"></i>
@@ -5649,8 +5428,11 @@ goto_css_declaration Goto CSS Declaration
 автор:       geekpradd
 посилання:   https://packagecontrol.io/packages/HTML%20Minifier
              https://github.com/geekpradd/sublime-html5-minifier
-призначення: мініфікація HTML-коду
-залежності:  ???
+призначення: мініфікація HTML, CSS та JS-коду
+залежності:  немає
+
+Не зважаючи на назви усіх пунктів меню і самого додатку, він працює не тільки з
+HTML, а й з CSS та JS.
 
 ##### Меню HTML Minifier
 
@@ -5678,7 +5460,7 @@ minifier2 HTML Minfier: Minify File (modify existing)
 посилання:   https://packagecontrol.io/packages/HTML%20Nest%20Comments
              https://github.com/philsinatra/HTML-Nest-Comments
 призначення: виправлення помилки вкладених коментарів
-залежності:  ???
+залежності:  немає
 
 ##### Меню HTML Nest Comments
 
@@ -5700,7 +5482,7 @@ nest HTML Nest Comments: Comment/Uncomment Selection
 посилання:   https://packagecontrol.io/packages/HTML-CSS-JS%20Prettify
              https://github.com/victorporof/Sublime-HTMLPrettify
 призначення: вирівнювання коду
-залежності:  node, npm-пакет js-beautify
+залежності:  Node.js, npm-пакет js-beautify
              (https://github.com/beautify-web/js-beautify).
 
 
@@ -5807,7 +5589,9 @@ global_file_rules                       правила форматування 
 ```
 
 respect_editorconfig_files              правила з файлу ".editorconfig" (
-                                        https://editorconfig.org/) перезаписують правила з файлу ".jsbeautifyrc". Але налаштування use_editor_indentation та
+                                        https://editorconfig.org/) перезаписують
+                                        правила з файлу ".jsbeautifyrc". Але
+                                        налаштування use_editor_indentation та
                                         use_editor_syntax мають пріоритет над
                                         будь-якими файлами конфігурацій.
                                         true
@@ -5835,7 +5619,7 @@ print_diagnostics                       Log the settings passed to the
 
 1. директорія, в якій знаходиться файл, що підлягає форматуванню
 2. директорії, вище по ієрархії від директорії, вказаної у пункті 1
-3. домашня директорія користувача (Your home folder)
+3. домашня директорія користувача
 4. Your personal Sublime settings folder
 
 Якщо файл знайдено, пошук припиняється, наступні файли ігноруються.
@@ -5934,33 +5718,33 @@ Preferences ▶ Package Settings ▶ Inc-Dec-Value
 
 ##### Команди Inc-Dec-Value
 
-inc_dec_value .
+inc_dec_value збільшити на мінімальне значення
               alt+up
               alt+scroll_up
               args: { "action": "inc_min" } }
 
-inc_dec_value .
+inc_dec_value зменшити на мінімальне значення
               alt+down
               alt+scroll_down
               args: { "action": "dec_min" } }
 
-inc_dec_value .
+inc_dec_value вставити мінімальне значення
               alt+insert
               args: { "action": "ins_min" } }
 
-inc_dec_value .
+inc_dec_value збільшити на максимальне значення
               super+up (Linux)
               super+alt+up (Windows)
               super+scroll_up
               args: { "action": "inc_max" } }
 
-inc_dec_value .
+inc_dec_value зменшити на максимальне значення
               super+down (Linux)
               super+alt+down (Windows)
               super+scroll_down
               args: { "action": "dec_max" } }
 
-inc_dec_value .
+inc_dec_value вставити максимальне значення
               super+insert (Linux)
               super+alt+insert (Windows)
               args: { "action": "ins_max" } }
@@ -5990,7 +5774,7 @@ inc_dec_value .
 посилання:   https://packagecontrol.io/packages/jQuery
              https://github.com/SublimeText/jQuery
 призначення: надає підказки для jQuery
-залежності:  ???
+залежності:  немає
 
 Додаток надає підказки-автокомпліти для jQuery. У парах ключ-значення зручно
 бігати TAB'ом.
@@ -6004,8 +5788,9 @@ inc_dec_value .
 автор:       jonlabelle
 посилання:   https://packagecontrol.io/packages/JsPrettier
              https://github.com/jonlabelle/SublimeJsPrettier
+             https://prettier.io/
 призначення: вирівнювання коду
-залежності:  ???
+залежності:  Node.js.js, npm, Prettier
 
 Даний пакунок додає до Sublime Text функціонал форматувальника коду Prettier.
 Для роботи вимагає наявності встановлених Node.js та Prettier v2.6 або вище.
@@ -6017,9 +5802,6 @@ npm install --save-dev prettier
 # npm (global):
 npm install --global prettier
 ```
-
-https://packagecontrol.io/packages/JsPrettier
-https://prettier.io/
 
 Prettier має багато плагінів для різних мов (напр. pug, nginx, sql, php),
 підтримує EditorConfig (.editorconfig).
@@ -6033,7 +5815,7 @@ prettier --write).
 ```json
 {
   "trailingComma": "es5",
-  "tabWidth": 4,
+  "tabWidth": 2,
   "semi": false,
   "singleQuote": true
 }
@@ -6203,7 +5985,8 @@ prettier_options.printWidth             максимальна довжина р
 
 prettier_options.tabWidth               розмір відступів. За замовчуванням
                                         береться з параметра ST tab_size, щоб
-                                        відключити цю поведінку, треба виставити disable_tab_width_auto_detection в true
+                                        відключити цю поведінку, треба виставити
+                                        disable_tab_width_auto_detection в true
                                         2
 
 prettier_options.singleQuote            використання одинарних лапок замість
@@ -6313,7 +6096,7 @@ prettier_options.singleAttributePerLine Enforce single attribute per line in
                                         false
 
 Пакунок підтримує можливість робити специфічні налаштування для конктетного
-проекту. ДЛя цього потрібно у файлі .subkime-project додати об'єкт
+проекту. Для цього потрібно у файлі .sublime-project додати об'єкт
 з налаштуваннями з ключем "js_prettier":
 
 ```json
@@ -6342,7 +6125,7 @@ js_prettier JsPrettier: Format Code
 посилання:   https://packagecontrol.io/packages/Less
              https://github.com/SublimeText/Less
 призначення: підсвітка синтаксису less
-залежності:  нема
+залежності:  немає
 
 
 #### LiveReload                                                 <i id="LRl"></i>
@@ -6353,7 +6136,7 @@ js_prettier JsPrettier: Format Code
              https://github.com/alepez/LiveReload-sublimetext3
 призначення: автоматичне перезавантаження браузера при збереженні змін в
              HTML/CSS/JS/SCSS/SASS
-залежності:  ???
+залежності:  немає
 
 Після встановлення плагіна потрібно: Ctrl+Shift+P, прописати live reload та
 вибрати LiveReload: Enable/Diasble plug-ins ▶ Enable - Simple Reload. Потім в
@@ -6433,7 +6216,7 @@ toggle_tab_lock перемкнути стан вкладки
 посилання:   https://packagecontrol.io/packages/Markdown%20HTML%20Preview
              https://github.com/zeyon/MarkdownHtmlPreview
 призначення: відкриває браузер і показує, як виглядає md-файл
-залежності:  ???
+залежності:  немає
 
 ##### Команди Markdown HTML Preview
 
@@ -6449,11 +6232,18 @@ markdown_html_preview Markdown HTML Preview
 посилання:   https://packagecontrol.io/packages/Markdown%20Table%20Formatter
              https://github.com/bitwiser73/MarkdownTableFormatter
 призначення: вирівнювання таблиць у файлах markdown
-залежності:  ???
+залежності:  немає
 
 Пакунок дозволяє вирівнювати таблиці у файлах формату markdown. Щоб вирівнювання
 пройшло успішно, рядок, який розділяє тіло і шапку таблиці, не повинен мати
 пробілів.
+
+приклад таблиці:
+```md
+| header1 | header2 | header3 |
+|:--------|:-------:|--------:|
+|left     |  center |    right|
+```
 
 
 ##### Меню Markdown Table Formatter
@@ -6475,7 +6265,7 @@ default_justification визначає, як вирівнювати текст �
 margin                кількість пробілів між "|" і текстом комірки
                       1
 
-padding               додаткові пробіли після/до текстукомірки
+padding               додаткові пробіли після/до тексту комірки
                       0
 
 verbose               make plugin verbose in debug console
@@ -6497,16 +6287,24 @@ markdown_table_format MarkdownTableFormatter: format table
 посилання:   https://packagecontrol.io/packages/MarkdownEditing
              https://sublimetext-markdown.github.io/MarkdownEditing
 призначення: надає засоби для роботи з markdown
-залежності:  ???
+залежності:  немає
 
-Пакунок надає інструменти для роботи з markdown: показує заголовки в меню Goto
-Symbol / Goto Symbol in Project, згортає секції по заголовках, надає навігацію
-заголовках тощо. Дозволяє проводити рецензію файлу ( `{++ addition ++}`,
-`{>> comment <<}`, `{-- deletion --}` тощо) та приймати або відхиляти їх (
-Alt+ENter / Alt+Backspace).
+Пакунок надає інструменти для роботи з markdown:
 
-
-https://sublimetext-markdown.github.io/MarkdownEditing/
+- показує заголовки в Goto Symbol… / Goto Symbol in Project…
+- згортає секцію із заголовком
+- дає навігацію між заголовками (перехід на наступний/попередній)
+- змінює рівень заголовка
+- новий документ зберігається з іменем першого заголовка
+- клавіша Tab у списку змінює рівень відступу і стиль маркеру
+- клавіші Shift+Tab у списку повертає рівень відступу на попередній
+- дозволяє проводити рецензію файлу ( `{++ addition ++}`, `{>> comment <<}`,
+  `{-- deletion --}`, `{== highlight==}{>> comment <<}`,
+  `{~~ substitution ~> by ~~}` ) та приймати або відхиляти їх (Alt+ENter /
+  Alt+Backspace).
+- автоматично згортає URL картинок і посилань
+- Jump between definitions and references
+- додає/видаляє виноски (footnotes)
 
 
 ##### Меню MarkdownEditing
@@ -6682,12 +6480,16 @@ mde.list_indent_bullets                 List bullets to be used for
 ##### Команди MarkdownEditing
 
 mde_select_color_scheme                 MarkdownEditing: Select Color scheme
+                                        вибір кольорової схеми
 
 mde_toggle_centered_line                MarkdownEditing: Toggle Centered Line
 
 mde_markdown_lint                       MarkdownEditing: Markdown Lint
+                                        перевірити правопис внутрішніми засобами
 
 mde_markdown_lint_mdl                   MarkdownEditing: Run markdownlint
+                                        перевірити правопис (запустити зовнішній
+                                        лінтер)
 
 mde_match_heading_hashes                MarkdownEditing: Add Closing Heading Hashes
                                         args: { "enabled": true }
@@ -6702,6 +6504,7 @@ mde_fix_underlined_headings             MarkdownEditing: Fix Underlined Headings
 mde_convert_underlined_headings_to_atx  MarkdownEditing: Convert Underlined Headings to ATX
 
 mde_change_headings_level               MarkdownEditing: Convert Heading to Text
+                                        перетворити заголовок на звичайний текст
                                         alt+k, alt+keypad0
                                         alt+k, alt+0
                                         args: { "to": 0 }
@@ -6913,14 +6716,13 @@ mde_toggle_task_list_item               Toggle GFM tasks
 автор:       facelessuser
 посилання:   https://packagecontrol.io/packages/MarkdownPreview
              https://github.com/facelessuser/MarkdownPreview
+             https://facelessuser.github.io/MarkdownPreview/
 призначення: Додаток показує в браузері, як виглядає md-файл.
-залежності:  ???
-
-https://facelessuser.github.io/MarkdownPreview/
+залежності:  немає
 
 Додаток має інтеграцію з LiveReload. Може працювати з різними парсерами (github,
 gitlab - онлайн, python - офлайн, або іншими). Дозволяє зберегти згенерований
-html у буфер обміну або файл.
+html у буфер обміну або файл, відкрити його у браузері або редакторі.
 
 
 ##### Меню MarkdownPreview
@@ -6983,16 +6785,6 @@ enabled_parsers       масив доступних для використан�
 
 ##### Команди MarkdownPreview
 
-За замовчуванням жодних клавіатурних скорочень не встановлено, їх можна
-налаштувати вручну (Preferences ▶ Keybindings):
-
-```js
-// For a specific parser and target
-{ "keys": ["alt+m"], "command": "markdown_preview", "args": {"target": "browser", "parser":"markdown"} },
-// To bring up the quick panel to select enabled parsers for a given target
-{ "keys": ["alt+m"], "command": "markdown_preview_select", "args": {"target": "browser"} }
-```
-
 markdown_preview_select Markdown Preview: Preview in Browser
                         args: { "target": "browser" }
 
@@ -7005,6 +6797,10 @@ markdown_preview_select Markdown Preview: Save to HTML
 markdown_preview_select Markdown Preview: Copy to Clipboard
                         args: { "target": "clipboard" }
 
+markdown_preview        ???
+                        відкриття md-файлу у певному середовищі з певним парсером
+                        args: {"target": "browser", "parser":"markdown"}
+
 markdown_cheatsheet     Markdown Preview: Open Markdown Cheat sheet
                         args: {}
 
@@ -7016,7 +6812,7 @@ markdown_cheatsheet     Markdown Preview: Open Markdown Cheat sheet
 посилання:   https://packagecontrol.io/packages/nginx
              https://github.com/brandonwamboldt/sublime-nginx
 призначення: підсвітка синтаксису конфігураційних файлів Nginx
-залежності:  нема
+залежності:  немає
 
 
 #### Nodejs                                                     <i id="Njs"></i>
@@ -7026,7 +6822,7 @@ markdown_cheatsheet     Markdown Preview: Open Markdown Cheat sheet
 посилання:   https://packagecontrol.io/packages/Nodejs
              https://github.com/tanepiper/SublimeText-Nodejs
 призначення: підказки для NodeJS
-залежності:  ???
+залежності:  немає
 
 Пакунок здатен запускати системи збірок. Для цього при відкритому js-файлі
 потрібно вибрати систему (Tools ▶ Build System) і потім її запустити через
@@ -7119,7 +6915,7 @@ edit_settings       Nodejs::User Key Bindings
 посилання:   https://packagecontrol.io/packages/Origami
              https://github.com/SublimeText/Origami
 призначення: створення довільних груп вкладок
-залежності:  ???
+залежності:  немає
 
 Пакунок дозволяє створювати довільні групи вкладок і надає зручну по них
 навігацію.
@@ -7135,7 +6931,7 @@ Context ▶ Origami
 ##### Налаштування Origami
 
 saved_layouts                масив збережених макетів (команда "Origami: Save
--                             Current Layout")
+                             Current Layout")
 
 create_new_pane_if_necessary створити нову групу вкладок, якщо її нема, але була
                              викликана команда навігації в її сторону
@@ -7201,7 +6997,7 @@ unzoom_pane                    Origami: Unzoom Current Pane
 посилання:   https://packagecontrol.io/packages/PackageResourceViewer
              https://github.com/skuroda/PackageResourceViewer
 призначення: надає інструменти для роботи зі встановленими пакунками
-залежності:  ???
+залежності:  немає
 
 Пакунок дозволяє переглядати код встановлених пакунків, переносити, редагувати.
 
@@ -7264,40 +7060,91 @@ view_package_file       PackageResourceViewer: View Package Resource
 посилання:   https://packagecontrol.io/packages/PlainTasks
              https://github.com/aziz/PlainTasks
 призначення: організація todo-листів
-залежності:  ???
+залежності:  немає
 
-Пакунок надає можливість організовувати todo-листи. Встановлюється в директорію
-Data/Packages. Працює з файловими розширеннями .todo/.todolist/.tasks/.taskpaper
-або файлами TODO без розширення.
+Пакунок надає можливість організовувати todo-листи. Працює з файловими
+розширеннями .todo/.todolist/.tasks/.taskpaper або файлами TODO без розширення.
 
 Все, що закінчується двокрапкою, стає заголовком, заголовки можуть бути
-вкладеними. Курсив позначається нижнім підкресленням, жирний текст - зірочками.
+вкладеними. Навігація по заголовках - ctrl+r.
+
+Курсив позначається нижнім підкресленням, жирний текст - зірочками.
 
 Якщо набрати два дефіса і натиснути tab, додаток вставить сепаратор:
 --- ✄ -----------------------
 
-Пакунок має такі вбудовані теги: @today, @critical, @high, @low, @started,
-@toggle, @created, @due вони присутні у попапі автодоповнення ("ctrl+space" /
-"alt+/" / "tab").
+Пакунок має такі вбудовані теги (вони присутні у попапі автодоповнення):
+- @today,
+- @critical,
+- @high,
+- @low,
+- @started,
+- @toggle,
+- @created,
+- @due.
 
 @started() - повторне натиснення клавіші tab ставить дату після тега. Якщо
 скасувати/зупинити/виконати цю задачу, з'явиться час, потрачений на неї.
 
 @toggle(current date) зупиняє/відновлює виконання задачі (обрахунок часу)
 
+@created(current date) - якщо через ctrl+shift+enter - створює нову задачу з цим
+тегом
+
 @due(date) - дозволяє здійснювати облік часу: під тегом вставляє скільки часу
 лишилося до визначеної дати, або скільки часу пройшло з моменту, коли задача
-повинна була бути виконаною. Замість кінцевої дати можна вписувати кількість
-часу, потрібного на виконання задачі. Детальніше:
-https://packagecontrol.io/packages/PlainTasks
+повинна була бути виконаною. Формат дати: @due(year-month-day hour:minute).
+Замість кінцевої дати можна вписувати кількість часу, потрібного на виконання
+задачі (а потім натиснути tab, курсор має бути в дужках):
+
+@due(1)          1-й день наступного місяця, час поточний                                                     |
+@due(--1)        1-й день поточного місяця, час поточний                                                    |
+@due(5)          5-й день поточного місяця (або наступного, якщо поточна дата
+                 більша або рівна 5)
+@due(2-3)        3-те лютого поточного року (або наступного, якщо поточна дата
+                 більша)
+@due(31 23:)     31-ше число поточного/наступного місяця, 23-ї години (хвилини -
+                 з поточного часу)
+@due(16.1.1 1:1) @due(16-01-01 01:01)
+@due(+)          + 1 день (завтра)
+@due(+1)         + 1 день (завтра)
+@due(+1d)        + 1 день (завтра)
+@due(+w)         + 1 тиждень
+@due(+3w)        + 3 тижні
+@due(++)         + 1 день від @created(date) якщо є, інакше @due(+)
+@due(+2:)        + 2 години від поточної дати
+@due(+:555)      + 555 хвилин від поточної дати
+@due(+2 12:)     + 2 доби і 12 годин від поточної дати
+
+Правий клік по тегу дає можливість фільтрувати теги: все, крім активного тегу,
+буде згорнуто (розгорнути - ctrl+k,ctrl+j).
+
+Доступна навігація по тегах - ctrl+shift+r.
+
+
+Пакунок може відкривати посилання (ctrl+shift+u), усі, крім http(s), повинні
+бути огорнені у ламані дужки, напр. <skype:nickname>.
 
 Пакунок дозволяє створювати посилання на файли і каталоги проекту в todo-файлах.
 Посилання відкриваються комбінацією клавіш alt+o. Відкриття каталогу призводить
 до його появи у бічній панелі (додавання каталогу до проекту). У файлових
 посиланнях можна додавати номер рядку і відступ курсору від краю, напр.:
 ".\filename:11:8".
+```
+[](path)
+[](path ":11:8")
+[](path ">symbol")
+[](path "any text")
+[[path]]
+[[path::11:8]]
+[[path::*symbol]]
+[[path::any text]]
+[[path]] ":11:8"
+[[path]] ">symbol"
+[[path]] "any text"
+```
 
-У файлах пакунку ж файл Tutorial.todo з доступною інструкцією.
+У файлах пакунку є файл Tutorial.todo з доступною інструкцією.
 
 
 ##### Меню PlainTasks
@@ -7355,7 +7202,7 @@ plain_tasks_archive                     Tasks: Archive
                                         кінець документа в секцію "Archive"
 
 plain_tasks_archive                     Tasks: Archive within selection(s)
-                                        args: {"partial": true} }
+                                        args: {"partial": true}
 
 plain_tasks_calendar                    Tasks: Show date picker
 
@@ -7369,7 +7216,7 @@ plain_tasks_complete                    Tasks: Complete
                                         повторний клік - без дати
 
 plain_tasks_convert_to_html             Tasks: Save as HTML…
-                                        args: {"ask": true} }
+                                        args: {"ask": true}
                                         відкриває нову вкладку в редакторі і
                                         вставляє в неї html-код, що відповідає
                                         todo-файлу.
@@ -7419,7 +7266,7 @@ plain_tasks_sort_by_due_date_and_priority Tasks: Sort items in the list under
                                           cursor by due date and priority
                                           f5
 
-plain_tasks_new_with_date               ?
+plain_tasks_new_with_date               Створити нову задачу з тегом @created()
                                         ctrl+shift+enter
 
 plain_tasks_goto_tag                    навігація по тегах (відкривається список
@@ -7448,7 +7295,7 @@ plain_tasks_re_calculate_time_for_tasks ?
 посилання:   https://packagecontrol.io/packages/Pug
              https://github.com/davidrios/pug-tmbundle
 призначення: підсвітка синтиксису pug
-залежності:  нема
+залежності:  немає
 
 
 #### Random Everything                                          <i id="REg"></i>
@@ -7458,7 +7305,7 @@ plain_tasks_re_calculate_time_for_tasks ?
 посилання:   https://packagecontrol.io/packages/Random%20Everything
              https://github.com/kimpettersen/random-sublime-text-plugin
 призначення: генерація випадкових даних
-залежності:  ???
+залежності:  немає
 
 Пакунок не створює пункти меню і не має клавіатурних скорочень. Доступ до
 команд здійснюється виключно через панель команд.
@@ -7539,7 +7386,7 @@ random_word              Random:Word
 посилання:   https://packagecontrol.io/packages/Sass
              https://github.com/braver/SublimeSass
 призначення: підсвітка синтаксису sass/scss
-залежності:  нема
+залежності:  немає
 
 
 #### SCSS                                                       <i id="SCS"></i>
@@ -7549,7 +7396,7 @@ random_word              Random:Word
 посилання:   https://packagecontrol.io/packages/SCSS
              https://github.com/MarioRicalde/SCSS.tmbundle
 призначення: підсвітка синтаксису scss 
-залежності:  нема
+залежності:  немає
 
 
 #### SFTP                                                       <i id="FTP"></i>
@@ -7562,7 +7409,7 @@ random_word              Random:Word
 призначення: пакунок дозволяє синхронізувати каталоги, записувати/зчитувати
              файли по протоколу FTP/SFTP/FTPS. Фактично виконує функції
              вбудованої FileZilla.
-залежності:  ???
+залежності:  немає
 
 Пакунок може
 - створювати, редагувати, перейменовувати і видаляти файли і каталоги на стороні
@@ -7697,7 +7544,7 @@ file_permissions            вісімкові дозволи для файлі�
 ftp_obey_passive_host       ???
                             false
 
-ftp_passive_mode            Якщо для підключення до FTP слід використовувати
+ftp_passive_mode            Якщо для підключення по FTP слід використовувати
                             пасивний режим pasv. Якщо перше завантаження на
                             FTP-сервер займає багато часу, спробуйте встановити
                             значення false. Хоча це не встановлено явно за
@@ -7724,8 +7571,8 @@ port                        номер порту для встановленн�
                             ""
 
 preserve_modification_times Якщо час модифікації файлів має бути збережено під
-                            час завантаження та завантаження.  Цей параметр може
-                            бути false, true (для завантажень і завантажень) і "download_only", який може знадобитися, оскільки ця
+                            час вивантаження та завантаження.  Цей параметр може
+                            бути false, true (для вивантажень і завантажень) і "download_only", який може знадобитися, оскільки ця
                             функція доступна не на всіх FTP-серверах.
                             false
 
@@ -7756,14 +7603,14 @@ sftp_flags                  Необроблені прапори командн
                             []
 
 sftp_sudo                   Якщо виконуваний файл sftp-сервера має бути
-                            викликаний на сервері через sudo.  Для цього на
+                            викликаний на сервері через sudo. Для цього на
                             сервері, до якого підключено, потрібен sudo без
                             пароля, і на сервері має бути запущено Unix.
                             false
 
 ssh_key_file                приватний ssh-файл-ключ для встановлення ssh-зв'язку.
                             Linux і Mac за замовчуванням використовуватимуть
-                            закритий ключ у ~/.ssh/.  У Windows це має бути файл
+                            закритий ключ у ~/.ssh/. У Windows це має бути файл
                             .ppk, створений за допомогою Pageant.
                             ""
 
@@ -7796,7 +7643,7 @@ ignore_regexes          регулярні вирази для файлів і �
                         ["\\.sublime-(project|workspace)", "sftp-config(-alt\\d?)?\\.json", "sftp-settings\\.json", "/venv/", "\\.svn", "\\.hg", "\\.git", "\\.bzr", "_darcs", "CVS", "\\.DS_Store", "Thumbs\\.db", "desktop\\.ini"]
                         ```
 
-save_before_upload      визначає, чи зберігатимуьться файли перед завантаженням.
+save_before_upload      визначає, чи зберігатимуться файли перед завантаженням.
                         Це стосується лише файлів, завантажених за допомогою
                         команди з клавіатури.
                         false
@@ -7924,7 +7771,7 @@ sftp_last_server                   ???
 посилання:   https://packagecontrol.io/packages/SideBarEnhancements
              https://github.com/titoBouzout/SideBarEnhancements
 призначення: розширює функціонал бічної панелі
-залежності:  ???
+залежності:  немає
 
 
 ##### Меню SidebarEnhancements
@@ -8059,7 +7906,7 @@ i_donated_to_sidebar_enhancements_developer видалити попрошайк�
 aaaaa_side_bar                aaaaa_side_bar
 
 reveal_in_side_bar            File: Locate
-                              підсвітити файл у бічній панелі (якщопанель
+                              підсвітити файл у бічній панелі (якщо панель
                               закрита, команда її відкриє)
 
 side_bar_copy                 ???
@@ -8136,7 +7983,7 @@ side_bar_copy_url             File: Copy URL
 
 side_bar_copy_url_decoded     ???
 
-side_bar_cut                  ???
+side_bar_cut                  вирізати
 
 side_bar_delete               File: Delete
                               видалити файл
@@ -8276,10 +8123,10 @@ Commands.sublime-commands.
 посилання:   https://packagecontrol.io/packages/StyleToken
              https://github.com/vcharnahrebel/style-token
 призначення: підсвітка довільних фрагментів коду
-залежності:  ???
+залежності:  немає
 
-Підтримує до 10 стилів (StyleToken.sublime-settings). За замовчуванням
-клавіатурні скорочення має тільки для Windows.
+За замовчуванням підтримує 5 стилів, але може бути розширений до 10
+(StyleToken.sublime-settings).
 
 
 ##### Меню StyleToken
@@ -8292,27 +8139,27 @@ Context ▶ Style Token
 token_style         Style [1-5]
                     підсвічує виділений текст відповідним стилем
                     args:
-                      styleIndex: порядковий номер стилю
+                      style_index: порядковий номер стилю
 
 token_style_clear   Clear All
                     видаляє підсвітку обраного стилю, якщо без аргументів - 
                     видаляє підсвітку усіх стилів
                     args:
-                      styleIndex: порядковий номер стилю
+                      style_index: порядковий номер стилю
 
 token_style_go      Jump to next token
                     переходить до наступного виділеного фрагменту даного стилю,
                     якщо без аргументу - переходить до наступного фрагменту
                     довільного стилю
                     args:
-                      styleIndex: порядковий номер стилю
+                      style_index: порядковий номер стилю
 
 token_style_go_back Jump to prev token
                     переходить до попереднього виділеного фрагменту даного стилю,
                     якщо без аргументу - переходить до попереднього фрагменту
                     довільного стилю
                     args:
-                      styleIndex: порядковий номер стилю
+                      style_index: порядковий номер стилю
 
 
 #### SublimeCodeIntel                                           <i id="SCI"></i>
@@ -8322,7 +8169,7 @@ token_style_go_back Jump to prev token
 посилання:   https://packagecontrol.io/packages/SublimeCodeIntel
              https://sublimecodeintel.github.io/
 призначення: надає доступ до автокомплітів багатьох мов програмування
-залежності:  ???
+залежності:  CodeIntel, Python, pip
 
 Пакунок робить дві речі: автокомпліт стандартних функцій мови програмування
 (підтримує мови ActionScript, Django, Docker, EJS, epMojo, HTML, KomodoSnippet,
@@ -8332,7 +8179,11 @@ Perl, Go, ECMAScript, JavaScript, Node.js, CSS, SCSS, Sass, Less, HTML5, Tcl,
 C/C++, Objective-C.) та додавання в контекстне меню команди для переходу на
 місце оголошення функції.
 
-Вимагає встановленого на комп'ютері Python та pip (для установки CodeIntel).
+Після встановлення Python, встановлюється pip, потім CodeIntel:
+```cmd
+sudo apt install python3-pip
+sudo pip3 install --upgrade --pre CodeIntel
+```
 
 
 ##### Меню SublimeCodeIntel
@@ -8502,7 +8353,7 @@ sublimecodeintel_reset             SublimeCodeIntel: Reset
              https://github.com/SublimeLinter/SublimeLinter
              https://www.sublimelinter.com/
 призначення: фреймворк для перевірки синтаксису коду
-залежності:  ???
+залежності:  немає
 
 
 ##### Меню SublimeLinter
@@ -10215,12 +10066,15 @@ subl --command 'sublimerge_compare_paths {"paths": ["/first/path", "/second/path
 посилання:   https://packagecontrol.io/packages/Table%20Editor
              https://github.com/vkocubinsky/SublimeTableEditor
 призначення: зручне створення і корегування текстових таблиць
-залежності:  ???
+залежності:  немає
 
 Пакунок надає інструменти, які дозволяють зручно працювати з таблицями у формі
 тексту: навігація по чарункам, додавання/видалення рядків/колонок, вирівнювання,
 переміщення рядків/колонок, розбиття чарунок, об'єднання рядків тощо. Має добре
 написаний файл readme. Більше не підтримується розробником.
+
+Для роботи з таблицями потрібно спочатку увімкнути пакунок для конкретного файлу
+або синтаксису.
 
 
 ##### Меню Table Editor
@@ -10229,31 +10083,6 @@ Preferences ▶ Package Settings ▶ Table Editor
 
 
 ##### Команди Table Editor
-
-table_editor_align                      Re-align the table without change the
-                                        current table field. Move cursor to
-                                        begin of the current table field.
-                                        ctrl+shift+a
-
-table_editor_csv_to_table               Convert selected CSV region into table
-                                        ctrl+k, |
-
-table_editor_delete_column              Видалити поточну колонку
-                                        alt+shift+left
-
-table_editor_disable_for_current_syntax Table Editor: Disable for current syntax
-
-table_editor_disable_for_current_view   Table Editor: Disable 'align_number_right' for current view
-                                        args: {"prop": "table_editor_align_number_right"}
-
-table_editor_disable_for_current_view   Table Editor: Disable 'detect_header' for current view 
-                                        args: {"prop": "table_editor_detect_header"}
-
-table_editor_disable_for_current_view   Table Editor: Disable 'keep_space_left' for current view 
-                                        args: {"prop": "table_editor_keep_space_left"}
-
-table_editor_disable_for_current_view   Table Editor: Disable for current view
-                                        args: {"prop": "enable_table_editor"}
 
 table_editor_enable_for_current_syntax  Table Editor: Enable for current syntax
                                         вмикає додаток для певного синтаксису
@@ -10269,16 +10098,46 @@ table_editor_enable_for_current_view    Table Editor: Enable 'detect_header' for
 
 table_editor_enable_for_current_view    Table Editor: Enable for current view
                                         вмикає додаток для певного вікна
-                                        args: {"prop": "enable_table_editor}
+                                        args: {"prop": "enable_table_editor"}
+
+table_editor_disable_for_current_syntax Table Editor: Disable for current syntax
+                                        вимикає додаток для поточного синтаксису
+
+table_editor_disable_for_current_view   Table Editor: Disable 'align_number_right' for current view
+                                        args: {"prop": "table_editor_align_number_right"}
+
+table_editor_disable_for_current_view   Table Editor: Disable 'detect_header' for current view 
+                                        args: {"prop": "table_editor_detect_header"}
+
+table_editor_disable_for_current_view   Table Editor: Disable 'keep_space_left' for current view 
+                                        args: {"prop": "table_editor_keep_space_left"}
+
+table_editor_disable_for_current_view   Table Editor: Disable for current view
+                                        вимикає додаток для певного вікна
+                                        args: {"prop": "enable_table_editor"}
+
+table_editor_align                      Re-align the table without change the
+                                        current table field. Move cursor to
+                                        begin of the current table field.
+                                        ctrl+shift+a
+
+table_editor_csv_to_table               Перетворює дані типу
+                                        ```
+                                        anna,23
+                                        emma,43
+                                        ```
+                                        на повноційну таблицю
+                                        ctrl+k, |
+
+table_editor_delete_column              Видалити поточну колонку
+                                        alt+shift+left
 
 table_editor_film                       Table Editor: Show demo film in new scratch view
                                         показує перебіг самотестування у новому
                                         вікні
 
-table_editor_hline_and_move             Insert a horizontal line below current
-                                        row, and move the cursor into the row
-                                        below that line. Doesn't make sense and
-                                        doesn't supported for Textile syntaxes
+table_editor_hline_and_move             вставляє горизонтальну лінію через всю
+                                        таблицю з тире і утворює новий рядок
                                         ctrl+k, enter
 
 table_editor_insert_column              Вставити пусту колонку ліворуч від
@@ -10298,8 +10157,8 @@ table_editor_insert_single_hline        Insert single horizontal line below
                                         doesn't supported for Textile syntax
                                         ctrl+k, -
 
-table_editor_join_lines                 Join current row and next row into one
-                                        if next row is not hline
+table_editor_join_lines                 об'єднати рядки в одній чарунці в один
+                                        рядок
                                         ctrl+j
 
 table_editor_kill_row                   Видалити поточний рядок
@@ -10317,8 +10176,7 @@ table_editor_move_row_down              Перемістити рядок вни
 table_editor_move_row_up                Перемістити рядок вгору
                                         alt+up
 
-table_editor_next_field                 Re-align the table, move to the next
-                                        field. Creates a new row if necessary. 
+table_editor_next_field                 створює новий рядок таблиці
                                         tab
 
 table_editor_next_row                   Re-align the table and move down to next
@@ -10354,98 +10212,10 @@ table_editor_set_syntax                 Table Editor: Set table syntax 'Textile'
                                         встановити синтаксис для поточного вікна
                                         args: {"syntax": "Textile"}
 
-table_editor_split_column_down          Split rest of cell down from current
-                                        cursor position, insert new line bellow
-                                        if current row is last row in the table
-                                        or if next line is hline
+table_editor_split_column_down          розбити довгу чарунку на кілька рядків.
+                                        Для цього вона повинна бути попередньо
+                                        відоклемлена лініями
                                         alt+enter
-
-
-##### Клавіатурні скорочення
-
-**ctrl+shift+a**
-
-        Re-align the table without change the current table field. Move cursor
-        to begin of the current table field.
-
-**tab**
-
-        Re-align the table, move to the next field. Creates a new row if
-        necessary. 
-
-**shift+tab**
-
-        Re-align, move to previous field.
-
-**enter**
-
-        Re-align the table and move down to next row. Creates a new row if
-        necessary.
-        At the beginning or end of a line, enter still does new line.
-
-**alt+left**
-
-        Move the current column left.
-
-**alt+right**
-
-        Move the current column right.
-
-**alt+shift+left**
-
-        Kill the current column.
-
-**alt+shift+right**
-
-        Insert a new column to the left of the cursor position.
-
-**alt+shift+up**
-
-        Kill the current row or horizontal line.
-
-**alt+shift+down**
-
-        Insert a new row above the current row. 
-
-**alt+up**
-
-        Move current row up
-
-**alt+down**
-
-        Move current row down
-
-**ctrl+k, -**
-
-        Insert single horizontal line below current row. 
-        Doesn't make sense and doesn't supported for Textile syntax
-
-**ctrl+k, =**
-
-        Insert double horizontal line below current row. 
-        Doesn't make sense and doesn't supported for Textile syntaxes
-
-
-**ctrl+k, enter**
-
-        Insert a horizontal line below current row, and move the cursor into the
-        row below that line. 
-        Doesn't make sense and doesn't supported for Textile syntaxes
-
-
-**ctrl+k, |**
-
-        Convert selected CSV region into table
-
-**alt+enter**
-    
-        Split rest of cell down from current cursor position,
-        insert new line bellow if current row is last row in the table or if
-        next line is hline
-
- **ctrl+j**
-        
-        Join current row and next row into one if next row is not hline
 
 
 #### TabsExtra                                                  <i id="TsE"></i>
@@ -10455,10 +10225,11 @@ table_editor_split_column_down          Split rest of cell down from current
 посилання:   https://packagecontrol.io/packages/TabsExtra
              https://facelessuser.github.io/TabsExtra/
 призначення: надає розширене контекстне меню для вкладок
-залежності:  ???
+залежності:  немає
 
 Після встановлення пакунку потрібно вручну оновити контекстне меню вкладок через
 Preferences ▶ Package Settings ▶ TabsExtra.
+Увага! Даний пункт перезатирає українізоавне меню.
 
 Пункт меню "Sticy Tabs" позначає вкладку як таку, яку не треба закривати при
 наступному виклику команди "Close All Tabs".
@@ -10656,7 +10427,7 @@ tabs_extra_view_wrapper     Save As…
 посилання:   https://packagecontrol.io/packages/Tag
              https://github.com/titoBouzout/Tag
 призначення: надає додаткові інструменти для роботи з HTML
-залежності:  ???
+залежності:  немає
 
 Набір пакетів для роботи з HTML. Не встановлюється через менеджер пакунків, для
 встановлення потрібно завантажити архів з github.
@@ -10746,11 +10517,13 @@ tag_remove_picked_in_selection          Remove Picked Tags in Selection
 посилання:   https://packagecontrol.io/packages/Tagify
              https://github.com/maciej-zuk/sublime-tagify
 призначення: дозволяє вставляти мітки в коді і потім зручно ними маніпулювати
-             (виводити списком у окремій вкладці тощо)
-залежності:  ???
-
-Пакунок шукає мітки у всіх файлах проекту, що мають одне із розширень, вказаних
-у налаштуваннях.
+             (виводити клікабельним списком у окремій вкладці тощо)
+залежності:  немає
+проблеми:    1. опція "tag_re" не застосовується, сформувати свій тег не можливо
+             2. у файлах з розширенням, відмінним від "py", теги автоматично не
+                закоментовуються
+             3. в списку тегів виводяться також ті, які не передбачені
+                переліком тегів у налаштуваннях
 
 
 ##### Меню Tagify
@@ -10796,7 +10569,7 @@ tagify         Tagify: Get tag list
 автор:       Will Bond (wbond)
 посилання:   https://packagecontrol.io/packages/Terminal
 призначення: дозволяє відкрити зовнішній термінал через контекстне меню
-залежності:  ???
+залежності:  немає
 
 Відкриває термінал через контекстне меню активного файла, файла в бічній панелі
 або через комбінацію клавіш. У налаштуваннях можна вибрати свій термінал.
@@ -10833,22 +10606,13 @@ env        An environment variables changeset. Default environment variables
 
 ##### Команди Terminal
 
-command_name Command Name In Command Palette
-             default_key_binding
-             пояснення до команди
-             args:
-               first_arg: пояснення
-                 lorem
-               second_arg: пояснення
-                 lorem
-
 open_terminal                Terminal: Open
                              Ctrl+Shift+T (Windows & Linux)
                              Super+Shift+T (OSX)
                              відкриває термінал у директорії поточного файла
 
 open_terminal_project_folder Terminal: Open in project folder
-                             Ctrl+sSift+Alt+T (Windows & Linux)
+                             Ctrl+sShift+Alt+T (Windows & Linux)
                              Super+Shift+Alt+T (OSX)
                              відкриває термінал у кореневій директорії проекту
 
@@ -10860,10 +10624,9 @@ open_terminal_project_folder Terminal: Open in project folder
 посилання:   https://packagecontrol.io/packages/Terminus
              https://github.com/randy3k/Terminus
 призначення: додає термінал в середину Sublime Text
-залежності:  ???
+залежності:  немає
 
-Terminus можна використовувати як систему збірки. Детальніше:
-https://packagecontrol.io/packages/Terminus
+Terminus можна використовувати як систему збірки.
 
 Детальний огляд (англійською):
 https://www.youtube.com/watch?v=mV0ghkMwTQc
@@ -10959,6 +10722,7 @@ window.run_command(
 ```
 
 toggle_terminus_panel   Terminus: Toggle Panel
+                        показати/приховати панель
 
 terminus_reset          Terminus: Reset
 
@@ -10970,7 +10734,6 @@ terminus_close          Terminus: Close
 terminus_close_all      Terminus: Close All
                         закрити усі термінали
 
-
 terminus_maximize       Terminus: Maximize to Tab
                         переносить термінал з панелі у вікно
 
@@ -10978,8 +10741,10 @@ terminus_minimize       Terminus: Minimize to Panel
                         переносить термінал з вікна у панель
 
 terminus_select_theme   Terminus Utilities: Select Theme
+                        вибрати тему для термінала
 
 terminus_generate_theme Terminus Utilities: Generate User Theme
+                        створити тему для термінала
 
 
 #### TrailingSpaces                                             <i id="TSs"></i>
@@ -10989,15 +10754,13 @@ terminus_generate_theme Terminus Utilities: Generate User Theme
 посилання:   https://packagecontrol.io/packages/TrailingSpaces
              https://github.com/SublimeText/TrailingSpaces
 призначення: підсвічує зайві пробіли у кінці рядків
-залежності:  ???
+залежності:  немає
 
 Пакунок розширює вбудовані можливості Sublime. Якщо їх цілком достатньо, пакунок
 не потрібен. Ці вбудовані можливості наступні:
 
-trim_trailing_white_space_on_save видаляє пробілів при збереженні документа
-
+trim_trailing_white_space_on_save видаляє пробіли при збереженні документа
 draw_white_space                  показує пробіли (не тільки прикінцеві)
-
 ensure_newline_at_eof_on_save     додає пустий рядок в кінець документу
 
 
@@ -11017,30 +10780,42 @@ Preferences ▶ Package Settings ▶ Trailing Spaces ▶ Settings, або фай
 
 
 enabled                  робочий стан пакунку
+                         true
 
 highlight_color          колір підсвітки, пустий рядок - прозора підсвітка
+                         "region.redish"
 
 include_empty_lines      підсвітка рядків, де є тільки пробіли
+                         true
 
 include_current_line     підсвітка рядку з курсором
+                         true
 
 scope_ignore             не підсвічувати вказані типи файлів
+                         ["text.find-in-files", "source.build_output", "source.diff", "text.html.markdown"]
 
 modified_lines_only      при видаленні пробілів видаляються тільки ті, що
                          зроблені з моменту останнього збереження
+                         false
 
 trim_on_save             видалення пробілів при збереженні документа
+                         false
 
 save_after_trim          збереження документа при видаленні пробілів
+                         false
 
 non_visible_highlighting лінива підсвітка пробілів (не підсвічує не видиме)
+                         500
 
 update_interval          час спрацювання оновлення
+                         250
 
 file_max_size            кількість символів у документі, більше якої плагін
                          вимикається
+                         1048576
 
 regexp                   перевизначення поняття пробілу в кінці рядка
+                         "[ \t]+"
 
 
 ##### Команди TrailingSpaces
@@ -11070,12 +10845,13 @@ toggle_trailing_spaces_modified_lines_only перемикає налаштува
              https://github.com/adampresley/sublime-view-in-browser
              сайт
 призначення: відкриття активного файлу у браузері
-залежності:  ???
+залежності:  немає
 
 Додає пункт меню "View in Browser" до контекстного меню відкритого файла (не в
-боковій панелі, а саме на тексті відкритого файла). Контекстне меню відкритого
-файла і так має за замовчуванням команду "Open in Browser" (правда, тільки для
-html-файлів). Якщо її достатньо, пакунок не потрібен.
+боковій панелі як SideBarEnhacements, а саме на тексті відкритого файла).
+Контекстне меню відкритого файла і так має за замовчуванням команду "Open in
+Browser" (правда, тільки для html-файлів). Якщо її достатньо, пакунок не
+потрібен.
 
 Пакунок відкриває усі файли відповідно до їх розширень. Якщо файл новий і не
 збережений, пакунок його відкриє як файл у форматі .htm. За замовчуванням файли
@@ -11163,7 +10939,7 @@ view_in_browser View In Browser
 посилання:   https://packagecontrol.io/packages/Vue%20Syntax%20Highlight
              https://github.com/vuejs/vue-syntax-highlight
 призначення: підсвітка синтаксису vue
-залежності:  нема
+залежності:  немає
 
 
 #### WordCount                                                  <i id="WoC"></i>
@@ -11173,12 +10949,7 @@ view_in_browser View In Browser
 посилання:   -
              https://github.com/titoBouzout/WordCount
 призначення: додає в рядок стану інформацію по кількості слів, сторінок тощо
-залежності:  ???
-
-
-??? https://github.com/search?q=SUblime+WordCount
-
-Цей пакунок відсутній на packageio, тільки на гіті
+залежності:  немає
 
 від цього автора є ще один подібний пакунок
 https://packagecontrol.io/packages/WordingStatus
@@ -11235,7 +11006,7 @@ whitelist_syntaxes           Масив розширень, де пакунок 
                              масив пустий, пакунок працюватиме з усіма файлами
                              []
 
-words_per_page               якого розміру є сторінка (у кількості слів)
+words_per_page               якого розміру є сторінка (по кількості слів)
                              300
 
 strip                        регулярні вирази для тих наборів букв, які не

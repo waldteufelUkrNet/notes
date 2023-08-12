@@ -1,93 +1,127 @@
 …▲▼▶◀"”«»"×
 
-???
-=======================================================================================
-- клавіатурні скорочення у форматі: комбінація для додатку + комбінація для команди
-=======================================================================================
+??? !!!
+================================================================================
 htmllinter не повинен перевіряти md!
+================================================================================
+Trimmer    - пакунок для редагування тексту
+PackagesUI - пакунок для управління пакунками
+Require Helper - підказки при підключенні модулів
+https://packagecontrol.io/packages/DocBlockr%202021%20(DoxyDoxygen%20powered) - альтернатива DocBlockr
+HyperClick - аналог clickable urls, ніби працює не тільки з модулями, а дофіга чим
 ================================================================================
 не робоче/не актуальне
 не працює:
 CSS Extended Completions           додавання файлів CSS/SCSS/LESS-файлів в кеш і їх подальше використання в автокомплітах, не працює: меню додається, але постійно не активне
 SublimeLinter-contrib-sqlint       не можу поставити rubygem на linux
 ================================================================================
-A File Icon                        ---
-AdvancedNewFile                    ---
-Alignment                          ---
-AlignTab                           AlT
-All Autocomplete                   ---
-AutoFileName                       ---
-Autoprefixer                       ---
-Babel                              ---
-BracketHighlighter                 BHl
-Can I Use                          CIU
-Clickable URLs                     ---
-ClickableRequires                  ---
-Clipboard History                  ---
-Color Highlight                    ---
-Color Highlighter                  CHr
-CommandsBrowser                    ---
-Console Wrap                       CoW
-CSS Extended Completions           CEC
-CSS3                               ---
-CSSComb                            CCb
+
+#### "Системні"                                    <i id="packages-group-1"></i>
+
++ AdvancedNewFile                    ANF
++ Clickable URLs                     CUs
++ Clipboard History                  ClH
++ CommandsBrowser                    CoB
 Debugger                           Deb
-DocBlockr                          ---
-Dockerfile Syntax Highlighting     ---
-DotENV                             ---
-EditorConfig                       ---
-Emmet                              ---
++ FindKeyConflicts                   FKC
++ Inc-Dec-Value                      IDV
++ LiveReload                         LRl
++ LockTab                            LoT
++ Origami                            Ori
++ PackageResourceViewer              PRV
++ Random Everything                  REg
++ SFTP                               FTP
++ SideBarEnhancements                SBE
++ TabsExtra                          TsE
++ Tagify                             Tgf
++ Terminal                           Trl
++ Terminus                           Trs
++ View In Browser                    ViB
++ WordCount                          WoC
+
+
+#### Підсвічування синтаксису                      <i id="packages-group-2"></i>
+
++ Babel                              Bbl
++ BracketHighlighter                 BHl
++ Color Highlight                    CHt
++ Color Highlighter                  CHr
++ CSS3                               CS3
++ Dockerfile Syntax Highlighting     DSH
++ DotENV                             Dot
++ GraphQL                            GQL
++ HTML (C#)                          HC#
++ LESS                               LSS
++ nginx                              ngi
++ Pug                                Pug
++ SASS                               SAS
++ SCSS                               SCS
++ StyleToken                         StT
++ TrailingSpaces                     TSs
++ Vue Syntax Highlight               VSH
+
+
+#### Вирівнювання                                  <i id="packages-group-3"></i>
+
++ Alignment                          Alm
++ AlignTab                           AlT
++ HTML-CSS-JS Prettify               HPr
++ JsPrettier                         JsP
++ Markdown Table Formatter           MTF
+
+
+#### Підказки                                      <i id="packages-group-4"></i>
+
++ All Autocomplete                   AAc
++ AutoFileName                       AFN
++ jQuery                             jQu
++ Nodejs                             Njs
++ SublimeCodeIntel                   SCI
+
+
+#### Перевірка коду (лінтери)                      <i id="packages-group-5"></i>
+
+SublimeLinter                      SuL
+SublimeLinter-annotations          SLa
+SublimeLinter-contrib-HTMLHint     ScH
+SublimeLinter-contrib-markdownlint SLm
+SublimeLinter-eslint               SLe
+SublimeLinter-json                 SLj
+SublimeLinter-pug-lint             SLp
+SublimeLinter-stylelint            SLs
+
+
+#### Система контролю версій                       <i id="packages-group-6"></i>
+
 FileDiffs                          FDs
-FindKeyConflicts                   ---
 gist                               gst
 Git                                Git
 Git Gutter                         GGr
-Goto-CSS-Declaration               GCD
-GraphQL                            ---
-HTML (C#)                          ---
-HTML Minifier                      HMr
-HTML Nest Comments                 HNC
-HTML-CSS-JS Prettify               HPr
-Inc-Dec-Value                      ---
-jQuery                             ---
-JsPrettier                         JsP
-LESS                               ---
-LiveReload                         ---
-LockTab                            LoT
-Markdown HTML Preview              ---
-Markdown Table Formatter           MTF
-MarkdownEditing                    MEg
-MarkdownPreview                    ---
-nginx                              ---
-Nodejs                             Njs
-Origami                            Ori
-PackageResourceViewer              ---
-PlainTasks                         PTs
-Pug                                ---
-Random Everything                  ---
-SASS                               ---
-SCSS                               SCS
-SFTP                               FTP
-SideBarEnhancements                SBE
 SideBarGit                         SBG
-StyleToken                         StT
-SublimeCodeIntel                   SCI
-SublimeLinter                      SuL
-SublimeLinter contrib HTMLHint     ---
-SublimeLinter-annotations          ---
-SublimeLinter-contrib-markdownlint ---
-SublimeLinter-eslint               ---
-SublimeLinter-json                 ---
-SublimeLinter-pug-lint             ---
-SublimeLinter-stylelint            ---
-Sublimerge3                        ---
-Table Editor                       ---
-TabsExtra                          TsE
-Tag                                Tag
-Tagify                             ---
-Terminal                           Trl
-Terminus                           Trs
-TrailingSpaces                     TSs
-View In Browser                    ViB
-Vue Syntax Highlight               ---
-WordCount                          ---
+Sublimerge3                        SM3
+
+
+#### Різне                                         <i id="packages-group-7"></i>
+
++ Autoprefixer                       APr
++ Can I Use                          CIU
++ ClickableRequires                  CRs
++ Console Wrap                       CoW
++ CSSComb                            CCb
++ DocBlockr                          DBr
++ EditorConfig                       ECg
++ Emmet                              Emm
++ Goto-CSS-Declaration               GCD
++ HTML Minifier                      HMr
++ HTML Nest Comments                 HNC
++ Markdown HTML Preview              MHP
++ MarkdownEditing                    MEg
++ MarkdownPreview                    MPw
++ PlainTasks                         PTs
++ Table Editor                       TaE
++ Tag                                Tag
+
+
+new versoin of st
+license
+themes

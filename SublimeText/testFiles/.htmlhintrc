@@ -1,0 +1,7 @@
+{
+  "doctype-first": true,
+  "html-lang-require": true,
+  "space-tab-mixed-disabled": "space",
+  "spec-char-escape": true,
+  "tags-check": true
+}

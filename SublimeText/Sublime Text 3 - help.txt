@@ -2,12 +2,9 @@
 
 ??? !!!
 ================================================================================
-htmllinter не повинен перевіряти md!
-================================================================================
-Trimmer    - пакунок для редагування тексту
-PackagesUI - пакунок для управління пакунками
+Trimmer - пакунок для редагування тексту
 Require Helper - підказки при підключенні модулів
-https://packagecontrol.io/packages/DocBlockr%202021%20(DoxyDoxygen%20powered) - альтернатива DocBlockr
+DocBlockr 2021 (DoxyDoxygen powered) - розширена альтернатива DocBlockr
 HyperClick - аналог clickable urls, ніби працює не тільки з модулями, а дофіга чим
 ================================================================================
 не робоче/не актуальне
@@ -81,12 +78,12 @@ Debugger                           Deb
 
 #### Перевірка коду (лінтери)                      <i id="packages-group-5"></i>
 
-SublimeLinter                      SuL
-SublimeLinter-annotations          SLa
-SublimeLinter-contrib-HTMLHint     ScH
-SublimeLinter-contrib-markdownlint SLm
++ SublimeLinter                      SuL
++ SublimeLinter-annotations          SLa
++ SublimeLinter-contrib-HTMLHint     ScH
++ SublimeLinter-contrib-markdownlint SLm
 SublimeLinter-eslint               SLe
-SublimeLinter-json                 SLj
++ SublimeLinter-json                 SLj
 SublimeLinter-pug-lint             SLp
 SublimeLinter-stylelint            SLs
 

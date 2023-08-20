@@ -1,0 +1,13 @@
+{
+  "first-header-h1": {
+    "level": 1
+  },
+  "no-trailing-spaces": {
+    "br_spaces": 2,
+    "list_item_empty_lines": false,
+    "strict": false
+  },
+  "no-multiple-blanks": {
+    "maximum": 2
+  }
+}

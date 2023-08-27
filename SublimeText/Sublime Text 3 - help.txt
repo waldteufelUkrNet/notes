@@ -84,7 +84,7 @@ Debugger                           Deb
 + SublimeLinter-contrib-markdownlint SLm
 SublimeLinter-eslint               SLe
 + SublimeLinter-json                 SLj
-SublimeLinter-pug-lint             SLp
++ SublimeLinter-pug-lint             SLp
 SublimeLinter-stylelint            SLs
 
 

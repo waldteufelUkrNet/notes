@@ -8891,13 +8891,12 @@ npm install markdownlint-cli
 Для виключення певних файлів з перевірки використовується файл
 .markdownlintignore, який має синтаксис .gitignore.
 
+Крім дефолтних правил можна писати свої, детальніше:
+https://github.com/DavidAnson/markdownlint/blob/main/doc/CustomRules.md
 
-Повний список правил доступний за адресою:
-https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+Лінтер можна налаштувати на роботу з Prettier, детальніше:
+https://github.com/DavidAnson/markdownlint/blob/main/doc/Prettier.md
 
-!!! після саиску глянути https://github.com/DavidAnson/markdownlint/blob/main/doc/CustomRules.md та https://github.com/DavidAnson/markdownlint/blob/main/doc/Prettier.md
-
---------------------------------------------------------------------------------
 
 header-increment                  (heading-increment) Не можна перескакувати
                                   рівні заголовків, напр.:
@@ -9648,17 +9647,16 @@ strict режим парсингу, якщо false - сприймає комен
 автор:       SublimeLinter
 посилання:   https://packagecontrol.io/packages/SublimeLinter-pug-lint
              https://github.com/SublimeLinter/SublimeLinter-pug-lint
+             https://github.com/pugjs/pug-lint
+             https://github.com/pugjs/pug-lint/blob/master/docs/rules.md#disallowattributeinterpolation-true
 призначення: надає можливість перевіряти правильність синтаксису pug
-залежності:  ???
+залежності:  Node.js, npm, pug-lint
 
-https://github.com/benedfit/SublimeLinter-contrib-pug-lint
-
-Лінтер надає доступ до інтерфейсу pug-lint (https://github.com/pugjs/pug-lint),
-перевіряє синтаксис коду Pug-файлів.
+Лінтер надає доступ до інтерфейсу pug-lint.
 
 Для використання лінтеру необхідно встановити pug-lint через пакетний менеджер
 npm глобально або як модуль в проекті:
-```shell
+```cmd
 npm install -g pug-lint
 ```
 
@@ -9676,24 +9674,46 @@ npm install -g pug-lint
 ["--config", "/path/to/file"]).
 
 Шлях до файлу кешується, тобто якщо потрібно створити новий файл, також потрібно
-очистити кеш SublimeLInter (Tools ▶ SublimeLinter ▶ Clear Caches).
+очистити кеш SublimeLinter (Tools ▶ SublimeLinter ▶ Clear Caches).
 ??? В SublimeText4 такого нема.
 
 
 ##### Налаштування конфігураційного файла
 
-preset          застаріла опція
+preset          застаріла опція, натомість треба використовувати extends
 
 extends         шлях до конфігураційного файлу (відносний або абсолютний), який
                 розширює поточний файл. Властивості поточного файлу мають
-                перевагу над властивостями додаткового конфігу.
+                перевагу над властивостями додаткового конфігу, напр.:
+                ```json
+                {
+                  "extends": "./node_modules/coding-standard/.pug-lintrc",
+                  "disallowIdLiterals": null
+                }
+                ```
+                також замість шляху може бути вказано попередньо встановлений
+                пакунок:
+                ```cmd
+                $ npm install --save-dev pug-lint-config-clock
+                ```
+                ```json
+                {
+                  "extends": "pug-lint-config-myrules",
+                  "disallowIdLiterals": null
+                }
+                ```
                 string
 
 excludeFiles    масив патернів для шляхів до файлів, які не потрібно перевіряти
                 array, default
-                ```["node_modules/**"]```
+                `["node_modules/**"]`
 
-additionalRules масив шляхів для додаткових файлів з правилами
+additionalRules масив шляхів для додаткових файлів з правилами, напр.:
+                ```json
+                {
+                  "additionalRules": ["project-rules/*.js"]
+                }
+                ```
                 array
 
 Також у файлі конфігу прописуються правила перевірки синтаксису. Якщо правила
@@ -9705,8 +9725,529 @@ additionalRules масив шляхів для додаткових файлів
 }
 ```
 
-Повний список правил доступний за адресою:
-https://github.com/pugjs/pug-lint/blob/master/docs/rules.md#disallowattributeinterpolation-true
+###### Правила pug-lint
+
+disallowAttributeConcatenation        Забороняє робити конкатенацію в атрибутах
+                                      ```pug
+                                      //- Invalid
+                                      a(href='text ' + title) Link
+                                      //- Invalid under `'aggressive'`
+                                      a(href=text + title) Link
+                                      a(href=num1 + num2) Link
+                                      ```
+                                      true/"aggressive"
+
+disallowAttributeInterpolation        Забороняє інтерполяцію в атрибутах
+                                      ```pug
+                                      //- Invalid
+                                      a(href='text #{title}') Link
+                                      //- Valid
+                                      a(href='text \#{title}') Link
+                                      a(href='text \\#{title}') Link
+                                      ```
+                                      інтерполяція з Pug v2 видалена
+                                      true
+
+disallowAttributeTemplateString       Забороняє в атрибутах мати шаблони рядків
+                                      ```pug
+                                      //- true: Invalid
+                                      a(href=`https://${site}`) Link
+                                      
+                                      //- true: Valid
+                                      a(href=getLink(`https://${site}`)) Link
+                                      
+                                      //- "all": Invalid
+                                      a(href=getLink(`https://${site}`)) Link
+                                      ```
+                                      true/"all"
+
+disallowBlockExpansion                Pug must not contain any block expansion
+                                      operators
+                                      ```pug
+                                      //- Invalid
+                                      p: strong text
+                                      table: tr: td text
+                                      ```
+                                      true
+
+disallowClassLiterals                 Забороняє користуватися літералами класів
+                                      ```pug
+                                      //- Invalid
+                                      .class
+                                      
+                                      //- Valid
+                                      div(class='class')
+                                      ```
+                                      true
+
+disallowClassAttributeWithStaticValue Забороняє використовувати атрибут class
+                                      ```pug
+                                      //- Invalid
+                                      span(class='foo')
+                                      
+                                      //- Valid
+                                      span.foo
+                                      ```
+                                      true
+
+disallowClassLiteralsBeforeAttributes Класи пишуться після атрибутів
+                                      ```pug
+                                      //- Invalid
+                                      input.class(type='text')
+                                      
+                                      //- Valid
+                                      input(type='text').class
+                                      ```
+                                      true
+
+disallowClassLiteralsBeforeIdLiterals Літерали id пишуться перед класами
+                                      ```pug
+                                      //- Invalid
+                                      input.class#id(type='text')
+                                      
+                                      //- Valid
+                                      input#id.class(type='text')
+                                      ```
+                                      true
+
+disallowDuplicateAttributes           Забороняє дублікати літералів (крім класів)
+                                      ```pug
+                                      //- Invalid
+                                      div(a='a' a='b')
+                                      #id(id='id')
+                                      
+                                      //- Valid
+                                      div(class='a', class='b')
+                                      .class(class='class')
+                                      ```
+                                      true
+
+disallowHtmlText                      Забороняє html всередині pug
+                                      ```pug
+                                      //- Invalid
+                                      <strong>html text</strong>
+                                      p this is <strong>html</strong> text
+                                      ```
+                                      true
+
+disallowIdAttributeWithStaticValue    Забороняє id-атрибут
+                                      ```pug
+                                      //- Invalid
+                                      span(id='foo')
+                                      
+                                      //- Valid
+                                      span#id
+                                      ```
+                                      true
+
+disallowIdLiteralsBeforeAttributes    Забороняє літерали перед атрибутами
+                                      ```pug
+                                      //- Invalid
+                                      input#id(type='text')
+                                      
+                                      //- Valid
+                                      input(type='text')#id
+                                      ```
+                                      true
+
+disallowIdLiterals                    Забороняє id-літерали
+                                      ```pug
+                                      //- Invalid
+                                      #id
+                                      
+                                      //- Valid
+                                      div(id='id')
+                                      ```
+                                      true
+
+disallowLegacyMixinCall               The Pug template must not contain legacy
+                                      mixin call
+                                      ```pug
+                                      //- Invalid
+                                      mixin myMixin(arg)
+                                      
+                                      //- Valid mixin call
+                                      +myMixin(arg)
+                                      
+                                      //- Valid mixin call with block attached
+                                      +myMixin(arg)
+                                        p Hey
+                                      
+                                      //- Valid mixin definition
+                                      mixin myMixin(arg)
+                                        p Hey
+                                      ```
+                                      true
+
+disallowMultipleLineBreaks            Забороняє мати пусті розриви між рядками
+                                      ```pug
+                                      //- Invalid
+                                      div
+                                      
+                                      
+                                      div
+                                      
+                                      //- Valid
+                                      div
+                                      
+                                      div
+                                      ```
+                                      true
+
+disallowSpaceAfterCodeOperator        Забороняє пробіл після символів коду (-,=,
+                                      !=)
+                                      ```pug
+                                      //- true: Invalid
+                                      p= 'This code is <escaped>'
+                                      p!=  'This code is <strong>not</strong> escaped'
+                                      
+                                      //- true: Valid
+                                      p='This code is <escaped>'
+                                      p!='This code is <strong>not</strong> escaped'
+                                      
+                                      //- ["-"]: Invalid
+                                      - var a = 'This is code'
+                                      
+                                      //- ["-"]: Valid
+                                      -var a = 'This is code'
+                                      ```
+                                      true/Array
+
+disallowSpacesInsideAttributeBrackets Забороняє пробіли між дужками і вмістом
+                                      ```pug
+                                      //- Invalid
+                                      input( type='text' name='name' value='value' )
+                                      
+                                      //- Valid
+                                      input(type='text' name='name' value='value')
+                                      ```
+                                      true
+
+disallowSpecificAttributes            Забороняє визначені наперед атрибути. Можна
+                                      налаштувати атрибути під конкретні теги.
+                                      ```pug
+                                      //- "a" OR [ "A", "b" ]: Invalid
+                                      span(a='a')
+                                      div(B='b')
+                                      
+                                      //- [ { img: [ "title" ] } ]: Invalid
+                                      img(title='title')
+                                      ```
+                                      String/Array
+
+disallowSpecificTags                  Забороняє визначені наперед теги
+                                      ```pug
+                                      //- [ "b", "i" ]: Invalid
+                                      b Bold text
+                                      i Italic text
+                                      ```
+                                      String/Array
+
+disallowStringConcatenation           Забороняє конкатенацію рядків (атрибути
+                                      ігнорує)
+                                      ```pug
+                                      //- Invalid
+                                      h1= title + 'text'
+                                      //- Invalid under `'aggressive'`
+                                      h1= title + text
+                                      ```
+                                      true/"aggressive"
+
+disallowStringInterpolation           Забороняє інтерполяцію (крім атрибутів і
+                                      тегів)
+                                      ```pug
+                                      //- Invalid
+                                      h1 #{title} text
+                                      ```
+                                      true
+
+disallowTagInterpolation              Забороняє інтерполяцію в тегах
+                                      ```pug
+                                      //- Invalid
+                                      | #[strong html] text
+                                      p #[strong html] text
+                                      ```
+                                      true
+
+disallowTemplateString                Забороняє використання шаблонних рядків
+                                      ```pug
+                                      //- true: Invalid
+                                      h1= `${title} text`
+                                      
+                                      //- true: Valid
+                                      h1= translate(`${title} text`)
+                                      
+                                      //- all: Invalid
+                                      h1= translate(`${title} text`)
+                                      ```
+                                      true/"all"
+
+disallowTrailingSpaces                Забороняє прикінцеві пробіли
+
+maximumLineLength                     Контролює максимальну довжину рядку
+                                      number
+
+maximumNumberOfLines                  Контролює максимальну кількість рядків у
+                                      файлі
+                                      number
+
+requireClassLiteralsBeforeAttributes  Літерали класів повинні бути перед
+                                      атрибутами
+                                      ```pug
+                                      //- Invalid
+                                      input(type='text').class
+                                      
+                                      //- Valid
+                                      input.class(type='text')
+                                      ```
+                                      true
+
+requireClassLiteralsBeforeIdLiterals  Літерали класів повинні бути перед id-
+                                      літералами
+                                      ```pug
+                                      //- Invalid
+                                      input#id.class(type='text')
+                                      
+                                      //- Valid
+                                      input.class#id(type='text')
+                                      ```
+                                      true
+
+requireIdLiteralsBeforeAttributes     id-літерали повинні бути перед атрибутами
+                                      ```pug
+                                      //- Invalid
+                                      input(type='text')#id
+                                      
+                                      //- Valid
+                                      input#id(type='text')
+                                      ```
+                                      true
+
+requireLineFeedAtFileEnd              Файл повинен закінчуватися пустим рядком
+                                      true
+
+requireLowerCaseAttributes            Імена атрибутів повинні писатися малими
+                                      літерами (файли з doctype xml ігноруються)
+                                      ```pug
+                                      //- Invalid
+                                      div(Class='class')
+                                      
+                                      //- Valid
+                                      div(class='class')
+                                      ```
+                                      true
+
+requireLowerCaseTags                  Теги повинні писатися малими літерами
+                                      ```pug
+                                      //- Invalid
+                                      Div(class='class')
+                                      
+                                      //- Valid
+                                      div(class='class')
+                                      ```
+                                      true
+
+requireSpaceAfterCodeOperator         Вимагає наявності одного пробілу після
+                                      операторів коду (-,=,!=)
+                                      ```pug
+                                      //- true: Invalid
+                                      p='This code is <escaped>'
+                                      p!=  'This code is <strong>not</strong> escaped'
+                                      
+                                      //- true: Valid
+                                      p= 'This code is <escaped>'
+                                      p!= 'This code is <strong>not</strong> escaped'
+                                      
+                                      //- [ "-" ]: Invalid
+                                      -var a = 'This is code'
+                                      
+                                      //- [ "-" ]: Valid
+                                      - var a = 'This is code'
+                                      ```
+                                      true/Array
+
+requireSpacesInsideAttributeBrackets  Вимагає пробіли між дужками і їх вмістом
+                                      ```pug
+                                      //- Invalid
+                                      input(type='text' name='name' value='value')
+                                      
+                                      //- Valid
+                                      input( type='text' name='name' value='value' )
+                                      ```
+                                      true
+
+requireSpecificAttributes             Вимагає додаткових специфічних атрибутів
+                                      ```pug
+                                      //- [ { img: [ "alt" ] } ]: Invalid
+                                      img(src='src')
+                                      
+                                      //- Valid
+                                      img(src='src' alt='alt')
+                                      ```
+                                      Array
+
+requireStrictEqualityOperators        Вимагає строгих операторів порівняння
+                                      ```pug
+                                      //- Invalid
+                                      if true == false
+                                      if true != false
+                                      
+                                      //- Valid
+                                      if true === false
+                                      if true !== false
+                                      ```
+                                      true
+
+validateAttributeQuoteMarks           Визначає тип лапок в атрибутах, якщо true -
+                                      всі лапки повинні бути ідентичні першим
+                                      ```pug
+                                      //- "'": Invalid
+                                      input(type="text" name="name" value="value")
+                                      
+                                      //- "'": Valid
+                                      input(type='text' name='name' value='value')
+                                      ```
+                                      "'"/"\""/true
+
+validateAttributeSeparator            Визначає спосіб розділення атрибутів
+                                      ```pug
+                                      //- ", ": Invalid
+                                      input(type='text' name='name' value='value')
+                                      div
+                                        input(type='text'
+                                        , name='name'
+                                        , value='value'
+                                        )
+                                      
+                                      //- ", ": Valid
+                                      input(type='text', name='name', value='value')
+
+                                      //- { "separator": " ", "multiLineSeparator": "\n  " }
+                                      //- All attributes that are on the same line must be immediately followed by a space.
+                                      //- All attributes that are on different lines must be preceded by two spaces.
+                                                                            
+                                      //- Invalid
+                                      input(type='text', name='name', value='value')
+                                      div
+                                        input(type='text'
+                                        , name='name'
+                                        , value='value'
+                                        )
+                                      
+                                      //- Valid
+                                      input(type='text' name='name' value='value')
+                                      div
+                                        input(type='text'
+                                          name='name'
+                                          value='value'
+                                      )
+                                      ```
+                                      string/Object
+
+validateDivTags                       Забороняє явно вказувати "div", якщо у них
+                                      є id або класи
+                                      ```pug
+                                      //- Invalid
+                                      div.class
+                                      div#id
+                                      div.class(class='class')
+                                      
+                                      //- Valid
+                                      .class
+                                      #id
+                                      .class(class='class')
+                                      ```
+                                      true
+
+validateExtensions                    Підключати і наслідувати в шаблонах Pug
+                                      можна лише файли, що наслідуються Pug
+                                      ```pug
+                                      //- Invalid
+                                      include a
+                                      include a.jade
+                                      extends a
+                                      extends a.txt
+                                      extends a.jade
+                                      
+                                      //- Valid
+                                      include a.txt
+                                      include a.pug
+                                      extends a.pug
+                                      ```
+                                      true
+
+validateIndentation                   Перевіряє спосіб відступів
+                                      ```pug
+                                      //- 2: Invalid
+                                      div
+                                      <TAB>div
+                                      
+                                      //- 2: Valid
+                                      div
+                                      <SPACE><SPACE>div
+                                      
+                                      //- "\t": Invalid
+                                      div
+                                      <SPACE><SPACE>div
+                                      
+                                      //- "\t": Valid
+                                      div
+                                      <TAB>div
+                                      ```
+                                      number/"\t"
+
+validateLineBreaks                    Перевіряє символ кінця рядку
+                                      ```pug
+                                      //- "LF": Invalid
+                                      div(class='class')<CRLF>
+                                      .button
+                                      
+                                      //- "LF": Valid
+                                      div(class='class')<LF>
+                                      .button
+                                      ```
+                                      "CR"/"LF"/"CRLF"
+
+validateSelfClosingTags               Pug-файли не повинні містити необов'язкові
+                                      закриваючі теги
+                                      ```pug
+                                      //- Invalid
+                                      area/
+                                      link/
+                                      
+                                      //- Valid
+                                      area
+                                      link
+                                      foo/
+                                      
+                                      doctype xml
+                                      area/
+                                      ```
+                                      true
+
+validateTemplateString                Перевіряє використання шаблонних рядків
+                                      ```pug
+                                      //- 'variable': Invalid
+                                      h1= `${title}`
+                                      
+                                      //- 'variable': Valid
+                                      h1= title
+                                      
+                                      //- 'string': Invalid
+                                      h1= `title`
+                                      
+                                      //- 'string': Valid
+                                      h1= 'title'
+                                      
+                                      //- 'concatenation': Invalid
+                                      h1= `title` + `text`
+                                      h1= `title` + variable
+                                      
+                                      //- 'concatenation': Valid
+                                      h1= `titletext`
+                                      h1= `title${variable}`
+                                      ```
+                                      true/Array
 
 
 #### SublimeLinter-stylelint                                    <i id="SLs"></i>

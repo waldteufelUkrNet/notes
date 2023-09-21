@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="ua">
   <head>
     <meta charset="UTF-8">
@@ -13,13 +12,37 @@
     <script defer src="js/dbase.js"></script>
     <script defer src="js/wScroll.js"></script>
     <script defer src="js/index.js"></script>
+    <style>
+      video{
+        margin           : 0;
+        padding          : 0;
+        border           : 0;
+        font-size        : 100%;
+        font             : inherit;
+        vertical-align   : baseline;
+        color            : red;
+        background-color : rgb(18, 69, 222);
+      }
+    </style>
     <title>My books</title>
   </head>
   <body>
-<main role="main"></main>
-<a>blabla</a>
-<a href="bbb" title="aaa" />
-<img src="bbb" title="aaa" alt="asd"></img>
+<!-- <!DOCTYPE html> -->
+
+
+   <!-- invalid: -->
+   <main role="main"></main>
+   <a>blabla</a>
+   <a href="bbb" title="aaa" />
+   <img src="bbb" title="aaa" alt="asd"></img>
+
+   <!-- valid: -->
+   <main>Main content</main>
+   <a href="#" title="">blabla</a>
+   <a href="bbb" title="aaa">Link</a>
+   <img src="bbb" title="aaa" alt="asd" />
+
+
 
     <main class="main">
       <div class="header-wrapper">

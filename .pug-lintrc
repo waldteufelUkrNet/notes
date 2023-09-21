@@ -1,0 +1,55 @@
+{
+  "disallowAttributeConcatenation": "aggressive",
+  "disallowAttributeInterpolation": false,
+  "disallowAttributeTemplateString": "all",
+
+  "disallowStringConcatenation": "aggressive",
+  "disallowStringInterpolation": false,
+  "disallowTemplateString": false,
+
+  "disallowTagInterpolation": false,
+
+  "disallowSpecificAttributes": ["someAttr1", "someAttr2", {"someTag": ["someAttrForThisTag"]}],
+  "requireSpecificAttributes": [{"someTag": ["someAttrForThisTag"]}],
+  "disallowSpecificTags": ["someTag"],
+
+  "disallowClassLiterals": false,
+  "disallowClassAttributeWithStaticValue": true,
+  "disallowClassLiteralsBeforeAttributes": false,
+  "requireClassLiteralsBeforeAttributes": true,
+  "disallowClassLiteralsBeforeIdLiterals": true,
+  "requireClassLiteralsBeforeIdLiterals": false,
+
+  "disallowIdAttributeWithStaticValue": true,
+  "disallowIdLiteralsBeforeAttributes": false,
+  "requireIdLiteralsBeforeAttributes": true,
+  "disallowIdLiterals": false,
+
+  "disallowDuplicateAttributes": true,
+  "disallowHtmlText": true,
+  "disallowLegacyMixinCall": true,
+  "requireLowerCaseAttributes": true,
+  "requireLowerCaseTags": true,
+  "disallowBlockExpansion": true,
+
+  "disallowMultipleLineBreaks": true,
+  "disallowSpaceAfterCodeOperator": false,
+  "requireSpaceAfterCodeOperator": true,
+  "disallowSpacesInsideAttributeBrackets": true,
+  "requireSpacesInsideAttributeBrackets": false,
+  "disallowTrailingSpaces": true,
+  "maximumLineLength": 120,
+  "maximumNumberOfLines": 1000,
+  "requireLineFeedAtFileEnd": true,
+
+  "requireStrictEqualityOperators": true,
+
+  "validateAttributeQuoteMarks": "\"",
+  "validateAttributeSeparator": ", ",
+  "validateDivTags": true,
+  "validateExtensions": true,
+  "validateIndentation": 2,
+  "validateLineBreaks": "CRLF",
+  "validateSelfClosingTags": true,
+  "validateTemplateString": true
+}

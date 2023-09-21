@@ -1,0 +1,11 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-standard-scss"],
+  "rules": {
+    "keyframe-block-no-duplicate-selectors": [
+      true,
+      {
+        "message": "trololo"
+      }
+    ]
+  }
+}

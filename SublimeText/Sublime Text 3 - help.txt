@@ -80,12 +80,13 @@ Debugger                           Deb
 
 + SublimeLinter                      SuL
 + SublimeLinter-annotations          SLa
-+ SublimeLinter-contrib-HTMLHint     ScH
-+ SublimeLinter-contrib-markdownlint SLm
+++ SublimeLinter-contrib-HTMLHint     ScH
+++ SublimeLinter-contrib-markdownlint SLm
 SublimeLinter-eslint               SLe
 + SublimeLinter-json                 SLj
-+ SublimeLinter-pug-lint             SLp
+++ SublimeLinter-pug-lint             SLp
 SublimeLinter-stylelint            SLs
+prettiter
 
 
 #### Система контролю версій                       <i id="packages-group-6"></i>

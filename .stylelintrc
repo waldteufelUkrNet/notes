@@ -1,0 +1,46 @@
+{
+  // "extends": ["stylelint-config-standard", "./myExtendableConfig"],
+  // "plugins": ["../some-rule-set.js"],
+  // "customSyntax": "postcss-lit",
+  // "defaultSeverity": "warning",
+  // "configurationComment": "trololo",
+  // "ignoreDisables": "trololo",
+  // "ignoreFiles": [],
+  // "allowEmptyInput": true,
+  // "cache": true,
+  // "fix": true,
+
+  // "report{NeedlessDisables,InvalidScopeDisables,DescriptionlessDisables}": [
+  //   false,
+  //   {
+  //     "except": ["unit-allowed-list"],
+  //     "severity": "warning"
+  //   }
+  // ],
+
+  "rules": {
+    "ruleName": true,
+    "ruleName2": [
+      true,
+      {
+        "disableFix": true,
+        "message": "trololo",
+        "reportDisables": true,
+        "severity": "warning",
+      }
+    ]
+  },
+
+  // "overrides": [
+  //   {
+  //     "files": ["*.scss", "**/*.scss"],
+  //     "customSyntax": "postcss-scss"
+  //   },
+  //   {
+  //     "files": ["components/**/*.css", "pages/**/*.css"],
+  //     "rules": {
+  //       "alpha-value-notation": "percentage"
+  //     }
+  //   }
+  // ]
+}

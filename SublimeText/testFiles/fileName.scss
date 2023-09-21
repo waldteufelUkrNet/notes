@@ -13,6 +13,9 @@
   max-width: 1600px;
   margin: 0 auto;
   padding: 15px;
+  font-size        : 100%;
+  font             : inherit;
+  vertical-align   : baseline;
 }
 
 .textareas-wrapper {
@@ -22,6 +25,7 @@
   flex-grow: 1;
   min-height: 700px;
 }
+
 .textarea-wrapper {
   flex-grow: 1;
   position: relative;

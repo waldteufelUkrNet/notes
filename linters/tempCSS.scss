@@ -1,0 +1,5 @@
+/* invalid */
+#container a { top: 10px; }
+a { top: 0; }
+
+@media not(min-width: 300px) {}

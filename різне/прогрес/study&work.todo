@@ -1,3 +1,9 @@
+☐ SublimeText
+  ✔ SubliMerge3 @done (23-10-07 21:13)
+  ✔ themes @done (23-10-07 21:48)
+  ✔ new version @done (23-10-08 23:06)
+  ✔ licence @done (23-10-08 23:06)
+
 ☐ HTML/CSS
   ☐ HTML
     ☐ w3s: HTML Tutorial (https://www.w3schools.com/html/default.asp)
@@ -14,7 +20,13 @@
   ☐ prometheus: Основи Web UI розробки 2023 (https://prometheus.org.ua/course/course-v1:LITS+114+2022_T2)
   ☐ w3s: Accessibility Tutorial (https://www.w3schools.com/accessibility/index.php)
 
+☐ pug
+
 ☐ SASS/SCSS
+  ☐ у CSSComb є властивість "config.sort-order", вона визначає порядок сортування css-властивостей. Вона більш-менш готова, але для файлів scss там є додаткова можливість сортувати імпорти, медіа запити, змінні, наслідування. Зробити правильний порядок.
+  ☐ prettiter + stylelint
+  ☐ stylelint sort npm package for css
+  ☐ переглянути HTML-CSS-JS Prettify - файли конфігів
   ☐ w3s: Sass Tutorial (https://www.w3schools.com/sass/default.php)
   ☐ https://sass-lang.com/
   ☐ https://sass-scss.ru/
@@ -24,21 +36,23 @@
   ☐ https://en.bem.info/
 
 ☐ GIT
+  ☐ FileDiffs, gist, Git, Git Gutter, SideBarGit
   ☐ prometheus: Git для розподіленої розробки програмного забезпечення
   ☐ Кантер: git-курс (https://youtu.be/W4hoc24K93E?list=PLDyvV36pndZFHXjXuwA_NywNrVQO0aQqb)
   ☐ Кантер: git-разное (https://youtu.be/lHacJuru1bc?list=PLDyvV36pndZEB7kWWocU4QSn-G78LoaEE)
   ☐ w3s: Git Tutorial (https://www.w3schools.com/git/default.asp)
   ☐ Sublime Merge
-  ☐ sublimerge3
 
 ☐ JavaScript
+  ☐ prettiter + eslint
+  ☐ eslint - вивчити правила
   ☐ Кантер: https://uk.javascript.info/
   ☐ metanit: Руководство по JavaScript (https://metanit.com/web/javascript/)
   ☐ TimurShemsedinov: Основы программирования с примерами на JavaScript (1 часть) (https://www.youtube.com/playlist?list=PLHhi8ymDMrQZad6JDh6HRzY1Wz5WB34w0)
   ☐ TimurShemsedinov: Основы программирования с примерами на JavaScript (2 часть) (https://www.youtube.com/playlist?list=PLHhi8ymDMrQZ5bHGEftKvqdScBhtMUGke)
 
 ☐ Node.js
-  ☐ під час роботи з яким-небудь nodejs-проектом потестити debugger з node-адаптером.
+  ☐ під час роботи з яким-небудь nodejs-проектом потестити Debugger з node-адаптером.
   ☐ Кантер: Node.js (https://learn.javascript.ru/screencast/nodejs)
   ☐ metanit: Руководство по Node.js (https://metanit.com/web/nodejs/)
   ☐ w3s: Node.js Tutorial (https://www.w3schools.com/nodejs/default.asp)
@@ -124,8 +138,6 @@
     4. дублікати в медіа-запитах. Як їх позбутися? https://github.com/rbtech/gulp-css-purge?
        purge = require('gulp-css-purge'); - видалення дублюючого коду css? - файл реально зменшується, але дублікати не пропадають
     5. uncss для файлу бібліотек css
-
-☐ pug
 
 ☐ Python
   ☐ протестувати пакунок Sublime Text Anaconda

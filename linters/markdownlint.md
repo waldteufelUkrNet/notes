@@ -20,7 +20,7 @@ Info                                                           <i id="info"></i>
 Для роботи лінтера потрібно встановити відповідний npm-пакет:
 
 ```cmd
-npm install markdownlint-cli
+npm install -save-dev markdownlint-cli
 ```
 
 Для виключення певних файлів з перевірки використовується файл

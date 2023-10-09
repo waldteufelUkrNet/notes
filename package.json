@@ -1,7 +1,16 @@
 {
-  "dependencies": {
+  "type": "module",
+  "devDependencies": {
+    "@eslint/js": "^8.50.0",
+    "eslint": "^8.50.0",
+    "eslint-plugin-jsdoc": "^46.8.2",
+    "globals": "^13.22.0",
     "htmlhint": "^1.1.4",
     "markdownlint-cli": "^0.36.0",
-    "pug-lint": "^2.7.0"
+    "postcss": "^8.4.30",
+    "pug-lint": "^2.7.0",
+    "stylelint": "^15.10.3",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-config-standard-scss": "^11.0.0"
   }
 }

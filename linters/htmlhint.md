@@ -18,7 +18,7 @@ Info                                                           <i id="info"></i>
 
 ```shell
 npm install -g htmlhint@latest
-npm install htmlhint@latest
+npm install -D htmlhint@latest
 ```
 
 Налаштування лінтера зберігаються у файлі налаштувань `.htmlhintrc`, причому

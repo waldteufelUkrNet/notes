@@ -1,6 +1,7 @@
 Установка NodeJs на Linux Mint
 ================================================================================
 
+
 Зміст
 --------------------------------------------------------------------------------
 
@@ -13,27 +14,30 @@
 
 1. Встановити через термінал доступну версію. Скоріше за все вона буде не свіжа.
 
-```shell
-sudo apt install nodejs
-sudo apt install npm
-```
+   ```shell
+   sudo apt install nodejs
+   sudo apt install npm
+   ```
 
 2. Очистити кеш npm
-```shell
-sudo npm cache clean -f
-```
+
+   ```shell
+   sudo npm cache clean -f
+   ```
 
 3. Встановити модуль n
-```shell
-sudo npm install -g n
-```
+
+   ```shell
+   sudo npm install -g n
+   ```
 
 4. Встановити стабільну / останню / конкретну версію
-```shell
-sudo n stable
-sudo n latest
-sudo n 12.13.1
-```
+
+   ```shell
+   sudo n stable
+   sudo n latest
+   sudo n 12.13.1
+   ```
 
 
 Посилання                                                     <i id="links"></i>

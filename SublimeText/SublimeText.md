@@ -4009,19 +4009,60 @@ jsdocs_reparse  DocBlockr: Reparse comment block
              ведуть різні розробники з різними IDE. 
 залежності:  немає
 
-В корені проекту створюється файл .editorconfig, в якому вказані правила
+В корені проекту створюється файл `.editorconfig`, в якому вказані правила
 стилізації коду. Пакунок його зчитує і слідкує, щоб код відповідав вказаному
 стандарту.
 
 Підтримує наступні властивості:
 
-1. root
-2. indent_style
-3. indent_size
-4. end_of_line
-5. charset
-6. trim_trailing_whitespace
-7. insert_final_newline
+1. `root` - вказує, що даний файл є крайнім і вище по ієрархії шукати не треба
+2. `indent_style` - `tab`/`space`
+3. `indent_size` - число, кількість пробілів на один відступ, або `"tab"` - тоді
+   значення береться з властивості `tab_width`
+4. `end_of_line` - `lf`/`cr`/`crlf`
+5. `charset` - `latin1`/`utf-8`/`utf-8-bom`/`utf-16be`/`utf-16le`
+6. `trim_trailing_whitespace` - boolean, `true` - видаляти пробіли перед
+   символами нового рядка
+7. `insert_final_newline` - boolean, `true` - файл закінчується порожнім рядком
+8. `tab_width` - число, кількість пробілів, які замінюють 1 таб
+
+Приклад файлу:
+
+```text
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+# Matches multiple files with brace expansion notation
+# Set default charset
+[*.{js,py}]
+charset = utf-8
+
+# 4 space indentation
+[*.py]
+indent_style = space
+indent_size = 4
+
+# Tab indentation (no size specified)
+[Makefile]
+indent_style = tab
+
+# Indentation override for all JS under lib directory
+[lib/**.js]
+indent_style = space
+indent_size = 2
+
+# Matches the exact files either package.json or .travis.yml
+[{package.json,.travis.yml}]
+indent_style = space
+indent_size = 2
+```
 
 
 ##### Меню EditorConfig
@@ -8715,6 +8756,7 @@ selector_    A scope selector for regions that the word lists will be searched
 
 Для роботи лінтера потрібно встановити відповідний npm-пакет (локально обо
 глобально):
+
 ```cmd
 npm install -g htmlhint@latest
 npm install htmlhint@latest
@@ -8733,9 +8775,10 @@ npm install htmlhint@latest
 }
 ```
 
-За замовчуванням htmlhint перевіряє також і md-файли. Щоб цього уникнути, у
-файлі налаштувань SublimeLinter.sublime-settings в секції linters потрібно явно
-вказати область видимості для лінтера:
+За замовчуванням `htmlhint` перевіряє також і md-файли. Щоб цього уникнути, у
+файлі налаштувань `SublimeLinter.sublime-settings` в секції `linters` потрібно
+явно вказати область видимості для лінтера:
+
 ```json
 {
   "htmlhint" : {
@@ -8761,6 +8804,7 @@ npm install htmlhint@latest
 Лінтер надає доступ до інтерфейсу markdownlint.
 
 Для роботи лінтера потрібно встановити відповідний npm-пакет:
+
 ```shell
 npm install markdownlint-cli
 ```
